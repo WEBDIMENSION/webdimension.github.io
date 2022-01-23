@@ -1,0 +1,28 @@
+version: '3.0'
+services:
+  gatsby:
+    container_name: gatsby
+    build: ./docker
+    volumes:
+      - ./blog:/blog:delegated
+#      - /blog/node_modules:/blog/node_modules
+      - /blog/.cache
+      - /blog/.vscode
+      - /blog/build
+      - /blog/node_modules
+      - /blog/public
+    working_dir: /blog
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+      - "40444:40444"
+    environment:
+      - NODE_ENV=development
+      - INTERNAL_STATUS_PORT=40444
+    stdin_open: true
+#    command: gatsby develop --host 0.0.0.0
+    tty: true
+networks:
+  default:
+    external:
+      name: wp2gatsby
