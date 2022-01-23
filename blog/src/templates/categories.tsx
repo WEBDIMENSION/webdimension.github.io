@@ -1,5 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
 
 interface IData {
   allMarkdownRemark: {
@@ -27,7 +30,16 @@ const Categories = ({pageContext, data }: {pageContext: IPageContext, data: IDat
     const categoryHeader = `${totalCount} post${
         totalCount === 1 ? "" : "s"
     } category with "${category}"`
+
+  const post = data.markdownRemark
+
     return (
+      <Layout>
+        <Seo
+          title={category}
+          // description={post.frontmatter.description || post.excerpt}
+          description={category}
+        />
         <div>
             <h1>{categoryHeader}</h1>
             <ul>
@@ -43,6 +55,7 @@ const Categories = ({pageContext, data }: {pageContext: IPageContext, data: IDat
             </ul>
             <Link to="/category">All categories</Link>
         </div>
+      </Layout>
     )
 }
 

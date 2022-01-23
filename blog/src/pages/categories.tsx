@@ -6,6 +6,8 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import {Helmet} from "react-helmet"
 import {Link, graphql, PageProps} from "gatsby"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 // const CategoriesPage = ({
 //                       data: {
@@ -23,6 +25,8 @@ const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
   const title = data.site?.siteMetadata?.title
 
   return (
+    <Layout>
+      <Seo title="All posts"/>
     <div>
       <Helmet title={title}/>
       <div>
@@ -38,6 +42,7 @@ const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
         </ul>
       </div>
     </div>
+    </Layout>
   )
 }
 
@@ -51,7 +56,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(limit: 2000) 
+    
+    {
       group(field: frontmatter___categories) {
         fieldValue
         totalCount

@@ -6,6 +6,8 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import {Helmet} from "react-helmet"
 import {Link, graphql, PageProps} from "gatsby"
+import Layout from "../components/layout"
+import Seo from "../components/seo";
 
 // const TagsPage = ({
 //                       data: {
@@ -19,7 +21,10 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({ data }) => 
   const group = data.allMarkdownRemark.group
 
   return (
-    <div>
+    <Layout>
+      <Seo title="All posts"/>
+
+      <div>
       <Helmet title={data.site?.siteMetadata?.title}/>
       <div>
         <h1>Tags</h1>
@@ -34,6 +39,7 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({ data }) => 
         </ul>
       </div>
     </div>
+    </Layout>
   )
 }
 
