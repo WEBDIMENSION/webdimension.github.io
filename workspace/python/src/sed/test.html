@@ -1,0 +1,19 @@
+---
+title: Docker Memo<br />
+date: '2020-12-15 13:36:11'<br/>
+description: &quot;Docker系小ネタメモ。随時更新&quot;<br/>
+categories: &quot;&quot;<br/>
+tags: 	""<br/>
+---
+
+<h1>Docker Memo</h1>
+<h2>Docker ip　取得</h2>
+<p>Ansible でのtestの際に inventory_file にhostのIPを動的に書き込みたい</p>
+<pre><code class="language-bash">docker inspect -f &#039;{{ .NetworkSettings.IPAddress }}&#039; &lt;container&gt;</code></pre>
+<h2>'docker exec' is not road env</h2>
+<pre><code class="language-bash">docke exec xxx</code></pre>
+<p>/etc/profile ~/.profile などは自動読み込まない。</p>
+<pre><code class="language-bash">docke exec xxx bash</code></pre>
+<p>等でlogin後は環境変数が有効になる。</p>
+<pre><code class="language-bash">docke exec xxx</code></pre>
+<p>で完結させたい場合は一手間必要。</p>

@@ -1,0 +1,54 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: ${COMPOSE_PROJECT_NAME}_mysql5_7
+    user: "1000:50"
+    volumes:
+      - ${DIR_PATH}/mysql/my.cnf:/etc/mysql/my.cnf
+      - ${DIR_PATH}/mysql/data:/var/lib/mysql
+      - ${DIR_PATH}/mysql/backup:/tmp/mysql
+      - ${DIR_PATH}/mysql/init:/docker-entrypoint-initdb.d
+      - ${DIR_PATH}/mysql/logs:/var/log/mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - ${MYSQL_EXTERNAL_PORT}:${MYSQL_INTERNAL_PORT}
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb_use_native_aio=0
+    networks:
+      default:
+        ipv4_address: ${MYSQL_IP}
+  python:
+    build:
+      context: ./python
+    container_name: ${COMPOSE_PROJECT_NAME}_python
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ${DIR_PATH}/python/src:/workspace/src
+      - ${DIR_PATH}/python/output:/workspace/output
+      - ${DIR_PATH}/.env:/workspace/src/.env
+    working_dir: /workspace/src
+    tty: true
+  pandoc:
+    build:
+      context: ./pandoc
+    container_name: ${COMPOSE_PROJECT_NAME}_pandoc
+    volumes:
+      - ${DIR_PATH}/pandoc/src:/workspace/src
+      - ${DIR_PATH}/python/output:/workspace/output
+      - ${DIR_PATH}/../blog/content/blog:/workspace/content/blog
+    working_dir: /workspace/src
+    entrypoint: "/bin/sh -c './pandoc.sh'"
+    stdin_open: true
+#    tty: true
+networks:
+  default:
+    external:
+      name: ${NET_WORK_NAME}
