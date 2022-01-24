@@ -69,4 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 content/blog/*
-content/blog/!.gitkeep
+!content/blog/hello_world/
+!content/blog/.gitkeep
