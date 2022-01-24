@@ -8,7 +8,6 @@
 import * as React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import {StaticImage} from "gatsby-plugin-image"
-// import Typography from '@material-ui/core/Typography';
 
 const Bio = () => {
   const data = useStaticQuery<GatsbyTypes.BioQueryQuery>(graphql`
