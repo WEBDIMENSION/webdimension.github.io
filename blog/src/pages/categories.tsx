@@ -1,13 +1,9 @@
 import React from "react"
-
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
-// Components
 import {Helmet} from "react-helmet"
-import {Link, graphql, PageProps} from "gatsby"
+import {graphql, PageProps} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Categories from "../components/categories";
 
 // const CategoriesPage = ({
 //                       data: {
@@ -21,7 +17,6 @@ const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
   data,
 }) => {
 
-  const group = data.allMarkdownRemark.group
   const title = data.site?.siteMetadata?.title
 
   return (
@@ -29,18 +24,7 @@ const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
       <Seo title="All posts"/>
     <div>
       <Helmet title={title}/>
-      <div>
-        <h1>categories</h1>
-        <ul>
-          {group.map(category => (
-            <li key={category.fieldValue}>
-              <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
-                {category.fieldValue} ({category.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Categories/>
     </div>
     </Layout>
   )

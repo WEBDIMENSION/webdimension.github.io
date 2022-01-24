@@ -39,8 +39,9 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  /*margin: 0.67em 0;*/
 }
+
 
 /* Grouping content
    ========================================================================== */
@@ -341,3 +342,16 @@ summary {
 [hidden] {
   display: none;
 }
+
+body,
+main,
+article,
+h1, h2, h3, h4, h5, h6,
+ul, li,
+p, div,
+header,
+footer {
+  margin: 0;
+  padding: 0;
+}
+

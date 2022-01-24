@@ -1,13 +1,10 @@
 import React from "react"
 
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
-// Components
 import {Helmet} from "react-helmet"
-import {Link, graphql, PageProps} from "gatsby"
+import {graphql, PageProps} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo";
+import Tags from "../components/tags";
 
 // const TagsPage = ({
 //                       data: {
@@ -17,34 +14,20 @@ import Seo from "../components/seo";
 //                           },
 //                       },
 //                   }) => {
-const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({ data }) => {
-  const group = data.allMarkdownRemark.group
-
+const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQuery>> = ({data}) => {
+  const title = data.site?.siteMetadata?.title
   return (
     <Layout>
       <Seo title="All posts"/>
-
       <div>
-      <Helmet title={data.site?.siteMetadata?.title}/>
-      <div>
-        <h1>Tags</h1>
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <Helmet title={title}/>
+        <Tags/>
       </div>
-    </div>
     </Layout>
   )
 }
 
 export default TagsPage
-
 export const pageQuery = graphql`
   query TagsQuery{
     site {
@@ -52,7 +35,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(limit: 2000) 
+    
+    {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

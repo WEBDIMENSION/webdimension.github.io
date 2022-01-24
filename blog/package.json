@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
+    "@types/styled-components": "^5.1.21",
     "gatsby": "^4.4.0",
     "gatsby-plugin-feed": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",

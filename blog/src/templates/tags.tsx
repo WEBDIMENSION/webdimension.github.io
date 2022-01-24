@@ -2,6 +2,7 @@ import React from "react"
 import {Link, graphql} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import {Box} from "@material-ui/core";
 
 interface IData {
   allMarkdownRemark: {
@@ -45,7 +46,12 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
             const {title} = node.frontmatter
             return (
               <li key={slug}>
-                <Link to={slug}>{title}</Link>
+               <Box sx={{
+                  borderRadius: '50%',
+                  borderColor: 'primary.main'
+                }}>
+                  <Link to={slug}>{title}</Link>
+                </Box>
               </li>
             )
           })}

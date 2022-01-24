@@ -31,7 +31,6 @@ const Categories = ({pageContext, data }: {pageContext: IPageContext, data: IDat
         totalCount === 1 ? "" : "s"
     } category with "${category}"`
 
-  const post = data.markdownRemark
 
     return (
       <Layout>
