@@ -2,19 +2,22 @@ import React from "react"
 import {Link, graphql} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import {Box} from "@material-ui/core";
+import PostList from "../components/postList"
+import ListTitle from "../components/listTitle"
+// import styled from "styled-components"
+
 
 interface IData {
   allMarkdownRemark: {
     totalCount: number
-    edges: Array<{
-      node: {
-        fields: {
-          slug: string
-        }
-        frontmatter: {
-          title: string
-        }
+    nodes: Array<{
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+        date: string
+        description: string
       }
     }>
   }
@@ -26,10 +29,12 @@ interface IPageContext {
 
 const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) => {
   const {tag} = pageContext
-  const {totalCount, edges} = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  const totalCount = data.allMarkdownRemark.totalCount
+  const nodes = data.allMarkdownRemark.nodes
+  // const tagHeader = `${totalCount} post${
+  //   totalCount === 1 ? "" : "s"
+  // } Tagging: ${tag}`
+
   return (
     <Layout>
       <Seo
@@ -37,49 +42,52 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
         // description={post.frontmatter.description || post.excerpt}
         description={tag}
       />
-      <div>
-        <h1>{tagHeader}</h1>
-        {/* <h1>{tag}</h1> */}
-        <ul>
-          {edges.map(({node}: { node: any }) => {
-            const {slug} = node.fields
-            const {title} = node.frontmatter
-            return (
-              <li key={slug}>
-               <Box sx={{
-                  borderRadius: '50%',
-                  borderColor: 'primary.main'
-                }}>
-                  <Link to={slug}>{title}</Link>
-                </Box>
-              </li>
-            )
-          })}
-        </ul>
-        <Link to="/tags">All tags</Link>
-      </div>
+          <div>
+            <ListTitle title={tag} prefixTitle="Tagging"/>
+            <PostList nodes={nodes}/>
+            <Link to="/tags">All tags</Link>
+          </div>
     </Layout>
-  )
+)
 }
-
 export default Tags
 
 export const pageQuery = graphql`
-  query Tags($tag: String) {
+query Tags($tag: String)
+  {
     allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
+      limit
+  :
+    2000
+    sort: {
+      fields: [frontmatter___date], order
+    :
+      DESC
+    }
+    filter: {
+      frontmatter: {
+        tags: { in:
+          [$tag]
+        }
+      }
+    }
+  )
+    {
       totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+      nodes
+      {
+        fields
+        {
+          slug
+        }
+        frontmatter
+        {
+          date(formatString
+        :
+          "MMMM DD, YYYY"
+        )
+          title
+          description
         }
       }
     }

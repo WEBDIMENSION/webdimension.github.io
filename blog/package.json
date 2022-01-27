@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.3.1",
     "@types/styled-components": "^5.1.21",
+    "add": "^2.0.6",
     "gatsby": "^4.4.0",
     "gatsby-plugin-feed": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
@@ -27,6 +30,7 @@
     "gatsby-remark-responsive-iframe": "^5.4.0",
     "gatsby-remark-smartypants": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
+    "gatsby-theme-material-ui": "^5.1.0",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "prismjs": "^1.25.0",
@@ -36,13 +40,12 @@
     "styled-components": "^5.3.3",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "use-dark-mode": "^2.3.1"
+    "use-dark-mode": "^2.3.1",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.12.3",
     "@types/react-helmet": "^6.1.5",
     "@types/typography": "^0.16.4",
-    "gatsby-plugin-material-ui": "^4.1.0",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"

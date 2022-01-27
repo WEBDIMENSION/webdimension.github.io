@@ -18,7 +18,7 @@ const Footer = () => {
     return (
         <footer>
             <p>
-                <small>(c) 2021 {data.site?.siteMetadata?.title}</small>
+                <small>(c) 2021 {data.site?.siteMetadata?.title}s</small>
             </p>
         </footer>
     )

@@ -2,9 +2,9 @@
 import * as React from "react"
 import { Link, graphql} from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import styled from "styled-components"
 
 interface Props {
   data: {
@@ -57,33 +57,26 @@ const BlogPost = ({data}: Props) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
+      <ArticleWrapper
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
         </header>
+        <p className="postDate"><span>{post.frontmatter.date}</span></p>
         <section
           dangerouslySetInnerHTML={{__html: post.html}}
           itemProp="articleBody"
         />
         <hr/>
-        <footer>
-          <Bio/>
-        </footer>
-      </article>
+        {/*<footer>*/}
+        {/*  <Bio/>*/}
+        {/*</footer>*/}
+      </ArticleWrapper>
       <nav className="blog-post-nav">
         <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
         >
           <li>
             {previous && (
@@ -106,6 +99,30 @@ const BlogPost = ({data}: Props) => {
 }
 
 export default BlogPost
+
+const ArticleWrapper = styled.article`
+  header {
+    margin-bottom: 1em;
+    border-bottom: 1px var(--colorPrimary) dashed;
+  }
+  P.postDate {
+    text-align: end;
+    span {
+      color: var(--colorSecondary);
+    }
+  }
+  section {
+    margin-top: 1em;
+    border-radius: 8px;
+    background-color: var(--bgColorScondary); 
+    padding: 0.5em;
+    h1 {
+      display: none;
+    }
+  }
+`
+
+
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

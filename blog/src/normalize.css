@@ -37,10 +37,10 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
-  font-size: 2em;
-  /*margin: 0.67em 0;*/
-}
+/*h1 {*/
+/*  font-size: 2em;*/
+/*  !*margin: 0.67em 0;*!*/
+/*}*/
 
 
 /* Grouping content
@@ -346,8 +346,10 @@ summary {
 body,
 main,
 article,
+section,
+aside,
 h1, h2, h3, h4, h5, h6,
-ul, li,
+ul, ol, li,
 p, div,
 header,
 footer {
@@ -355,3 +357,6 @@ footer {
   padding: 0;
 }
 
+ul, ol {
+  list-style: none;
+}

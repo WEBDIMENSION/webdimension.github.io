@@ -11,7 +11,6 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import {Helmet} from "react-helmet"
 import {Link, graphql, useStaticQuery} from "gatsby"
-import Grid from "@material-ui/core/Grid";
 
 const Categories = () => {
   const data = useStaticQuery(graphql`
@@ -22,7 +21,7 @@ const Categories = () => {
         }
       }
       allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
+        group(field: frontmatter___categories) {
           fieldValue
           totalCount
         }
@@ -32,6 +31,7 @@ const Categories = () => {
 
   const title: string = data.site.siteMetadata?.title
   const group: any[] = data.allMarkdownRemark?.group
+  console.log(title)
 
   return (
     <div className="tags">

@@ -1,11 +1,14 @@
 :root {
   --font: "游ゴシック体";
   --font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-  --background: #333;
-  --fontColor: #ccc;
-  --hrefBackground: #555;
-  --hrefVisitedBackground: #444;
-  --visitedColor: #aaa;
+  /*--borderColor: steelblue;*/
+  --fontSizeH1: 2em;
+  --fontSizeH2: 1.5em;
+  --fontSizeH3: 1.3em;
+  --fontSizeH4: 1.3rm;
+  --fontSizeH5: 1.0em;
+  --fontSizeH6: 0.8em;
+  /*--borderColor: #fe0;*/
 
   --black: #333;
   --red: #F00;
@@ -14,25 +17,58 @@
   --yellow: #Fe0;
   --yellow2: #FF5;
   --glay: #f5f2f0;
-  --visited: #999;
-  --hover: #00F;
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 70%;
+  color: #FFee00;
 }
 
+body.light-mode{
+  --bgColorPrimary: #f5f5f5;
+  --bgColorScondary: #eeeeee;
+  --colorPrimary: #99CCFF;
+  --colorSecondary: #5f9ea0;
+  --fontColor: #333;
+  --visitedColor: #777;
+  --hrefBackground: #fff;
+  --hrefVisitedBackground: #ddd;
+  --hover: #4169E1;
+}
+
+body.dark-mode{
+  --bgColorPrimary: #222;
+  --bgColorScondary: #333;
+  --colorPrimary: #336699;
+  --colorSecondary: #5f9ea0;
+  --fontColor: #ddd;
+  --visitedColor: #bbb;
+  --hrefBackground: #555;
+  --hrefVisitedBackground: #444;
+  --hover: #00F;
+}
+
+
+
 body {
-  --font: var(--font);
+  font: var(--font);
   color: var(--fontColor);
-  --bg: var(--background);
+  background-color: var(--bgColorPrimary);
   font-weight: 500;
   line-height: 1.8;
   font-size: 1.6rem;
 }
 
+h1 {
+  font-size: var(--fontSizeH1);
+}
+
+h2 {
+  font-size: var(--fontSizeH2);
+}
 a {
-  color: var(--fontColor)
+  color: var(--fontColor);
+  text-decoration: none;
 }
 
 a:visited {
@@ -44,31 +80,10 @@ a:hover {
 }
 
 
-/*light mode*/
-/*body.light {*/
-/*  --bg: white;*/
-/*  !*--textNormal: #222;*!*/
-/*  !*--textTitle: #222;*!*/
-/*  !*--textLink: blue;*!*/
-/*  --hr: hsla(0, 0%, 0%, 0.2);*/
-/*  !*color: var(--red);*!*/
-/*  background-color: var(--blue);*/
-/*}*/
-
-/*!*dark mode*!*/
-/*body.dark {*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  --bg: #white;*/
-/*  --textNormal: white;*/
-/*  --textTitle: white;*/
-/*  --textLink: yellow;*/
-/*  --hr: hsla(0, 0%, 100%, 0.2);*/
-/*  color: var(--white);*/
-/*}*/
-
 
 .container {
   max-width: 1180px;
   margin: 0 auto;
   padding: 10px 15px;
 }
+

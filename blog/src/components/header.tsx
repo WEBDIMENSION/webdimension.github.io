@@ -33,15 +33,15 @@ const Header = () => {
   }
   return (
     <HeaderWrapper>
-      <div className="container">
+      <div className="header">
         <div className="logo">
         <StaticImage
           className="bio-avatar"
           layout="fixed"
           formats={["auto", "png", "avif"]}
           src="../images/prof.png"
-          width={50}
-          height={50}
+          width={60}
+          height={60}
           quality={95}
           alt="Profile picture"
         />
@@ -53,7 +53,7 @@ const Header = () => {
               <Link to="/about">AboutMe</Link>
             </li>
             <li>
-              <Link to="/contact">contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
@@ -63,32 +63,33 @@ const Header = () => {
 }
 export default Header
 const HeaderWrapper = styled.header`
-  
-  margin-top: 8px;  
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  //a {
-  //  text-decoration: none;
-  //}
-  //a:visited {
-  //  color: var(--black);
-  //}
-  //a:hover {
-  //  color: var(--blue);
-  //}
-  //
-  .container {
-    height: 50px;
+  margin-top: 16px;
+  //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  a {
+    text-decoration: none;
+  }
+  a:visited {
+    color: var(--fontColor);
+  }
+  a:hover {
+    color: var(--fontColor);
+  }
+
+  .header {
+    height: 2.5em;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 32px;
+    border-bottom: 1px var(--colorPrimary) solid;
     .logo {
       display: flex;
       .bio-avatar{
-        margin-right: 16px;
+        margin-right: 32px;
       }
     }
     .headerTitle{
-      font-size: 2em;   
+      font-size: 2.5em;   
       font-weight: bold;
     }
   }
@@ -102,16 +103,6 @@ const HeaderWrapper = styled.header`
     li {
       padding: 0 0 0 20px;
       font-size: 1.5em;
-      //a {
-      //  color: var(--black);
-      //  font-weight: bold;
-      //}
-      //a:visited {
-      //  color: var(--black);
-      //}
-      //a:hover {
-      //  color: var(--blue);
-      //}
     }
   }
 `

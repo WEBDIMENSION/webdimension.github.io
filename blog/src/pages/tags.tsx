@@ -14,14 +14,15 @@ import Tags from "../components/tags";
 //                           },
 //                       },
 //                   }) => {
-const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQuery>> = ({data}) => {
+const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
   const title = data.site?.siteMetadata?.title
+
   return (
     <Layout>
       <Seo title="All posts"/>
       <div>
         <Helmet title={title}/>
-        <Tags/>
+        <Tags isSideBar={false}/>
       </div>
     </Layout>
   )
