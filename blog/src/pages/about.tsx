@@ -17,8 +17,8 @@ const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
     // <Layout title={siteTitle}>
     <Layout>
       <Seo title="AboutMe"/>
-      <h1>AboutMe</h1>
       <Article>
+      <h1>AboutMe</h1>
         <section>
           <Bio/>
         </section>

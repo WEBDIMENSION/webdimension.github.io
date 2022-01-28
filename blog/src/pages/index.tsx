@@ -10,6 +10,8 @@ import {PageProps, graphql} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
+import Article from "../components/postArticle"
+import styled from "styled-components";
 
 
 // const BlogIndex = ({ data, location }) => {
@@ -35,16 +37,23 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
 
     return (
       <Layout>
-        <Seo title="All posts"/>
-        <h2>最近の投稿</h2>
-        <PostList nodes={nodes}/>
+          <Seo title="All posts"/>
+        <Article>
+          <H2Wrapper>最近の投稿</H2Wrapper>
+          <section>
+            <PostList nodes={nodes}/>
+          </section>
+        </Article>
       </Layout>
     )
   }
 }
-
 export default BlogIndex
 
+const H2Wrapper = styled.h2`
+  font-size: var(--fontSizeH1);
+  
+`
 export const pageQuery = graphql`
   query BlogIndex {
     site {

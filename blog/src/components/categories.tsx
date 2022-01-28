@@ -34,10 +34,6 @@ const Categories = () => {
   console.log(title)
 
   return (
-    <div className="tags">
-      <Helmet title={title}/>
-      <div>
-        <h2>Categories</h2>
         <ul>
           {group.map(tag => (
             <li key={tag.fieldValue} >
@@ -47,8 +43,6 @@ const Categories = () => {
             </li>
           ))}
         </ul>
-      </div>
-    </div>
   )
 }
 

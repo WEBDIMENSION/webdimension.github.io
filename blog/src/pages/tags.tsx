@@ -5,6 +5,7 @@ import {graphql, PageProps} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo";
 import Tags from "../components/tags";
+import Article from "../components/postArticle"
 
 // const TagsPage = ({
 //                       data: {
@@ -19,11 +20,14 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
 
   return (
     <Layout>
-      <Seo title="All posts"/>
-      <div>
+      <Article>
+        <Seo title="All posts"/>
         <Helmet title={title}/>
-        <Tags isSideBar={false}/>
-      </div>
+        <h1>Tags</h1>
+        <section>
+          <Tags isSideBar={false}/>
+        </section>
+      </Article>
     </Layout>
   )
 }

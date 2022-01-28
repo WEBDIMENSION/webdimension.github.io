@@ -16,8 +16,8 @@ const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
     // <Layout title={siteTitle}>
     <Layout>
       <Seo title="AboutMe"/>
-      <h1>Contact</h1>
       <Article>
+      <h1>Contact</h1>
         <section>
           説明文
         </section>

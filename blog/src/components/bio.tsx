@@ -45,7 +45,7 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-      <BioDescription/>
+      <BioDescription isSideBar={false}/>
     </div>
   )
 }

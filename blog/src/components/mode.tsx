@@ -4,15 +4,18 @@ import useDarkMode from 'use-dark-mode';
 import styled from "styled-components"
 // import {ThemeProvider} from "@emotion/react";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+
 
 const theme = createTheme({
-  palette: {
-    // primary: deepPurple[50],
-    secondary: {
-      main: '#0f0',
+    palette: {
+      // primary: deepPurple[50],
+      secondary: {
+        main: '#0f0',
+      }
     }
-  }
-})
+  })
 ;
 
 
@@ -36,5 +39,4 @@ const DarkModeToggle = () => {
 
 export default DarkModeToggle
 const DarkModeSwitch = styled.div`
-  text-align: end;
 `

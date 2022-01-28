@@ -46,14 +46,14 @@ const PostList = ({nodes}: { nodes: any}) => {
                     <span>{node.frontmatter?.date}</span>
                     </p>
                   </header>
-                  <section>
+                  {/*<section>*/}
                     <p
                       dangerouslySetInnerHTML={{
                         __html: node.frontmatter?.description || node?.excerpt || '',
                       }}
                       itemProp="description"
                     />
-                  </section>
+                  {/*</section>*/}
                 </article>
               </li>
             )

@@ -4,6 +4,7 @@ import {graphql, PageProps} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Categories from "../components/categories";
+import Article from "../components/postArticle"
 
 // const CategoriesPage = ({
 //                       data: {
@@ -14,18 +15,21 @@ import Categories from "../components/categories";
 //                       },
 //                   }) => (
 const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
-  data,
-}) => {
+                                                                                 data,
+                                                                               }) => {
 
   const title = data.site?.siteMetadata?.title
 
   return (
     <Layout>
-      <Seo title="All posts"/>
-    <div>
-      <Helmet title={title}/>
-      <Categories/>
-    </div>
+      <Article>
+        <Seo title="All posts"/>
+        <Helmet title={title}/>
+        <h1>categories</h1>
+        <section>
+          <Categories/>
+        </section>
+      </Article>
     </Layout>
   )
 }

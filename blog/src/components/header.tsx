@@ -5,6 +5,9 @@ import {useStaticQuery, graphql} from "gatsby"
 // import {siteMetadata} from "../../gatsby-config"
 import styled from "styled-components"
 import {StaticImage} from "gatsby-plugin-image";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+
 
 const Header = () => {
   const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
@@ -23,6 +26,7 @@ const Header = () => {
   let siteName
 
   if (isRootPath) {
+
     siteName = <h1 className="headerTitle">{data.site?.siteMetadata?.title}</h1>
   } else {
     siteName = (
@@ -33,8 +37,10 @@ const Header = () => {
   }
   return (
     <HeaderWrapper>
-      <div className="header">
-        <div className="logo">
+      <Box sx={{display: 'flex', justifyContent: 'space-between'}} className="header">
+      {/*  <Grid container>*/}
+      {/*    <Grid item xs={12} md={9} className={"header mb6"}>*/}
+      <Box sx={{display: 'flex'}} className="logo">
         <StaticImage
           className="bio-avatar"
           layout="fixed"
@@ -46,7 +52,15 @@ const Header = () => {
           alt="Profile picture"
         />
         {siteName}
-        </div>
+      </Box>
+      {/*</Grid>*/}
+      {/*<Grid item xs={12} md={3}>*/}
+      <Box sx={{
+        display: {
+          xs: 'none',
+          md: 'block',
+        }
+      }}>
         <nav>
           <ul>
             <li>
@@ -57,14 +71,70 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </Box>
+      {/*  </Grid>*/}
+      {/*</Grid>*/}
+      </Box>
+
     </HeaderWrapper>
   )
 }
 export default Header
 const HeaderWrapper = styled.header`
-  margin-top: 16px;
-  //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+
+  .header {
+    //height: 2.0em;
+    ////display: flex;
+    //align-items: center;
+    ////justify-content: space-between;
+    //padding-bottom: 32px;
+    //border-bottom: 1px var ( --colorPrimary ) solid;
+
+    .logo {
+      //display: flex;
+      .bio-avatar {
+        margin-right: 16px;
+      }
+  }
+
+  .headerTitle {
+    font-size: 2.0em;
+    font-weight: bold;
+  }
+
+  //}
+  //
+  //
+  nav {
+    //display: flex;
+    //width: 100%;
+    //text-align: end;
+    //background-color: #FFf;
+
+    ul {
+      //justify-content: space-around;
+      //width: 100%;
+      list-style: none;
+      //background-color: #FFee00;
+
+      //vertical-align: bottom;
+      //height: 100%;
+      display: flex;
+
+      li {
+        //text-align: end;
+        //display: inline-block;
+        padding-left: 20px;
+        font-size: 1.5em;
+        padding-top: 0.5em;
+        //vertical-align: bottom;
+        justify-content: end;
+        //background-color: #00ffff;
+      }
+    }
+  }
+
   a {
     text-decoration: none;
   }
@@ -75,34 +145,4 @@ const HeaderWrapper = styled.header`
     color: var(--fontColor);
   }
 
-  .header {
-    height: 2.5em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 32px;
-    border-bottom: 1px var(--colorPrimary) solid;
-    .logo {
-      display: flex;
-      .bio-avatar{
-        margin-right: 32px;
-      }
-    }
-    .headerTitle{
-      font-size: 2.5em;   
-      font-weight: bold;
-    }
-  }
-
-
-  nav ul {
-    margin: 0;
-    list-style: none;
-    display: flex;
-
-    li {
-      padding: 0 0 0 20px;
-      font-size: 1.5em;
-    }
-  }
 `
