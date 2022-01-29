@@ -1919,6 +1919,13 @@
     prop-types "^15.7.2"
     react-is "^17.0.2"
 
+"@mui/icons-material@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.3.1.tgz#e0e0aecce5a86971dbaa46441d931a9c749a1c53"
+  integrity sha512-8zBWCaE8DHjIGZhGgMod92p6Rm38EhXrS+cZtaV0+jOTMeWh7z+mvswXzb/rVKc0ZYqw6mQYBcn2uEs2yclI9w==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+
 "@mui/material@^5.3.1":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.3.1.tgz#23c1e71b9cf995837ff5fdca34ac5052496861f5"
@@ -9970,6 +9977,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-modern-drawer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-modern-drawer/-/react-modern-drawer-1.0.1.tgz#a400c551216b3dffadf93e80f7cc313d30434d13"
+  integrity sha512-Stswd8ETIRTGLJl7aFtu92kXb+7UCPn2mzTvpGWsE1kMXco3dK+PZyw/4NGGwDpesZvwPsz3PFlO1BuVqBZpCg==
 
 react-refresh@^0.9.0:
   version "0.9.0"

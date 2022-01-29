@@ -42,7 +42,7 @@ const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
           {/*</a>*/}
         </p>
       )}
-      {isSideBar ? <p className="sideBarLink"><Link to={`/about`}>AboutMe</Link></p> : ''}
+      {isSideBar ? <p className="sideBarLink"><Link to={`/about`}>&gt;&gt;&nbsp;AboutMe</Link></p> : ''}
     </DivWrapper>
   )
 }

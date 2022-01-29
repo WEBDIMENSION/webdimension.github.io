@@ -40,7 +40,7 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
           <HeaderUnder/>
           <DivWrapper>
             <Grid container>
-              <Grid item xs={12} md={3} className={"sideBar"}>
+              <Grid item xs={12} md={3.5} className={"sideBar"}>
                 <Box sx={{
                   display: {
                     xs: 'none',
@@ -57,7 +57,7 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
                   </nav>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={9}>
+              <Grid item xs={12} md={8.5}>
                 <main className="mainContent">
                   {children}
                 </main>

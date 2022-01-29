@@ -8,12 +8,21 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
 import Mode from "../components/mode";
-
+import Drawer from "../components/drawer";
 
 
 const headerUnder = () => {
 
-  const darkMode = useDarkMode(true);
+  // const darkMode = useDarkMode(true);
+  const [isOpen, setIsOpen] = React.useState(false)
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState)
+  }
+
+  const style = {
+    width: "50%",
+    margin: "0 auto",
+  };
 
   return (
     <DivWrapper>
@@ -30,7 +39,7 @@ const headerUnder = () => {
             md: 'none',
           }
         }}>
-          <div>menu</div>
+          <Drawer/>
         </Box>
         <Box sx={{
           textAlign: 'right',
