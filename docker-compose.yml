@@ -14,7 +14,7 @@ services:
     working_dir: /blog
     ports:
       - "8000:8000"
-      - "9000:9000"
+      - "8080:9000"
       - "40444:40444"
     environment:
       - NODE_ENV=development

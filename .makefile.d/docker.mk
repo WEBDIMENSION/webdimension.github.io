@@ -33,6 +33,9 @@ define _docker
 	docker $1 $2
 endef
 
+docker_stats:
+	@$(call _docker, 'stats', '--no-stream')
+
 docker_images:
 	@$(call _docker, 'images')
 

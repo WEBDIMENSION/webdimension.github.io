@@ -4,6 +4,7 @@ import {PageProps, graphql} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Article from "../components/postArticle"
+import Tags from "../components/tags"
 
 // const NotFoundPage = ({ data, location }) => {
 const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => {
@@ -14,22 +15,29 @@ const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => 
     // <Layout title={siteTitle}>
     <Layout>
       <Seo title="404: Not Found"/>
-      <Article>
-        <section>
+      <Aeanticle>
           <h1>404: Not Found</h1>
-          <p>You just hit a route that doesn't exist... the sadness.</p>
-        </section>
-      </Article>
+          <section>
+            <p>お探しのページはみつかりませんでした。</p>
+          </section>
+          <h2>Tags</h2>
+          <section>
+            <Tags isSideBar={false}/>
+          </section>
+      </Aeanticle>
     </Layout>
-  )
+)
 }
 
 export default NotFoundPage
 
 export const pageQuery = graphql`
-  query NotFoundQuery{
-    site {
-      siteMetadata {
+query NotFoundQuery
+  {
+    site
+    {
+      siteMetadata
+      {
         title
       }
     }

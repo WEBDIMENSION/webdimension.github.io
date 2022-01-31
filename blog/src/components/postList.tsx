@@ -22,7 +22,6 @@ import {Link} from "gatsby"
 
 const PostList = ({nodes}: { nodes: any}) => {
 
-  console.log(nodes)
 
     return (
         <OlWrapper>
@@ -36,16 +35,16 @@ const PostList = ({nodes}: { nodes: any}) => {
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  <header>
+                  {/*<header>*/}
                     <h2>
-                      <Link to={node.fields?.slug || ''} itemProp="url">
+                      <Link to={'/blog' + node.fields?.slug || ''} itemProp="url">
                         <span itemProp="headline">{title}</span>
                       </Link>
                     </h2>
                     <p className="postDate">
                     <span>{node.frontmatter?.date}</span>
                     </p>
-                  </header>
+                  {/*</header>*/}
                   {/*<section>*/}
                     <p
                       dangerouslySetInnerHTML={{

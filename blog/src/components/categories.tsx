@@ -31,13 +31,13 @@ const Categories = () => {
 
   const title: string = data.site.siteMetadata?.title
   const group: any[] = data.allMarkdownRemark?.group
-  console.log(title)
+  // console.log(title)
 
   return (
         <ul>
           {group.map(tag => (
             <li key={tag.fieldValue} >
-                <Link to={`/categories/${kebabCase(tag.fieldValue)}/`}>
+                <Link to={`/blog/categories/${kebabCase(tag.fieldValue)}`}>
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
             </li>

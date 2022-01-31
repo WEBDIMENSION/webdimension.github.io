@@ -11,10 +11,12 @@
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.1",
+    "@mui/lab": "^5.0.0-alpha.66",
     "@mui/material": "^5.3.1",
     "@types/styled-components": "^5.1.21",
     "add": "^2.0.6",
     "gatsby": "^4.4.0",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-feed": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
     "gatsby-plugin-google-analytics": "^4.4.0",
@@ -67,8 +69,9 @@
     "develop": "gatsby develop --host 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop --host 0.0.0.0",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --host 0.0.0.0",
     "clean": "gatsby clean",
+    "clean2": "rm rf .cache/* public/*",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "typecheck": "tsc"
   }

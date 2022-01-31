@@ -64,6 +64,9 @@ const Header = () => {
         <nav>
           <ul>
             <li>
+              <Link to="/blog">blog</Link>
+            </li>
+            <li>
               <Link to="/about">AboutMe</Link>
             </li>
             <li>

@@ -36,9 +36,12 @@ const drawer = () => {
           <li>
             <Link to={`/`}>Top</Link>
           </li>
+          <li>
+            <Link to={`/blog`}>Blog</Link>
+          </li>
           <ul className={"secondaryMenu"}>
             <li>
-              <Link to={`/Tags`}>Tags</Link>
+              <Link to={`/blog/tags`}>Tags</Link>
             </li>
           </ul>
           <li>

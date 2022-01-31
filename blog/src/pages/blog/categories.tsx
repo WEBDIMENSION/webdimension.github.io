@@ -1,21 +1,23 @@
 import React from "react"
-
 import {Helmet} from "react-helmet"
 import {graphql, PageProps} from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo";
-import Tags from "../components/tags";
-import Article from "../components/postArticle"
+import Layout from "../../components/layout"
+import Seo from "../../components/seo"
+import Categories from "../../components/categories";
+import Article from "../../components/postArticle"
 
-// const TagsPage = ({
+// const CategoriesPage = ({
 //                       data: {
 //                           allMarkdownRemark: { group },
 //                           site: {
 //                               siteMetadata: { title },
 //                           },
 //                       },
-//                   }) => {
-const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
+//                   }) => (
+const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
+                                                                                 data,
+                                                                               }) => {
+
   const title = data.site?.siteMetadata?.title
 
   return (
@@ -23,18 +25,20 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
       <Article>
         <Seo title="All posts"/>
         <Helmet title={title}/>
-        <h1>Tags</h1>
+        <h1>categories</h1>
         <section>
-          <Tags isSideBar={false}/>
+          <Categories/>
         </section>
       </Article>
     </Layout>
   )
 }
 
-export default TagsPage
+
+export default CategoriesPage
+
 export const pageQuery = graphql`
-  query TagsQuery{
+  query CategoriesQuery{
     site {
       siteMetadata {
         title
@@ -43,7 +47,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(limit: 2000) 
     
     {
-      group(field: frontmatter___tags) {
+      group(field: frontmatter___categories) {
         fieldValue
         totalCount
       }

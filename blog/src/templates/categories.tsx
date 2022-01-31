@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
 import ListTitle from "../components/listTitle"
+import PageNation from "../components/pageNation"
 
 interface IData {
   allMarkdownRemark: {
@@ -42,10 +43,13 @@ const Categories = ({pageContext, data}: { pageContext: IPageContext, data: IDat
         description={category}
       />
       <div>
-        <ListTitle title={category} prefixTitle="Catagory"/>
+        <ListTitle title={category} prefixTitle="Category"/>
         <PostList nodes={nodes}/>
         <Link to="/category">All categories</Link>
       </div>
+      <section>
+        <PageNation pageContext={pageContext}/>
+      </section>
     </Layout>
   )
 }
@@ -53,12 +57,15 @@ const Categories = ({pageContext, data}: { pageContext: IPageContext, data: IDat
 export default Categories
 
 export const pageQuery = graphql`
-  query($category: String) {
+  query Categories($category: String, $skip: Int!, $limit: Int!)
+  {
     allMarkdownRemark(
-      limit: 2000
+      skip: $skip
+      limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { categories: { in: [$category] } } }
-    ) {
+    )
+     {
       totalCount
       nodes {
         fields {

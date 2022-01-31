@@ -46,13 +46,13 @@ const Tags = ({isSideBar}: { isSideBar: boolean }) => {
             {group.slice(0, tagsCount).map(tag => (
               <LiWrapper key={tag.fieldValue}>
                 <div>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}`}>
                     {tag.fieldValue}
                   </Link>&nbsp;({tag.totalCount})
                 </div>
               </LiWrapper>
             ))}
-            {isSideBar ? <p className="sideBarLink"><Link to={`/tags`}>&gt;&gt;&nbsp;More Tags&nbsp;({AllTagsCount})</Link></p> : ''}
+            {isSideBar ? <p className="sideBarLink"><Link to={`/blog/tags`}>&gt;&gt;&nbsp;More Tags&nbsp;({AllTagsCount})</Link></p> : ''}
           </UlWrapper>
     </>
   )
