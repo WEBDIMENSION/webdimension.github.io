@@ -15,7 +15,7 @@ const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => 
     // <Layout title={siteTitle}>
     <Layout>
       <Seo title="404: Not Found"/>
-      <Aeanticle>
+      <Article>
           <h1>404: Not Found</h1>
           <section>
             <p>お探しのページはみつかりませんでした。</p>
@@ -24,7 +24,7 @@ const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => 
           <section>
             <Tags isSideBar={false}/>
           </section>
-      </Aeanticle>
+      </Article>
     </Layout>
 )
 }
