@@ -9,6 +9,9 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 import styled from "styled-components"
 import {Link, graphql, useStaticQuery} from "gatsby"
+import SideBarContentBottom from "../components/sideBarContentBottom"
+import IconButton from '@mui/material/IconButton';
+import TagIcon from '@mui/icons-material/Tag';
 
 // Components
 // import {Helmet} from "react-helmet"
@@ -41,7 +44,7 @@ const Tags = ({isSideBar}: { isSideBar: boolean }) => {
   const tagsCount = isSideBar ? sideBarTagsCount : AllTagsCount
 
   return (
-   <>
+   <div>
           <UlWrapper>
             {group.slice(0, tagsCount).map(tag => (
               <LiWrapper key={tag.fieldValue}>
@@ -52,32 +55,31 @@ const Tags = ({isSideBar}: { isSideBar: boolean }) => {
                 </div>
               </LiWrapper>
             ))}
-            {isSideBar ? <p className="sideBarLink"><Link to={`/blog/tags`}>&gt;&gt;&nbsp;More Tags&nbsp;({AllTagsCount})</Link></p> : ''}
           </UlWrapper>
-    </>
+            {isSideBar ?
+              <SideBarContentBottom>
+                <IconButton
+                  color="inherit"
+                  size="large"
+                  aria-label="tags"
+                >
+                  <TagIcon/>
+                </IconButton>
+                <Link to={`/blog/tags`}>All Tags</Link>
+              </SideBarContentBottom> : ""
+            }
+    </div>
   )
 }
 
 export default Tags
-// const SideBarContent = styled.p`
-//   //background-color: #333333;
-//   //border-radius: 1em;
-//   //padding: 0.5em;
-// `
 const UlWrapper = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   -webkit-justify-content: space-around;
   justify-content: space-around;
-  //border: 1px var(--borderColor) solid;
-  p {
-    border-top: 1px var(--fontColor) dotted;
-    width: 100%;
-    text-align: end;
-    margin: 0.5em 0.5em;
-    padding-top: 4px;
-  }
+  border: 1px var(--borderColor) solid;
 `
 const LiWrapper = styled.li`
   div {

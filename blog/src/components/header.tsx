@@ -7,6 +7,7 @@ import styled from "styled-components"
 import {StaticImage} from "gatsby-plugin-image";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import Drawer from "./drawer";
 
 
 const Header = () => {
@@ -38,45 +39,54 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Box sx={{display: 'flex', justifyContent: 'space-between'}} className="header">
-      {/*  <Grid container>*/}
-      {/*    <Grid item xs={12} md={9} className={"header mb6"}>*/}
-      <Box sx={{display: 'flex'}} className="logo">
-        <StaticImage
-          className="bio-avatar"
-          layout="fixed"
-          formats={["auto", "png", "avif"]}
-          src="../images/prof.png"
-          width={60}
-          height={60}
-          quality={95}
-          alt="Profile picture"
-        />
-        {siteName}
-      </Box>
-      {/*</Grid>*/}
-      {/*<Grid item xs={12} md={3}>*/}
-      <Box sx={{
-        display: {
-          xs: 'none',
-          md: 'block',
-        }
-      }}>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/blog">blog</Link>
-            </li>
-            <li>
-              <Link to="/about">AboutMe</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </Box>
-      {/*  </Grid>*/}
-      {/*</Grid>*/}
+        {/*  <Grid container>*/}
+        {/*    <Grid item xs={12} md={9} className={"header mb6"}>*/}
+        <Box sx={{display: 'flex'}} className="logo">
+          <StaticImage
+            className="bio-avatar"
+            layout="fixed"
+            formats={["auto", "png", "avif"]}
+            src="../images/prof.png"
+            width={60}
+            height={60}
+            quality={95}
+            alt="Profile picture"
+          />
+          {siteName}
+        </Box>
+        {/*</Grid>*/}
+        {/*<Grid item xs={12} md={3}>*/}
+        <Box sx={{
+          display: {
+            xs: 'none',
+            md: 'block',
+          }
+        }}>
+          <nav className={"pc"}>
+            <ul>
+              <li>
+                <Link to="/blog">blog</Link>
+              </li>
+              <li>
+                <Link to="/about">AboutMe</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+        </Box>
+        <Box sx={{
+          display: {
+            xs: 'block',
+            md: 'none',
+          }
+        }}>
+          <Drawer/>
+        </Box>
+
+        {/*  </Grid>*/}
+        {/*</Grid>*/}
       </Box>
 
     </HeaderWrapper>
@@ -91,61 +101,64 @@ const HeaderWrapper = styled.header`
     ////display: flex;
     //align-items: center;
     ////justify-content: space-between;
-    //padding-bottom: 32px;
-    //border-bottom: 1px var ( --colorPrimary ) solid;
+    padding-bottom: 16px;
+    border-bottom: 1px var(--colorPrimary) solid;
+    margin-bottom: 1em;
 
     .logo {
       //display: flex;
       .bio-avatar {
         margin-right: 16px;
       }
-  }
+    }
 
-  .headerTitle {
-    font-size: 2.0em;
-    font-weight: bold;
-  }
+    .headerTitle {
+      font-size: 2.0em;
+      font-weight: bold;
+    }
 
-  //}
-  //
-  //
-  nav {
-    //display: flex;
-    //width: 100%;
-    //text-align: end;
-    //background-color: #FFf;
-
-    ul {
-      //justify-content: space-around;
+    //}
+    //
+    //
+    nav.pc {
+      //display: flex;
       //width: 100%;
-      list-style: none;
-      //background-color: #FFee00;
+      //text-align: end;
+      //background-color: #FFf;
 
-      //vertical-align: bottom;
-      //height: 100%;
-      display: flex;
+      ul {
+        //justify-content: space-around;
+        //width: 100%;
+        list-style: none;
+        //background-color: #FFee00;
 
-      li {
-        //text-align: end;
-        //display: inline-block;
-        padding-left: 20px;
-        font-size: 1.5em;
-        padding-top: 0.5em;
         //vertical-align: bottom;
-        justify-content: end;
-        //background-color: #00ffff;
+        //height: 100%;
+        display: flex;
+
+        li {
+          //text-align: end;
+          //display: inline-block;
+          padding-left: 20px;
+          font-size: 1.5em;
+          padding-top: 0.5em;
+          //vertical-align: bottom;
+          justify-content: end;
+          //background-color: #00ffff;
+        }
       }
     }
-  }
 
-  a {
-    text-decoration: none;
-  }
-  a:visited {
-    color: var(--fontColor);
-  }
-  a:hover {
-    color: var(--fontColor);
-  }
+    a {
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: var(--fontColor);
+    }
+
+    a:hover {
+      color: var(--fontColor);
+    }
 
 `

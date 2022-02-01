@@ -34,20 +34,24 @@ const headerUnder = () => {
         }
       }}>
         <Box sx={{
+          textAlign: 'left',
+          width: {
+            sm: "100%",
+          },
+          display: {
+            xs: 'block',
+            md: 'none',
+          }
+        }}>
+          <Mode/>
+        </Box>
+        <Box sx={{
           display: {
             xs: 'block',
             md: 'none',
           }
         }}>
           <Drawer/>
-        </Box>
-        <Box sx={{
-          textAlign: 'right',
-          width: {
-            sm: "100%",
-          }
-        }}>
-          <Mode/>
         </Box>
       </Box>
     </DivWrapper>

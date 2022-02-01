@@ -96,6 +96,7 @@ abbr[title] {
 b,
 strong {
   font-weight: bolder;
+  /*white-space: nowrap;*/
 }
 
 /**

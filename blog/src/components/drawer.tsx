@@ -5,6 +5,14 @@ import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css'
 import IconButton from '@mui/material/IconButton';
 import {Menu} from '@mui/icons-material';
+import HomeIcon from '@mui/icons-material/Home';
+import TagIcon from '@mui/icons-material/Tag';
+import InfoIcon from '@mui/icons-material/Info';
+import EmailIcon from '@mui/icons-material/Email';
+import ListIcon from '@mui/icons-material/List';
+import Mode from "./mode";
+
+
 
 const drawer = () => {
 
@@ -19,7 +27,8 @@ const drawer = () => {
       <IconButton
         color="inherit"
         onClick={toggleDrawer}
-        size="large"
+        // size="large"
+        sizeLarge
         aria-label="menu"
       >
         <Menu/>
@@ -27,30 +36,70 @@ const drawer = () => {
       <Drawer
         open={isOpen}
         onClose={toggleDrawer}
-        direction='left'
+        direction='right'
       >
         <div className={"closeButton"}>
           <button onClick={toggleDrawer}>Close</button>
         </div>
         <UlWrapper className={"drawerMenu"}>
           <li>
+            <IconButton
+              color="inherit"
+              size="large"
+              aria-label="home"
+            >
+              <HomeIcon/>
+            </IconButton>
+
             <Link to={`/`}>Top</Link>
           </li>
           <li>
+            <IconButton
+              color="inherit"
+              size="large"
+              aria-label="blog"
+            >
+              <ListIcon/>
+            </IconButton>
             <Link to={`/blog`}>Blog</Link>
           </li>
           <ul className={"secondaryMenu"}>
             <li>
+              <IconButton
+                color="inherit"
+                size="large"
+                aria-label="tags"
+              >
+                <TagIcon/>
+              </IconButton>
               <Link to={`/blog/tags`}>Tags</Link>
             </li>
           </ul>
           <li>
+            <IconButton
+              color="inherit"
+              size="large"
+              aria-label="about"
+            >
+              <InfoIcon/>
+            </IconButton>
             <Link to={`/about`}>AboutMe</Link>
           </li>
           <li>
+            <IconButton
+              color="inherit"
+              size="large"
+              aria-label="contact"
+            >
+              <EmailIcon/>
+            </IconButton>
             <Link to={`/contact`}>Contact</Link>
           </li>
         </UlWrapper>
+        <div className={"displayMode"}>
+          Display
+          <Mode/>
+        </div>
       </Drawer>
     </DivWrapper>
   )
@@ -68,6 +117,10 @@ const DivWrapper = styled.div`
   div.closeButton {
     text-align: end;
   }
+  div.displayMode {
+    padding-left: 8px;
+  }
+
 `
 const UlWrapper = styled.ul`
   padding-top: 8px;

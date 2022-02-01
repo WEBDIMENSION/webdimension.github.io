@@ -8,6 +8,9 @@
 import * as React from "react"
 import {useStaticQuery, graphql, Link} from "gatsby"
 import styled from "styled-components"
+import InfoIcon from '@mui/icons-material/Info';
+import SideBarContentBottom from "../components/sideBarContentBottom"
+import IconButton from '@mui/material/IconButton';
 // import {StaticImage} from "gatsby-plugin-image"
 
 const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
@@ -22,43 +25,54 @@ const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
           social {
             twitter
           }
+          github {
+            repository
+          }
         }
       }
     }
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site?.siteMetadata?.author
-  const social = data.site?.siteMetadata?.social
+  const github = data.site?.siteMetadata?.github
 
   return (
     <DivWrapper className="bio">
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          {/*<a href={`https://twitter.com/${social?.twitter || ``}`}>*/}
-          {/*  You should follow them on Twitter*/}
-          {/*</a>*/}
-        </p>
-      )}
-      {isSideBar ? <p className="sideBarLink"><Link to={`/about`}>&gt;&gt;&nbsp;AboutMe</Link></p> : ''}
+      WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。<br/>
+      実経験の備忘録。<br/>
+      当サイトは<strong>Gatsby(blog-theme)&nbsp;TypeScript化</strong>して構築しています。<br/>
+      Hostingは<a href={"https://www.netlify.com"}>Netlify</a>を利用しています。<br/>
+      ソースは<a href={github?.repository}
+             target={"_blank"}>GitHub</a>(webdimension/gatasby_blog)で全公開しております。
+      {isSideBar ?
+        <SideBarContentBottom>
+          <IconButton
+            color="inherit"
+            size="large"
+            aria-label="about"
+          >
+            <InfoIcon/>
+          </IconButton>
+          <Link to={`/about`}>AboutMe</Link>
+        </SideBarContentBottom> : ""
+      }
     </DivWrapper>
   )
 }
 
 export default BioDescription
 const DivWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  //display: flex;
+  word-wrap: break-word;
+  //-webkit-justify-content: space-around;
+  //justify-content: space-around;
+  //padding: 8px 0;
 
-  p.sideBarLink {
-    border-top: 1px var(--fontColor) dotted;
-    width: 100%;
-    text-align: end;
-    margin: 0.5em 0.5em;
-    padding-top: 4px;
-  }
+  //p.sideBarLink {
+  //  border-top: 1px var(--fontColor) dotted;
+  //  //  width: 100%;
+  //  text-align: end;
+  //  margin-top: 0.5em;
+  //  padding-top: 0.2em;
+    //}
 `

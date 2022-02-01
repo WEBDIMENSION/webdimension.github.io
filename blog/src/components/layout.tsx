@@ -37,8 +37,8 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
       <Grid container className="container">
         <Grid item xs={12}>
           <Header/>
-          <HeaderUnder/>
-          <DivWrapper>
+          {/*<HeaderUnder/>*/}
+          <DivWrapper className="contents">
             <Grid container>
               <Grid item xs={12} md={3.5} className={"sideBar"}>
                 <Box sx={{
@@ -47,6 +47,9 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
                     md: 'block',
                   }
                 }}>
+                  <div className={"modeWrap"}>
+                  <Mode/>
+                  </div>
                   <nav>
                     <SidebarContent title="ABOUT">
                       <BioDescription isSideBar={true}/>
@@ -72,7 +75,16 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
 }
 export default Layout
 const DivWrapper = styled.div`
+    a {
+      text-decoration: underline;
+    }
+
   margin-top: 0.5em;
+
+  .modeWrap {
+    font-size: var(--fontSizeH1);
+    text-align: center;
+  }
   .sideBar {
     padding-right: 12px;
   }
@@ -81,6 +93,6 @@ const DivWrapper = styled.div`
     //margin-left: 1.2em;
     //padding: 8px;
   }
-  
+
 `
 

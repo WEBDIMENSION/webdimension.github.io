@@ -1,14 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `おっさんWEBエンジニア奮闘記`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `NagaMuu`,
+      summary: `WEBエンジニア(第一世代) 都内在住 フリーランス`,
+      company: `WEBDIMENSION`,
+      company_url: ``
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `
+          WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。
+          インフラ、バックエンド、フロントエンドの備忘録を公開
+          `,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `none`,
+    },
+    github: {
+      repository: `https://github.com/WEBDIMENSION/gatasby_blog`,
+      url: `https://github.com/WEBDIMENSION/gatasby_blog`,
+    },
+    dockerhub: {
+      url: `https://hub.docker.com/u/webdimension`,
     },
   },
   plugins: [
