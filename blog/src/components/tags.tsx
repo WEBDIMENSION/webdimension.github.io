@@ -103,7 +103,8 @@ const LiWrapper = styled.li`
 
   a:hover {
     //color: var(--white);
-    background-color: var(--hover);
+    color: var(--colorPrimary);
+    background-color: var(--visitedColor);
   }
 
 `

@@ -113,17 +113,19 @@ const HeaderWrapper = styled.header`
     }
 
     .headerTitle {
-      font-size: 2.0em;
+      font-size: 1.6em;
       font-weight: bold;
+      padding-top: 0.4em;
     }
 
     //}
     //
     //
     nav.pc {
-      //display: flex;
+      display: flex;
       //width: 100%;
-      //text-align: end;
+      text-align: end;
+      margin-top: 1em ;
       //background-color: #FFf;
 
       ul {
@@ -134,16 +136,16 @@ const HeaderWrapper = styled.header`
 
         //vertical-align: bottom;
         //height: 100%;
-        display: flex;
+        //display: flex;
 
         li {
           //text-align: end;
-          //display: inline-block;
+          display: inline-block;
           padding-left: 20px;
-          font-size: 1.5em;
-          padding-top: 0.5em;
+          font-size: 1.2em;
+          //padding-top: 0.5em;
           //vertical-align: bottom;
-          justify-content: end;
+          //justify-content: flex-end;
           //background-color: #00ffff;
         }
       }

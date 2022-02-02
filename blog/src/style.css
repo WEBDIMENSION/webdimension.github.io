@@ -2,7 +2,7 @@
   --font: "游ゴシック体";
   --font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
   /*--borderColor: steelblue;*/
-  --fontSizeH1: 2em;
+  --fontSizeH1: 1.5em;
   --fontSizeH2: 1.5em;
   --fontSizeH3: 1.3em;
   --fontSizeH4: 1.3rm;
@@ -46,7 +46,7 @@ body.dark-mode{
   --visitedColor: #bbb;
   --hrefBackground: #555;
   --hrefVisitedBackground: #444;
-  --hover: #00F;
+  --hover: #4169E1;
 }
 
 

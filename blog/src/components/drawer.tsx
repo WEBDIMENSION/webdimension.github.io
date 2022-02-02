@@ -27,8 +27,8 @@ const drawer = () => {
       <IconButton
         color="inherit"
         onClick={toggleDrawer}
-        // size="large"
-        sizeLarge
+        size="large"
+        // sizeLarge
         aria-label="menu"
       >
         <Menu/>

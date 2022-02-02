@@ -7,7 +7,7 @@
 
 // import * as React from "react"
 import React from "react";
-import { useState } from "react";
+import {useState} from "react";
 // import { makeStyles, TextField, Button } from "@material-ui/core";
 import {TextField, Button} from "@mui/material";
 import styled from "styled-components";
@@ -95,20 +95,46 @@ const ContactForm = () => {
 
   return (
     <DivWrapper>
-        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact"/>
-          <input type="hidden" name="bot-field"/>
-          <input type={"text"} name={"name"} onChange={handleChange} />
-          <Button
-            type="submit"
-            variant="contained"
-            fullWidth
-            disabled={canSubmit()}
-            margin="normal"
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact"/>
+        <input type="hidden" name="bot-field"/>
+
+        <div className={"inputBlock"}>
+          <label htmlFor={"name"}>名前 : </label>
+          <input type={"text"} name={"name"} onChange={handleChange}/>
+        </div>
+
+        <div className={"inputBlock"}>
+          <label htmlFor={"email"}>Email : </label>
+          <input type={"text"} name={"emai"} onChange={handleChange}/>
+        </div>
+
+          <div className={"inputBlock"}>
+          <label htmlFor={"subject"}>subject : </label>
+            <input type={"text"} name={"subject"} onChange={handleChange}/>
+          </div>
+
+        <div className={"inputBlock"}>
+          <label htmlFor={"message"}>Message : </label>
+          <textarea
+            nam={"message"}
+            rows={12}
           >
-            送信
-          </Button>
-        </form>
+        </textarea>
+        </div>
+
+        <div className={"inputBlock"}>
+        <Button
+          type="submit"
+          variant="contained"
+          // fullWidth
+          // disabled={canSubmit()}
+          margin="normal"
+        >
+          送信
+        </Button>
+        </div>
+      </form>
     </DivWrapper>
   )
 }
@@ -117,11 +143,24 @@ export default ContactForm
 
 const DivWrapper = styled.div`
   form {
+    width: 100%;
+    input, textarea,
+    label  {
+      //display: block;
+      //margin: auto;
+      width: 100%;
+      //background-color: #ff0;
+      //font-size: 1.2em;
+    }
+    div.inputBlock {
+      width: 95%;
+      margin: 0 auto 1em ;
+    }
     input, textarea {
-      margin: auto;
-      background-color: #EEE;
-      width: 80%;
-      font-size: 1.2em;
+      color: var(--fontColor);
+      border: 2px solid var(--hrefVisitedBackground);  
+      background-color: var(--hrefBackground);
+      padding: 0.5em;
     }
   }
 `

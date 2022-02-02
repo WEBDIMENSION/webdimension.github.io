@@ -41,7 +41,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
       <Layout>
           <Seo title="All posts"/>
         <Article>
-          <H2Wrapper>最近の投稿</H2Wrapper>
+          <H2Wrapper>TopPage</H2Wrapper>
           <section>
             <PostList nodes={nodes}/>
           </section>
