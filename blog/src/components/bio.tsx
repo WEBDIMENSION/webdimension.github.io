@@ -175,8 +175,10 @@ const DivWrapper = styled.div`
 
   .bio-avatar {
     margin: 0 auto;
-    border-radius: 50%;
-    margin: 0 auto;
+    //border-radius: 50%;
+    picture > img {
+      border-radius: 50%;
+    }
   }
 
   .profArea {
