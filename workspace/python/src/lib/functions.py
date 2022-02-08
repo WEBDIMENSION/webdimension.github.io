@@ -20,10 +20,12 @@ def generate(categories_list, tags_list, row_val):
     rendered_s = tpl.render(
         post_title=post_title,
         post_date=row_val['post_date'],
+        post_modified=row_val['post_modified'],
         post_expect=expect,
         post_content=row_val['post_content'],
         categories=categories_list,
-        tags=tags_list
+        tags=tags_list,
+        draft=replace_nr("false")
     )
     output_path = '/workspace/output/html/' + row_val['post_name'] + '.html'
     # print(output_path)

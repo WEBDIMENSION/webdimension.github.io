@@ -14,6 +14,7 @@ import Article from "../components/postArticle"
 import PageNation from "../components/pageNation"
 import styled from "styled-components";
 import BlogIndex from "../pages";
+import PageTitle from "../components/pageTitle";
 
 
 // const BlogIndex = ({ data, location }) => {
@@ -38,7 +39,8 @@ const BlogList = ({ data, pageContext }) => {
       <Layout>
         <Seo title="All posts"/>
         <Article>
-          <H2Wrapper>Blog</H2Wrapper>
+          {/*<H2Wrapper>Blog</H2Wrapper>*/}
+          <PageTitle title={"Blog"} prefixTitle=""/>
           <section>
             <PostList nodes={nodes}/>
           </section>
@@ -67,6 +69,10 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
+          filter: { frontmatter: {
+          draft: { in: [false] }
+      } }
+
     ) {
       nodes {
         excerpt
@@ -75,8 +81,10 @@ export const pageQuery = graphql`
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
+          post_modified(formatString : "MMMM DD, YYYY" )
           title
           description
+          tags
         }
       }
     }

@@ -40,10 +40,6 @@ const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
     <DivWrapper className="bio">
       WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。<br/>
       実経験の備忘録。<br/>
-      当サイトは<strong>Gatsby(blog-theme)&nbsp;TypeScript化</strong>して構築しています。<br/>
-      Hostingは<a href={"https://www.netlify.com"}>Netlify</a>を利用しています。<br/>
-      ソースは<a href={github?.repository}
-             target={"_blank"}>GitHub</a>(webdimension/gatasby_blog)で全公開しております。
       {isSideBar ?
         <SideBarContentBottom>
           <IconButton

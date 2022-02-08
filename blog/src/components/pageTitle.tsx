@@ -6,19 +6,26 @@ import {useStaticQuery, graphql} from "gatsby"
 import styled from "styled-components"
 // import {StaticImage} from "gatsby-plugin-image";
 
-const ListTitle = ({ title, prefixTitle}: {title: string, prefixTitle: string}) => {
+const PageTitle = ({ title, prefixTitle}: {title: string, prefixTitle: string}) => {
   return (
     <DivWrapper className="pageTitle">
-      <div className="prefix">{prefixTitle}:</div>
+      {
+        (() => {
+          if (prefixTitle) {
+            return(
+            <div className="prefix">{prefixTitle}:</div>
+            );
+          }
+        })()
+      }
       <h1>{title}</h1>
     </DivWrapper>
 
  )
 }
-export default ListTitle
+export default PageTitle
 const DivWrapper = styled.div`
-  margin-bottom: 1em;
-
+  margin-bottom: 0;
   display: flex;
   .prefix {
     font-size: var(--fontSizeH1);

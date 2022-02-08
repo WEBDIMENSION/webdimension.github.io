@@ -31,6 +31,7 @@ body.light-mode{
   /*--colorPrimary: #336699;*/
   --colorSecondary: #5f9ea0;
   --fontColor: #333;
+  --colorWarning: #ffd700;
   --visitedColor: #777;
   --hrefBackground: #fff;
   --hrefVisitedBackground: #ddd;
@@ -43,6 +44,7 @@ body.dark-mode{
   --colorPrimary: #336699;
   --colorSecondary: #5f9ea0;
   --fontColor: #ddd;
+  --colorWarning: #f0e68c;
   --visitedColor: #bbb;
   --hrefBackground: #555;
   --hrefVisitedBackground: #444;

@@ -12,8 +12,12 @@ import styled from "styled-components"
 import SidebarContent from "../components/sidebarContent"
 import BioDescription from "./bioDescription";
 import HeaderUnder from "./headerUnder";
+import Drafts from "./drafts";
+import IconButton from '@mui/material/IconButton';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
-// import {Link} from "gatsby";
+import {Link} from "gatsby";
+import { Link as Scroll } from 'react-scroll';
 // import Mode from "../components/mode"
 // import {PageProps} from "gatsby";
 
@@ -34,12 +38,25 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
            transition: 'color 0.2s ease-out, background 0.2s ease-out',
          }}
     >
-      <Grid container className="container">
+      <Grid container className="container" id={"page_top"}>
         <Grid item xs={12}>
+          <Drafts/>
           <Header/>
           {/*<HeaderUnder/>*/}
           <DivWrapper className="contents">
             <Grid container>
+              <div className={"page_top"}>
+                <Scroll
+                  to={"page_top"}
+                  smooth={true}
+                  duration={600}
+                >
+                <IconButton >
+                  <ArrowUpwardIcon
+                  />
+                </IconButton>
+                </Scroll>
+              </div>
               <Grid item xs={12} md={3.5} className={"sideBar"}>
                 <Box sx={{
                   display: {
@@ -93,6 +110,20 @@ const DivWrapper = styled.div`
     //margin-left: 1.2em;
     //padding: 8px;
   }
-
+  .page_top {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    color: var(--fontColor);
+    border: 1px var(--fontColor) solid; 
+    border-radius: 8px;
+    background: var(--bgColorPrimary);
+    padding: 8px;
+    cursor: pointer;
+    transition: .3s;
+    button {
+      color: var(--fontColor) !important;
+    }
+  }
 `
 

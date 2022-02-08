@@ -49,6 +49,13 @@ const Bio = () => {
     <DivWrapper className="bio">
       <div className={"bioDescription"}>
         <BioDescription isSideBar={false}/>
+        <p>
+        当サイトは<strong>Gatsby(blog-theme)&nbsp;TypeScript化</strong>して構築しています。<br/>
+        Hostingは<a href={"https://www.netlify.com"}>Netlify</a>を利用しています。<br/>
+        ソースは<a href={github?.repository}
+               target={"_blank"}>GitHub</a>(webdimension/gatasby_blog)で全公開しております。
+        </p>
+
       </div>
       <div className={"profArea"}>
         <StaticImage
@@ -81,7 +88,7 @@ const Bio = () => {
 
       <div className={"bioDescription"}
       >
-        <h2>Overview</h2>
+        <h2>Profile</h2>
         <h3>Repositories</h3>
         <ul>
           <li><a href={github?.url} target={"_blank"}>GitHub</a></li>

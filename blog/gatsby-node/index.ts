@@ -62,15 +62,16 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
 // export const createPages = async ({graphql, actions}) => {
 export const createPages: GatsbyNode["createPages"] = async ({graphql, actions}) => {
   const {createPage} = actions
-  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const postsPerPage = 10 //記事一覧に表示させる記事数
 
-  // categoriesGroup: GatsbyTypes.FileConnection
-  // tagsGroup: GatsbyTypes.FileConnection
+  const inDraft = process.env.NODE_ENV === "production" ? [false] : [true, false]
+  console.log(inDraft)
   const result: any = await graphql<{
     allMarkdownRemark: GatsbyTypes.Query["allMarkdownRemark"]
   }>(`
      {
        allMarkdownRemark(
+       filter: { frontmatter: { draft: { in: [ ${inDraft} ] } } }
          sort: { fields: [frontmatter___date], order: ASC }
          limit: 1000
        ) {
@@ -82,19 +83,10 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
              frontmatter {
                tags
                categories
+               draft
              }
            }
          }
-       tagsGroup: allMarkdownRemark(limit: 1000) {
-         group(field: frontmatter___tags) {
-           fieldValue
-         }
-        } 
-       categoriesGroup: allMarkdownRemark(limit: 1000) {
-         group(field: frontmatter___categories) {
-          fieldValue
-         }
-       } 
      }
    `)
 
@@ -104,26 +96,91 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
 
 
   // const posts: GatsbyTypes.MarkdownRemarkConnection["nodes"] = result.data.allMarkdownRemark.nodes
-  const posts: GatsbyTypes.MarkdownRemarkConnection["nodes"] = result.data.allMarkdownRemark.nodes
+  const allPosts: GatsbyTypes.MarkdownRemarkConnection["nodes"] = result.data.allMarkdownRemark.nodes
+
+  // let drafts = posts.reduce((drafts, edge) => {
+  //   const edgeDraft: any = edge?.frontmatter?.draft
+  //   return edgeDraft ? drafts.concat(edgeDraft) : drafts
+  // }, [])
+  // console.log(drafts)
+
+  const posts = allPosts.filter( (post) => {
+      return post.frontmatter?.draft == false
+  })
+
+  const drafts = allPosts.filter( (post) => {
+    return post.frontmatter?.draft == true
+  })
+  console.log(drafts)
+
+
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+
+  if (drafts.length > 0) {
+    drafts.forEach((draft, index: number) => {
+      const previousPostId = index === 0 ? null : drafts[index - 1].id
+      const nextPostId = index === drafts.length - 1 ? null : drafts[index + 1].id
+
+      // console.log(post.frontmatter?.draft)
+      createPage({
+        path: '/blog' + draft.fields?.slug || '/undefined',
+        component: blogPost,
+        context: {
+          id: draft.id,
+          previousPostId,
+          nextPostId,
+          draft: draft.frontmatter?.draft,
+        },
+      })
+    })
+    const DraftTemplate = path.resolve("src/templates/blog-drafts.tsx") //パス
+    const numPages = Math.ceil(drafts.length / postsPerPage) //記事数 ÷ 表示させる記事数
+
+    Array.from({length: numPages}).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog/drafts` : `/blog/drafts/page/${i + 1}`, //スラッグ
+        component: DraftTemplate,
+        context:
+          {
+            limit: postsPerPage, //表示させる記事の制限数
+            skip: i * postsPerPage, //新しい記事からスキップさせる記事数
+            currentPage: i + 1,
+            numPages: numPages,
+            linkPrefix: `/blog/draft`,
+            linkSuffix: '/page/',
+            draft: inDraft,
+          },
+      })
+    })
+
+  }
+
+
+
+
+
+
+
 
   if (posts.length > 0) {
     posts.forEach((post, index: number) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
-      createPage({
-        path: '/blog' + post.fields?.slug || '/undefined',
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      })
+      // console.log(post.frontmatter?.draft)
+        createPage({
+          path: '/blog' + post.fields?.slug || '/undefined',
+          component: blogPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+            draft: post.frontmatter?.draft,
+          },
+        })
     })
   }
 
-  const postsPerPage = 10 //記事一覧に表示させる記事数
   const listTemplate = path.resolve("src/templates/blog-list.tsx") //パス
   const numPages = Math.ceil(posts.length / postsPerPage) //記事数 ÷ 表示させる記事数
 
@@ -131,13 +188,16 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
     createPage({
       path: i === 0 ? `/blog` : `/blog/page/${i + 1}`, //スラッグ
       component: listTemplate,
-      context: {
+      context:
+
+        {
         limit: postsPerPage, //表示させる記事の制限数
         skip: i * postsPerPage, //新しい記事からスキップさせる記事数
         currentPage: i + 1,
         numPages: numPages,
         linkPrefix: `/blog`,
-        linkSuffix: '/page/'
+        linkSuffix: '/page/',
+        draft: inDraft,
       },
     })
   })
@@ -145,8 +205,9 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
   ////////////////////////////////////////////////
   ///  Tags
   ////////////////////////////////////////////////
+  // console.log(posts)
   let tags = posts.reduce((tags, edge) => {
-    // console.log(edge?.fields?.slug)
+    // console.log(edge?.frontmatter?.tags)
     const edgeTags: any = edge?.frontmatter?.tags
     return edgeTags ? tags.concat(edgeTags) : tags
   }, [])
@@ -180,7 +241,8 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
           numPages: numPages,
           tag: tag,
           linkPrefix: `/blog/tags/${_.kebabCase(tag)}`,
-          linkSuffix: '/page/'
+          linkSuffix: '/page/',
+          draft: inDraft,
         },
       })
     }
@@ -191,11 +253,15 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
   ////////////////////////////////////////////////
   let categories = posts.reduce((categories, edge) => {
     const edgeCategories: any = edge?.frontmatter?.categories
-    return edgeCategories ? tags.concat(edgeCategories) : categories
+    // console.log(edgeCategories ? tags.concat(edgeCategories) : categories)
+    // console.log(edge?.frontmatter?.categories)
+
+    return edgeCategories ? categories.concat(edgeCategories) : categories
   }, [])
   // 重複削除
   categories = [...new Set(categories)]
-  // console.log(tags)
+  // console.log("category")
+  // console.log(categories)
 
   const categoriesTemplate = path.resolve('src/templates/categories.tsx')
 
@@ -223,7 +289,8 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
           numPages: numPages,
           category: category,
           linkPrefix: `/blog/categories/${_.kebabCase(category)}`,
-          linkSuffix: '/page/'
+          linkSuffix: '/page/',
+          draft: inDraft,
         },
       })
     }

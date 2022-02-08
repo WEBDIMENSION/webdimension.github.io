@@ -1,5 +1,4 @@
 import React from "react"
-import {Helmet} from "react-helmet"
 import {graphql, PageProps} from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
@@ -14,17 +13,13 @@ import Article from "../../components/postArticle"
 //                           },
 //                       },
 //                   }) => (
-const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({
-                                                                                 data,
-                                                                               }) => {
-
+const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({ data, }) => {
   const title = data.site?.siteMetadata?.title
 
   return (
     <Layout>
       <Article>
         <Seo title="All posts"/>
-        <Helmet title={title}/>
         <h1>categories</h1>
         <section>
           <Categories/>
@@ -42,14 +37,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(limit: 2000) 
-    
-    {
-      group(field: frontmatter___categories) {
-        fieldValue
-        totalCount
       }
     }
   }

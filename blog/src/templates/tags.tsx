@@ -3,11 +3,8 @@ import {Link, graphql} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
-import ListTitle from "../components/listTitle"
+import PageTitle from "../components/pageTitle"
 import PageNation from "../components/pageNation"
-
-// import styled from "styled-components"
-
 
 interface IData {
   allMarkdownRemark: {
@@ -19,7 +16,10 @@ interface IData {
       frontmatter: {
         title: string
         date: string
+        post_modified: string
         description: string
+        tags: string[]
+        draft: boolean
       }
     }>
   }
@@ -34,10 +34,6 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
   const {tag} = pageContext
   const totalCount = data.allMarkdownRemark.totalCount
   const nodes = data.allMarkdownRemark.nodes
-  // console.log(nodes)
-  // const tagHeader = `${totalCount} post${
-  //   totalCount === 1 ? "" : "s"
-  // } Tagging: ${tag}`
 
   return (
     <Layout>
@@ -47,7 +43,7 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
         description={tag}
       />
       <div>
-        <ListTitle title={tag} prefixTitle="Tagging"/>
+        <PageTitle title={tag} prefixTitle="Tagging"/>
         <PostList nodes={nodes}/>
         <Link to="/tags">All tags</Link>
       </div>
@@ -60,14 +56,20 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
 }
 export default Tags
 
+
 export const pageQuery = graphql`
 query Tags($tag: String, $skip: Int!, $limit: Int!)
   {
     allMarkdownRemark(
       skip: $skip
       limit: $limit
-    sort: { fields: [frontmatter___date], order : DESC }
-    filter: { frontmatter: { tags: { in: [$tag] } } }
+      sort: { fields: [frontmatter___date], order : DESC }
+      filter: { 
+        frontmatter: {
+            tags: { in: [$tag] }
+            draft: { in: [false] }
+        }
+      }
   )
     {
       totalCount
@@ -76,9 +78,11 @@ query Tags($tag: String, $skip: Int!, $limit: Int!)
           slug
         }
         frontmatter {
-            date(formatString : "MMMM DD, YYYY" )
+          date(formatString : "MMMM DD, YYYY" )
+          post_modified(formatString : "MMMM DD, YYYY" )
           title
           description
+          tags
         }
       }
     }

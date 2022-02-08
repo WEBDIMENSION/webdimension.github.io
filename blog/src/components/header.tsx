@@ -7,6 +7,7 @@ import styled from "styled-components"
 import {StaticImage} from "gatsby-plugin-image";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import Drafts from "./drafts";
 import Drawer from "./drawer";
 
 
@@ -88,7 +89,6 @@ const Header = () => {
         {/*  </Grid>*/}
         {/*</Grid>*/}
       </Box>
-
     </HeaderWrapper>
   )
 }
@@ -113,7 +113,7 @@ const HeaderWrapper = styled.header`
     }
 
     .headerTitle {
-      font-size: 1.6em;
+      font-size: min(4.3vw,1.6em);
       font-weight: bold;
       padding-top: 0.4em;
     }

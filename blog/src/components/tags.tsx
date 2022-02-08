@@ -14,7 +14,6 @@ import IconButton from '@mui/material/IconButton';
 import TagIcon from '@mui/icons-material/Tag';
 
 // Components
-// import {Helmet} from "react-helmet"
 
 const Tags = ({isSideBar}: { isSideBar: boolean }) => {
 
@@ -25,7 +24,10 @@ const Tags = ({isSideBar}: { isSideBar: boolean }) => {
           title
         }
       }
-      allMarkdownRemark(limit: 2000) {
+      allMarkdownRemark(
+       filter: { frontmatter: { draft: { in: [false] } } }
+      limit: 2000
+      ) {
         group(field: frontmatter___tags) {
           fieldValue
           totalCount

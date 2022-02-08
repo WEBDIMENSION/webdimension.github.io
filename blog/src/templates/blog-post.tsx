@@ -1,10 +1,11 @@
 // import React, {FC} from "react"
 import * as React from "react"
-import { Link, graphql} from "gatsby"
+import {Link, graphql} from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
+import PageTitle from "../components/pageTitle"
 
 interface Props {
   data: {
@@ -15,7 +16,10 @@ interface Props {
       frontmatter: {
         title: string
         date: string
+        post_modified: string
         description
+        tags: string[]
+        draft: boolean
       }
     }
     site: {
@@ -42,12 +46,13 @@ interface Props {
 
   }
 }
+
 //
 const BlogPost = ({data}: Props) => {
   // const BlogPost = () => {
 // const BlogPost: React.FC<PageProps<GatsbyTypes.BlogPostBySlugQuery>> = ({data}) => {
 
-    const post = data.markdownRemark
+  const post = data.markdownRemark
   // const siteTitle = data.site.siteMetadata?.title || `Title`
   const {previous, next} = data
 
@@ -63,9 +68,18 @@ const BlogPost = ({data}: Props) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <PageTitle title={post.frontmatter.title} prefixTitle=""/>
         </header>
         <p className="postDate"><span>{post.frontmatter.date}</span></p>
+        {
+          (() => {
+            if (post.frontmatter.draft) {
+              return(
+                <div className={"draft"}>Draft</div>
+              );
+            }
+          })()
+        }
         <section
           dangerouslySetInnerHTML={{__html: post.html}}
           itemProp="articleBody"
@@ -105,23 +119,35 @@ const ArticleWrapper = styled.article`
     margin-bottom: 1em;
     border-bottom: 1px var(--colorPrimary) dashed;
   }
+  
+  .draft {
+    background-color: var(--colorWarning);
+    color: var(--bgColorPrimary);
+    //display: inline-block;
+    padding: 4px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
   P.postDate {
     text-align: end;
+
     span {
       color: var(--colorSecondary);
     }
   }
+
   section {
     margin-top: 1em;
     border-radius: 8px;
-    background-color: var(--bgColorScondary); 
+    background-color: var(--bgColorScondary);
     padding: 0.5em;
-    h1 {
-      display: none;
-    }
+
+    //h1 {
+    //  display: none;
+    //}
   }
 `
-
 
 
 export const pageQuery = graphql`
@@ -142,7 +168,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        post_modified(formatString : "MMMM DD, YYYY" )
         description
+        tags
+        draft
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

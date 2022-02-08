@@ -3,7 +3,7 @@ import {Link, graphql} from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
-import ListTitle from "../components/listTitle"
+import PageTitle from "../components/pageTitle"
 import PageNation from "../components/pageNation"
 
 interface IData {
@@ -16,7 +16,10 @@ interface IData {
       frontmatter: {
         title: string
         date: string
+        post_modified: string
         description: string
+        tags: string[]
+        draft: boolean
       }
     }>
   }
@@ -31,9 +34,7 @@ const Categories = ({pageContext, data}: { pageContext: IPageContext, data: IDat
   const {category} = pageContext
   const totalCount = data.allMarkdownRemark.totalCount
   const nodes = data.allMarkdownRemark.nodes
-  const categoryHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } category with "${category}"`
+  console.log(nodes)
 
   return (
     <Layout>
@@ -43,7 +44,7 @@ const Categories = ({pageContext, data}: { pageContext: IPageContext, data: IDat
         description={category}
       />
       <div>
-        <ListTitle title={category} prefixTitle="Category"/>
+        <PageTitle title={category} prefixTitle="Category"/>
         <PostList nodes={nodes}/>
         <Link to="/category">All categories</Link>
       </div>
@@ -63,7 +64,10 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { categories: { in: [$category] } } }
+      filter: { frontmatter: { 
+          categories: { in: [$category] }
+          draft: { in: [false] }
+           } }
     )
      {
       totalCount
@@ -73,8 +77,10 @@ export const pageQuery = graphql`
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
+          post_modified(formatString : "MMMM DD, YYYY" )
           title
           description
+          tags
         }
       }
     }

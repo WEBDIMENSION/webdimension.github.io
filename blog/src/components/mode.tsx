@@ -30,7 +30,7 @@ const theme = createTheme({
 const DarkModeToggle = () => {
 
   const darkMode = useDarkMode(true);
-  console.log(darkMode)
+  // console.log(darkMode)
   return (
     <DarkModeSwitch>
       <ThemeProvider theme={theme}>

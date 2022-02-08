@@ -9,7 +9,6 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import {Helmet} from "react-helmet"
 import {Link, graphql, useStaticQuery} from "gatsby"
 
 const Categories = () => {
@@ -20,7 +19,10 @@ const Categories = () => {
           title
         }
       }
-      allMarkdownRemark(limit: 2000) {
+      allMarkdownRemark(
+      filter: { frontmatter: { draft: { in: [false] } } }
+      limit: 2000
+      ) {
         group(field: frontmatter___categories) {
           fieldValue
           totalCount
@@ -31,7 +33,6 @@ const Categories = () => {
 
   const title: string = data.site.siteMetadata?.title
   const group: any[] = data.allMarkdownRemark?.group
-  // console.log(title)
 
   return (
         <ul>

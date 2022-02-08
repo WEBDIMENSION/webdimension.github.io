@@ -7,6 +7,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Bio from "../components/bio"
 import Article from "../components/postArticle"
+import PageTitle from "../components/pageTitle"
+
 
 // const NotFoundPage = ({ data, location }) => {
 const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
@@ -18,7 +20,7 @@ const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
     <Layout>
       <Seo title="AboutMe"/>
       <Article>
-      <h1>AboutMe</h1>
+        <PageTitle title={"AboutMe"} prefixTitle=""/>
         <section>
           <Bio/>
         </section>

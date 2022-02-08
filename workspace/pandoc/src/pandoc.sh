@@ -38,5 +38,6 @@ for file in "$HTML_DIR"/*.html; do
     sed -i -e 's/\\\]/]/g' "$markdown_file"
     sed -i -e 's/]\\/]/g' "$markdown_file"
     sed -i -e "s/\\\'/'/g" "$markdown_file"
+    sed -i -e 's/draft: false\\/draft: false/' "$markdown_file"
 		sed  -i -e "s/https:\/\/blog.webdimension.jp\/wp-content\/uploads\/[0-9][0-9][0-9][0-9]\/[0-9][0-9]\//images\//g" $markdown_file
 done

@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Article from "../components/postArticle"
 import Tags from "../components/tags"
+import PageTitle from "../components/pageTitle"
 
 // const NotFoundPage = ({ data, location }) => {
 const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => {
@@ -16,7 +17,7 @@ const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => 
     <Layout>
       <Seo title="404: Not Found"/>
       <Article>
-          <h1>404: Not Found</h1>
+        <PageTitle title={"404: Not Found"} prefixTitle=""/>
           <section>
             <p>お探しのページはみつかりませんでした。</p>
           </section>
