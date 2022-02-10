@@ -62,7 +62,7 @@ const Drafts = () => {
   if(draftsLength > 0) {
     return (
       <DiWrapper>
-        <Link to={"/blog/drafts"}>
+        <Link to={"/blog/drafts/"}>
           <IconButton
           >
             <ListIcon

@@ -94,7 +94,13 @@ const ContactForm = () => {
   });
 
   return (
-    <FormWrapper name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+    <FormWrapper
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action={"/contact/thanks/"}
+    >
       <input type="hidden" name="form-name" value="contact"/>
       <input type="hidden" name="bot-field"/>
 

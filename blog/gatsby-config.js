@@ -7,11 +7,11 @@ module.exports = {
       company: `WEBDIMENSION`,
       company_url: ``
     },
+    siteUrl: `${process.env.SITE_URL}`,
     description: `
           WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。
           インフラ、バックエンド、フロントエンドの備忘録を公開
           `,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `none`,
     },
@@ -142,8 +142,32 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-material-ui`,
     // `gatsby-theme-material-ui`,
+
     // `gatsby-plugin-dark-mode`,
     `gatsby-plugin-typegen`,
     'gatsby-plugin-use-dark-mode',
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `${process.env.SITE_URL}`,
+        stripQueryString: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: `${process.env.SITE_URL}`,
+        sitemap: `${process.env.SITE_URL}/sitemap/sitemap-index.xml`,
+        policy: [{
+          userAgent: '*',
+          allow: '/',
+          disallow: [
+            '/contact/thanks',
+          ]
+        }]
+      }
+    }
   ],
+
 }

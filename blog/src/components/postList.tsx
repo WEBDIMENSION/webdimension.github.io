@@ -7,6 +7,7 @@ import {Link} from "gatsby"
 import IconButton from '@mui/material/IconButton';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import ListIcon from "@mui/icons-material/List";
+import kebabCase from "lodash/kebabCase";
 // interface IData {
 //   allMarkdownRemark: {
 //     totalCount: number
@@ -65,7 +66,10 @@ const PostList = ({nodes}: { nodes: any }) => {
                     <li key={tag}><IconButton>
                       <LocalOfferIcon />
                     </IconButton>
-                      <Link to={"/blog/tags/" + tag}>{tag}</Link></li>
+                    <Link to={`/blog/tags/${kebabCase(tag)}/`}>
+                      {tag}
+                    </Link>
+                    </li>
                   )
                 })}
               </ul>

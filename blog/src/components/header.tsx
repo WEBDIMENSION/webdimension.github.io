@@ -66,13 +66,13 @@ const Header = () => {
           <nav className={"pc"}>
             <ul>
               <li>
-                <Link to="/blog">blog</Link>
+                <Link to="/blog/">blog</Link>
               </li>
               <li>
-                <Link to="/about">AboutMe</Link>
+                <Link to="/about/">AboutMe</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact/">Contact</Link>
               </li>
             </ul>
           </nav>

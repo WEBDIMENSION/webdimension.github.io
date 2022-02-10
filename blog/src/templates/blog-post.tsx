@@ -127,6 +127,7 @@ const ArticleWrapper = styled.article`
     padding: 4px;
     border-radius: 4px;
     text-align: center;
+    font-weight: bolder;
   }
 
   P.postDate {

@@ -38,7 +38,7 @@ const Categories = () => {
         <ul>
           {group.map(tag => (
             <li key={tag.fieldValue} >
-                <Link to={`/blog/categories/${kebabCase(tag.fieldValue)}`}>
+                <Link to={`/blog/categories/${kebabCase(tag.fieldValue)}/`}>
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
             </li>

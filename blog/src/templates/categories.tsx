@@ -46,7 +46,7 @@ const Categories = ({pageContext, data}: { pageContext: IPageContext, data: IDat
       <div>
         <PageTitle title={category} prefixTitle="Category"/>
         <PostList nodes={nodes}/>
-        <Link to="/category">All categories</Link>
+        <Link to="/category/">All categories</Link>
       </div>
       <section>
         <PageNation pageContext={pageContext}/>

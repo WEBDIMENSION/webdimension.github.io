@@ -18,7 +18,7 @@ const PageNation = ({pageContext}) => {
           <li key={`pagination-number${i + 1}`}
               className={`${i + 1}` == currentPage ? "thisPage" : "etherPage"}
           >
-            <Link to={`${linkPrefix}${i === 0 ? "" : linkSuffix }${i === 0 ? "" : i + 1}`}>{i + 1}</Link>
+            <Link to={`${linkPrefix}${i === 0 ? "" : linkSuffix }${i === 0 ? "" : i + 1}/`}>{i + 1}</Link>
           </li>
         ))}
       </UlWrapper>

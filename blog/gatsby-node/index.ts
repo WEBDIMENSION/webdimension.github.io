@@ -133,12 +133,12 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
         },
       })
     })
-    const DraftTemplate = path.resolve("src/templates/blog-drafts.tsx") //パス
+    const DraftTemplate = path.resolve("src/templates/blog-drafts.tsx")
     const numPages = Math.ceil(drafts.length / postsPerPage) //記事数 ÷ 表示させる記事数
 
     Array.from({length: numPages}).forEach((_, i) => {
       createPage({
-        path: i === 0 ? `/blog/drafts` : `/blog/drafts/page/${i + 1}`, //スラッグ
+        path: i === 0 ? `/blog/drafts/` : `/blog/drafts/page/${i + 1}/`,
         component: DraftTemplate,
         context:
           {
@@ -186,7 +186,7 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
 
   Array.from({length: numPages}).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`, //スラッグ
+      path: i === 0 ? `/blog/` : `/blog/page/${i + 1}/`,
       component: listTemplate,
       context:
 
@@ -227,9 +227,9 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
       const pageNumber = index + 1
       let prefix = ''
       if (pageNumber === 1) {
-        prefix = `/blog/tags/${_.kebabCase(tag)}`
+        prefix = `/blog/tags/${_.kebabCase(tag)}/`
       } else {
-        prefix = `/blog/tags/${_.kebabCase(tag)}/page/${pageNumber}`
+        prefix = `/blog/tags/${_.kebabCase(tag)}/page/${pageNumber}/`
       }
       createPage({
         path: prefix,
@@ -275,9 +275,9 @@ export const createPages: GatsbyNode["createPages"] = async ({graphql, actions})
       const pageNumber = index + 1
       let prefix = ''
       if (pageNumber === 1) {
-        prefix = `/blog/categories/${_.kebabCase(category)}`
+        prefix = `/blog/categories/${_.kebabCase(category)}/`
       } else {
-        prefix = `/blog/categories/${_.kebabCase(category)}/page/${pageNumber}`
+        prefix = `/blog/categories/${_.kebabCase(category)}/page/${pageNumber}/`
       }
       createPage({
         path: prefix,

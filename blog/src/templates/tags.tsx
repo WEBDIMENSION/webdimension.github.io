@@ -45,7 +45,7 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
       <div>
         <PageTitle title={tag} prefixTitle="Tagging"/>
         <PostList nodes={nodes}/>
-        <Link to="/tags">All tags</Link>
+        <Link to="/blog/tags/">All tags</Link>
       </div>
       <section>
         <PageNation pageContext={pageContext}/>

@@ -13,16 +13,39 @@ services:
       - /blog/public
     working_dir: /blog
     ports:
-      - "8000:8000"
-      - "8080:9000"
-      - "40444:40444"
+      - ${DEVELOP_EXTERNAL_PORT}:${DEVELOP_INTERNAL_PORT}
+      - ${SERVE_EXTERNAL_PORT}:${SERVE_INTERNAL_PORT}
+      - ${STATUS_EXTERNAL_PORT}:${STATUS_INTERNAL_PORT}
     environment:
-      - NODE_ENV=development
-      - INTERNAL_STATUS_PORT=40444
+      - NODE_ENV=${NODE_ENV}
+      - SITE_URL=${SITE_URL}
+      - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
 #    command: gatsby develop --host 0.0.0.0
     tty: true
+#  gatsby_serve:
+#    container_name: gatsby_serve
+#    build: ./docker
+#    volumes:
+#      - ./blog:/blog:delegated
+#      #      - /blog/node_modules:/blog/node_modules
+#      - /blog/.cache
+#      - /blog/.vscode
+#      - /blog/build
+#      - /blog/node_modules
+#      - /blog/public
+#    working_dir: /blog
+#    ports:
+#      - "8080:9000"
+#      - "40445:40445"
+#    environment:
+##      - NODE_ENV=production
+#      - NODE_ENV=development
+#      - INTERNAL_STATUS_PORT=40445
+#    stdin_open: true
+##    command: gatsby serve --host 0.0.0.0
+#    tty: true
 networks:
   default:
     external:
-      name: wp2gatsby
+      name: ${NET_WORK_NAME}

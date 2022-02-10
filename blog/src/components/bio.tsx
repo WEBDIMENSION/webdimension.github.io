@@ -80,7 +80,7 @@ const Bio = () => {
           >
           <EmailIcon/>
           </IconButton>
-            <Link to={"/contact"}>Contact</Link></div>
+            <Link to={"/contact/"}>Contact</Link></div>
         {/*<div className={"bioDescription"}>*/}
         {/*  WEB系バックエンドを主軸にフロントエンドまでが守備範囲。<br/>*/}
         {/*</div>*/}

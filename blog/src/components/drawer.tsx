@@ -61,7 +61,7 @@ const drawer = () => {
             >
               <ListIcon/>
             </IconButton>
-            <Link to={`/blog`}>Blog</Link>
+            <Link to={`/blog/`}>Blog</Link>
           </li>
           <ul className={"secondaryMenu"}>
             <li>
@@ -72,7 +72,7 @@ const drawer = () => {
               >
                 <TagIcon/>
               </IconButton>
-              <Link to={`/blog/tags`}>Tags</Link>
+              <Link to={`/blog/tags/`}>Tags</Link>
             </li>
           </ul>
           <li>
@@ -83,7 +83,7 @@ const drawer = () => {
             >
               <InfoIcon/>
             </IconButton>
-            <Link to={`/about`}>AboutMe</Link>
+            <Link to={`/about/`}>AboutMe</Link>
           </li>
           <li>
             <IconButton
@@ -93,7 +93,7 @@ const drawer = () => {
             >
               <EmailIcon/>
             </IconButton>
-            <Link to={`/contact`}>Contact</Link>
+            <Link to={`/contact/`}>Contact</Link>
           </li>
         </UlWrapper>
         <div className={"displayMode"}>

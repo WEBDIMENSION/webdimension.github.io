@@ -49,7 +49,7 @@ const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
           >
             <InfoIcon/>
           </IconButton>
-          <Link to={`/about`}>AboutMe</Link>
+          <Link to={`/about/`}>AboutMe</Link>
         </SideBarContentBottom> : ""
       }
     </DivWrapper>
