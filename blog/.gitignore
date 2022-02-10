@@ -73,3 +73,4 @@ content/blog/*
 !content/blog/.gitkeep
 
 gatsby-node/gatsby-node.js.default
+.vscode
