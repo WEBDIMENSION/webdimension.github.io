@@ -3,3 +3,4 @@ mysql/data
 mysql/backup
 mysql/logs
 python/output
+linkchecker/output
