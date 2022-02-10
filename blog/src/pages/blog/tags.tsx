@@ -5,21 +5,18 @@ import Seo from "../../components/seo";
 import Tags from "../../components/tags";
 import Article from "../../components/postArticle"
 
-// const TagsPage = ({
-//                       data: {
-//                           allMarkdownRemark: { group },
-//                           site: {
-//                               siteMetadata: { title },
-//                           },
-//                       },
-//                   }) => {
 const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
   const title = data.site?.siteMetadata?.title
 
   return (
     <Layout>
       <Article>
-        <Seo title="All posts"/>
+        <Seo
+          title={"Tags (タグ)一覧"}
+          DisplaySubTitle={true}
+          description={"Tags (タグ)一覧"}
+        />
+
         <h1>Tags</h1>
         <section>
           <Tags isSideBar={false}/>

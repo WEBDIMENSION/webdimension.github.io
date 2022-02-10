@@ -20,13 +20,17 @@ import PageTitle from "../components/pageTitle";
 // const BlogIndex = ({ data, location }) => {
 // const BlogList: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
 const BlogList = ({ data, pageContext }) => {
-  // const siteTitle = data.site?.siteMetadata?.title || `Title`
+  const subTitle = data.site?.siteMetadata?.subTitle || ``
   const nodes = data.allMarkdownRemark.nodes
 
   if (nodes.length === 0) {
     return (
       <Layout>
-        <Seo title="All posts"/>
+        <Seo
+          title={subTitle + "記事一覧"}
+          DisplaySubTitle={true}
+          description={"記事一覧"}
+        />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -37,7 +41,11 @@ const BlogList = ({ data, pageContext }) => {
   } else {
     return (
       <Layout>
-        <Seo title="All posts"/>
+        <Seo
+          title={"All posts (記事一覧)"}
+          DisplaySubTitle={true}
+          description={"All posts (記事一覧)"}
+        />
         <Article>
           {/*<H2Wrapper>Blog</H2Wrapper>*/}
           <PageTitle title={"Blog"} prefixTitle=""/>
@@ -54,15 +62,12 @@ const BlogList = ({ data, pageContext }) => {
 }
 export default BlogList
 
-const H2Wrapper = styled.h2`
-  font-size: var(--fontSizeH1);
-  
-`
 export const pageQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
+        subTitle
       }
     }
     allMarkdownRemark(

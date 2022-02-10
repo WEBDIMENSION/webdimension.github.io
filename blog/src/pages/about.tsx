@@ -18,7 +18,12 @@ const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
   return (
     // <Layout title={siteTitle}>
     <Layout>
-      <Seo title="AboutMe"/>
+      <Seo
+        title="おっさんWEBエンジニアのプロファイル"
+        DisplaySubTitle={false}
+        description={"プロファイル"}
+
+      />
       <Article>
         <PageTitle title={"AboutMe"} prefixTitle=""/>
         <section>

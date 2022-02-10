@@ -59,9 +59,12 @@ const BlogPost = ({data}: Props) => {
   return (
     <Layout>
       <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={post.frontmatter.title + " の記事"}
+        DisplaySubTitle={true}
+        description={post.frontmatter.description || post.excerpt + " の記事"}
       />
+
+      {/*<Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />*/}
       <ArticleWrapper
         className="blog-post"
         itemScope

@@ -17,7 +17,12 @@ const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
   return (
     // <Layout title={siteTitle}>
     <Layout>
-      <Seo title="Contact"/>
+      <Seo
+        title="おっさんWEBエンジニア Contact- お問い合わせ"
+        DisplaySubTitle={false}
+        description={"Contact- お問い合わせ"}
+      />
+
       <Article>
         <PageTitle title={"Contact"} prefixTitle=""/>
         <section>

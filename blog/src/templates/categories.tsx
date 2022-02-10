@@ -38,11 +38,15 @@ const Categories = ({pageContext, data}: { pageContext: IPageContext, data: IDat
 
   return (
     <Layout>
-      <Seo
-        title={category}
-        // description={post.frontmatter.description || post.excerpt}
-        description={category}
+      <Seo title={category} // description={post.frontmatter.description || post.excerpt}
+        // description={category}
       />
+      <Seo
+        title={category + " がカテゴライズされた記事一覧"}
+        DisplaySubTitle={true}
+        description={category + " がカテゴライズされた記事一覧"}
+      />
+
       <div>
         <PageTitle title={category} prefixTitle="Category"/>
         <PostList nodes={nodes}/>

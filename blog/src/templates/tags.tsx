@@ -37,11 +37,14 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
 
   return (
     <Layout>
+      {/*<Seo title={tag} description={tag} />*/}
       <Seo
-        title={tag}
-        // description={post.frontmatter.description || post.excerpt}
-        description={tag}
+        title={tag + " がタグ付けされた記事一覧"}
+        DisplaySubTitle={true}
+        description={tag + " がタグ付けされた記事一覧"}
       />
+
+
       <div>
         <PageTitle title={tag} prefixTitle="Tagging"/>
         <PostList nodes={nodes}/>

@@ -5,22 +5,19 @@ import Seo from "../../components/seo"
 import Categories from "../../components/categories";
 import Article from "../../components/postArticle"
 
-// const CategoriesPage = ({
-//                       data: {
-//                           allMarkdownRemark: { group },
-//                           site: {
-//                               siteMetadata: { title },
-//                           },
-//                       },
-//                   }) => (
 const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = ({ data, }) => {
   const title = data.site?.siteMetadata?.title
 
   return (
     <Layout>
       <Article>
-        <Seo title="All posts"/>
-        <h1>categories</h1>
+        <Seo
+          title={"Categories (カテゴリー)一覧"}
+          DisplaySubTitle={true}
+          description={"Categories (カテゴリー)一覧"}
+        />
+
+        <h1>Categories</h1>
         <section>
           <Categories/>
         </section>

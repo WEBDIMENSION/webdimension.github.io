@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `おっさんWEBエンジニア奮闘記`,
+    subTitle: `[Infra (インフラ)、Backend (バックエンド)、Frontend (フロントエンド)] `,
     author: {
       name: `NagaMuu`,
       summary: `WEBエンジニア(第一世代) 都内在住 フリーランス`,
@@ -8,10 +9,7 @@ module.exports = {
       company_url: ``
     },
     siteUrl: `${process.env.SITE_URL}`,
-    description: `
-          WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。
-          インフラ、バックエンド、フロントエンドの備忘録を公開
-          `,
+    description: `WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。`,
     social: {
       twitter: `none`,
     },

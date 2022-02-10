@@ -19,7 +19,6 @@ import PageNation from "../components/pageNation";
 // const BlogIndex = ({ data, location }) => {
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
 
-  // const siteTitle = data.site?.siteMetadata?.title || `Title`
   const nodes = data.allMarkdownRemark.nodes
 
   if (nodes.length === 0) {
@@ -27,7 +26,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
     return (
       // <Layout>
       <Layout>
-        <Seo title="All posts"/>
+        <Seo title="No blog posts found"/>
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -39,9 +38,10 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
 
     return (
       <Layout>
-          <Seo
-            title="All posts"
-          />
+        <Seo title="TopPage"
+             DisplaySubTitle={false}
+             description={"TopPage (トップページ)、Latest post (最近の投稿)"}
+        />
         <Article>
           <H2Wrapper>TopPage</H2Wrapper>
           <section>

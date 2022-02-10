@@ -17,6 +17,7 @@ const Seo = (
   lang,
   meta,
   title,
+  DisplaySubTitle
 }: {
   description?: string
   lang?: string
@@ -25,6 +26,7 @@ const Seo = (
     | { property: string; content: string; name?: undefined }
   >
   title?: string
+  DisplaySubTitle?: boolean
 }
   // { description, lang, meta, title }
   ) => {
@@ -34,6 +36,7 @@ const Seo = (
         site {
           siteMetadata {
             title
+            subTitle
             description
             social {
               twitter
@@ -44,7 +47,8 @@ const Seo = (
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const subTitle =  DisplaySubTitle?  ' ' + site.siteMetadata?.subTitle : ''
+  const metaDescription =  site.siteMetadata.description + ' ' + description
   const defaultTitle = site.siteMetadata?.title
 
   return (
@@ -52,7 +56,7 @@ const Seo = (
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={title + subTitle}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
