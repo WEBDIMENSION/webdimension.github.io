@@ -71,3 +71,5 @@ yarn-error.log
 content/blog/*
 !content/blog/es-lint/
 !content/blog/.gitkeep
+
+gatsby-node/gatsby-node.js.default
