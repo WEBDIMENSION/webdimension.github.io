@@ -36,7 +36,7 @@ const Tags = ({
   pageContext: IPageContext
   data: IData
 }) => {
-  console.log(pageContext)
+  // console.log(pageContext)
   const { tag } = pageContext
   const totalCount = data.allMarkdownRemark.totalCount
   const nodes = data.allMarkdownRemark.nodes

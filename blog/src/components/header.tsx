@@ -47,7 +47,7 @@ const Header = () => {
           <StaticImage
             className="bio-avatar"
             layout="fixed"
-            formats={["auto", "png", "avif"]}
+            formats={["AUTO", "WEBP"]}
             src="../images/prof.png"
             width={60}
             height={60}

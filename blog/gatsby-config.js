@@ -35,6 +35,16 @@ module.exports = {
         head: true, // Optional
       },
     },
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: [
+          "GOOGLE_ANALYTICS_TRACKING_ID",
+          "GOOGLE_ADSENSE_TRACKING_ID",
+          "SITE_URL",
+        ]
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

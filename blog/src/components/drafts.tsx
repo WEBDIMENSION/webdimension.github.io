@@ -50,8 +50,8 @@ const Drafts = () => {
     process.env.NODE_ENV === "production"
       ? 0
       : data.allMarkdownRemark.nodes.length
-  console.log(data.allMarkdownRemark)
-  console.log(draftsLength)
+  // console.log(data.allMarkdownRemark)
+  // console.log(draftsLength)
   // const title: string = data.site.siteMetadata?.title
   // const group: any[] = data.allMarkdownRemark?.group
   // group.sort((a, b) => b.totalCount - a.totalCount);
