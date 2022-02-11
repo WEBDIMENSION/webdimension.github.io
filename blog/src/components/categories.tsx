@@ -12,7 +12,7 @@ import kebabCase from "lodash/kebabCase"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Categories = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.categoriesQueryQuery>(graphql`
     query categoriesQuery {
       site {
         siteMetadata {

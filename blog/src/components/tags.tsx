@@ -16,7 +16,7 @@ import TagIcon from "@mui/icons-material/Tag"
 // Components
 
 const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.tagsQueryQuery>(graphql`
     query tagsQuery {
       site {
         siteMetadata {

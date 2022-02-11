@@ -19,7 +19,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 // Components
 
 const Drafts = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.DraftsQueryQuery>(graphql`
     query DraftsQuery {
       site {
         siteMetadata {
