@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
+import {useLocation} from "@reach/router"
+import GoogleAds from "../components/google/googleAdsense"
 
 interface Props {
   data: {
@@ -49,8 +51,9 @@ interface Props {
 
 //
 const BlogPost = ({data}: Props) => {
-  // const BlogPost = () => {
-// const BlogPost: React.FC<PageProps<GatsbyTypes.BlogPostBySlugQuery>> = ({data}) => {
+
+  const location = useLocation();
+  const path = location?.pathname || ''
 
   const post = data.markdownRemark
   // const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -87,22 +90,23 @@ const BlogPost = ({data}: Props) => {
           dangerouslySetInnerHTML={{__html: post.html}}
           itemProp="articleBody"
         />
+        <GoogleAds path={path} />
         <hr/>
         {/*<footer>*/}
         {/*  <Bio/>*/}
         {/*</footer>*/}
       </ArticleWrapper>
-      <nav className="blog-post-nav">
+      <NavWrapper className="blogPostNav">
         <ul
         >
-          <li>
+          <li className={"prev"}>
             {previous && (
               <Link to={'/blog' + previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li className={"next"}>
             {next && (
               <Link to={'/blog' + next.fields.slug} rel="next">
                 {next.frontmatter.title} →
@@ -110,7 +114,7 @@ const BlogPost = ({data}: Props) => {
             )}
           </li>
         </ul>
-      </nav>
+      </NavWrapper>
     </Layout>
   )
 }
@@ -146,13 +150,19 @@ const ArticleWrapper = styled.article`
     border-radius: 8px;
     background-color: var(--bgColorScondary);
     padding: 0.5em;
-
-    //h1 {
-    //  display: none;
-    //}
   }
 `
 
+const NavWrapper = styled.nav` 
+  
+  margin: 1em 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li.next {
+      text-align: right; 
+  }
+`
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

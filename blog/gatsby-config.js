@@ -25,8 +25,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [process.env.GATSBY_TRACKING_ID],
+        trackingIds: [process.env.GOOGLE_ANALYTICS_TRACKING_ID],
       },
+    },
+    {
+      resolve: `@isamrish/gatsby-plugin-google-adsense`,
+      options: {
+        googleAdClientId: [process.env.GOOGLE_ADSENSE_TRACKING_ID],
+        head: true // Optional
+      }
     },
     `gatsby-plugin-image`,
     {
