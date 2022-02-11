@@ -19,6 +19,7 @@ services:
     environment:
       - NODE_ENV=${NODE_ENV}
       - SITE_URL=${SITE_URL}
+      - GATSBY_TRACKING_ID=${GATSBY_TRACKING_ID}
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
 #    command: gatsby develop --host 0.0.0.0
