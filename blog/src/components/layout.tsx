@@ -1,90 +1,85 @@
 // import * as React from "react"
 import React from "react"
-import {useLocation} from "@reach/router"
+import { useLocation } from "@reach/router"
 import Header from "./header"
 import Footer from "./footer"
 // import Bio from "../components/bio"
 import Tags from "../components/tags"
 import Mode from "../components/mode"
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid"
+import Box from "@mui/material/Box"
 import styled from "styled-components"
 import SidebarContent from "../components/sidebarContent"
-import BioDescription from "./bioDescription";
-import HeaderUnder from "./headerUnder";
-import Drafts from "./drafts";
-import IconButton from '@mui/material/IconButton';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import BioDescription from "./bioDescription"
+import HeaderUnder from "./headerUnder"
+import Drafts from "./drafts"
+import IconButton from "@mui/material/IconButton"
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
 
-import {Link} from "gatsby";
-import { Link as Scroll } from 'react-scroll';
+import { Link } from "gatsby"
+import { Link as Scroll } from "react-scroll"
 // import Mode from "../components/mode"
 // import {PageProps} from "gatsby";
 
 // const Layout = ({location, children) => {
-const Layout = ({children}: { children?: React.ReactNode }) => {
-// const Layout: React.FC<PageProps> = ({ location },{ children }: { children?: React.ReactNode }) => {
+const Layout = ({ children }: { children?: React.ReactNode }) => {
+  // const Layout: React.FC<PageProps> = ({ location },{ children }: { children?: React.ReactNode }) => {
 
-  const location = useLocation();
+  const location = useLocation()
 
   const rootPath = `/`
   const isRootPath = location?.pathname === rootPath
   return (
-
-    <div data-is-root-path={isRootPath}
-         style={{
-           backgroundColor: 'var(--bg)',
-           color: 'var(--textNormal)',
-           transition: 'color 0.2s ease-out, background 0.2s ease-out',
-         }}
+    <div
+      data-is-root-path={isRootPath}
+      style={{
+        backgroundColor: "var(--bg)",
+        color: "var(--textNormal)",
+        transition: "color 0.2s ease-out, background 0.2s ease-out",
+      }}
     >
       <Grid container className="container" id={"page_top"}>
         <Grid item xs={12}>
-          <Drafts/>
-          <Header/>
+          <Drafts />
+          <Header />
           {/*<HeaderUnder/>*/}
           <DivWrapper className="contents">
             <Grid container>
               <div className={"page_top"}>
-                <Scroll
-                  to={"page_top"}
-                  smooth={true}
-                  duration={600}
-                >
-                <IconButton >
-                  <ArrowUpwardIcon
-                  />
-                </IconButton>
+                <Scroll to={"page_top"} smooth={true} duration={600}>
+                  <IconButton>
+                    <ArrowUpwardIcon />
+                  </IconButton>
                 </Scroll>
               </div>
               <Grid item xs={12} md={3.5} className={"sideBar"}>
-                <Box sx={{
-                  display: {
-                    xs: 'none',
-                    md: 'block',
-                  }
-                }}>
+                <Box
+                  sx={{
+                    display: {
+                      xs: "none",
+                      md: "block",
+                    },
+                  }}
+                >
                   <div className={"modeWrap"}>
-                  <Mode/>
+                    <Mode />
                   </div>
                   <nav>
                     <SidebarContent title="ABOUT">
-                      <BioDescription isSideBar={true}/>
+                      <BioDescription isSideBar={true} />
                     </SidebarContent>
                     <SidebarContent title="TAGS">
-                      <Tags isSideBar={true}/>
+                      <Tags isSideBar={true} />
                     </SidebarContent>
                   </nav>
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
-                <main className="mainContent">
-                  {children}
-                </main>
+                <main className="mainContent">{children}</main>
               </Grid>
             </Grid>
           </DivWrapper>
-          <Footer/>
+          <Footer />
         </Grid>
       </Grid>
     </div>
@@ -92,9 +87,9 @@ const Layout = ({children}: { children?: React.ReactNode }) => {
 }
 export default Layout
 const DivWrapper = styled.div`
-    a {
-      text-decoration: underline;
-    }
+  a {
+    text-decoration: underline;
+  }
 
   margin-top: 0.5em;
 
@@ -115,15 +110,14 @@ const DivWrapper = styled.div`
     right: 12px;
     bottom: 12px;
     color: var(--fontColor);
-    border: 1px var(--fontColor) solid; 
+    border: 1px var(--fontColor) solid;
     border-radius: 8px;
     background: var(--bgColorPrimary);
     padding: 8px;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
     button {
       color: var(--fontColor) !important;
     }
   }
 `
-

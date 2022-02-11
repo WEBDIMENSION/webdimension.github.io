@@ -1,5 +1,5 @@
 import React from "react"
-import {Link, graphql} from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
@@ -29,9 +29,15 @@ interface IPageContext {
   tag: string
 }
 
-const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) => {
+const Tags = ({
+  pageContext,
+  data,
+}: {
+  pageContext: IPageContext
+  data: IData
+}) => {
   console.log(pageContext)
-  const {tag} = pageContext
+  const { tag } = pageContext
   const totalCount = data.allMarkdownRemark.totalCount
   const nodes = data.allMarkdownRemark.nodes
 
@@ -44,45 +50,35 @@ const Tags = ({pageContext, data}: { pageContext: IPageContext, data: IData }) =
         description={tag + " がタグ付けされた記事一覧"}
       />
 
-
       <div>
-        <PageTitle title={tag} prefixTitle="Tagging"/>
-        <PostList nodes={nodes}/>
+        <PageTitle title={tag} prefixTitle="Tagging" />
+        <PostList nodes={nodes} />
         <Link to="/blog/tags/">All tags</Link>
       </div>
       <section>
-        <PageNation pageContext={pageContext}/>
+        <PageNation pageContext={pageContext} />
       </section>
-
     </Layout>
   )
 }
 export default Tags
 
-
 export const pageQuery = graphql`
-query Tags($tag: String, $skip: Int!, $limit: Int!)
-  {
+  query Tags($tag: String, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       skip: $skip
       limit: $limit
-      sort: { fields: [frontmatter___date], order : DESC }
-      filter: { 
-        frontmatter: {
-            tags: { in: [$tag] }
-            draft: { in: [false] }
-        }
-      }
-  )
-    {
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] }, draft: { in: [false] } } }
+    ) {
       totalCount
       nodes {
         fields {
           slug
         }
         frontmatter {
-          date(formatString : "MMMM DD, YYYY" )
-          post_modified(formatString : "MMMM DD, YYYY" )
+          date(formatString: "MMMM DD, YYYY")
+          post_modified(formatString: "MMMM DD, YYYY")
           title
           description
           tags

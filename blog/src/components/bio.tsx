@@ -6,14 +6,12 @@
  */
 
 import * as React from "react"
-import {useStaticQuery, graphql, Link} from "gatsby"
-import {StaticImage} from "gatsby-plugin-image";
-import BioDescription from "./bioDescription";
-import styled from "styled-components";
-import IconButton from '@mui/material/IconButton';
-import EmailIcon from '@mui/icons-material/Email';
-
-
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import BioDescription from "./bioDescription"
+import styled from "styled-components"
+import IconButton from "@mui/material/IconButton"
+import EmailIcon from "@mui/icons-material/Email"
 
 // import {StaticImage} from "gatsby-plugin-image"
 
@@ -48,14 +46,20 @@ const Bio = () => {
   return (
     <DivWrapper className="bio">
       <div className={"bioDescription"}>
-        <BioDescription isSideBar={false}/>
+        <BioDescription isSideBar={false} />
         <p>
-        当サイトは<strong>Gatsby(blog-theme)&nbsp;TypeScript化</strong>して構築しています。<br/>
-        Hostingは<a href={"https://www.netlify.com"}>Netlify</a>を利用しています。<br/>
-        ソースは<a href={github?.repository}
-               target={"_blank"}>GitHub</a>(webdimension/gatasby_blog)で全公開しております。
+          当サイトは<strong>Gatsby(blog-theme)&nbsp;TypeScript化</strong>
+          して構築しています。
+          <br />
+          Hostingは<a href={"https://www.netlify.com"}>Netlify</a>
+          を利用しています。
+          <br />
+          ソースは
+          <a href={github?.repository} target={"_blank"}>
+            GitHub
+          </a>
+          (webdimension/gatasby_blog)で全公開しております。
         </p>
-
       </div>
       <div className={"profArea"}>
         <StaticImage
@@ -70,7 +74,9 @@ const Bio = () => {
         />
         <div className={"profDiv"}>Author:&nbsp;{author?.name}</div>
         <div className={"profDiv"}>{author?.summary}</div>
-        <div className={"profDiv"}>WEB系バックエンドを主軸にフロントエンドまでが守備範囲。</div>
+        <div className={"profDiv"}>
+          WEB系バックエンドを主軸にフロントエンドまでが守備範囲。
+        </div>
         <div className={"profDiv"}>
           <IconButton
             color="inherit"
@@ -78,22 +84,32 @@ const Bio = () => {
             aria-label="Contact"
             href={"/contact"}
           >
-          <EmailIcon/>
+            <EmailIcon />
           </IconButton>
-            <Link to={"/contact/"}>Contact</Link></div>
+          <Link to={"/contact/"}>Contact</Link>
+        </div>
         {/*<div className={"bioDescription"}>*/}
         {/*  WEB系バックエンドを主軸にフロントエンドまでが守備範囲。<br/>*/}
         {/*</div>*/}
       </div>
 
-      <div className={"bioDescription"}
-      >
+      <div className={"bioDescription"}>
         <h2>Profile</h2>
         <h3>Repositories</h3>
         <ul>
-          <li><a href={github?.url} target={"_blank"}>GitHub</a></li>
-          <li><s>GitLab (非公開)</s></li>
-          <li><a href={dockerhub?.url} target={"_blank"}>DockerHub</a></li>
+          <li>
+            <a href={github?.url} target={"_blank"}>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <s>GitLab (非公開)</s>
+          </li>
+          <li>
+            <a href={dockerhub?.url} target={"_blank"}>
+              DockerHub
+            </a>
+          </li>
         </ul>
         <h3>Language</h3>
         <ul>
@@ -171,7 +187,6 @@ const Bio = () => {
           <li>GoogleMeet</li>
         </ul>
       </div>
-
     </DivWrapper>
   )
 }

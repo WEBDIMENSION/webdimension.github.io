@@ -1,12 +1,12 @@
 // import React, {FC} from "react"
 import * as React from "react"
-import {Link, graphql} from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
-import {useLocation} from "@reach/router"
+import { useLocation } from "@reach/router"
 import GoogleAds from "../components/google/googleAdsense"
 
 interface Props {
@@ -45,19 +45,17 @@ interface Props {
         title: string
       }
     }
-
   }
 }
 
 //
-const BlogPost = ({data}: Props) => {
-
-  const location = useLocation();
-  const path = location?.pathname || ''
+const BlogPost = ({ data }: Props) => {
+  const location = useLocation()
+  const path = location?.pathname || ""
 
   const post = data.markdownRemark
   // const siteTitle = data.site.siteMetadata?.title || `Title`
-  const {previous, next} = data
+  const { previous, next } = data
 
   return (
     <Layout>
@@ -74,41 +72,38 @@ const BlogPost = ({data}: Props) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <PageTitle title={post.frontmatter.title} prefixTitle=""/>
+          <PageTitle title={post.frontmatter.title} prefixTitle="" />
         </header>
-        <p className="postDate"><span>{post.frontmatter.date}</span></p>
-        {
-          (() => {
-            if (post.frontmatter.draft) {
-              return(
-                <div className={"draft"}>Draft</div>
-              );
-            }
-          })()
-        }
+        <p className="postDate">
+          <span>{post.frontmatter.date}</span>
+        </p>
+        {(() => {
+          if (post.frontmatter.draft) {
+            return <div className={"draft"}>Draft</div>
+          }
+        })()}
         <section
-          dangerouslySetInnerHTML={{__html: post.html}}
+          dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
         <GoogleAds path={path} />
-        <hr/>
+        <hr />
         {/*<footer>*/}
         {/*  <Bio/>*/}
         {/*</footer>*/}
       </ArticleWrapper>
       <NavWrapper className="blogPostNav">
-        <ul
-        >
+        <ul>
           <li className={"prev"}>
             {previous && (
-              <Link to={'/blog' + previous.fields.slug} rel="prev">
+              <Link to={"/blog" + previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li className={"next"}>
             {next && (
-              <Link to={'/blog' + next.fields.slug} rel="next">
+              <Link to={"/blog" + next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -126,7 +121,7 @@ const ArticleWrapper = styled.article`
     margin-bottom: 1em;
     border-bottom: 1px var(--colorPrimary) dashed;
   }
-  
+
   .draft {
     background-color: var(--colorWarning);
     color: var(--bgColorPrimary);
@@ -182,7 +177,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        post_modified(formatString : "MMMM DD, YYYY" )
+        post_modified(formatString: "MMMM DD, YYYY")
         description
         tags
         draft

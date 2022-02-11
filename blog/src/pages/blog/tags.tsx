@@ -1,11 +1,13 @@
 import React from "react"
-import {graphql, PageProps} from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import Layout from "../../components/layout"
-import Seo from "../../components/seo";
-import Tags from "../../components/tags";
+import Seo from "../../components/seo"
+import Tags from "../../components/tags"
 import Article from "../../components/postArticle"
 
-const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
+const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({
+  data,
+}) => {
   const title = data.site?.siteMetadata?.title
 
   return (
@@ -19,7 +21,7 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
 
         <h1>Tags</h1>
         <section>
-          <Tags isSideBar={false}/>
+          <Tags isSideBar={false} />
         </section>
       </Article>
     </Layout>
@@ -28,7 +30,7 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({data}) => {
 
 export default TagsPage
 export const pageQuery = graphql`
-  query TagsQuery{
+  query TagsQuery {
     site {
       siteMetadata {
         title

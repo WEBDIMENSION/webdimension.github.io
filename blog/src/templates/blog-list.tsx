@@ -3,7 +3,7 @@ import * as React from "react"
 // import React from 'react';
 // import type {FC} from 'react';
 // import { Link, graphql } from "gatsby"
-import {PageProps, graphql, Link } from "gatsby"
+import { PageProps, graphql, Link } from "gatsby"
 // import styled from "styled-components"
 
 // import Bio from "../components/bio"
@@ -12,10 +12,9 @@ import Seo from "../components/seo"
 import PostList from "../components/postList"
 import Article from "../components/postArticle"
 import PageNation from "../components/pageNation"
-import styled from "styled-components";
-import BlogIndex from "../pages";
-import PageTitle from "../components/pageTitle";
-
+import styled from "styled-components"
+import BlogIndex from "../pages"
+import PageTitle from "../components/pageTitle"
 
 // const BlogIndex = ({ data, location }) => {
 // const BlogList: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
@@ -48,12 +47,12 @@ const BlogList = ({ data, pageContext }) => {
         />
         <Article>
           {/*<H2Wrapper>Blog</H2Wrapper>*/}
-          <PageTitle title={"Blog"} prefixTitle=""/>
+          <PageTitle title={"Blog"} prefixTitle="" />
           <section>
-            <PostList nodes={nodes}/>
+            <PostList nodes={nodes} />
           </section>
           <section>
-            <PageNation pageContext={pageContext}/>
+            <PageNation pageContext={pageContext} />
           </section>
         </Article>
       </Layout>
@@ -74,10 +73,7 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
-          filter: { frontmatter: {
-          draft: { in: [false] }
-      } }
-
+      filter: { frontmatter: { draft: { in: [false] } } }
     ) {
       nodes {
         excerpt
@@ -86,7 +82,7 @@ export const pageQuery = graphql`
         }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
-          post_modified(formatString : "MMMM DD, YYYY" )
+          post_modified(formatString: "MMMM DD, YYYY")
           title
           description
           tags

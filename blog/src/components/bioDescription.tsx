@@ -6,14 +6,14 @@
  */
 
 import * as React from "react"
-import {useStaticQuery, graphql, Link} from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
-import InfoIcon from '@mui/icons-material/Info';
+import InfoIcon from "@mui/icons-material/Info"
 import SideBarContentBottom from "../components/sideBarContentBottom"
-import IconButton from '@mui/material/IconButton';
+import IconButton from "@mui/material/IconButton"
 // import {StaticImage} from "gatsby-plugin-image"
 
-const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
+const BioDescription = ({ isSideBar }: { isSideBar: boolean }) => {
   const data = useStaticQuery<GatsbyTypes.BioDescriptionQuery>(graphql`
     query BioDescription {
       site {
@@ -38,20 +38,20 @@ const BioDescription = ({isSideBar}: { isSideBar: boolean }) => {
 
   return (
     <DivWrapper className="bio">
-      WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。<br/>
-      実経験の備忘録。<br/>
-      {isSideBar ?
+      WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。
+      <br />
+      実経験の備忘録。
+      <br />
+      {isSideBar ? (
         <SideBarContentBottom>
-          <IconButton
-            color="inherit"
-            size="large"
-            aria-label="about"
-          >
-            <InfoIcon/>
+          <IconButton color="inherit" size="large" aria-label="about">
+            <InfoIcon />
           </IconButton>
           <Link to={`/about/`}>AboutMe</Link>
-        </SideBarContentBottom> : ""
-      }
+        </SideBarContentBottom>
+      ) : (
+        ""
+      )}
     </DivWrapper>
   )
 }
@@ -70,5 +70,5 @@ const DivWrapper = styled.div`
   //  text-align: end;
   //  margin-top: 0.5em;
   //  padding-top: 0.2em;
-    //}
+  //}
 `

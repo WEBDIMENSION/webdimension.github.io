@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react"
 
 export const GoogleAds = ({ path }) => {
   useEffect(() => {
@@ -8,7 +8,7 @@ export const GoogleAds = ({ path }) => {
   return (
     <ins
       className="adsbygoogle"
-      style={{ "display": "block"}}
+      style={{ display: "block" }}
       data-ad-client={process.env.GOOGLE_ADSENSE_TRACKING_ID}
       data-ad-slot="4206718020"
       data-ad-format="auto"

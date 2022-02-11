@@ -77,7 +77,7 @@
     "start": "gatsby develop --host 0.0.0.0",
     "serve": "gatsby serve --host 0.0.0.0",
     "clean": "gatsby clean",
-    "clean2": "rm rf .cache/* public/*",
+    "clean2": "rm -rf .cache/* public/*",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "typecheck": "tsc"
   }

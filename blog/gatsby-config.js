@@ -6,7 +6,7 @@ module.exports = {
       name: `NagaMuu`,
       summary: `WEBエンジニア(第一世代) 都内在住 フリーランス`,
       company: `WEBDIMENSION`,
-      company_url: ``
+      company_url: ``,
     },
     siteUrl: `${process.env.SITE_URL}`,
     description: `WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。`,
@@ -32,8 +32,8 @@ module.exports = {
       resolve: `@isamrish/gatsby-plugin-google-adsense`,
       options: {
         googleAdClientId: [process.env.GOOGLE_ADSENSE_TRACKING_ID],
-        head: true // Optional
-      }
+        head: true, // Optional
+      },
     },
     `gatsby-plugin-image`,
     {
@@ -156,7 +156,7 @@ module.exports = {
 
     // `gatsby-plugin-dark-mode`,
     `gatsby-plugin-typegen`,
-    'gatsby-plugin-use-dark-mode',
+    "gatsby-plugin-use-dark-mode",
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
@@ -166,19 +166,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         host: `${process.env.SITE_URL}`,
         sitemap: `${process.env.SITE_URL}/sitemap/sitemap-index.xml`,
-        policy: [{
-          userAgent: '*',
-          allow: '/',
-          disallow: [
-            '/contact/thanks',
-          ]
-        }]
-      }
-    }
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["/contact/thanks"],
+          },
+        ],
+      },
+    },
   ],
-
 }

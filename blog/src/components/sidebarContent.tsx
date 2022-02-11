@@ -4,9 +4,14 @@ import styled from "styled-components"
 // import SidebarContentBottom from "../components/sidebarContentBottom"
 // import {PageProps} from "gatsby";
 
-
-const SidebarContent = ({title, children}: { title: string, children?: React.ReactNode }) => {
-// const SidebarContent = ({title}: {title: string},{children}: { children?: React.ReactNode} ) => {
+const SidebarContent = ({
+  title,
+  children,
+}: {
+  title: string
+  children?: React.ReactNode
+}) => {
+  // const SidebarContent = ({title}: {title: string},{children}: { children?: React.ReactNode} ) => {
 
   // console.log(children)
   // console.log(title)
@@ -14,10 +19,10 @@ const SidebarContent = ({title, children}: { title: string, children?: React.Rea
     <ContentWrapper>
       <h2>{title}</h2>
       <div className="sidebarContent">
-      {children}
-      {/*<SidebarContentBottom content="testBottom"/>*/}
+        {children}
+        {/*<SidebarContentBottom content="testBottom"/>*/}
       </div>
-      <div className="bottomText"/>
+      <div className="bottomText" />
     </ContentWrapper>
   )
 }
@@ -28,12 +33,12 @@ const ContentWrapper = styled.div`
   margin-bottom: 2em;
   //background-color: var(--borderColor);
   //border-radius: 1em 1em 2px 2px;
-  .sidebarContent{
+  .sidebarContent {
     //background-color: var(--borderColor);
     padding: 0.5em;
     background-color: var(--bgColorScondary);
     border: 1px var(--colorPrimary) solid;
-    box-shadow: inset 0 0 30px -15px rgba(255,255,255, 0.4);
+    box-shadow: inset 0 0 30px -15px rgba(255, 255, 255, 0.4);
   }
 
   h2 {
@@ -41,7 +46,7 @@ const ContentWrapper = styled.div`
     letter-spacing: 0.5em;
     background-color: var(--colorPrimary);
     font-weight: bolder;
-    border-radius: 1em 1em 0 0 ;
+    border-radius: 1em 1em 0 0;
     font-size: var(--fontSizeH3);
   }
 

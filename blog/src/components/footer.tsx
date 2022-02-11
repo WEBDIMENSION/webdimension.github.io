@@ -1,6 +1,6 @@
 import * as React from "react"
-import {useStaticQuery, graphql} from "gatsby"
-import styled from "styled-components";
+import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 // import { siteMetadata } from "../../gatsby-config"
 
@@ -18,13 +18,11 @@ const Footer = () => {
     }
   `)
 
-// const Footer = () => {
+  // const Footer = () => {
   return (
     <FooterWrapper>
       <p>
-        <small>
-          {data.site?.siteMetadata?.title}
-        </small>
+        <small>{data.site?.siteMetadata?.title}</small>
         <small>
           &copy;2007&nbsp;{data.site?.siteMetadata?.author?.company}
         </small>
@@ -46,7 +44,6 @@ const FooterWrapper = styled.footer`
       display: block;
     }
   }
-
 `
 // export const pageQuery = graphql`
 //   query Footer {

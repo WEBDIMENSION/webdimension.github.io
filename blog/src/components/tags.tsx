@@ -8,25 +8,24 @@
 import React from "react"
 import kebabCase from "lodash/kebabCase"
 import styled from "styled-components"
-import {Link, graphql, useStaticQuery} from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import SideBarContentBottom from "../components/sideBarContentBottom"
-import IconButton from '@mui/material/IconButton';
-import TagIcon from '@mui/icons-material/Tag';
+import IconButton from "@mui/material/IconButton"
+import TagIcon from "@mui/icons-material/Tag"
 
 // Components
 
-const Tags = ({isSideBar}: { isSideBar: boolean }) => {
-
+const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
   const data = useStaticQuery(graphql`
-    query  tagsQuery{
+    query tagsQuery {
       site {
         siteMetadata {
           title
         }
       }
       allMarkdownRemark(
-       filter: { frontmatter: { draft: { in: [false] } } }
-      limit: 2000
+        filter: { frontmatter: { draft: { in: [false] } } }
+        limit: 2000
       ) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -38,38 +37,36 @@ const Tags = ({isSideBar}: { isSideBar: boolean }) => {
 
   // const title: string = data.site.siteMetadata?.title
   const group: any[] = data.allMarkdownRemark?.group
-  group.sort((a, b) => b.totalCount - a.totalCount);
-
+  group.sort((a, b) => b.totalCount - a.totalCount)
 
   const sideBarTagsCount: number = 24
   const AllTagsCount = data.allMarkdownRemark?.group.length
   const tagsCount = isSideBar ? sideBarTagsCount : AllTagsCount
 
   return (
-   <div>
-          <UlWrapper>
-            {group.slice(0, tagsCount).map(tag => (
-              <LiWrapper key={tag.fieldValue}>
-                <div>
-                  <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue}
-                  </Link>&nbsp;({tag.totalCount})
-                </div>
-              </LiWrapper>
-            ))}
-          </UlWrapper>
-            {isSideBar ?
-              <SideBarContentBottom>
-                <IconButton
-                  color="inherit"
-                  size="large"
-                  aria-label="tags"
-                >
-                  <TagIcon/>
-                </IconButton>
-                <Link to={`/blog/tags/`}>All Tags</Link>
-              </SideBarContentBottom> : ""
-            }
+    <div>
+      <UlWrapper>
+        {group.slice(0, tagsCount).map(tag => (
+          <LiWrapper key={tag.fieldValue}>
+            <div>
+              <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}/`}>
+                {tag.fieldValue}
+              </Link>
+              &nbsp;({tag.totalCount})
+            </div>
+          </LiWrapper>
+        ))}
+      </UlWrapper>
+      {isSideBar ? (
+        <SideBarContentBottom>
+          <IconButton color="inherit" size="large" aria-label="tags">
+            <TagIcon />
+          </IconButton>
+          <Link to={`/blog/tags/`}>All Tags</Link>
+        </SideBarContentBottom>
+      ) : (
+        ""
+      )}
     </div>
   )
 }
@@ -108,5 +105,4 @@ const LiWrapper = styled.li`
     color: var(--colorPrimary);
     background-color: var(--visitedColor);
   }
-
 `

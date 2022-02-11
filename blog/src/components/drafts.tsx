@@ -8,46 +8,48 @@
 import React from "react"
 import kebabCase from "lodash/kebabCase"
 import styled from "styled-components"
-import {Link, graphql, useStaticQuery} from "gatsby"
-import IconButton from '@mui/material/IconButton';
-import ListIcon from '@mui/icons-material/List'
+import { Link, graphql, useStaticQuery } from "gatsby"
+import IconButton from "@mui/material/IconButton"
+import ListIcon from "@mui/icons-material/List"
 import SideBarContentBottom from "../components/sideBarContentBottom"
-import TagIcon from '@mui/icons-material/Tag';
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
+import TagIcon from "@mui/icons-material/Tag"
+import WbSunnyIcon from "@mui/icons-material/WbSunny"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
 
 // Components
 
 const Drafts = () => {
-
   const data = useStaticQuery(graphql`
-    query  DraftsQuery{
+    query DraftsQuery {
       site {
         siteMetadata {
           title
         }
       }
       allMarkdownRemark(
-       filter: { frontmatter: { draft: { in: [true] } } }
-      limit: 2000
+        filter: { frontmatter: { draft: { in: [true] } } }
+        limit: 2000
       ) {
-         totalCount
-         nodes {
-           fields {
-             slug
-           }
-           frontmatter {
-             date(formatString : "MMMM DD, YYYY" )
-             title
-             description
-           }
+        totalCount
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
         }
       }
     }
   `)
 
   // const draftsLength: number = data.allMarkdownRemark.nodes.length
-  const draftsLength: number = process.env.NODE_ENV === "production" ? 0 : data.allMarkdownRemark.nodes.length
+  const draftsLength: number =
+    process.env.NODE_ENV === "production"
+      ? 0
+      : data.allMarkdownRemark.nodes.length
   console.log(data.allMarkdownRemark)
   console.log(draftsLength)
   // const title: string = data.site.siteMetadata?.title
@@ -59,26 +61,24 @@ const Drafts = () => {
   // const AllTagsCount = data.allMarkdownRemark?.group.length
   // const tagsCount = isSideBar ? sideBarTagsCount : AllTagsCount
 
-  if(draftsLength > 0) {
+  if (draftsLength > 0) {
     return (
       <DiWrapper>
         <Link to={"/blog/drafts/"}>
-          <IconButton
-          >
-            <ListIcon
-            />
+          <IconButton>
+            <ListIcon />
           </IconButton>
-          Draft</Link>
+          Draft
+        </Link>
       </DiWrapper>
     )
   } else {
-    return ''
+    return ""
   }
 }
 
 export default Drafts
 const DiWrapper = styled.div`
-  
   //list-style: none;
   //display: flex;
   //flex-wrap: wrap;

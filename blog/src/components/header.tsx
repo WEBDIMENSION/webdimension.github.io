@@ -1,15 +1,14 @@
 import * as React from "react"
-import {useLocation} from "@reach/router"
-import {Link} from "gatsby"
-import {useStaticQuery, graphql} from "gatsby"
+import { useLocation } from "@reach/router"
+import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 // import {siteMetadata} from "../../gatsby-config"
 import styled from "styled-components"
-import {StaticImage} from "gatsby-plugin-image";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Drafts from "./drafts";
-import Drawer from "./drawer";
-
+import { StaticImage } from "gatsby-plugin-image"
+import Grid from "@mui/material/Grid"
+import Box from "@mui/material/Box"
+import Drafts from "./drafts"
+import Drawer from "./drawer"
 
 const Header = () => {
   const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
@@ -21,14 +20,13 @@ const Header = () => {
       }
     }
   `)
-  const location = useLocation();
-  const __PATH_PREFIX__ = ''
+  const location = useLocation()
+  const __PATH_PREFIX__ = ""
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let siteName
 
   if (isRootPath) {
-
     siteName = <h1 className="headerTitle">{data.site?.siteMetadata?.title}</h1>
   } else {
     siteName = (
@@ -39,10 +37,13 @@ const Header = () => {
   }
   return (
     <HeaderWrapper>
-      <Box sx={{display: 'flex', justifyContent: 'space-between'}} className="header">
+      <Box
+        sx={{ display: "flex", justifyContent: "space-between" }}
+        className="header"
+      >
         {/*  <Grid container>*/}
         {/*    <Grid item xs={12} md={9} className={"header mb6"}>*/}
-        <Box sx={{display: 'flex'}} className="logo">
+        <Box sx={{ display: "flex" }} className="logo">
           <StaticImage
             className="bio-avatar"
             layout="fixed"
@@ -57,12 +58,14 @@ const Header = () => {
         </Box>
         {/*</Grid>*/}
         {/*<Grid item xs={12} md={3}>*/}
-        <Box sx={{
-          display: {
-            xs: 'none',
-            md: 'block',
-          }
-        }}>
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              md: "block",
+            },
+          }}
+        >
           <nav className={"pc"}>
             <ul>
               <li>
@@ -77,13 +80,15 @@ const Header = () => {
             </ul>
           </nav>
         </Box>
-        <Box sx={{
-          display: {
-            xs: 'block',
-            md: 'none',
-          }
-        }}>
-          <Drawer/>
+        <Box
+          sx={{
+            display: {
+              xs: "block",
+              md: "none",
+            },
+          }}
+        >
+          <Drawer />
         </Box>
 
         {/*  </Grid>*/}

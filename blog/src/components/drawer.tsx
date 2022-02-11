@@ -1,25 +1,22 @@
 import React from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 import styled from "styled-components"
-import Drawer from 'react-modern-drawer';
-import 'react-modern-drawer/dist/index.css'
-import IconButton from '@mui/material/IconButton';
-import {Menu} from '@mui/icons-material';
-import HomeIcon from '@mui/icons-material/Home';
-import TagIcon from '@mui/icons-material/Tag';
-import InfoIcon from '@mui/icons-material/Info';
-import EmailIcon from '@mui/icons-material/Email';
-import ListIcon from '@mui/icons-material/List';
-import Mode from "./mode";
-
-
+import Drawer from "react-modern-drawer"
+import "react-modern-drawer/dist/index.css"
+import IconButton from "@mui/material/IconButton"
+import { Menu } from "@mui/icons-material"
+import HomeIcon from "@mui/icons-material/Home"
+import TagIcon from "@mui/icons-material/Tag"
+import InfoIcon from "@mui/icons-material/Info"
+import EmailIcon from "@mui/icons-material/Email"
+import ListIcon from "@mui/icons-material/List"
+import Mode from "./mode"
 
 const drawer = () => {
-
   // const darkMode = useDarkMode(true);
   const [isOpen, setIsOpen] = React.useState(false)
   const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState)
+    setIsOpen(prevState => !prevState)
   }
 
   return (
@@ -31,80 +28,55 @@ const drawer = () => {
         // sizeLarge
         aria-label="menu"
       >
-        <Menu/>
+        <Menu />
       </IconButton>
-      <Drawer
-        open={isOpen}
-        onClose={toggleDrawer}
-        direction='right'
-      >
+      <Drawer open={isOpen} onClose={toggleDrawer} direction="right">
         <div className={"closeButton"}>
           <button onClick={toggleDrawer}>Close</button>
         </div>
         <UlWrapper className={"drawerMenu"}>
           <li>
-            <IconButton
-              color="inherit"
-              size="large"
-              aria-label="home"
-            >
-              <HomeIcon/>
+            <IconButton color="inherit" size="large" aria-label="home">
+              <HomeIcon />
             </IconButton>
 
             <Link to={`/`}>Top</Link>
           </li>
           <li>
-            <IconButton
-              color="inherit"
-              size="large"
-              aria-label="blog"
-            >
-              <ListIcon/>
+            <IconButton color="inherit" size="large" aria-label="blog">
+              <ListIcon />
             </IconButton>
             <Link to={`/blog/`}>Blog</Link>
           </li>
           <ul className={"secondaryMenu"}>
             <li>
-              <IconButton
-                color="inherit"
-                size="large"
-                aria-label="tags"
-              >
-                <TagIcon/>
+              <IconButton color="inherit" size="large" aria-label="tags">
+                <TagIcon />
               </IconButton>
               <Link to={`/blog/tags/`}>Tags</Link>
             </li>
           </ul>
           <li>
-            <IconButton
-              color="inherit"
-              size="large"
-              aria-label="about"
-            >
-              <InfoIcon/>
+            <IconButton color="inherit" size="large" aria-label="about">
+              <InfoIcon />
             </IconButton>
             <Link to={`/about/`}>AboutMe</Link>
           </li>
           <li>
-            <IconButton
-              color="inherit"
-              size="large"
-              aria-label="contact"
-            >
-              <EmailIcon/>
+            <IconButton color="inherit" size="large" aria-label="contact">
+              <EmailIcon />
             </IconButton>
             <Link to={`/contact/`}>Contact</Link>
           </li>
         </UlWrapper>
         <div className={"displayMode"}>
           Display
-          <Mode/>
+          <Mode />
         </div>
       </Drawer>
     </DivWrapper>
   )
-    ;
-};
+}
 
 export default drawer
 const DivWrapper = styled.div`
@@ -120,7 +92,6 @@ const DivWrapper = styled.div`
   div.displayMode {
     padding-left: 8px;
   }
-
 `
 const UlWrapper = styled.ul`
   padding-top: 8px;

@@ -9,19 +9,19 @@ import React from "react"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import {Link, graphql, useStaticQuery} from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Categories = () => {
   const data = useStaticQuery(graphql`
-    query  categoriesQuery{
+    query categoriesQuery {
       site {
         siteMetadata {
           title
         }
       }
       allMarkdownRemark(
-      filter: { frontmatter: { draft: { in: [false] } } }
-      limit: 2000
+        filter: { frontmatter: { draft: { in: [false] } } }
+        limit: 2000
       ) {
         group(field: frontmatter___categories) {
           fieldValue
@@ -35,15 +35,15 @@ const Categories = () => {
   const group: any[] = data.allMarkdownRemark?.group
 
   return (
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue} >
-                <Link to={`/blog/categories/${kebabCase(tag.fieldValue)}/`}>
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-            </li>
-          ))}
-        </ul>
+    <ul>
+      {group.map(tag => (
+        <li key={tag.fieldValue}>
+          <Link to={`/blog/categories/${kebabCase(tag.fieldValue)}/`}>
+            {tag.fieldValue} ({tag.totalCount})
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
 

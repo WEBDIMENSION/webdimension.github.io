@@ -2,12 +2,12 @@
 import React from "react"
 import styled from "styled-components"
 // import SidebarContentBottom from "../components/sidebarContentBottom"
-import {PageProps} from "gatsby";
-import {Link} from "gatsby"
-import IconButton from '@mui/material/IconButton';
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import ListIcon from "@mui/icons-material/List";
-import kebabCase from "lodash/kebabCase";
+import { PageProps } from "gatsby"
+import { Link } from "gatsby"
+import IconButton from "@mui/material/IconButton"
+import LocalOfferIcon from "@mui/icons-material/LocalOffer"
+import ListIcon from "@mui/icons-material/List"
+import kebabCase from "lodash/kebabCase"
 // interface IData {
 //   allMarkdownRemark: {
 //     totalCount: number
@@ -24,9 +24,7 @@ import kebabCase from "lodash/kebabCase";
 //   }
 // }
 
-const PostList = ({nodes}: { nodes: any }) => {
-
-
+const PostList = ({ nodes }: { nodes: any }) => {
   return (
     <OlWrapper>
       {nodes.map(node => {
@@ -41,7 +39,7 @@ const PostList = ({nodes}: { nodes: any }) => {
             >
               {/*<header>*/}
               <h2>
-                <Link to={'/blog' + node.fields?.slug || ''} itemProp="url">
+                <Link to={"/blog" + node.fields?.slug || ""} itemProp="url">
                   <span itemProp="headline">{title}</span>
                 </Link>
               </h2>
@@ -55,7 +53,7 @@ const PostList = ({nodes}: { nodes: any }) => {
               {/*<section>*/}
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter?.description || node?.excerpt || '',
+                  __html: node.frontmatter?.description || node?.excerpt || "",
                 }}
                 itemProp="description"
               />
@@ -63,12 +61,11 @@ const PostList = ({nodes}: { nodes: any }) => {
               <ul className={"tags"}>
                 {node.frontmatter?.tags?.map(tag => {
                   return (
-                    <li key={tag}><IconButton>
-                      <LocalOfferIcon />
-                    </IconButton>
-                    <Link to={`/blog/tags/${kebabCase(tag)}/`}>
-                      {tag}
-                    </Link>
+                    <li key={tag}>
+                      <IconButton>
+                        <LocalOfferIcon />
+                      </IconButton>
+                      <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   )
                 })}
@@ -84,7 +81,6 @@ const PostList = ({nodes}: { nodes: any }) => {
 export default PostList
 
 const OlWrapper = styled.ol`
-
   P.post_modified {
     text-align: end;
 

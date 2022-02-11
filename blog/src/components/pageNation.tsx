@@ -1,12 +1,11 @@
-import React from "react";
-import {Link} from "gatsby";
-import styled from "styled-components";
+import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
 // import { makeStyles } from "@mui/material/styles";
 // import { Pagination } from "@mui/lab";
 
-
-const PageNation = ({pageContext}) => {
-  const {numPages} = pageContext
+const PageNation = ({ pageContext }) => {
+  const { numPages } = pageContext
   // console.log(pageContext.currentPage)
   const currentPage = pageContext.currentPage
   const linkPrefix = pageContext.linkPrefix
@@ -15,17 +14,24 @@ const PageNation = ({pageContext}) => {
     <nav>
       <UlWrapper>
         {Array.from({ length: numPages }, (_, i) => (
-          <li key={`pagination-number${i + 1}`}
-              className={`${i + 1}` == currentPage ? "thisPage" : "etherPage"}
+          <li
+            key={`pagination-number${i + 1}`}
+            className={`${i + 1}` == currentPage ? "thisPage" : "etherPage"}
           >
-            <Link to={`${linkPrefix}${i === 0 ? "" : linkSuffix }${i === 0 ? "" : i + 1}/`}>{i + 1}</Link>
+            <Link
+              to={`${linkPrefix}${i === 0 ? "" : linkSuffix}${
+                i === 0 ? "" : i + 1
+              }/`}
+            >
+              {i + 1}
+            </Link>
           </li>
         ))}
       </UlWrapper>
     </nav>
-  );
-};
-export default PageNation;
+  )
+}
+export default PageNation
 const UlWrapper = styled.ul`
   display: flex;
   justify-content: center;
@@ -42,5 +48,4 @@ const UlWrapper = styled.ul`
   li.etherPage {
     background-color: var(--colorPrimary);
   }
-
 `
