@@ -74,7 +74,7 @@ const drawer = () => {
           Display
           <Mode />
         </div>
-      <GoogleAds/>
+        <GoogleAds />
       </Drawer>
     </DivWrapper>
   )

@@ -1,9 +1,8 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { useLocation } from "@reach/router"
 
 export const GoogleAds = () => {
-
   const location = useLocation()
   const path = location?.pathname || ""
   console.log(path)
@@ -12,8 +11,7 @@ export const GoogleAds = () => {
     ;(window.adsbygoogle = window.adsbygoogle || []).push({})
   }, [path])
 
-
-  if (process.env.NODE_ENV == 'development') {
+  if (process.env.NODE_ENV == "development") {
     return (
       <AsideWrapper className={"adArea"}>
         <div className={"adsenseDummy"}>
@@ -26,7 +24,7 @@ export const GoogleAds = () => {
       <AsideWrapper className={"adArea"}>
         <ins
           className="adsbygoogle"
-          style={{display: "block"}}
+          style={{ display: "block" }}
           data-ad-client={process.env.GOOGLE_ADSENSE_TRACKING_ID}
           data-ad-slot="4206718020"
           data-ad-format="auto"

@@ -70,18 +70,18 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                       <BioDescription isSideBar={true} />
                     </SidebarContent>
                   </nav>
-                    <GoogleAds/>
+                  <GoogleAds />
                   <nav>
                     <SidebarContent title="TAGS">
                       <Tags isSideBar={true} />
                     </SidebarContent>
                   </nav>
-                    <GoogleAds/>
+                  <GoogleAds />
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
                 <main className="mainContent">{children}</main>
-                <GoogleAds/>
+                <GoogleAds />
               </Grid>
             </Grid>
           </DivWrapper>

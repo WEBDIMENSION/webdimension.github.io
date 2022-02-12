@@ -42,7 +42,7 @@ module.exports = {
           "GOOGLE_ANALYTICS_TRACKING_ID",
           "GOOGLE_ADSENSE_TRACKING_ID",
           "SITE_URL",
-        ]
+        ],
       },
     },
     `gatsby-plugin-image`,
