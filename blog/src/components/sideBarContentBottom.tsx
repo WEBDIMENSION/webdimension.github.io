@@ -6,11 +6,7 @@
  */
 
 import * as React from "react"
-// import {useStaticQuery, graphql, Link} from "gatsby"
 import styled from "styled-components"
-// import InfoIcon from '@mui/icons-material/Info';
-// import IconButton from '@mui/material/IconButton';
-// import {StaticImage} from "gatsby-plugin-image"
 
 const SideBarContentBottom = ({ children }: { children?: React.ReactNode }) => {
   return <Pwrapper className="sideBarLink">{children}</Pwrapper>

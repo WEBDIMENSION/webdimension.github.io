@@ -51,8 +51,6 @@ body.dark-mode{
   --hover: #4169E1;
 }
 
-
-
 body {
   font: var(--font);
   color: var(--fontColor);
@@ -69,6 +67,7 @@ h1 {
 h2 {
   font-size: var(--fontSizeH2);
 }
+
 a {
   color: var(--fontColor);
   text-decoration: none;
@@ -82,11 +81,8 @@ a:hover {
   color: var(--hover);
 }
 
-
-
 .container {
   max-width: 1180px;
   margin: 0 auto;
   padding: 1em 15px;
 }
-

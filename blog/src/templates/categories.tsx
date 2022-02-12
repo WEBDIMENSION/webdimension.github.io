@@ -44,8 +44,7 @@ const Categories = ({
   return (
     <Layout>
       <Seo
-        title={category} // description={post.frontmatter.description || post.excerpt}
-        // description={category}
+        title={category}
       />
       <Seo
         title={category + " がカテゴライズされた記事一覧"}

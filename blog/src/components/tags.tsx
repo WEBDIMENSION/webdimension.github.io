@@ -13,8 +13,6 @@ import SideBarContentBottom from "../components/sideBarContentBottom"
 import IconButton from "@mui/material/IconButton"
 import TagIcon from "@mui/icons-material/Tag"
 
-// Components
-
 const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
   const data = useStaticQuery<GatsbyTypes.tagsQueryQuery>(graphql`
     query tagsQuery {
@@ -36,7 +34,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
   `)
 
   // const title: string = data.site.siteMetadata?.title
-  const group: any[] = data.allMarkdownRemark?.group
+  const group: any = data.allMarkdownRemark?.group
   group.sort((a, b) => b.totalCount - a.totalCount)
 
   const sideBarTagsCount: number = 24

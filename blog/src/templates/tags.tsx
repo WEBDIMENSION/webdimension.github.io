@@ -36,14 +36,11 @@ const Tags = ({
   pageContext: IPageContext
   data: IData
 }) => {
-  // console.log(pageContext)
   const { tag } = pageContext
-  const totalCount = data.allMarkdownRemark.totalCount
   const nodes = data.allMarkdownRemark.nodes
 
   return (
     <Layout>
-      {/*<Seo title={tag} description={tag} />*/}
       <Seo
         title={tag + " がタグ付けされた記事一覧"}
         DisplaySubTitle={true}

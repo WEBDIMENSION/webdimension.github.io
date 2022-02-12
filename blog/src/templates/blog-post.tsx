@@ -1,12 +1,9 @@
-// import React, {FC} from "react"
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
-import { useLocation } from "@reach/router"
 
 interface Props {
   data: {
@@ -50,7 +47,6 @@ interface Props {
 //
 const BlogPost = ({ data }: Props) => {
   const post = data.markdownRemark
-  // const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
   return (
@@ -61,7 +57,6 @@ const BlogPost = ({ data }: Props) => {
         description={post.frontmatter.description || post.excerpt + " の記事"}
       />
 
-      {/*<Seo title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />*/}
       <ArticleWrapper
         className="blog-post"
         itemScope
@@ -83,9 +78,6 @@ const BlogPost = ({ data }: Props) => {
           itemProp="articleBody"
         />
         <hr />
-        {/*<footer>*/}
-        {/*  <Bio/>*/}
-        {/*</footer>*/}
       </ArticleWrapper>
       <NavWrapper className="blogPostNav">
         <ul>
@@ -120,7 +112,6 @@ const ArticleWrapper = styled.article`
   .draft {
     background-color: var(--colorWarning);
     color: var(--bgColorPrimary);
-    //display: inline-block;
     padding: 4px;
     border-radius: 4px;
     text-align: center;

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { PageProps, graphql } from "gatsby"
-
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import ContactForm from "../../components/contactForm"
@@ -8,12 +7,9 @@ import Article from "../../components/postArticle"
 import styled from "styled-components"
 import PageTitle from "../../components/pageTitle"
 
-// const NotFoundPage = ({ data, location }) => {
 const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
-  // const siteTitle = data?.site?.siteMetadata?.title
 
   return (
-    // <Layout title={siteTitle}>
     <Layout>
       <Seo
         title="おっさんWEBエンジニア Contact- お問い合わせ"

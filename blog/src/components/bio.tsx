@@ -13,8 +13,6 @@ import styled from "styled-components"
 import IconButton from "@mui/material/IconButton"
 import EmailIcon from "@mui/icons-material/Email"
 
-// import {StaticImage} from "gatsby-plugin-image"
-
 const Bio = () => {
   const data = useStaticQuery<GatsbyTypes.BioQueryQuery>(graphql`
     query BioQuery {
@@ -29,6 +27,7 @@ const Bio = () => {
           }
           github {
             url
+            repository
           }
           dockerhub {
             url
@@ -38,7 +37,6 @@ const Bio = () => {
     }
   `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site?.siteMetadata?.author
   const github = data.site?.siteMetadata?.github
   const dockerhub = data.site?.siteMetadata?.dockerhub
@@ -58,7 +56,7 @@ const Bio = () => {
           <a href={github?.repository} target={"_blank"}>
             GitHub
           </a>
-          (webdimension/gatasby_blog)で全公開しております。
+          (webdimension/gatsby_blog)で全公開しております。
         </p>
       </div>
       <div className={"profArea"}>
@@ -88,9 +86,6 @@ const Bio = () => {
           </IconButton>
           <Link to={"/contact/"}>Contact</Link>
         </div>
-        {/*<div className={"bioDescription"}>*/}
-        {/*  WEB系バックエンドを主軸にフロントエンドまでが守備範囲。<br/>*/}
-        {/*</div>*/}
       </div>
 
       <div className={"bioDescription"}>
@@ -197,7 +192,6 @@ const DivWrapper = styled.div`
 
   .bio-avatar {
     margin: 0 auto;
-    //border-radius: 50%;
     picture > img {
       border-radius: 50%;
     }

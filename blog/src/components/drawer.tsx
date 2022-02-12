@@ -14,7 +14,6 @@ import Mode from "./mode"
 import GoogleAds from "../components/google/googleAdsense"
 
 const drawer = () => {
-  // const darkMode = useDarkMode(true);
   const [isOpen, setIsOpen] = React.useState(false)
   const toggleDrawer = () => {
     setIsOpen(prevState => !prevState)
@@ -26,7 +25,6 @@ const drawer = () => {
         color="inherit"
         onClick={toggleDrawer}
         size="large"
-        // sizeLarge
         aria-label="menu"
       >
         <Menu />

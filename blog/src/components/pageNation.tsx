@@ -1,12 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-// import { makeStyles } from "@mui/material/styles";
-// import { Pagination } from "@mui/lab";
 
 const PageNation = ({ pageContext }) => {
   const { numPages } = pageContext
-  // console.log(pageContext.currentPage)
   const currentPage = pageContext.currentPage
   const linkPrefix = pageContext.linkPrefix
   const linkSuffix = pageContext.linkSuffix

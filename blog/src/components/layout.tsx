@@ -1,9 +1,7 @@
-// import * as React from "react"
 import React from "react"
 import { useLocation } from "@reach/router"
 import Header from "./header"
 import Footer from "./footer"
-// import Bio from "../components/bio"
 import Tags from "../components/tags"
 import Mode from "../components/mode"
 import Grid from "@mui/material/Grid"
@@ -11,20 +9,13 @@ import Box from "@mui/material/Box"
 import styled from "styled-components"
 import SidebarContent from "../components/sidebarContent"
 import BioDescription from "./bioDescription"
-import HeaderUnder from "./headerUnder"
 import Drafts from "./drafts"
 import IconButton from "@mui/material/IconButton"
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
 import GoogleAds from "../components/google/googleAdsense"
-
-import { Link } from "gatsby"
 import { Link as Scroll } from "react-scroll"
-// import Mode from "../components/mode"
-// import {PageProps} from "gatsby";
 
-// const Layout = ({location, children) => {
 const Layout = ({ children }: { children?: React.ReactNode }) => {
-  // const Layout: React.FC<PageProps> = ({ location },{ children }: { children?: React.ReactNode }) => {
 
   const location = useLocation()
 
@@ -43,7 +34,6 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         <Grid item xs={12}>
           <Drafts />
           <Header />
-          {/*<HeaderUnder/>*/}
           <DivWrapper className="contents">
             <Grid container>
               <div className={"page_top"}>
@@ -108,8 +98,6 @@ const DivWrapper = styled.div`
   }
 
   .mainContent {
-    //margin-left: 1.2em;
-    //padding: 8px;
   }
   .page_top {
     position: fixed;

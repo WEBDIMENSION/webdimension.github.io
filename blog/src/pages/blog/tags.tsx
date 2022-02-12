@@ -5,10 +5,7 @@ import Seo from "../../components/seo"
 import Tags from "../../components/tags"
 import Article from "../../components/postArticle"
 
-const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = ({
-  data,
-}) => {
-  const title = data.site?.siteMetadata?.title
+const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = () => {
 
   return (
     <Layout>

@@ -5,20 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-// import * as React from "react"
 import React from "react"
 import { useState } from "react"
-// import { makeStyles, TextField, Button } from "@material-ui/core";
 import { TextField, Button } from "@mui/material"
 import styled from "styled-components"
-// import red from '@material-ui/core/colors/red';
-// import blue from '@material-ui/core/colors/blue';
-
-// import {useStaticQuery, graphql} from "gatsby"
-// import TextField from "@material-ui/core/TextField";
-// import Button from "@material-ui/core/Button";
-// import styled from "styled-components"
-// import {StaticImage} from "gatsby-plugin-image"
 
 declare module "@material-ui/core/styles/createTheme" {
   interface Theme {
@@ -28,6 +18,7 @@ declare module "@material-ui/core/styles/createTheme" {
   }
 }
 
+//TODO
 const ContactForm = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")

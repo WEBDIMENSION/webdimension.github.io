@@ -2,12 +2,9 @@ import * as React from "react"
 import { useLocation } from "@reach/router"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-// import {siteMetadata} from "../../gatsby-config"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
-import Drafts from "./drafts"
 import Drawer from "./drawer"
 
 const Header = () => {
@@ -41,8 +38,6 @@ const Header = () => {
         sx={{ display: "flex", justifyContent: "space-between" }}
         className="header"
       >
-        {/*  <Grid container>*/}
-        {/*    <Grid item xs={12} md={9} className={"header mb6"}>*/}
         <Box sx={{ display: "flex" }} className="logo">
           <StaticImage
             className="bio-avatar"
@@ -56,8 +51,6 @@ const Header = () => {
           />
           {siteName}
         </Box>
-        {/*</Grid>*/}
-        {/*<Grid item xs={12} md={3}>*/}
         <Box
           sx={{
             display: {
@@ -90,9 +83,6 @@ const Header = () => {
         >
           <Drawer />
         </Box>
-
-        {/*  </Grid>*/}
-        {/*</Grid>*/}
       </Box>
     </HeaderWrapper>
   )
@@ -102,16 +92,11 @@ const HeaderWrapper = styled.header`
 
 
   .header {
-    //height: 2.0em;
-    ////display: flex;
-    //align-items: center;
-    ////justify-content: space-between;
     padding-bottom: 16px;
     border-bottom: 1px var(--colorPrimary) solid;
     margin-bottom: 1em;
 
     .logo {
-      //display: flex;
       .bio-avatar {
         margin-right: 16px;
       }
@@ -123,35 +108,17 @@ const HeaderWrapper = styled.header`
       padding-top: 0.4em;
     }
 
-    //}
-    //
-    //
     nav.pc {
       display: flex;
-      //width: 100%;
       text-align: end;
       margin-top: 1em ;
-      //background-color: #FFf;
 
       ul {
-        //justify-content: space-around;
-        //width: 100%;
         list-style: none;
-        //background-color: #FFee00;
-
-        //vertical-align: bottom;
-        //height: 100%;
-        //display: flex;
-
         li {
-          //text-align: end;
           display: inline-block;
           padding-left: 20px;
           font-size: 1.2em;
-          //padding-top: 0.5em;
-          //vertical-align: bottom;
-          //justify-content: flex-end;
-          //background-color: #00ffff;
         }
       }
     }
@@ -167,5 +134,4 @@ const HeaderWrapper = styled.header`
     a:hover {
       color: var(--fontColor);
     }
-
 `

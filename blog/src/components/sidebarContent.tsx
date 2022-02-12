@@ -1,8 +1,5 @@
-// import * as React from "react"
 import React from "react"
 import styled from "styled-components"
-// import SidebarContentBottom from "../components/sidebarContentBottom"
-// import {PageProps} from "gatsby";
 
 const SidebarContent = ({
   title,
@@ -11,10 +8,7 @@ const SidebarContent = ({
   title: string
   children?: React.ReactNode
 }) => {
-  // const SidebarContent = ({title}: {title: string},{children}: { children?: React.ReactNode} ) => {
 
-  // console.log(children)
-  // console.log(title)
   return (
     <ContentWrapper>
       <h2>{title}</h2>
@@ -31,10 +25,7 @@ export default SidebarContent
 
 const ContentWrapper = styled.div`
   margin-bottom: 1em;
-  //background-color: var(--borderColor);
-  //border-radius: 1em 1em 2px 2px;
   .sidebarContent {
-    //background-color: var(--borderColor);
     padding: 0.5em;
     background-color: var(--bgColorScondary);
     border: 1px var(--colorPrimary) solid;
@@ -52,11 +43,9 @@ const ContentWrapper = styled.div`
 
   .bottomText {
     text-align: center;
-    //border-bottom: 1px var(--borderColor) solid;
     display: block;
     background-color: var(---colorPrimary);
     border-radius: 0 0 2px 2px;
     height: 2px;
-    //margin-top: 0.5em;
   }
 `

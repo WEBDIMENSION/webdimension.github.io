@@ -2,10 +2,7 @@ import React from "react"
 import { Switch } from "@mui/material"
 import useDarkMode from "use-dark-mode"
 import styled from "styled-components"
-// import {ThemeProvider} from "@emotion/react";
 import { createTheme, ThemeProvider } from "@mui/material/styles"
-import Grid from "@mui/material/Grid"
-import Box from "@mui/material/Box"
 import IconButton from "@mui/material/IconButton"
 import DarkModeIcon from "@mui/icons-material/DarkMode"
 import WbSunnyIcon from "@mui/icons-material/WbSunny"
@@ -25,7 +22,7 @@ const theme = createTheme({
 })
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(true)
-  // console.log(darkMode)
+
   return (
     <DarkModeSwitch>
       <ThemeProvider theme={theme}>

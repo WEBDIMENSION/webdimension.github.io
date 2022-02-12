@@ -1,23 +1,12 @@
 import * as React from "react"
-// import React from "react"
-// import React from 'react';
-// import type {FC} from 'react';
-// import { Link, graphql } from "gatsby"
-import { PageProps, graphql, Link } from "gatsby"
-// import styled from "styled-components"
-
-// import Bio from "../components/bio"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
 import Article from "../components/postArticle"
 import PageNation from "../components/pageNation"
-import styled from "styled-components"
-import BlogIndex from "../pages"
 import PageTitle from "../components/pageTitle"
 
-// const BlogIndex = ({ data, location }) => {
-// const BlogList: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
 const BlogList = ({ data, pageContext }) => {
   const subTitle = data.site?.siteMetadata?.subTitle || ``
   const nodes = data.allMarkdownRemark.nodes
@@ -46,7 +35,6 @@ const BlogList = ({ data, pageContext }) => {
           description={"All posts (記事一覧)"}
         />
         <Article>
-          {/*<H2Wrapper>Blog</H2Wrapper>*/}
           <PageTitle title={"Blog"} prefixTitle="" />
           <section>
             <PostList nodes={nodes} />

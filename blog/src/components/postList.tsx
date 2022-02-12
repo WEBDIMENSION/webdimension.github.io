@@ -1,28 +1,9 @@
-// import * as React from "react"
 import React from "react"
 import styled from "styled-components"
-// import SidebarContentBottom from "../components/sidebarContentBottom"
-import { PageProps } from "gatsby"
 import { Link } from "gatsby"
 import IconButton from "@mui/material/IconButton"
 import LocalOfferIcon from "@mui/icons-material/LocalOffer"
-import ListIcon from "@mui/icons-material/List"
 import kebabCase from "lodash/kebabCase"
-// interface IData {
-//   allMarkdownRemark: {
-//     totalCount: number
-//     nodes: Array<{
-//       fields: {
-//         slug: string
-//       }
-//       frontmatter: {
-//         title: string
-//         date: string
-//         description: string
-//       }
-//     }>
-//   }
-// }
 
 const PostList = ({ nodes }: { nodes: any }) => {
   return (
@@ -34,30 +15,21 @@ const PostList = ({ nodes }: { nodes: any }) => {
           <li key={node.fields?.slug} className={"postList"}>
             <article
               className="post-list-item"
-              // itemScope
-              // itemType="http://schema.org/Article"
             >
-              {/*<header>*/}
               <h2>
                 <Link to={"/blog" + node.fields?.slug || ""} itemProp="url">
                   <span itemProp="headline">{title}</span>
                 </Link>
               </h2>
-              {/*<p className="postDate">*/}
-              {/*  <span>{node.frontmatter?.date}</span>*/}
-              {/*</p>*/}
               <p className="post_modified">
                 <span>{node.frontmatter?.post_modified}</span>
               </p>
-              {/*</header>*/}
-              {/*<section>*/}
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter?.description || node?.excerpt || "",
                 }}
                 itemProp="description"
               />
-              {/*</section>*/}
               <ul className={"tags"}>
                 {node.frontmatter?.tags?.map(tag => {
                   return (
@@ -86,7 +58,6 @@ const OlWrapper = styled.ol`
 
     span {
       color: var(--colorSecondary);
-      //padding: 0.3em;
     }
   }
 

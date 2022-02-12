@@ -26,7 +26,6 @@ const Seo = ({
   title?: string
   DisplaySubTitle?: boolean
 }) =>
-  // { description, lang, meta, title }
   {
     const { site } = useStaticQuery(
       graphql`

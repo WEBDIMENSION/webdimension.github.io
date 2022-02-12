@@ -2,8 +2,6 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-// import { siteMetadata } from "../../gatsby-config"
-
 const Footer = () => {
   const data = useStaticQuery<GatsbyTypes.FooterQuery>(graphql`
     query Footer {
@@ -18,7 +16,6 @@ const Footer = () => {
     }
   `)
 
-  // const Footer = () => {
   return (
     <FooterWrapper>
       <p>
@@ -45,12 +42,3 @@ const FooterWrapper = styled.footer`
     }
   }
 `
-// export const pageQuery = graphql`
-//   query Footer {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `

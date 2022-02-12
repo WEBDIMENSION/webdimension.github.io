@@ -1,20 +1,11 @@
 import * as React from "react"
-// import React from "react"
-// import React from 'react';
-// import type {FC} from 'react';
-// import { Link, graphql } from "gatsby"
 import { PageProps, graphql } from "gatsby"
-// import styled from "styled-components"
-
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/postList"
 import Article from "../components/postArticle"
 import styled from "styled-components"
-import PageNation from "../components/pageNation"
 
-// const BlogIndex = ({ data, location }) => {
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({
   data,
 }) => {
@@ -22,7 +13,6 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({
 
   if (nodes.length === 0) {
     return (
-      // <Layout>
       <Layout>
         <Seo title="No blog posts found" />
         <p>

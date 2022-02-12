@@ -8,7 +8,6 @@
 import React from "react"
 import kebabCase from "lodash/kebabCase"
 
-// Components
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Categories = () => {
@@ -31,8 +30,7 @@ const Categories = () => {
     }
   `)
 
-  const title: string = data.site.siteMetadata?.title
-  const group: any[] = data.allMarkdownRemark?.group
+  const group: any = data.allMarkdownRemark?.group
 
   return (
     <ul>
