@@ -11,6 +11,7 @@ import InfoIcon from "@mui/icons-material/Info"
 import EmailIcon from "@mui/icons-material/Email"
 import ListIcon from "@mui/icons-material/List"
 import Mode from "./mode"
+import GoogleAds from "../components/google/googleAdsense"
 
 const drawer = () => {
   // const darkMode = useDarkMode(true);
@@ -73,6 +74,7 @@ const drawer = () => {
           Display
           <Mode />
         </div>
+      <GoogleAds/>
       </Drawer>
     </DivWrapper>
   )

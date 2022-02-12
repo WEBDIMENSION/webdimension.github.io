@@ -15,6 +15,7 @@ import HeaderUnder from "./headerUnder"
 import Drafts from "./drafts"
 import IconButton from "@mui/material/IconButton"
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
+import GoogleAds from "../components/google/googleAdsense"
 
 import { Link } from "gatsby"
 import { Link as Scroll } from "react-scroll"
@@ -68,14 +69,19 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                     <SidebarContent title="ABOUT">
                       <BioDescription isSideBar={true} />
                     </SidebarContent>
+                  </nav>
+                    <GoogleAds/>
+                  <nav>
                     <SidebarContent title="TAGS">
                       <Tags isSideBar={true} />
                     </SidebarContent>
                   </nav>
+                    <GoogleAds/>
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
                 <main className="mainContent">{children}</main>
+                <GoogleAds/>
               </Grid>
             </Grid>
           </DivWrapper>

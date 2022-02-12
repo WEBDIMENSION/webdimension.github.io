@@ -7,7 +7,6 @@ import Seo from "../components/seo"
 import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
 import { useLocation } from "@reach/router"
-import GoogleAds from "../components/google/googleAdsense"
 
 interface Props {
   data: {
@@ -50,8 +49,6 @@ interface Props {
 
 //
 const BlogPost = ({ data }: Props) => {
-  const location = useLocation()
-  const path = location?.pathname || ""
 
   const post = data.markdownRemark
   // const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -86,7 +83,6 @@ const BlogPost = ({ data }: Props) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <GoogleAds path={path} />
         <hr />
         {/*<footer>*/}
         {/*  <Bio/>*/}

@@ -30,7 +30,7 @@ const SidebarContent = ({
 export default SidebarContent
 
 const ContentWrapper = styled.div`
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   //background-color: var(--borderColor);
   //border-radius: 1em 1em 2px 2px;
   .sidebarContent {
