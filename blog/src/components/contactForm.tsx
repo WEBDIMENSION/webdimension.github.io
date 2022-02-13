@@ -7,16 +7,8 @@
 
 import React from "react"
 import { useState } from "react"
-import { TextField, Button } from "@mui/material"
+import { Button } from "@mui/material"
 import styled from "styled-components"
-
-declare module "@material-ui/core/styles/createTheme" {
-  interface Theme {
-    status: {
-      form: React.CSSProperties["color"]
-    }
-  }
-}
 
 //TODO
 const ContactForm = () => {
@@ -25,28 +17,22 @@ const ContactForm = () => {
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
 
-  const handleChange = event => {
-    console.log(event.target.name)
-    switch (event.target.name) {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    console.log(event.target?.name)
+    switch (event?.target?.name) {
       case "name":
-        setName(event.target.value)
-        console.log(event.target.value)
+        setName(event.target?.value)
         break
       case "email":
-        // setEmail(event.target.value);
-        console.log(event.target.value)
+        setEmail(event.target.value);
         break
       case "subject":
-        // setSubject(event.target.value);
-        console.log(event.target.value)
+        setSubject(event.target.value);
         break
       case "message":
-        // setMessage(event.target.value);
-        console.log(event.target.value)
+        setMessage(event.target.value);
         break
       default:
-        console.log(event.target.value)
-        console.log("key not found")
     }
   }
 
@@ -54,33 +40,13 @@ const ContactForm = () => {
     if (name === "") return true
     if (email === "") return true
     if (subject === "") return true
-    // if (message === "") return true;
+    if (message === "") return true;
+
+     const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (email.length > 1 && !regex.test(email)) return true
 
     return false
   }
-
-  const CssTextField = styled(TextField)({
-    color: "var(-- fontColor)",
-    backgroundColor: "var(--bgColorPrimary)",
-    "& label.Mui-focused": {
-      color: "var(--hover)",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "var(--hover)",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "green",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        // borderColor: "var(--colorPrimary)",
-        color: "var(--red)",
-      },
-      "&:hover fieldset": {
-        borderColor: "var(--blue)",
-      },
-    },
-  })
 
   return (
     <FormWrapper
@@ -100,16 +66,21 @@ const ContactForm = () => {
           name={"name"}
           onChange={handleChange}
           placeholder={"山田太郎"}
+          value={name}
+          required
         />
       </div>
 
       <div className={"inputBlock"}>
         <label htmlFor={"email"}>Email : </label>
         <input
-          type={"text"}
+          type={"email"}
           name={"email"}
+          // pattern={".+@globex\.com"}
           onChange={handleChange}
           placeholder={"account@abcd.com"}
+          value={email}
+          required
         />
       </div>
 
@@ -120,6 +91,8 @@ const ContactForm = () => {
           name={"subject"}
           onChange={handleChange}
           placeholder={"件名"}
+          value={subject}
+          required
         />
       </div>
 
@@ -130,7 +103,9 @@ const ContactForm = () => {
           rows={12}
           onChange={handleChange}
           placeholder={"お問い合わせ内容"}
-        ></textarea>
+          value={message}
+          required
+        />
       </div>
 
       <div className={"inputBlock, submitButton"}>
@@ -138,7 +113,7 @@ const ContactForm = () => {
           type="submit"
           variant="contained"
           fullWidth
-          // disabled={canSubmit()}
+          disabled={canSubmit()}
           // margin="normal"
           // size={"large"}
         >
