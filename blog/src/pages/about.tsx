@@ -7,7 +7,6 @@ import Article from "../components/postArticle"
 import PageTitle from "../components/pageTitle"
 
 const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
-
   return (
     <Layout>
       <Seo

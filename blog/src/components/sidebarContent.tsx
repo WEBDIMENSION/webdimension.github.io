@@ -8,7 +8,6 @@ const SidebarContent = ({
   title: string
   children?: React.ReactNode
 }) => {
-
   return (
     <ContentWrapper>
       <h2>{title}</h2>

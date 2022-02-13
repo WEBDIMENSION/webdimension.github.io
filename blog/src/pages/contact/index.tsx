@@ -8,7 +8,6 @@ import styled from "styled-components"
 import PageTitle from "../../components/pageTitle"
 
 const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
-
   return (
     <Layout>
       <Seo

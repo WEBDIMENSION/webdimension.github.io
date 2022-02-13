@@ -13,7 +13,7 @@ const PageTitle = ({
       {(() => {
         if (prefixTitle) {
           return <div className="prefix">{prefixTitle}:</div>
-        }else{
+        } else {
           return ""
         }
       })()}

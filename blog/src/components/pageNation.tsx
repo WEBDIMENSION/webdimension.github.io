@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const PageNation = ({ pageContext}: {pageContext: any}) => {
+const PageNation = ({ pageContext }: { pageContext: any }) => {
   const { numPages } = pageContext
   const currentPage = pageContext.currentPage
   const linkPrefix = pageContext.linkPrefix

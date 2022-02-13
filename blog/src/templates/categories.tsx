@@ -42,9 +42,7 @@ const Categories = ({
 
   return (
     <Layout>
-      <Seo
-        title={category}
-      />
+      <Seo title={category} />
       <Seo
         title={category + " がカテゴライズされた記事一覧"}
         DisplaySubTitle={true}

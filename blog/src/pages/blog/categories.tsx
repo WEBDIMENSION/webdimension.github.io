@@ -5,8 +5,9 @@ import Seo from "../../components/seo"
 import Categories from "../../components/categories"
 import Article from "../../components/postArticle"
 
-const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = () => {
-
+const CategoriesPage: React.FC<
+  PageProps<GatsbyTypes.CategoriesQueryQuery>
+> = () => {
   return (
     <Layout>
       <Article>

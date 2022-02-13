@@ -8,49 +8,49 @@ import PageNation from "../components/pageNation"
 import PageTitle from "../components/pageTitle"
 
 interface IData {
-    allMarkdownRemark: {
-      id: number
+  allMarkdownRemark: {
+    id: number
+    excerpt: string
+    html: string
+    nodes: Array<{
       excerpt: string
-      html: string
-      nodes: Array<{
-        excerpt: string
-        fields: {
-          slug: string
-        }
-      }>
-      frontmatter: {
-        title: string
-        date: string
-        post_modified: string
-        description: string
-        tags: string[]
-        draft: boolean
-      }
-    }
-    site: {
-      siteMetadata: {
-        title: string
-        subTitle: string
-      }
-    }
-    previous: {
       fields: {
         slug: string
       }
-      frontmatter: {
-        title: string
-      }
+    }>
+    frontmatter: {
+      title: string
+      date: string
+      post_modified: string
+      description: string
+      tags: string[]
+      draft: boolean
     }
-    next: {
-      fields: {
-        slug: string
-      }
-      frontmatter: {
-        title: string
-      }
+  }
+  site: {
+    siteMetadata: {
+      title: string
+      subTitle: string
     }
+  }
+  previous: {
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      title: string
+    }
+  }
+  next: {
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      title: string
+    }
+  }
 }
-const BlogList = ({ data, pageContext }: {data: IData, pageContext: any} ) => {
+const BlogList = ({ data, pageContext }: { data: IData; pageContext: any }) => {
   const subTitle = data.site?.siteMetadata?.subTitle || ``
   const nodes = data.allMarkdownRemark?.nodes
 

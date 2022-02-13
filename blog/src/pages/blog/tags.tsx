@@ -6,7 +6,6 @@ import Tags from "../../components/tags"
 import Article from "../../components/postArticle"
 
 const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = () => {
-
   return (
     <Layout>
       <Article>
