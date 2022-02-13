@@ -37,7 +37,6 @@ const Categories = ({
   data: IData
 }) => {
   const { category } = pageContext
-  const totalCount = data.allMarkdownRemark.totalCount
   const nodes = data.allMarkdownRemark.nodes
   console.log(nodes)
 

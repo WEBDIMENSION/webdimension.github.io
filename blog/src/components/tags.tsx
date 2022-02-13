@@ -35,7 +35,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
 
   // const title: string = data.site.siteMetadata?.title
   const group: any = data.allMarkdownRemark?.group
-  group.sort((a, b) => b.totalCount - a.totalCount)
+  group?.sort((a: any, b: any) => b.totalCount - a.totalCount)
 
   const sideBarTagsCount: number = 24
   const AllTagsCount = data.allMarkdownRemark?.group.length
@@ -44,7 +44,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
   return (
     <div>
       <UlWrapper>
-        {group.slice(0, tagsCount).map(tag => (
+        {group.slice(0, tagsCount).map((tag: any) => (
           <LiWrapper key={tag.fieldValue}>
             <div>
               <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}/`}>

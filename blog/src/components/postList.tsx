@@ -5,17 +5,46 @@ import IconButton from "@mui/material/IconButton"
 import LocalOfferIcon from "@mui/icons-material/LocalOffer"
 import kebabCase from "lodash/kebabCase"
 
+// interface INode {
+//   excerpt?: string | null | undefined
+//   fields?: { slug?: string | null | undefined } | null | undefined
+//   frontmatter?:
+//     | {
+//         date?: any | null | undefined
+//         post_modified?: any | null | undefined
+//         title?: string | null | undefined
+//         description?: string | null | undefined
+//         tags?: Array<{
+//           tag: string
+//         }>
+//       }
+//     | null
+//     | undefined
+// }
+
+// interface INodes {
+//   site?:
+//   | {
+//       siteMetadata?: { title?: string | null | undefined } | null | undefined
+//     }
+//   | null
+//   | undefined
+// allMarkdownRemark: {
+//   nodes: Array<{
+//     node: INode
+//   }>
+// }
+// }
+
 const PostList = ({ nodes }: { nodes: any }) => {
   return (
     <OlWrapper>
-      {nodes.map(node => {
-        const title = node.frontmatter?.title || node.fields?.slug
+      {nodes.map((node: any) => {
+        const title = node?.frontmatter?.title || node.fields?.slug
 
         return (
           <li key={node.fields?.slug} className={"postList"}>
-            <article
-              className="post-list-item"
-            >
+            <article className="post-list-item">
               <h2>
                 <Link to={"/blog" + node.fields?.slug || ""} itemProp="url">
                   <span itemProp="headline">{title}</span>
@@ -31,7 +60,7 @@ const PostList = ({ nodes }: { nodes: any }) => {
                 itemProp="description"
               />
               <ul className={"tags"}>
-                {node.frontmatter?.tags?.map(tag => {
+                {node.frontmatter?.tags?.map((tag: any) => {
                   return (
                     <li key={tag}>
                       <IconButton>

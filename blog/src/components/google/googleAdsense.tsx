@@ -5,10 +5,9 @@ import { useLocation } from "@reach/router"
 export const GoogleAds = () => {
   const location = useLocation()
   const path = location?.pathname || ""
-  console.log(path)
 
   useEffect(() => {
-    ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    (window.adsbygoogle = window.adsbygoogle || []).push({})
   }, [path])
 
   if (process.env.NODE_ENV == "development") {

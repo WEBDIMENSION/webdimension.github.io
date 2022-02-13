@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 declare namespace GatsbyTypes {
 type Maybe<T> = T | undefined;
 type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -22,8 +20,6 @@ type Scalars = {
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: never;
 };
-
-
 
 
 
@@ -4050,4 +4046,9 @@ type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
 
 type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
+}
+
+/* eslint-disable */
+interface Window {
+  adsbygoogle?: { [key: string]: unknown }[];
 }

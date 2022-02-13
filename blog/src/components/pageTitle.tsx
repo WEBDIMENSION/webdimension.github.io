@@ -13,6 +13,8 @@ const PageTitle = ({
       {(() => {
         if (prefixTitle) {
           return <div className="prefix">{prefixTitle}:</div>
+        }else{
+          return ""
         }
       })()}
       <h1>{title}</h1>

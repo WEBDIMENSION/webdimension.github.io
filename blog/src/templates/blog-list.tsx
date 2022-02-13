@@ -7,9 +7,52 @@ import Article from "../components/postArticle"
 import PageNation from "../components/pageNation"
 import PageTitle from "../components/pageTitle"
 
-const BlogList = ({ data, pageContext }) => {
+interface IData {
+    allMarkdownRemark: {
+      id: number
+      excerpt: string
+      html: string
+      nodes: Array<{
+        excerpt: string
+        fields: {
+          slug: string
+        }
+      }>
+      frontmatter: {
+        title: string
+        date: string
+        post_modified: string
+        description: string
+        tags: string[]
+        draft: boolean
+      }
+    }
+    site: {
+      siteMetadata: {
+        title: string
+        subTitle: string
+      }
+    }
+    previous: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+    next: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+}
+const BlogList = ({ data, pageContext }: {data: IData, pageContext: any} ) => {
   const subTitle = data.site?.siteMetadata?.subTitle || ``
-  const nodes = data.allMarkdownRemark.nodes
+  const nodes = data.allMarkdownRemark?.nodes
 
   if (nodes.length === 0) {
     return (

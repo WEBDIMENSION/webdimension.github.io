@@ -30,14 +30,15 @@ const Categories = () => {
     }
   `)
 
-  const group: any = data.allMarkdownRemark?.group
+  const group = data.allMarkdownRemark?.group
 
+  console.log(group)
   return (
     <ul>
-      {group.map(tag => (
-        <li key={tag.fieldValue}>
-          <Link to={`/blog/categories/${kebabCase(tag.fieldValue)}/`}>
-            {tag.fieldValue} ({tag.totalCount})
+      {group.map(category => (
+        <li key={category.fieldValue}>
+          <Link to={`/blog/categories/${kebabCase(category.fieldValue)}/`}>
+            {category.fieldValue} ({category.totalCount})
           </Link>
         </li>
       ))}

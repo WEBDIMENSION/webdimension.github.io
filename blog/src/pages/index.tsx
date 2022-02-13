@@ -6,6 +6,25 @@ import PostList from "../components/postList"
 import Article from "../components/postArticle"
 import styled from "styled-components"
 
+// interface INode {
+//   nodes: Array<{
+//     node: {
+//       fieldes: {
+//         slug?: string
+//       }
+//       expect: string
+//       formatter: {
+//         date?: string
+//         post_modified?: string
+//         title?: string
+//         description?: string
+//         tags?: Array<{
+//           tag: string
+//         }>
+//       }
+//     }
+//   }>
+// }
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({
   data,
 }) => {
