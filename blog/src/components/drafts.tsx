@@ -48,12 +48,14 @@ const Drafts = () => {
     <DiWrapper>
       {(() => {
         if (draftsLength > 0) {
-          return <Link to={"/blog/drafts/"}>
-            <IconButton>
-              <ListIcon />
-            </IconButton>
-            Draft
-          </Link>
+          return (
+            <Link to={"/blog/drafts/"}>
+              <IconButton>
+                <ListIcon />
+              </IconButton>
+              Draft
+            </Link>
+          )
         } else {
           return ""
         }

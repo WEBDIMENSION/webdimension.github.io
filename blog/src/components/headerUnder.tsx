@@ -5,7 +5,6 @@ import Mode from "../components/mode"
 import Drawer from "../components/drawer"
 
 const headerUnder = () => {
-
   return (
     <DivWrapper>
       <Box

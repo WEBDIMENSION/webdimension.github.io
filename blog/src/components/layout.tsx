@@ -16,7 +16,6 @@ import GoogleAds from "../components/google/googleAdsense"
 import { Link as Scroll } from "react-scroll"
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
-
   const location = useLocation()
 
   const rootPath = `/`

@@ -7,7 +7,7 @@ export const GoogleAds = () => {
   const path = location?.pathname || ""
 
   useEffect(() => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({})
+    ;(window.adsbygoogle = window.adsbygoogle || []).push({})
   }, [path])
 
   if (process.env.NODE_ENV == "development") {

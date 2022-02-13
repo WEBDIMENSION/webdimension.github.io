@@ -13,7 +13,6 @@ import SideBarContentBottom from "../components/sideBarContentBottom"
 import IconButton from "@mui/material/IconButton"
 
 const BioDescription = ({ isSideBar }: { isSideBar: boolean }) => {
-
   return (
     <DivWrapper className="bio">
       WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。
