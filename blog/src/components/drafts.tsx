@@ -45,22 +45,24 @@ const Drafts = () => {
 
   // if (draftsLength > 0) {
   return (
-    <DiWrapper>
+    <>
       {(() => {
         if (draftsLength > 0) {
           return (
-            <Link to={"/blog/drafts/"}>
-              <IconButton>
-                <ListIcon />
-              </IconButton>
-              Draft
-            </Link>
+            <DiWrapper>
+              <Link to={"/blog/drafts/"}>
+                <IconButton>
+                  <ListIcon />
+                </IconButton>
+                Draft
+              </Link>
+            </DiWrapper>
           )
         } else {
           return ""
         }
       })()}
-    </DiWrapper>
+    </>
   )
   // }
   // else {
