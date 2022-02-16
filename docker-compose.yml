@@ -7,7 +7,7 @@ services:
       - ./blog:/blog:delegated
 #      - /blog/node_modules:/blog/node_modules
       - /blog/.cache
-      - /blog/.vscode
+#      - /blog/.vscode
       - /blog/build
       - /blog/node_modules
       - /blog/public
@@ -20,7 +20,7 @@ services:
       - NODE_ENV=${NODE_ENV}
       - SITE_URL=${SITE_URL}
       - GOOGLE_ANALYTICS_TRACKING_ID=${GOOGLE_ANALYTICS_TRACKING_ID}
-      - GOOGLE_ADSENSE_TRACKING_ID=${GOOGLE_ADSENSE_TRACKING_ID
+      - GOOGLE_ADSENSE_TRACKING_ID=${GOOGLE_ADSENSE_TRACKING_ID}
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
 #    command: gatsby develop --host 0.0.0.0

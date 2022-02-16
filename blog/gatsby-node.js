@@ -9,11 +9,7 @@ require("ts-node").register({
 
 require("./src/__generated__/gatsby-types")
 
-const {
-  createPages,
-  onCreateNode,
-  createSchemaCustomization,
-} = require("./gatsby-node/index")
+const { createPages, onCreateNode, createSchemaCustomization } = require("./gatsby-node/index")
 
 exports.createPages = createPages
 exports.onCreateNode = onCreateNode

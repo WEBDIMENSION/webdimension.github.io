@@ -34,10 +34,7 @@ const Header = () => {
   }
   return (
     <HeaderWrapper>
-      <Box
-        sx={{ display: "flex", justifyContent: "space-between" }}
-        className="header"
-      >
+      <Box sx={{ display: "flex", justifyContent: "space-between" }} className="header">
         <Box sx={{ display: "flex" }} className="logo">
           <StaticImage
             className="bio-avatar"

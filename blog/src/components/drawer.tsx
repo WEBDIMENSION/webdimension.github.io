@@ -21,12 +21,7 @@ const drawer = () => {
 
   return (
     <DivWrapper>
-      <IconButton
-        color="inherit"
-        onClick={toggleDrawer}
-        size="large"
-        aria-label="menu"
-      >
+      <IconButton color="inherit" onClick={toggleDrawer} size="large" aria-label="menu">
         <Menu />
       </IconButton>
       <Drawer open={isOpen} onClose={toggleDrawer} direction="right">

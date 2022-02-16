@@ -72,16 +72,9 @@ const Bio = () => {
         />
         <div className={"profDiv"}>Author:&nbsp;{author?.name}</div>
         <div className={"profDiv"}>{author?.summary}</div>
+        <div className={"profDiv"}>WEB系バックエンドを主軸にフロントエンドまでが守備範囲。</div>
         <div className={"profDiv"}>
-          WEB系バックエンドを主軸にフロントエンドまでが守備範囲。
-        </div>
-        <div className={"profDiv"}>
-          <IconButton
-            color="inherit"
-            size="large"
-            aria-label="Contact"
-            href={"/contact"}
-          >
+          <IconButton color="inherit" size="large" aria-label="Contact" href={"/contact"}>
             <EmailIcon />
           </IconButton>
           <Link to={"/contact/"}>Contact</Link>

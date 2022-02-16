@@ -6,9 +6,7 @@ import Article from "../components/postArticle"
 import Tags from "../components/tags"
 import PageTitle from "../components/pageTitle"
 
-const NotFoundPage: React.FC<
-  PageProps<GatsbyTypes.NotFoundQueryQuery>
-> = () => {
+const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundQueryQuery>> = () => {
   return (
     <Layout>
       <Seo title="404: Not Found - お問い合わせのページは見つかりませんでした。" />

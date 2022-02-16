@@ -2,7 +2,7 @@
  * Tags component that queries for data
  * with Gatsby's useStaticQuery component
  *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
+ * See' https'//www.gatsbyjs.com/docs/use-static-query/
  */
 
 import React from "react"
@@ -19,10 +19,7 @@ const Drafts = () => {
           title
         }
       }
-      allMarkdownRemark(
-        filter: { frontmatter: { draft: { in: [true] } } }
-        limit: 2000
-      ) {
+      allMarkdownRemark(filter: { frontmatter: { draft: { in: [true] } } }, limit: 2000) {
         totalCount
         nodes {
           fields {
@@ -38,12 +35,8 @@ const Drafts = () => {
     }
   `)
 
-  const draftsLength: number =
-    process.env.NODE_ENV === "production"
-      ? 0
-      : data.allMarkdownRemark.nodes.length
+  const draftsLength: number = process.env.NODE_ENV === "production" ? 0 : data.allMarkdownRemark.nodes.length
 
-  // if (draftsLength > 0) {
   return (
     <>
       {(() => {
@@ -64,10 +57,6 @@ const Drafts = () => {
       })()}
     </>
   )
-  // }
-  // else {
-  //   return ""
-  // }
 }
 
 export default Drafts
@@ -75,6 +64,7 @@ const DiWrapper = styled.div`
   text-align: center;
   border: 1px var(--colorWarning) solid;
   border-radius: 8px;
+
   button {
     color: var(--colorWarning) !important;
   }

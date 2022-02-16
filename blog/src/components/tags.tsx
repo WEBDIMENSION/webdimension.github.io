@@ -21,10 +21,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
           title
         }
       }
-      allMarkdownRemark(
-        filter: { frontmatter: { draft: { in: [false] } } }
-        limit: 2000
-      ) {
+      allMarkdownRemark(filter: { frontmatter: { draft: { in: [false] } } }, limit: 2000) {
         group(field: frontmatter___tags) {
           fieldValue
           totalCount
@@ -47,9 +44,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
         {group.slice(0, tagsCount).map((tag: any) => (
           <LiWrapper key={tag.fieldValue}>
             <div>
-              <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue}
-              </Link>
+              <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}/`}>{tag.fieldValue}</Link>
               &nbsp;({tag.totalCount})
             </div>
           </LiWrapper>

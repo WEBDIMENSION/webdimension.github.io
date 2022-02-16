@@ -1,13 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 
-const PageTitle = ({
-  title,
-  prefixTitle,
-}: {
-  title: string
-  prefixTitle: string
-}) => {
+const PageTitle = ({ title, prefixTitle }: { title: string; prefixTitle: string }) => {
   return (
     <DivWrapper className="pageTitle">
       {(() => {

@@ -20,9 +20,7 @@ const Footer = () => {
     <FooterWrapper>
       <p>
         <small>{data.site?.siteMetadata?.title}</small>
-        <small>
-          &copy;2007&nbsp;{data.site?.siteMetadata?.author?.company}
-        </small>
+        <small>&copy;2007&nbsp;{data.site?.siteMetadata?.author?.company}</small>
       </p>
     </FooterWrapper>
   )

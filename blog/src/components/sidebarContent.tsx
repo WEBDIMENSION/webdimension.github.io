@@ -1,13 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const SidebarContent = ({
-  title,
-  children,
-}: {
-  title: string
-  children?: React.ReactNode
-}) => {
+const SidebarContent = ({ title, children }: { title: string; children?: React.ReactNode }) => {
   return (
     <ContentWrapper>
       <h2>{title}</h2>

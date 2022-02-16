@@ -16,10 +16,7 @@ const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
       />
 
       <Article>
-        <PageTitle
-          title={"お問い合わせありがとうございました"}
-          prefixTitle=""
-        />
+        <PageTitle title={"お問い合わせありがとうございました"} prefixTitle="" />
         <section>
           <PWrapper>
             返信にはお時間頂く場合があります。

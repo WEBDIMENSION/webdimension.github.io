@@ -4,11 +4,7 @@ import { GatsbyNode } from "gatsby"
 
 const _ = require("lodash")
 
-export const onCreateNode: GatsbyNode["onCreateNode"] = ({
-  node,
-  getNode,
-  actions,
-}) => {
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -20,17 +16,16 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   }
 }
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
-  ({ actions }) => {
-    const { createTypes } = actions
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
+  const { createTypes } = actions
 
-    // Explicitly define the siteMetadata {} object
-    // This way those will always be defined even if removed from gatsby-config.js
+  // Explicitly define the siteMetadata {} object
+  // This way those will always be defined even if removed from gatsby-config.js
 
-    // Also, explicitly define the Markdown frontmatter
-    // This way the "MarkdownRemark" queries will return `null` even when no
-    // blog posts are stored inside "content/blog" instead of returning an error
-    createTypes(`
+  // Also, explicitly define the Markdown frontmatter
+  // This way the "MarkdownRemark" queries will return `null` even when no
+  // blog posts are stored inside "content/blog" instead of returning an error
+  createTypes(`
     type SiteSiteMetadata {
       author: Author
       siteUrl: String
@@ -61,18 +56,14 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       slug: String
     }
   `)
-  }
+}
 
 // export const createPages = async ({graphql, actions}) => {
-export const createPages: GatsbyNode["createPages"] = async ({
-  graphql,
-  actions,
-}) => {
+export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
   const { createPage } = actions
   const postsPerPage = 10 //記事一覧に表示させる記事数
 
-  const inDraft =
-    process.env.NODE_ENV === "production" ? [false] : [true, false]
+  const inDraft = process.env.NODE_ENV === "production" ? [false] : [true, false]
   console.log(inDraft)
   const result: any = await graphql<{
     allMarkdownRemark: GatsbyTypes.Query["allMarkdownRemark"]
@@ -102,8 +93,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   if (data === undefined) throw "データが見つかりませんでした"
 
   // const posts: GatsbyTypes.MarkdownRemarkConnection["nodes"] = result.data.allMarkdownRemark.nodes
-  const allPosts: GatsbyTypes.MarkdownRemarkConnection["nodes"] =
-    result.data.allMarkdownRemark.nodes
+  const allPosts: GatsbyTypes.MarkdownRemarkConnection["nodes"] = result.data.allMarkdownRemark.nodes
 
   // let drafts = posts.reduce((drafts, edge) => {
   //   const edgeDraft: any = edge?.frontmatter?.draft
@@ -125,8 +115,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   if (drafts.length > 0) {
     drafts.forEach((draft, index: number) => {
       const previousPostId = index === 0 ? null : drafts[index - 1].id
-      const nextPostId =
-        index === drafts.length - 1 ? null : drafts[index + 1].id
+      const nextPostId = index === drafts.length - 1 ? null : drafts[index + 1].id
 
       // console.log(post.frontmatter?.draft)
       createPage({
@@ -215,9 +204,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   tags.forEach(item => {
     const tag = item
-    const tagsCount = posts.filter(post =>
-      post.frontmatter?.tags?.includes(item)
-    ).length
+    const tagsCount = posts.filter(post => post.frontmatter?.tags?.includes(item)).length
     const numPages = Math.ceil(tagsCount / postsPerPage) //分割されるページの数
     for (let index = 0; index < numPages; index++) {
       const pageNumber = index + 1
@@ -263,9 +250,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   categories.forEach(item => {
     const category = item
-    const categoriesCount = posts.filter(post =>
-      post.frontmatter?.categories?.includes(item)
-    ).length
+    const categoriesCount = posts.filter(post => post.frontmatter?.categories?.includes(item)).length
     const numPages = Math.ceil(categoriesCount / postsPerPage) //分割されるページの数
     for (let index = 0; index < numPages; index++) {
       const pageNumber = index + 1

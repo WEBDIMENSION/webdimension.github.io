@@ -26,25 +26,11 @@ const DarkModeToggle = () => {
   return (
     <DarkModeSwitch>
       <ThemeProvider theme={theme}>
-        <IconButton
-          size="large"
-          aria-label="light"
-          onClick={darkMode.toggle}
-          color={"primary"}
-        >
+        <IconButton size="large" aria-label="light" onClick={darkMode.toggle} color={"primary"}>
           <WbSunnyIcon />
         </IconButton>
-        <Switch
-          checked={darkMode.value}
-          onChange={darkMode.toggle}
-          color={"warning"}
-        />
-        <IconButton
-          size="large"
-          aria-label="dark"
-          onClick={darkMode.toggle}
-          color={"secondary"}
-        >
+        <Switch checked={darkMode.value} onChange={darkMode.toggle} color={"warning"} />
+        <IconButton size="large" aria-label="dark" onClick={darkMode.toggle} color={"secondary"}>
           <DarkModeIcon />
         </IconButton>
       </ThemeProvider>

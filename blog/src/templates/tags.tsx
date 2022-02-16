@@ -29,13 +29,7 @@ interface IPageContext {
   tag: string
 }
 
-const Tags = ({
-  pageContext,
-  data,
-}: {
-  pageContext: IPageContext
-  data: IData
-}) => {
+const Tags = ({ pageContext, data }: { pageContext: IPageContext; data: IData }) => {
   const { tag } = pageContext
   const nodes = data.allMarkdownRemark.nodes
 

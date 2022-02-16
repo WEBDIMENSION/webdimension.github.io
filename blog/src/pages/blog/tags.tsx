@@ -9,11 +9,7 @@ const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = () => {
   return (
     <Layout>
       <Article>
-        <Seo
-          title={"Tags (タグ)一覧"}
-          DisplaySubTitle={true}
-          description={"Tags (タグ)一覧"}
-        />
+        <Seo title={"Tags (タグ)一覧"} DisplaySubTitle={true} description={"Tags (タグ)一覧"} />
 
         <h1>Tags</h1>
         <section>

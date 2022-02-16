@@ -9,11 +9,7 @@ import PageTitle from "../components/pageTitle"
 const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
   return (
     <Layout>
-      <Seo
-        title="おっさんWEBエンジニアのプロファイル"
-        DisplaySubTitle={false}
-        description={"プロファイル"}
-      />
+      <Seo title="おっさんWEBエンジニアのプロファイル" DisplaySubTitle={false} description={"プロファイル"} />
       <Article>
         <PageTitle title={"AboutMe"} prefixTitle="" />
         <section>

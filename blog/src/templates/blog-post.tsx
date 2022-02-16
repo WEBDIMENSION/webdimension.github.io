@@ -57,11 +57,7 @@ const BlogPost = ({ data }: Props) => {
         description={post.frontmatter.description || post.excerpt + " の記事"}
       />
 
-      <ArticleWrapper
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <ArticleWrapper className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <PageTitle title={post.frontmatter.title} prefixTitle="" />
         </header>
@@ -73,10 +69,7 @@ const BlogPost = ({ data }: Props) => {
             return <div className={"draft"}>Draft</div>
           }
         })()}
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
         <hr />
       </ArticleWrapper>
       <NavWrapper className="blogPostNav">
@@ -146,11 +139,7 @@ const NavWrapper = styled.nav`
 `
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostBySlug($id: String, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         title

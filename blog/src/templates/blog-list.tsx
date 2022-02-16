@@ -57,26 +57,17 @@ const BlogList = ({ data, pageContext }: { data: IData; pageContext: any }) => {
   if (nodes.length === 0) {
     return (
       <Layout>
-        <Seo
-          title={subTitle + "記事一覧"}
-          DisplaySubTitle={true}
-          description={"記事一覧"}
-        />
+        <Seo title={subTitle + "記事一覧"} DisplaySubTitle={true} description={"記事一覧"} />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No blog posts found. Add markdown posts to "content/blog" (or the directory you specified for the
+          "gatsby-source-filesystem" plugin in gatsby-config.js).
         </p>
       </Layout>
     )
   } else {
     return (
       <Layout>
-        <Seo
-          title={"All posts (記事一覧)"}
-          DisplaySubTitle={true}
-          description={"All posts (記事一覧)"}
-        />
+        <Seo title={"All posts (記事一覧)"} DisplaySubTitle={true} description={"All posts (記事一覧)"} />
         <Article>
           <PageTitle title={"Blog"} prefixTitle="" />
           <section>

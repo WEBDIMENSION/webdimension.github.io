@@ -11,17 +11,8 @@ const PageNation = ({ pageContext }: { pageContext: any }) => {
     <nav>
       <UlWrapper>
         {Array.from({ length: numPages }, (_, i) => (
-          <li
-            key={`pagination-number${i + 1}`}
-            className={`${i + 1}` == currentPage ? "thisPage" : "etherPage"}
-          >
-            <Link
-              to={`${linkPrefix}${i === 0 ? "" : linkSuffix}${
-                i === 0 ? "" : i + 1
-              }/`}
-            >
-              {i + 1}
-            </Link>
+          <li key={`pagination-number${i + 1}`} className={`${i + 1}` == currentPage ? "thisPage" : "etherPage"}>
+            <Link to={`${linkPrefix}${i === 0 ? "" : linkSuffix}${i === 0 ? "" : i + 1}/`}>{i + 1}</Link>
           </li>
         ))}
       </UlWrapper>

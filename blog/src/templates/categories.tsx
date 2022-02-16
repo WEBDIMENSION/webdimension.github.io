@@ -29,13 +29,7 @@ interface IPageContext {
   category: string
 }
 
-const Categories = ({
-  pageContext,
-  data,
-}: {
-  pageContext: IPageContext
-  data: IData
-}) => {
+const Categories = ({ pageContext, data }: { pageContext: IPageContext; data: IData }) => {
   const { category } = pageContext
   const nodes = data.allMarkdownRemark.nodes
   console.log(nodes)
@@ -69,9 +63,7 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { categories: { in: [$category] }, draft: { in: [false] } }
-      }
+      filter: { frontmatter: { categories: { in: [$category] }, draft: { in: [false] } } }
     ) {
       totalCount
       nodes {

@@ -322,21 +322,11 @@ export type SiteBuildMetadataBuildTimeArgs = {
   locale?: InputMaybe<Scalars["String"]>
 }
 
-export type GatsbyImageFormat =
-  | "NO_CHANGE"
-  | "AUTO"
-  | "JPG"
-  | "PNG"
-  | "WEBP"
-  | "AVIF"
+export type GatsbyImageFormat = "NO_CHANGE" | "AUTO" | "JPG" | "PNG" | "WEBP" | "AVIF"
 
 export type GatsbyImageLayout = "FIXED" | "FULL_WIDTH" | "CONSTRAINED"
 
-export type GatsbyImagePlaceholder =
-  | "DOMINANT_COLOR"
-  | "TRACED_SVG"
-  | "BLURRED"
-  | "NONE"
+export type GatsbyImagePlaceholder = "DOMINANT_COLOR" | "TRACED_SVG" | "BLURRED" | "NONE"
 
 export type MarkdownHeading = {
   id?: Maybe<Scalars["String"]>
@@ -569,11 +559,7 @@ export type ImageSharpFluid = {
   presentationHeight: Scalars["Int"]
 }
 
-export type ImagePlaceholder =
-  | "DOMINANT_COLOR"
-  | "TRACED_SVG"
-  | "BLURRED"
-  | "NONE"
+export type ImagePlaceholder = "DOMINANT_COLOR" | "TRACED_SVG" | "BLURRED" | "NONE"
 
 export type BlurredOptions = {
   /** Width of the generated low-res preview. Default is 20px */
@@ -3275,10 +3261,7 @@ export type BioQueryQuery = {
                   }
                 | null
                 | undefined
-              social?:
-                | { twitter?: string | null | undefined }
-                | null
-                | undefined
+              social?: { twitter?: string | null | undefined } | null | undefined
             }
           | null
           | undefined
@@ -3296,10 +3279,7 @@ export type Unnamed_1_Query = {
           | {
               title?: string | null | undefined
               description?: string | null | undefined
-              social?:
-                | { twitter?: string | null | undefined }
-                | null
-                | undefined
+              social?: { twitter?: string | null | undefined } | null | undefined
             }
           | null
           | undefined

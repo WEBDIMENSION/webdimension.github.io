@@ -18,10 +18,7 @@ const Categories = () => {
           title
         }
       }
-      allMarkdownRemark(
-        filter: { frontmatter: { draft: { in: [false] } } }
-        limit: 2000
-      ) {
+      allMarkdownRemark(filter: { frontmatter: { draft: { in: [false] } } }, limit: 2000) {
         group(field: frontmatter___categories) {
           fieldValue
           totalCount

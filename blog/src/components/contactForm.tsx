@@ -17,11 +17,7 @@ const ContactForm = () => {
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
 
-  const handleChange = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
     console.log(event.target?.name)
     switch (event?.target?.name) {
       case "name":
@@ -46,8 +42,7 @@ const ContactForm = () => {
     if (subject === "") return true
     if (message === "") return true
 
-    const regex =
-      /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     if (email.length > 1 && !regex.test(email)) return true
 
     return false
@@ -66,14 +61,7 @@ const ContactForm = () => {
 
       <div className={"inputBlock"}>
         <label htmlFor={"name"}>名前 : </label>
-        <input
-          type={"text"}
-          name={"name"}
-          onChange={handleChange}
-          placeholder={"山田太郎"}
-          value={name}
-          required
-        />
+        <input type={"text"} name={"name"} onChange={handleChange} placeholder={"山田太郎"} value={name} required />
       </div>
 
       <div className={"inputBlock"}>
@@ -91,14 +79,7 @@ const ContactForm = () => {
 
       <div className={"inputBlock"}>
         <label htmlFor={"subject"}>subject : </label>
-        <input
-          type={"text"}
-          name={"subject"}
-          onChange={handleChange}
-          placeholder={"件名"}
-          value={subject}
-          required
-        />
+        <input type={"text"} name={"subject"} onChange={handleChange} placeholder={"件名"} value={subject} required />
       </div>
 
       <div className={"inputBlock"}>
