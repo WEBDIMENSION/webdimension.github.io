@@ -13,7 +13,6 @@ export const GoogleAds = ({ slotKey }: { slotKey: string }) => {
     const sideUpper: unknown = process.env.GOOGLE_ADSENSE_SLOT_SIDE_UPPER
     const sideLower: unknown = process.env.GOOGLE_ADSENSE_SLOT_SIDE_LOPER
     const contentsLower: unknown = process.env.GOOGLE_ADSENSE_SLOT_CONTENTS_LOWPER
-    const drawer: unknown = process.env.GOOGLE_ADSENSE_DRAWER
     switch (slotKey) {
       case "sideUpper":
         return sideUpper
@@ -21,8 +20,6 @@ export const GoogleAds = ({ slotKey }: { slotKey: string }) => {
         return sideLower
       case "contentsLower":
         return contentsLower
-      case "drawer":
-        return drawer
       default:
     }
   }
