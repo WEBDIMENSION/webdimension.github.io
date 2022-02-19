@@ -17,10 +17,6 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  "rules": {
-  }
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {}
 }

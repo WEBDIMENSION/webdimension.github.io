@@ -30,3 +30,6 @@ gatsby_build:
 
 act:
 	cd $(PARENT_DIR) &&  act push -v
+
+vscode:
+	cd $(PARENT_DIR) &&  code blog/.vscode/workspace.code-workspace

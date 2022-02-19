@@ -2,6 +2,11 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import { useLocation } from "@reach/router"
 
+declare global {
+  interface Window {
+    adsbygoogle?: { [key: string]: unknown }[]
+  }
+}
 export const GoogleAds = () => {
   const location = useLocation()
   const path = location?.pathname || ""
