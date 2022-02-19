@@ -33,6 +33,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         <Grid item xs={12}>
           <Drafts />
           <Header />
+          <GoogleAdsense slotKey={"contentsLower"} />
           <DivWrapper className="contents">
             <Grid container>
               <div className={"page_top"}>
