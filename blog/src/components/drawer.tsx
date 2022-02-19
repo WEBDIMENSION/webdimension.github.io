@@ -11,7 +11,6 @@ import InfoIcon from "@mui/icons-material/Info"
 import EmailIcon from "@mui/icons-material/Email"
 import ListIcon from "@mui/icons-material/List"
 import Mode from "./mode"
-import GoogleAds from "../components/google/googleAdsense"
 
 const drawer = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -67,7 +66,6 @@ const drawer = () => {
           Display
           <Mode />
         </div>
-        {/*<GoogleAds />*/}
       </Drawer>
     </DivWrapper>
   )
@@ -75,6 +73,10 @@ const drawer = () => {
 
 export default drawer
 const DivWrapper = styled.div`
+  div.drawerAdsense {
+    width: 100%;
+  }
+
   nav {
     background-color: var(--bgColorScondary) !important;
     opacity: 0.95;

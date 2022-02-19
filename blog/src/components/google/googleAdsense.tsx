@@ -7,7 +7,26 @@ declare global {
     adsbygoogle?: { [key: string]: unknown }[]
   }
 }
-export const GoogleAds = () => {
+
+export const GoogleAds = ({ slotKey }: { slotKey: string }) => {
+  const getSlot = (slotKey: string) => {
+    const sideUpper: unknown = process.env.GOOGLE_ADSENSE_SLOT_SIDE_UPPER
+    const sideLower: unknown = process.env.GOOGLE_ADSENSE_SLOT_SIDE_LOPER
+    const contentsLower: unknown = process.env.GOOGLE_ADSENSE_SLOT_CONTENTS_LOWPER
+    const drawer: unknown = process.env.GOOGLE_ADSENSE_DRAWER
+    switch (slotKey) {
+      case "sideUpper":
+        return sideUpper
+      case "sideLower":
+        return sideLower
+      case "contentsLower":
+        return contentsLower
+      case "drawer":
+        return drawer
+      default:
+    }
+  }
+
   const location = useLocation()
   const path = location?.pathname || ""
 
@@ -15,31 +34,28 @@ export const GoogleAds = () => {
     ;(window.adsbygoogle = window.adsbygoogle || []).push({})
   }, [path])
 
-  // if (process.env.NODE_ENV == "development") {
-  //   console.log("env: dev")
-  //   return (
-  //     <AsideWrapper className={"adArea"}>
-  //       <div className={"adsenseDummy"}>
-  //         <span>Adsense</span>
-  //       </div>
-  //     </AsideWrapper>
-  //   )
-  // } else {
-  console.log("env: prod")
-  console.log(process.env.GOOGLE_ADSENSE_TRACKING_ID)
-  return (
-    <AsideWrapper className={"adArea"}>
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block", width: "100%" }}
-        data-ad-client={process.env.GOOGLE_ADSENSE_TRACKING_ID}
-        data-ad-slot="4206718020"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
-    </AsideWrapper>
-  )
-  // }
+  if (process.env.NODE_ENV == "development") {
+    return (
+      <AsideWrapper className={"adArea"}>
+        <div className={"adsenseDummy"}>
+          <span>Adsense</span>
+        </div>
+      </AsideWrapper>
+    )
+  } else {
+    return (
+      <AsideWrapper className={"adArea"}>
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block", width: "100%" }}
+          data-ad-client={process.env.GOOGLE_ADSENSE_TRACKING_ID}
+          data-ad-slot={getSlot(slotKey)}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      </AsideWrapper>
+    )
+  }
 }
 export default GoogleAds
 

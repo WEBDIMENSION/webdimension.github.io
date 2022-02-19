@@ -12,7 +12,7 @@ import BioDescription from "./bioDescription"
 import Drafts from "./drafts"
 import IconButton from "@mui/material/IconButton"
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
-import GoogleAds from "../components/google/googleAdsense"
+import GoogleAdsense from "../components/google/googleAdsense"
 import { Link as Scroll } from "react-scroll"
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
@@ -59,18 +59,18 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                       <BioDescription isSideBar={true} />
                     </SidebarContent>
                   </nav>
-                  {/*<GoogleAds />*/}
+                  <GoogleAdsense slotKey={"sideUpper"} />
                   <nav>
                     <SidebarContent title="TAGS">
                       <Tags isSideBar={true} />
                     </SidebarContent>
                   </nav>
-                  {/*<GoogleAds />*/}
+                  <GoogleAdsense slotKey={"sideLower"} />
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
                 <main className="mainContent">{children}</main>
-                <GoogleAds />
+                <GoogleAdsense slotKey={"contentsLower"} />
               </Grid>
             </Grid>
           </DivWrapper>
