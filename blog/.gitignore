@@ -68,9 +68,10 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-content/blog/*
-!content/blog/es-lint/
 !content/blog/.gitkeep
 
 gatsby-node/gatsby-node.js.default
 .vscode
+
+# content/blog/*
+# !content/blog/es-lint/
