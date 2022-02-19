@@ -59,13 +59,13 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                       <BioDescription isSideBar={true} />
                     </SidebarContent>
                   </nav>
-                  <GoogleAds />
+                  {/*<GoogleAds />*/}
                   <nav>
                     <SidebarContent title="TAGS">
                       <Tags isSideBar={true} />
                     </SidebarContent>
                   </nav>
-                  <GoogleAds />
+                  {/*<GoogleAds />*/}
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
@@ -92,12 +92,14 @@ const DivWrapper = styled.div`
     font-size: var(--fontSizeH1);
     text-align: center;
   }
+
   .sideBar {
     padding-right: 12px;
   }
 
   .mainContent {
   }
+
   .page_top {
     position: fixed;
     right: 12px;
@@ -109,6 +111,7 @@ const DivWrapper = styled.div`
     padding: 8px;
     cursor: pointer;
     transition: 0.3s;
+
     button {
       color: var(--fontColor) !important;
     }

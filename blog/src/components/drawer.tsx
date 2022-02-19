@@ -67,7 +67,7 @@ const drawer = () => {
           Display
           <Mode />
         </div>
-        <GoogleAds />
+        {/*<GoogleAds />*/}
       </Drawer>
     </DivWrapper>
   )
@@ -84,6 +84,7 @@ const DivWrapper = styled.div`
   div.closeButton {
     text-align: end;
   }
+
   div.displayMode {
     padding-left: 8px;
   }
