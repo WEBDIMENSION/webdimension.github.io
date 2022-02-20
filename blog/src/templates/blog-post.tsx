@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
-import GoogleAdsense from "../components/google/googleAdsense"
 
 interface Props {
   data: {
@@ -70,7 +69,6 @@ const BlogPost = ({ data }: Props) => {
             return <div className={"draft"}>Draft</div>
           }
         })()}
-        <GoogleAdsense slotKey={"contentsLower"} />
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
         <hr />
       </ArticleWrapper>
