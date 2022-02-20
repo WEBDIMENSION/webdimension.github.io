@@ -44,6 +44,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
               </div>
               <Grid item xs={12} md={3.5} className={"sideBar"}>
                 <Box
+                  component="div"
                   sx={{
                     display: {
                       xs: "none",
@@ -54,12 +55,6 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                   <div className={"modeWrap"}>
                     <Mode />
                   </div>
-                  <nav>
-                    <SidebarContent title="TAGS">
-                      <Tags isSideBar={true} />
-                    </SidebarContent>
-                  </nav>
-                  <GoogleAdsense slotKey={"sideLower"} />
                   {(() => {
                     if (!isRootPath) {
                       return (
@@ -69,13 +64,19 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                               <BioDescription isSideBar={true} />
                             </SidebarContent>
                           </nav>
-                          <GoogleAdsense slotKey={"sideUpper"} />
+                          {/*<GoogleAdsense slotKey={"sideUpper"} />*/}
                         </>
                       )
                     } else {
                       return ""
                     }
                   })()}
+                  <nav>
+                    <SidebarContent title="TAGS">
+                      <Tags isSideBar={true} />
+                    </SidebarContent>
+                  </nav>
+                  {/*<GoogleAdsense slotKey={"sideLower"} />*/}
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
