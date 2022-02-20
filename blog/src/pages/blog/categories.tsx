@@ -4,14 +4,14 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Categories from "../../components/categories"
 import Article from "../../components/postArticle"
+import PageTitle from "../../components/pageTitle"
 
 const CategoriesPage: React.FC<PageProps<GatsbyTypes.CategoriesQueryQuery>> = () => {
   return (
     <Layout>
       <Article>
         <Seo title={"Categories (カテゴリー)一覧"} DisplaySubTitle={true} description={"Categories (カテゴリー)一覧"} />
-
-        <h1>Categories</h1>
+        <PageTitle title={"Categories"} prefixTitle="" />
         <section>
           <Categories />
         </section>

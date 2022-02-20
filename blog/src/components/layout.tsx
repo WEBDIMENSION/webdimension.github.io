@@ -55,17 +55,27 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                     <Mode />
                   </div>
                   <nav>
-                    <SidebarContent title="ABOUT">
-                      <BioDescription isSideBar={true} />
-                    </SidebarContent>
-                  </nav>
-                  <GoogleAdsense slotKey={"sideUpper"} />
-                  <nav>
                     <SidebarContent title="TAGS">
                       <Tags isSideBar={true} />
                     </SidebarContent>
                   </nav>
                   <GoogleAdsense slotKey={"sideLower"} />
+                  {(() => {
+                    if (!isRootPath) {
+                      return (
+                        <>
+                          <nav>
+                            <SidebarContent title="ABOUT">
+                              <BioDescription isSideBar={true} />
+                            </SidebarContent>
+                          </nav>
+                          <GoogleAdsense slotKey={"sideUpper"} />
+                        </>
+                      )
+                    } else {
+                      return ""
+                    }
+                  })()}
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
@@ -77,7 +87,6 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                 {/*  }*/}
                 {/*})()}*/}
                 <main className="mainContent">{children}</main>
-                <GoogleAdsense slotKey={"contentsLower"} />
                 <GoogleAdsense slotKey={"contentsLower"} />
               </Grid>
             </Grid>

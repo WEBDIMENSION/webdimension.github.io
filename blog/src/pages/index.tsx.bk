@@ -5,8 +5,7 @@ import Seo from "../components/seo"
 import PostList from "../components/postList"
 import Article from "../components/postArticle"
 import styled from "styled-components"
-import BioDescription from "../components/bioDescription"
-import GoogleAdsense from "../components/google/googleAdsense"
+import { StaticImage } from "gatsby-plugin-image"
 
 // interface INode {
 //   nodes: Array<{
@@ -44,29 +43,20 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
     return (
       <Layout>
         <Seo title="TopPage" DisplaySubTitle={false} description={"TopPage (トップページ)、Latest post (最近の投稿)"} />
-        <DivWrapper className={"topText"}>
-          <BioDescription isSideBar={false} />
-          <p>
-            WEB系バックエンドを主軸にインフラからフロントエンドまでが守備範囲。
-            <br />
-            WEBエンジニアを目指す方への参考になれば幸いです。
-          </p>
-          <GoogleAdsense slotKey={"contentsLower"} />
-        </DivWrapper>
-        {/*<div>*/}
-        {/*  <StaticImage*/}
-        {/*    className="topImage"*/}
-        {/*    layout="fullWidth"*/}
-        {/*    formats={["auto", "png", "jpg", "avif"]}*/}
-        {/*    src="../images/top.jpg"*/}
-        {/*    // width={100}*/}
-        {/*    // height={150}*/}
-        {/*    quality={95}*/}
-        {/*    alt=""*/}
-        {/*  />*/}
-        {/*</div>*/}
+        <div>
+          <StaticImage
+            className="topImage"
+            layout="fullWidth"
+            formats={["auto", "png", "jpg", "avif"]}
+            src="../images/top.jpg"
+            // width={100}
+            // height={150}
+            quality={95}
+            alt=""
+          />
+        </div>
         <Article>
-          <H2Wrapper>-- 最近の投稿 --</H2Wrapper>
+          <H2Wrapper>Latest Post</H2Wrapper>
           <section>
             <PostList nodes={nodes} />
           </section>
@@ -77,22 +67,8 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
 }
 export default BlogIndex
 
-const DivWrapper = styled.div`
-  margin: 2.2em 0;
-  font-size: 1.2em;
-  line-height: 2em;
-  text-align: center;
-
-  p {
-    margin: 2em 0;
-    line-height: 3em;
-    background-color: var(--bgColorScondary);
-  }
-`
-
 const H2Wrapper = styled.h2`
   font-size: var(--fontSizeH1);
-  text-align: center;
 `
 
 export const pageQuery = graphql`

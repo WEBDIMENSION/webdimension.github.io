@@ -67,7 +67,7 @@ const AsideWrapper = styled.aside`
     width: 100%;
     line-height: 200px;
     text-align: center;
-    background-color: #f5f2f0;
+    background-color: #999999;
     color: #333333;
 
     span {

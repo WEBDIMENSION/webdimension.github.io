@@ -4,14 +4,14 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import Tags from "../../components/tags"
 import Article from "../../components/postArticle"
+import PageTitle from "../../components/pageTitle"
 
 const TagsPage: React.FC<PageProps<GatsbyTypes.TagsQueryQuery>> = () => {
   return (
     <Layout>
       <Article>
         <Seo title={"Tags (タグ)一覧"} DisplaySubTitle={true} description={"Tags (タグ)一覧"} />
-
-        <h1>Tags</h1>
+        <PageTitle title={"Tags"} prefixTitle="" />
         <section>
           <Tags isSideBar={false} />
         </section>

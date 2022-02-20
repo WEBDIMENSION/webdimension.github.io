@@ -50,6 +50,7 @@ interface IData {
     }
   }
 }
+
 const BlogList = ({ data, pageContext }: { data: IData; pageContext: any }) => {
   const subTitle = data.site?.siteMetadata?.subTitle || ``
   const nodes = data.allMarkdownRemark?.nodes

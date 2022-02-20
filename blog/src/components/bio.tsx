@@ -72,7 +72,7 @@ const Bio = () => {
         />
         <div className={"profDiv"}>Author:&nbsp;{author?.name}</div>
         <div className={"profDiv"}>{author?.summary}</div>
-        <div className={"profDiv"}>WEB系バックエンドを主軸にフロントエンドまでが守備範囲。</div>
+        <div className={"profDiv"}>WEB系バックエンドを主軸にインフラからフロントエンドまでが守備範囲。</div>
         <div className={"profDiv"}>
           <IconButton color="inherit" size="large" aria-label="Contact" href={"/contact"}>
             <EmailIcon />
@@ -185,6 +185,7 @@ const DivWrapper = styled.div`
 
   .bio-avatar {
     margin: 0 auto;
+
     picture > img {
       border-radius: 50%;
     }
@@ -197,6 +198,7 @@ const DivWrapper = styled.div`
     border-radius: 0.5em;
     padding: 1.5em 0;
     margin: 2em auto;
+
     .profDiv {
       text-align: center;
     }
