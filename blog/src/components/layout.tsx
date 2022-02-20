@@ -33,7 +33,6 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         <Grid item xs={12}>
           <Drafts />
           <Header />
-          <GoogleAdsense slotKey={"contentsLower"} />
           <DivWrapper className="contents">
             <Grid container>
               <div className={"page_top"}>
@@ -70,7 +69,15 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                 </Box>
               </Grid>
               <Grid item xs={12} md={8.5}>
+                {/*{(() => {*/}
+                {/*  if (!isRootPath) {*/}
+                {/*    return <GoogleAdsense slotKey={"contentsLower"} />*/}
+                {/*  } else {*/}
+                {/*    return ""*/}
+                {/*  }*/}
+                {/*})()}*/}
                 <main className="mainContent">{children}</main>
+                <GoogleAdsense slotKey={"contentsLower"} />
                 <GoogleAdsense slotKey={"contentsLower"} />
               </Grid>
             </Grid>

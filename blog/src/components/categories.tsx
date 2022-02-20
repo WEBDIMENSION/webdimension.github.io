@@ -29,7 +29,6 @@ const Categories = () => {
 
   const group = data.allMarkdownRemark?.group
 
-  console.log(group)
   return (
     <ul>
       {group.map(category => (

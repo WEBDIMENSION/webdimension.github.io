@@ -6159,7 +6159,7 @@ gatsby-plugin-env-variables@^2.2.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-env-variables/-/gatsby-plugin-env-variables-2.2.0.tgz#75793854688be8773cdc3a1e1b10f04b1836bbe6"
   integrity sha512-znnUNqNmGE4qIq+nTaQeiTz54PQw3QRPflWWWtQg5V9ke3QcamEDVbJ1S1a2Afl5pXO7qCiXNaMMb8NFnNHdLw==
 
-gatsby-plugin-feed@^4.4.0:
+gatsby-plugin-feed@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-4.7.0.tgz#5afa871f502d597205a13e95ba43c470522a8b66"
   integrity sha512-PMSX+fETaLep/HDDjN9txYwJUkF3uimWTyAP+T2WgqfuPt80aDqiio94zrAqvfmfjyjdc6dsYgesEFiz32jF6A==

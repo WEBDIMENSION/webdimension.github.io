@@ -22,7 +22,7 @@
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-canonical-urls": "^4.7.0",
     "gatsby-plugin-env-variables": "^2.2.0",
-    "gatsby-plugin-feed": "^4.4.0",
+    "gatsby-plugin-feed": "^4.7.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
     "gatsby-plugin-google-analytics": "^4.4.0",
     "gatsby-plugin-google-gtag": "^4.7.0",
