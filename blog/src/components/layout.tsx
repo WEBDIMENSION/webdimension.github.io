@@ -34,15 +34,39 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
           <Drafts />
           <Header />
           <DivWrapper className="contents">
-            <Grid container>
-              <div className={"page_top"}>
-                <Scroll to={"page_top"} smooth={true} duration={600}>
-                  <IconButton>
-                    <ArrowUpwardIcon />
-                  </IconButton>
-                </Scroll>
-              </div>
-              <Grid item xs={12} md={3.5} className={"sideBar"}>
+            <div className={"page_top"}>
+              <Scroll to={"page_top"} smooth={true} duration={600}>
+                <IconButton>
+                  <ArrowUpwardIcon />
+                </IconButton>
+              </Scroll>
+            </div>
+            <Grid
+              container
+              sx={{
+                display: {
+                  md: "flex",
+                },
+                flexDirection: {
+                  md: "row-reverse",
+                },
+              }}
+            >
+              <Grid item xs={12} md={8.5}>
+                <main className="mainContent">{children}</main>
+                <GoogleAdsense slotKey={"contentsLower"} />
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={3.5}
+                className={"sideBar"}
+                sx={{
+                  pr: {
+                    md: 1,
+                  },
+                }}
+              >
                 <Box
                   component="div"
                   sx={{
@@ -55,40 +79,29 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                   <div className={"modeWrap"}>
                     <Mode />
                   </div>
-                  {(() => {
-                    if (!isRootPath) {
-                      return (
-                        <>
-                          <nav>
-                            <SidebarContent title="ABOUT">
-                              <BioDescription isSideBar={true} />
-                            </SidebarContent>
-                          </nav>
-                          {/*<GoogleAdsense slotKey={"sideUpper"} />*/}
-                        </>
-                      )
-                    } else {
-                      return ""
-                    }
-                  })()}
-                  <nav>
-                    <SidebarContent title="TAGS">
-                      <Tags isSideBar={true} />
-                    </SidebarContent>
-                  </nav>
-                  {/*<GoogleAdsense slotKey={"sideLower"} />*/}
                 </Box>
-              </Grid>
-              <Grid item xs={12} md={8.5}>
-                {/*{(() => {*/}
-                {/*  if (!isRootPath) {*/}
-                {/*    return <GoogleAdsense slotKey={"contentsLower"} />*/}
-                {/*  } else {*/}
-                {/*    return ""*/}
-                {/*  }*/}
-                {/*})()}*/}
-                <main className="mainContent">{children}</main>
-                <GoogleAdsense slotKey={"contentsLower"} />
+                <nav>
+                  <SidebarContent title="TAGS">
+                    <Tags isSideBar={true} />
+                  </SidebarContent>
+                </nav>
+                <GoogleAdsense slotKey={"sideLower"} />
+                {(() => {
+                  if (!isRootPath) {
+                    return (
+                      <>
+                        <nav>
+                          <SidebarContent title="ABOUT">
+                            <BioDescription isSideBar={true} />
+                          </SidebarContent>
+                        </nav>
+                        <GoogleAdsense slotKey={"sideUpper"} />
+                      </>
+                    )
+                  } else {
+                    return ""
+                  }
+                })()}
               </Grid>
             </Grid>
           </DivWrapper>
@@ -109,13 +122,6 @@ const DivWrapper = styled.div`
   .modeWrap {
     font-size: var(--fontSizeH1);
     text-align: center;
-  }
-
-  .sideBar {
-    padding-right: 12px;
-  }
-
-  .mainContent {
   }
 
   .page_top {

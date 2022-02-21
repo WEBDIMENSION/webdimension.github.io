@@ -34,7 +34,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
   const group: any = data.allMarkdownRemark?.group
   group?.sort((a: any, b: any) => b.totalCount - a.totalCount)
 
-  const sideBarTagsCount: number = 24
+  const sideBarTagsCount = 24
   const AllTagsCount = data.allMarkdownRemark?.group.length
   const tagsCount = isSideBar ? sideBarTagsCount : AllTagsCount
 

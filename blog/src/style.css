@@ -5,7 +5,7 @@
   --fontSizeH1: 1.5em;
   --fontSizeH2: 1.5em;
   --fontSizeH3: 1.3em;
-  --fontSizeH4: 1.3rm;
+  --fontSizeH4: 1.3 rm;
   --fontSizeH5: 1.0em;
   --fontSizeH6: 0.8em;
   /*--borderColor: #fe0;*/
@@ -24,7 +24,7 @@ html {
   color: #FFee00;
 }
 
-body.light-mode{
+body.light-mode {
   --bgColorPrimary: #f5f5f5;
   --bgColorScondary: #eeeeee;
   --colorPrimary: #99CCFF;
@@ -38,7 +38,7 @@ body.light-mode{
   --hover: #4169E1;
 }
 
-body.dark-mode{
+body.dark-mode {
   --bgColorPrimary: #222;
   --bgColorScondary: #333;
   --colorPrimary: #336699;

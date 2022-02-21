@@ -29,11 +29,12 @@ export default Footer
 
 const FooterWrapper = styled.footer`
   text-align: center;
-  font-size: var(--fontSizeH3);
+  font-size: var(--fontSizeH4);
   border-top: 1px var(--colorPrimary) solid;
   border-bottom: 1px var(--colorPrimary) solid;
   padding: 0.5em 0;
   margin-bottom: 1em;
+
   P {
     small {
       display: block;

@@ -18,11 +18,14 @@ export default SidebarContent
 
 const ContentWrapper = styled.div`
   margin-bottom: 1em;
+
   .sidebarContent {
     padding: 0.5em;
     background-color: var(--bgColorScondary);
     border: 1px var(--colorPrimary) solid;
     box-shadow: inset 0 0 30px -15px rgba(255, 255, 255, 0.4);
+    font-size: 0.9em;
+    text-align: center;
   }
 
   h2 {
@@ -31,7 +34,7 @@ const ContentWrapper = styled.div`
     background-color: var(--colorPrimary);
     font-weight: bolder;
     border-radius: 1em 1em 0 0;
-    font-size: var(--fontSizeH3);
+    font-size: var(--fontSizeH4);
   }
 
   .bottomText {
