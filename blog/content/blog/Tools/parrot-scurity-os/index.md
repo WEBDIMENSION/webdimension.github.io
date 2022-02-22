@@ -4,7 +4,7 @@ date: "2019-10-18 10:03:25"
 post_modified: "2019-10-20 08:59:42"
 description: "ペネレーションテストなど行う場合ToolをMACにインストールするのは[めんどくさい]{.under_line}し限界もあるので**Parrot Security OS**を準備する"
 categories: ["Tools"]
-tags: ["Parrot Security OS", "tmux", "tmuxinator"]
+tags: ["Parrot Security OS", "tmux", "tmuxinator", "Security"]
 draft: false
 ---
 

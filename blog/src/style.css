@@ -86,3 +86,22 @@ a:hover {
   margin: 0 auto;
   padding: 1em 15px;
 }
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px var(--fontColor) solid;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+th {
+  font-weight: bold;
+  background-color: var(--bgColorPrimary);
+}
+
+td {
+  text-align: center;
+}

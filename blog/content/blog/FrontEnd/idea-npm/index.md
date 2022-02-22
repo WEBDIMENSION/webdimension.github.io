@@ -4,7 +4,7 @@ date: "2019-09-23 03:50:17"
 post_modified: "2019-09-23 20:15:00"
 description: "'npm run watch'などはターミナルを開いて実行してましたが地味に[めんどくさい]{.under_line}のでIDEA側で操作するようにした。"
 categories: ["FrontEnd"]
-tags: ["開発環境", "Node", "Npm", "IDEA"]
+tags: ["開発環境", "Node", "Npm", "Intellij IDEA"]
 draft: false
 ---
 

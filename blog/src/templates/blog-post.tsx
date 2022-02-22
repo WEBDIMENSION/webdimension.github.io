@@ -58,17 +58,17 @@ const BlogPost = ({ data }: Props) => {
       />
 
       <ArticleWrapper className="blog-post" itemScope itemType="http://schema.org/Article">
+        {(() => {
+          if (post.frontmatter.draft) {
+            return <div className={"draft"}>Draft</div>
+          }
+        })()}
         <header>
           <PageTitle title={post.frontmatter.title} prefixTitle="" />
         </header>
         <p className="postDate">
           <span>{post.frontmatter.date}</span>
         </p>
-        {(() => {
-          if (post.frontmatter.draft) {
-            return <div className={"draft"}>Draft</div>
-          }
-        })()}
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
         <hr />
       </ArticleWrapper>
