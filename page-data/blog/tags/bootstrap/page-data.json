@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-tsx",
+    "path": "/blog/tags/bootstrap/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/BackEnd/php/laravel/laravel-preparation-01/"},"frontmatter":{"date":"February 15, 2020","post_modified":"February 15, 2020","title":"Laravelでの開発の前準備その１","description":"Laravel6へBootstrap4 vue.js を導入","tags":["Laravel","Vue.js","Bootstrap"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Bootstrap","linkPrefix":"/blog/tags/bootstrap","linkSuffix":"/page/","draft":[false]}},
+    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","2772418575"]}

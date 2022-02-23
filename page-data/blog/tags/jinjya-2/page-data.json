@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-tsx",
+    "path": "/blog/tags/jinjya-2/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/BackEnd/python/jinjya2/"},"frontmatter":{"date":"February 23, 2022","post_modified":"February 23, 2022","title":"python templateエンジン jinjya2","description":"jinjya2の使い方","tags":["Python","Jinjya2"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Jinjya2","linkPrefix":"/blog/tags/jinjya-2","linkSuffix":"/page/","draft":[false]}},
+    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","2772418575"]}
