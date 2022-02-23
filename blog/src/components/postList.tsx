@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import IconButton from "@mui/material/IconButton"
 import LocalOfferIcon from "@mui/icons-material/LocalOffer"
 import kebabCase from "lodash/kebabCase"
+import TagsInContent from "./tagsInContent"
 
 // interface INode {
 //   excerpt?: string | null | undefined
@@ -59,18 +60,19 @@ const PostList = ({ nodes }: { nodes: any }) => {
                 }}
                 itemProp="description"
               />
-              <ul className={"tags"}>
-                {node.frontmatter?.tags?.map((tag: any) => {
-                  return (
-                    <li key={tag}>
-                      <IconButton>
-                        <LocalOfferIcon />
-                      </IconButton>
-                      <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  )
-                })}
-              </ul>
+              <TagsInContent node={node} />
+              {/*<ul className={"tags"}>*/}
+              {/*  {node.frontmatter?.tags?.map((tag: any) => {*/}
+              {/*    return (*/}
+              {/*      <li key={tag}>*/}
+              {/*        <IconButton>*/}
+              {/*          <LocalOfferIcon />*/}
+              {/*        </IconButton>*/}
+              {/*        <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>*/}
+              {/*      </li>*/}
+              {/*    )*/}
+              {/*  })}*/}
+              {/*</ul>*/}
             </article>
           </li>
         )
@@ -102,17 +104,5 @@ const OlWrapper = styled.ol`
     background-color: var(--colorPrimary);
     border-radius: 8px;
     padding: 0 4px;
-  }
-
-  .tags {
-    display: flex;
-    justify-content: flex-end;
-
-    li {
-      margin-left: 1em;
-      button {
-        color: var(--fontColor) !important;
-      }
-    }
   }
 `

@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
+import TagsInContent from "../components/tagsInContent"
 
 interface Props {
   data: {
@@ -69,9 +70,17 @@ const BlogPost = ({ data }: Props) => {
         <p className="postDate">
           <span>{post.frontmatter.date}</span>
         </p>
+        <TagsInContent node={post} />
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.frontmatter?.description || post?.excerpt || "",
+          }}
+          itemProp="description"
+        />
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
         <hr />
       </ArticleWrapper>
+      <TagsInContent node={post} />
       <NavWrapper className="blogPostNav">
         <ul>
           <li className={"prev"}>
