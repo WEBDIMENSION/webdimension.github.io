@@ -49,12 +49,14 @@ const Bio = () => {
           当サイトは<strong>Gatsby(blog-theme)&nbsp;TypeScript化</strong>
           して構築しています。
           <br />
-          Hostingは<a href={"https://www.netlify.com"}>Netlify</a>
-          を利用しています。
+          Hostingは &nbsp;
+          <s>Netlify</s>
+          &nbsp;<a href={"https://github.com/"}>GitHub</a>&nbsp; を利用しています。
           <br />
           ソースは
           <a href={github?.repository} target={"_blank"}>
-            GitHub
+            {" "}
+            GitHub{" "}
           </a>
           (webdimension/gatsby_blog)で全公開しております。
         </p>
