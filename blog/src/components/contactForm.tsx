@@ -54,10 +54,9 @@ const ContactForm = () => {
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      action={"/contact/thanks/"}
+      action={"https://www.flexyform.com/f/c25a96c4d962cb18bbb18a605e90a60b21e4f30f"}
     >
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="_empty_field" />
 
       <div className={"inputBlock"}>
         <label htmlFor={"name"}>名前 : </label>
@@ -151,12 +150,15 @@ const FormWrapper = styled.form`
     padding: 8px;
     display: block;
   }
+
   label {
     padding-left: 4px;
   }
+
   .submitButton {
     margin: 1em auto;
     width: 94%;
+
     button {
       font-size: var(--fontSizeH6);
     }
