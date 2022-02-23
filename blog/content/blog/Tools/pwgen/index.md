@@ -4,7 +4,7 @@ date: "2019-11-02 23:12:36"
 post_modified: "2019-11-02 23:14:00"
 description: "複雑なパスワードをコマンド一発で生成"
 categories: ["Tools"]
-tags: ["Command", "Password"]
+tags: ["Command", "Security"]
 draft: false
 ---
 

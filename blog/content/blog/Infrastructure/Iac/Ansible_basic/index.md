@@ -4,7 +4,7 @@ date: "2022-02-23 01:06:13"
 post_modified: "2022-02-23 01:06:13"
 description: "IAS ( Infrastructure As Code )。インフラ構成をコード化して効率アップ"
 categories: ["Infrastructure"]
-tags: ["Ansible", "Iac"]
+tags: ["Ansible", "IaC"]
 draft: false
 ---
 
@@ -129,7 +129,7 @@ verbosity: 1
 
 ```ini
 [defaults]
-deprecation_warnings=False
+deprecation_warnings = False
 display_skipped_hosts = no
 timeout = 300
 ```

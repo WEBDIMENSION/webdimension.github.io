@@ -4,7 +4,7 @@ date: "2022-02-23 03:17:55"
 post_modified: "2022-02-23 03:17:55"
 description: "pyenv のインストール及び設定"
 categories: ["BackEnd"]
-tags: ["python", "開発環境"]
+tags: ["Python", "開発環境"]
 draft: false
 ---
 

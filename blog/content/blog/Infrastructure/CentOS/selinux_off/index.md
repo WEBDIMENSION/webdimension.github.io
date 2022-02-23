@@ -4,7 +4,7 @@ date: "2022-02-23 04:02:44"
 post_modified: "2022-02-23 04:02:44"
 description: "場合よって SELinux を OFF"
 categories: ["Infrastructure"]
-tags: ["CentOS7", "SELinux", "Security"]
+tags: ["Linux", "SELinux", "Security"]
 draft: false
 ---
 

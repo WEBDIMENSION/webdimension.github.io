@@ -4,7 +4,7 @@ date: "2022-02-23 02:34:19"
 post_modified: "2022-02-23 02:34:19"
 description: "html ファイルのスクレイピング、Dockerへインストール"
 categories: ["Tools"]
-tags: ["xmllint", "scraping", "Docker"]
+tags: ["Xmllint", "Scraping", "Docker"]
 draft: false
 ---
 

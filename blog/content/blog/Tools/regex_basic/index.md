@@ -4,7 +4,7 @@ date: "2022-02-23 03:38:28"
 post_modified: "2022-02-23 03:38:28"
 description: "正規表現 コピペ用"
 categories: ["Tools"]
-tags: ["正規表現", "regex", "テキスト処理"]
+tags: ["正規表現", "テキスト処理"]
 draft: false
 ---
 

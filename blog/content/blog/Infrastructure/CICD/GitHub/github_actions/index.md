@@ -4,7 +4,7 @@ date: "2020-12-14 13:59:44"
 post_modified: "2020-12-14 13:59:44"
 description: "Github Actions, Act (GitHub Actions の local実行)"
 categories: ["Infrastructure"]
-tags: ["CentOS7", "Docker", "GitHub Actions"]
+tags: ["Linux", "Docker", "GitHub Actions"]
 draft: false
 ---
 

@@ -4,7 +4,7 @@ date: "2020-12-14 12:21:24"
 post_modified: "2020-12-14 12:23:08"
 description: "Conoha API を使いVPN構築を簡略化 の備忘録"
 categories: ["Infrastructure"]
-tags: ["CentOS7", "Docker", "Python", "Ansible", "testinfra", "SoftEther VPN"]
+tags: ["Linux", "Docker", "Python", "Ansible", "Testinfra", "VPN"]
 draft: false
 ---
 

@@ -4,7 +4,7 @@ date: "2020-12-14 13:15:14"
 post_modified: "2020-12-14 13:15:14"
 description: "今後Let's Encryptの設定はAnsibleで行いたい。AnsibleのLet's Encryptテンプレート"
 categories: ["Infrastructure"]
-tags: ["CentOS7", "Apache", "Ansible", "Let's Encrypt", "Cron"]
+tags: ["Linux", "Apache", "Ansible", "Let's Encrypt", "Cron"]
 draft: false
 ---
 

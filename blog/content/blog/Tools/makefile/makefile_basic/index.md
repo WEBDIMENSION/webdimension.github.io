@@ -4,7 +4,7 @@ date: "2022-02-23 04:32:54"
 post_modified: "2022-02-23 04:32:54"
 description: "makefile 邪道な使い方"
 categories: ["Tools"]
-tags: ["makefile"]
+tags: ["Makefile"]
 draft: false
 ---
 

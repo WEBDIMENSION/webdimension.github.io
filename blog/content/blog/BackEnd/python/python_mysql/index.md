@@ -4,7 +4,7 @@ date: "2022-02-23 03:30:08"
 post_modified: "2022-02-23 03:30:08"
 description: "python から MySQL へ接続しデータを取得"
 categories: ["BackEnd"]
-tags: ["python", "MySQL"]
+tags: ["Python", "MySQL"]
 draft: false
 ---
 

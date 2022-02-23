@@ -4,7 +4,7 @@ date: "2022-02-23 03:15:17"
 post_modified: "2022-02-23 03:15:17"
 description: "jinjya2の使い方"
 categories: ["BackEnd"]
-tags: ["python", "jinjya2"]
+tags: ["Python", "Jinjya2"]
 draft: false
 ---
 
@@ -19,7 +19,7 @@ Jinja2
 ```python
 path_tpl = (pathlib.Path(__file__).parent.parent / 'tpl').resolve()
 # print(path_tpl)
-env = Environment(loader=FileSystemLoader(str(path_tpl )))
+env = Environment(loader=FileSystemLoader(str(path_tpl)))
 tpl = env.get_template('format.j2')
 print(row_val['post_title'])
 expect = replace_nr(row_val['post_excerpt'])

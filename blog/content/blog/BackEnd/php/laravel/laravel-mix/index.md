@@ -2,9 +2,9 @@
 title: "webpack - Laravelでの開発の前準備6"
 date: "2020-02-15 19:14:52"
 post_modified: "2020-02-15 20:04:00"
-description: "Laravel-mix (webpack)　で Build, Watch をしてみる"
+description: "Laravel-mix (webpack) で Build, Watch をしてみる"
 categories: ["BackEnd"]
-tags: ["Laravel", "webpack"]
+tags: ["Laravel", "Webpack"]
 draft: false
 ---
 
@@ -73,8 +73,7 @@ npm run development
 npm run watch
 ```
 
-ファイルに変更があれば変更を感知し開発モードで Build
-フロント作業はほぼ実行しっぱなし。
+ファイルに変更があれば変更を感知し開発モードで Build フロント作業はほぼ実行しっぱなし。
 
 ```bash
 npm run watch-poll

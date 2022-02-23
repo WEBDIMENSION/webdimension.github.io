@@ -4,7 +4,7 @@ date: "2022-02-23 02:47:33"
 post_modified: "2022-02-23 02:47:33"
 description: "vscode で Task を設定する際の変数"
 categories: ["Tools"]
-tags: ["vscode", "Intellij IDEA"]
+tags: ["VSCode", "Intellij IDEA"]
 draft: false
 ---
 

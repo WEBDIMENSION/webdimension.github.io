@@ -4,7 +4,7 @@ date: "2022-02-23 04:16:44"
 post_modified: "2022-02-23 04:16:44"
 description: "よくつかう iptables のコマンド"
 categories: ["Infrastructure"]
-tags: ["iptables", "CentOS7", "Security"]
+tags: ["iptables", "Linux", "Security"]
 draft: false
 ---
 

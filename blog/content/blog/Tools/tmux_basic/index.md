@@ -4,7 +4,7 @@ date: "2022-02-23 03:46:34"
 post_modified: "2022-02-23 03:46:34"
 description: "サーバーとの接続が突然切断してもTmuxなら安心"
 categories: ["Tools"]
-tags: ["tmux"]
+tags: ["Tmux"]
 draft: false
 ---
 

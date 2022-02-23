@@ -4,7 +4,7 @@ date: "2022-02-23 02:43:43"
 post_modified: "2022-02-23 02:43:43"
 description: "vscode の snippet の変数"
 categories: ["Tools"]
-tags: ["vscode", "snippet"]
+tags: ["VSCode", "Snippet"]
 draft: false
 ---
 

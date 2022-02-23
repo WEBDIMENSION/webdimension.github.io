@@ -4,7 +4,7 @@ date: "2022-02-23 04:21:55"
 post_modified: "2022-02-23 04:21:55"
 description: "サーバーの状態把握をするためのコマンド"
 categories: ["Infrastructure"]
-tags: ["monitoring", "Security", "Command"]
+tags: ["Security", "Command"]
 draft: false
 ---
 

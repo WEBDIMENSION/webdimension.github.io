@@ -5,7 +5,7 @@ post_modified: "2019-09-23 20:11:38"
 description: " ' vagrant up' ワンコマンドで Git, Vimをインストール。ホスと側ssh-keyをコピー、.vimrcを git cloneする。'すぐに使える'
 がテーマ。設定ファイルを外部ファイル化し使い回しも楽。 "
 categories: ["Environment"]
-tags: ["CentOS7", "Vagrant", "開発環境"]
+tags: ["Linux", "Vagrant", "開発環境"]
 draft: false
 ---
 

@@ -4,7 +4,7 @@ date: "2019-09-15 20:21:08"
 post_modified: "2019-09-23 20:00:59"
 description: "Docker for Mac のレスポンスに納得いかず、Vagrant上にDockerを作ってみた。リモートデバッグ、phpunit実行まで。"
 categories: ["Environment"]
-tags: ["CentOS7", "Vagrant", "開発環境", "Docker", "Xdebug", "PHPUnit"]
+tags: ["Linux", "Vagrant", "開発環境", "Docker", "Xdebug", "PHPUnit"]
 draft: false
 ---
 

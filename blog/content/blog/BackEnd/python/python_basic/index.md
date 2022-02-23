@@ -4,7 +4,7 @@ date: "2022-02-23 03:12:10"
 post_modified: "2022-02-23 03:12:10"
 description: "python 個人的メモ"
 categories: ["BackEnd"]
-tags: ["python"]
+tags: ["Python"]
 draft: false
 ---
 
@@ -29,18 +29,18 @@ else:
 
 ```python
 def replace_nr(str):
-    return str\
-        .replace('\n', '')\
-        .replace('\r', '')\
-        .replace('"', '')
+    return str
+    .replace('\n', '')
+    .replace('\r', '')
+    .replace('"', '')
 ```
 
 ## ファイル書き出し
 
 ```python
     f = open(output_path, 'w')
-    f.write(rendered_s)
-    f.close()
+f.write(rendered_s)
+f.close()
 ```
 
 ## 環境変数

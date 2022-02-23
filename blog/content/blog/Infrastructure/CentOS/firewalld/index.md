@@ -4,7 +4,7 @@ date: "2022-02-23 04:10:31"
 post_modified: "2022-02-23 04:10:31"
 description: "よく使う Firewalld コマンド"
 categories: ["Infrastructure"]
-tags: ["Firewalld", "CentOs", "Security"]
+tags: ["Firewalld", "Linux", "Security"]
 draft: false
 ---
 
