@@ -52,8 +52,6 @@ const ContactForm = () => {
     <FormWrapper
       name="contact"
       method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       action={"https://www.flexyform.com/f/c25a96c4d962cb18bbb18a605e90a60b21e4f30f"}
     >
       <input type="hidden" name="_empty_field" />
