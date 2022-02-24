@@ -99,14 +99,9 @@ const HeaderWrapper = styled.header`
 
 
   .header {
-    padding-top: 8px;
     padding-bottom: 16px;
     border-bottom: 1px var(--colorPrimary) solid;
     margin-bottom: 1em;
-    background-color: var(--bgColorPrimary);
-    opacity: 0.96;
-    width: 100%;
-    z-index: 999;
 
     .logo {
       .bio-avatar {
@@ -115,7 +110,7 @@ const HeaderWrapper = styled.header`
     }
 
     .headerTitle {
-      font-size: min(4.3vw, 1.6em);
+      font-size: min(4.3vw,1.6em);
       font-weight: bold;
       padding-top: 0.4em;
     }
@@ -123,11 +118,10 @@ const HeaderWrapper = styled.header`
     nav.pc {
       display: flex;
       text-align: end;
-      margin-top: 1em;
+      margin-top: 1em ;
 
       ul {
         list-style: none;
-
         li {
           display: inline-block;
           padding-left: 20px;
