@@ -25,12 +25,12 @@ html {
 }
 
 body.light-mode {
-  --bgColorPrimary: #f5f5f5;
-  --bgColorScondary: #eeeeee;
-  --colorPrimary: #99CCFF;
+  --bgColorPrimary: #fffffe;
+  --bgColorScondary: #F5F7FA;
+  --colorPrimary: #a3daff;
   /*--colorPrimary: #336699;*/
-  --colorSecondary: #5f9ea0;
-  --fontColor: #333;
+  --colorSecondary: #BCD8C1;
+  --fontColor: #555;
   --colorWarning: #ffd700;
   --visitedColor: #777;
   --hrefBackground: #fff;

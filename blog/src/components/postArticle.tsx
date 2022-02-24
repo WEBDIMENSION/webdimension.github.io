@@ -11,7 +11,7 @@ const ArticleWrapper = styled.article`
   section {
     background-color: var(--bgColorScondary);
     border-radius: 0.5em;
-    padding: 0.4em;
+    padding: 3px;
     margin-bottom: 1.5em;
   }
 `

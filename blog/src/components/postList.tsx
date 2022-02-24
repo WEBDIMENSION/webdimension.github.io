@@ -1,9 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import IconButton from "@mui/material/IconButton"
-import LocalOfferIcon from "@mui/icons-material/LocalOffer"
-import kebabCase from "lodash/kebabCase"
 import TagsInContent from "./tagsInContent"
 
 // interface INode {
@@ -55,6 +52,7 @@ const PostList = ({ nodes }: { nodes: any }) => {
                 <span>{node.frontmatter?.post_modified}</span>
               </p>
               <p
+                className="content"
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter?.description || node?.excerpt || "",
                 }}
@@ -95,8 +93,8 @@ const OlWrapper = styled.ol`
   li.postList {
     background-color: var(--bgColorScondary);
     border-radius: 8px;
-    margin-bottom: 2em;
-    padding: 0.5em;
+    margin-bottom: 1.5em;
+    padding: 3px;
     box-shadow: inset 0 0 30px -15px rgba(255, 255, 255, 0.4);
   }
 
@@ -104,5 +102,9 @@ const OlWrapper = styled.ol`
     background-color: var(--colorPrimary);
     border-radius: 8px;
     padding: 0 4px;
+  }
+
+  p.content {
+    padding-left: 6px;
   }
 `
