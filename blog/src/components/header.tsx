@@ -106,6 +106,7 @@ const HeaderWrapper = styled.header`
     background-color: var(--bgColorPrimary);
     opacity: 0.96;
     width: 100%;
+    z-index: 999;
 
     .logo {
       .bio-avatar {
