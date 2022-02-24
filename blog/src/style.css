@@ -84,7 +84,7 @@ a:hover {
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 1em 15px;
+  padding: 0 4px;
 }
 
 table, th, td {
