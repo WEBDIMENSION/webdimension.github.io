@@ -50,6 +50,10 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                 flexDirection: {
                   md: "row-reverse",
                 },
+                marginTop: {
+                  xs: "5em",
+                  md: "0",
+                },
               }}
             >
               <Grid item xs={12} md={8.5}>
