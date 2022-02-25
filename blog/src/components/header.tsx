@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useLocation } from "@reach/router"
-import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import Box from "@mui/material/Box"
