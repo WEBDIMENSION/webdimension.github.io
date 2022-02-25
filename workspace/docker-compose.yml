@@ -45,9 +45,9 @@ services:
       - ${DIR_PATH}/python/output:/workspace/output
       - ${DIR_PATH}/../blog/content/blog:/workspace/content/blog
     working_dir: /workspace/src
-    entrypoint: "/bin/sh -c './pandoc.sh'"
+    #    entrypoint: "/bin/sh -c './pandoc.sh'"
     stdin_open: true
-#    tty: true
+  #    tty: true
   linkchecker:
     build:
       context: ./linkchecker
