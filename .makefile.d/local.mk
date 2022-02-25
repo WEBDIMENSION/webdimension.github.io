@@ -29,7 +29,10 @@ gatsby_build:
 	cd $(PARENT_DIR) && docker-compose exec gatsby yarn build
 
 act:
-	cd $(PARENT_DIR) &&  act push -v
+	cd $(PARENT_DIR) &&  /usr/local/bin/act push -v
+
+which_act:
+	@(which act)
 
 vscode:
 	cd $(PARENT_DIR) &&  code blog/.vscode/workspace.code-workspace

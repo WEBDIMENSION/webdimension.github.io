@@ -31,6 +31,7 @@ jobs:
         working-directory: blog
 
       - name: Run build
+        if: ${{ github.ref == 'refs/heads/master' }}
         env:
           SITE_URL: ${{secrets.SITE_URL}}
           GOOGLE_ANALYTICS_TRACKING_ID: ${{secrets.GOOGLE_ANALYTICS_TRACKING_ID}}
