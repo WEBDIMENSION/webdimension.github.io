@@ -8,25 +8,6 @@ import styled from "styled-components"
 import BioDescription from "../components/bioDescription"
 import GoogleAdsense from "../components/google/googleAdsense"
 
-// interface INode {
-//   nodes: Array<{
-//     node: {
-//       fieldes: {
-//         slug?: string
-//       }
-//       expect: string
-//       formatter: {
-//         date?: string
-//         post_modified?: string
-//         title?: string
-//         description?: string
-//         tags?: Array<{
-//           tag: string
-//         }>
-//       }
-//     }
-//   }>
-// }
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes
 
@@ -34,10 +15,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
     return (
       <Layout>
         <Seo title="No blog posts found" />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the directory you specified for the
-          "gatsby-source-filesystem" plugin in gatsby-config.js).
-        </p>
+        <p>no post</p>
       </Layout>
     )
   } else {

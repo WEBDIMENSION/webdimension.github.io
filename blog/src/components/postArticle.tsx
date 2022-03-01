@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const PostArticle = ({ children }: { children?: any }) => {
+const PostArticle = ({ children }: { children?: React.ReactNode }) => {
   return <ArticleWrapper>{children}</ArticleWrapper>
 }
 

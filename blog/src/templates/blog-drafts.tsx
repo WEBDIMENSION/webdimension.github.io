@@ -18,7 +18,7 @@ import PageTitle from "../components/pageTitle"
 
 // const BlogIndex = ({ data, location }) => {
 // const BlogList: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({data}) => {
-const BlogDrafts = ({ data, pageContext }) => {
+const BlogDrafts = ({ data, pageContext }: { data: any; pageContext: any }) => {
   // const siteTitle = data.site?.siteMetadata?.title || `Title`
   const nodes = data.allMarkdownRemark.nodes
 
