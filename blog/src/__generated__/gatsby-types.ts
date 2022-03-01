@@ -3509,23 +3509,40 @@ type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
       & { readonly social: Maybe<Pick<Social, 'twitter'>> }
     )> }> };
 
-type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+type NotFoundQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-type FooterQueryVariables = Exact<{ [key: string]: never; }>;
+type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'title'>
-      & { readonly author: Maybe<Pick<Author, 'company'>> }
-    )> }> };
+type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type TagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type TagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type ContactQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type tagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type tagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
 
 type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3535,20 +3552,21 @@ type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick
       & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
     )> } };
 
-type tagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type blogListQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
 
 
-type tagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+    )> } };
 
-type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type NotFoundQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3576,36 +3594,34 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
-
-type ContactQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type blogListQueryQueryVariables = Exact<{
+type blogDraftsQueryQueryVariables = Exact<{
   skip: Scalars['Int'];
   limit: Scalars['Int'];
 }>;
 
 
-type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
       Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
     )> } };
+
+type FooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'title'>
+      & { readonly author: Maybe<Pick<Author, 'company'>> }
+    )> }> };
+
+type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
 type BlogPostBySlugQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
@@ -3619,33 +3635,10 @@ type BlogPostBySlugQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe
     & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'post_modified' | 'description' | 'tags' | 'draft'>> }
   )>, readonly previous: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }>, readonly next: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }> };
 
-type blogDraftsQueryQueryVariables = Exact<{
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
-    )> } };
-
-type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type CategoriesQueryVariables = Exact<{
-  category: Maybe<Scalars['String']>;
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type CategoriesQuery = { readonly allMarkdownRemark: (
-    Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
-  ) };
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type TagsQueryVariables = Exact<{
   tag: Maybe<Scalars['String']>;
@@ -3659,10 +3652,17 @@ type TagsQuery = { readonly allMarkdownRemark: (
     & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
   ) };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type CategoriesQueryVariables = Exact<{
+  category: Maybe<Scalars['String']>;
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
 
 
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+type CategoriesQuery = { readonly allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
+  ) };
 
 type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
