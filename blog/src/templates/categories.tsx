@@ -6,30 +6,7 @@ import PostList from "../components/postList"
 import PageTitle from "../components/pageTitle"
 import PageNation from "../components/pageNation"
 
-interface IData {
-  allMarkdownRemark: {
-    totalCount: number
-    nodes: Array<{
-      fields: {
-        slug: string
-      }
-      frontmatter: {
-        title: string
-        date: string
-        post_modified: string
-        description: string
-        tags: string[]
-        draft: boolean
-      }
-    }>
-  }
-}
-
-interface IPageContext {
-  category: string
-}
-
-const Categories = ({ pageContext, data }: { pageContext: IPageContext; data: IData }) => {
+const Categories = ({ pageContext, data }: { pageContext: any; data: any }) => {
   const { category } = pageContext
   const nodes = data.allMarkdownRemark.nodes
   console.log(nodes)

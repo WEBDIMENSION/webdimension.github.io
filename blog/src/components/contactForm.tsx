@@ -5,8 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { Button } from "@mui/material"
 import styled from "styled-components"
 
@@ -42,10 +41,8 @@ const ContactForm = () => {
     if (subject === "") return true
     if (message === "") return true
 
-    const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    if (email.length > 1 && !regex.test(email)) return true
-
-    return false
+    const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    return email.length > 1 && !regex.test(email)
   }
 
   return (

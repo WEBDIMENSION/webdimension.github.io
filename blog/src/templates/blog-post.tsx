@@ -6,47 +6,7 @@ import styled from "styled-components"
 import PageTitle from "../components/pageTitle"
 import TagsInContent from "../components/tagsInContent"
 
-interface Props {
-  data: {
-    markdownRemark: {
-      id: number
-      excerpt: string
-      html: string
-      frontmatter: {
-        title: string
-        date: string
-        post_modified: string
-        description
-        tags: string[]
-        draft: boolean
-      }
-    }
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-    previous: {
-      fields: {
-        slug: string
-      }
-      frontmatter: {
-        title: string
-      }
-    }
-    next: {
-      fields: {
-        slug: string
-      }
-      frontmatter: {
-        title: string
-      }
-    }
-  }
-}
-
-//
-const BlogPost = ({ data }: Props) => {
+const BlogPost = ({ data }: any) => {
   const post = data.markdownRemark
   const { previous, next } = data
 

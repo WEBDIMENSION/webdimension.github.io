@@ -108,7 +108,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
   const drafts = allPosts.filter(post => {
     return post.frontmatter?.draft == true
   })
-  console.log(drafts)
+  // console.log(drafts)
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
 
@@ -276,86 +276,4 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
       })
     }
   })
-
-  ////////////////////////////////////////////////////////////
-  ///  tags
-  ////////////////////////////////////////////////////////////
-  // Extract tag data from query
-  // const tagTemplate = path.resolve('src/templates/tags.tsx')
-  // const tags: GatsbyTypes.FileConnection["group"] = result.data.tagsGroup.group
-  // const tagsCount = tags.length
-  // const tagsNumPages = Math.ceil(tagsCount / postsPerPage) //分割されるページの数
-
-  // tags.forEach(tag => {
-  //   const tagsCount = tags.filter(
-  //     tags => tags.fieldValue === tag.fieldValue
-  //   ).length
-  //   console.log(tagsCount)
-  //
-  //   // const filterTags = tags.filter(
-  //   //   tags => tags.fieldValue === tag.fieldValue
-  //   // )
-  //   // console.log(filterTags)
-  //
-  //   const tagsNumPages = Math.ceil(tagsCount / postsPerPage) //分割されるページの数
-  //
-  //   for (let index = 0; index < tagsNumPages; index++) {
-  //
-  //     const tagsPageNumber = index + 1
-  //
-  //     let prefix = ''
-  //     if (tagsPageNumber === 1) {
-  //       prefix = `/blog/tags/${_.kebabCase(tag.fieldValue)}/`
-  //     } else {
-  //       prefix = `/blog/tags/${_.kebabCase(tag.fieldValue)}/page/${tagsPageNumber}/`
-  //     }
-  //
-  //     createPage({
-  //       path: prefix,
-  //       component: tagTemplate,
-  //       context: {
-  //         limit: postsPerPage, //追加
-  //         skip: index * postsPerPage, //追加
-  //         currentPage: tagsPageNumber, //追加
-  //         numPages: tagsNumPages, //追加
-  //         tag: tag.fieldValue,
-  //       },
-  //     })
-  //   }
-  // })
-
-  // const categoryTemplate = path.resolve('src/templates/categories.tsx')
-  // const categories: GatsbyTypes.FileConnection["group"] = result.data.categoriesGroup.group
-  // const categoriesCount = categories.length
-  // // const categoriesNumPages = Math.ceil(categoriesCount / postsPerPage) //分割されるページの数
-  //
-  // categories.forEach(category => {
-  //   const categoriesNumPages = Math.ceil(categoriesCount / postsPerPage) //分割されるページの数
-  //   for (let index = 0; index < categoriesNumPages; index++) {
-  //     const categoriesPageNumber = index + 1
-  //     let prefix = ''
-  //     if (categoriesPageNumber === 1) {
-  //       prefix = `/blog/category/${_.kebabCase(category.fieldValue)}/`
-  //     } else {
-  //       prefix = `/blog/category/${_.kebabCase(category.fieldValue)}/page/${categoriesPageNumber}/`
-  //     }
-  //
-  //     createPage({
-  //       path: prefix,
-  //       component: categoryTemplate,
-  //       context: {
-  //         limit: postsPerPage, //追加
-  //         skip: index * postsPerPage, //追加
-  //         currentPage: categoriesPageNumber, //追加
-  //         numPages: categoriesNumPages, //追加
-  //         category: category.fieldValue,
-  //         //
-  //         //   path: `/categories/${_.kebabCase(category.fieldValue)}/`,
-  //         // component: categoryTemplate,
-  //         // context: {
-  //         //   category: category.fieldValue,
-  //       },
-  //     })
-  //   }
-  // })
 }

@@ -8,7 +8,7 @@ import kebabCase from "lodash/kebabCase"
 const TagsInContent = ({ node }: { node: any }) => {
   return (
     <UlWrapper className={"tags"}>
-      {node.frontmatter?.tags?.map((tag: any) => {
+      {node.frontmatter?.tags?.map((tag: string) => {
         return (
           <li key={tag}>
             <IconButton>
