@@ -2,7 +2,7 @@ import path from "path"
 import { createFilePath } from "gatsby-source-filesystem"
 import { GatsbyNode } from "gatsby"
 
-const _ = require("lodash")
+import _ from "lodash"
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
