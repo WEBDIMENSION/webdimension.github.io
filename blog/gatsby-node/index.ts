@@ -64,7 +64,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
   const postsPerPage = 10 //記事一覧に表示させる記事数
 
   const inDraft = process.env.NODE_ENV === "production" ? [false] : [true, false]
-  console.log(inDraft)
   const result: any = await graphql<{
     allMarkdownRemark: GatsbyTypes.Query["allMarkdownRemark"]
   }>(`
@@ -82,6 +81,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
              frontmatter {
                tags
                categories
+               topics
                draft
              }
            }
@@ -185,6 +185,47 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
         draft: inDraft,
       },
     })
+  })
+
+  ////////////////////////////////////////////////
+  ///  Topics
+  ////////////////////////////////////////////////
+  let topics = posts.reduce((topics, edge) => {
+    const edgeTopics: any = edge?.frontmatter?.topics
+    return edgeTopics ? topics.concat(edgeTopics) : topics
+  }, [])
+  // 重複削除
+  topics = [...new Set(topics)]
+
+  const topicsTemplate = path.resolve("src/templates/topics.tsx")
+
+  topics.forEach(item => {
+    const topic = item
+    const topicsCount = posts.filter(post => post.frontmatter?.topics?.includes(item)).length
+    const numPages = Math.ceil(topicsCount / postsPerPage) //分割されるページの数
+    for (let index = 0; index < numPages; index++) {
+      const pageNumber = index + 1
+      let prefix = ""
+      if (pageNumber === 1) {
+        prefix = `/blog/topics/${_.kebabCase(topic)}/`
+      } else {
+        prefix = `/blog/topics/${_.kebabCase(topic)}/page/${pageNumber}/`
+      }
+      createPage({
+        path: prefix,
+        component: topicsTemplate,
+        context: {
+          limit: postsPerPage, //追加
+          skip: index * postsPerPage, //追加
+          currentPage: pageNumber, //追加
+          numPages: numPages,
+          topic: topic,
+          linkPrefix: `/blog/topics/${_.kebabCase(topic)}`,
+          linkSuffix: "/page/",
+          draft: inDraft,
+        },
+      })
+    }
   })
 
   ////////////////////////////////////////////////
