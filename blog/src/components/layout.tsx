@@ -106,6 +106,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                     <BioDescription isSideBar={true} />
                   </SidebarContent>
                 </nav>
+                <GoogleAdsense slotKey={"sideLower"} />
                 {/*      </>*/}
                 {/*    )*/}
                 {/*  } else {*/}
