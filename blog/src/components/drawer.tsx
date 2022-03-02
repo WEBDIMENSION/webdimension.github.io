@@ -10,6 +10,7 @@ import TagIcon from "@mui/icons-material/Tag"
 import InfoIcon from "@mui/icons-material/Info"
 import EmailIcon from "@mui/icons-material/Email"
 import ListIcon from "@mui/icons-material/List"
+import TopicIcon from "@mui/icons-material/Topic"
 import Mode from "./mode"
 
 const drawer = () => {
@@ -47,6 +48,12 @@ const drawer = () => {
                 <TagIcon />
               </IconButton>
               <Link to={`/blog/tags/`}>Tags</Link>
+            </li>
+            <li>
+              <IconButton color="inherit" size="large" aria-label="topics">
+                <TopicIcon />
+              </IconButton>
+              <Link to={`/blog/topics/`}>Topics</Link>
             </li>
           </ul>
           <li>

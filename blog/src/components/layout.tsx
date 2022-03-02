@@ -13,6 +13,7 @@ import Drafts from "./drafts"
 import IconButton from "@mui/material/IconButton"
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
 import GoogleAdsense from "../components/google/googleAdsense"
+import Topics from "../components/topics"
 import { Link as Scroll } from "react-scroll"
 
 const Layout = ({ children }: { children?: React.ReactNode }) => {
@@ -89,23 +90,28 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
                     <Tags isSideBar={true} />
                   </SidebarContent>
                 </nav>
+                <GoogleAdsense slotKey={"sideUpper"} />
+                <nav>
+                  <SidebarContent title="Topics">
+                    <Topics isSideBar={true} />
+                  </SidebarContent>
+                </nav>
                 <GoogleAdsense slotKey={"sideLower"} />
-                {(() => {
-                  if (!isRootPath) {
-                    return (
-                      <>
-                        <nav>
-                          <SidebarContent title="ABOUT">
-                            <BioDescription isSideBar={true} />
-                          </SidebarContent>
-                        </nav>
-                        <GoogleAdsense slotKey={"sideUpper"} />
-                      </>
-                    )
-                  } else {
-                    return ""
-                  }
-                })()}
+                {/*{(() => {*/}
+                {/*  if (!isRootPath) {*/}
+                {/*    return (*/}
+                {/*      <>*/}
+                <nav>
+                  <SidebarContent title="ABOUT">
+                    <BioDescription isSideBar={true} />
+                  </SidebarContent>
+                </nav>
+                {/*      </>*/}
+                {/*    )*/}
+                {/*  } else {*/}
+                {/*    return ""*/}
+                {/*  }*/}
+                {/*})()}*/}
               </Grid>
             </Grid>
           </DivWrapper>

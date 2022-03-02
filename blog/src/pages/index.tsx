@@ -7,6 +7,7 @@ import Article from "../components/postArticle"
 import styled from "styled-components"
 import BioDescription from "../components/bioDescription"
 import GoogleAdsense from "../components/google/googleAdsense"
+import Topics from "../components/topics"
 
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes
@@ -31,18 +32,10 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
           </p>
           <GoogleAdsense slotKey={"contentsLower"} />
         </DivWrapper>
-        {/*<div>*/}
-        {/*  <StaticImage*/}
-        {/*    className="topImage"*/}
-        {/*    layout="fullWidth"*/}
-        {/*    formats={["auto", "png", "jpg", "avif"]}*/}
-        {/*    src="../images/top.jpg"*/}
-        {/*    // width={100}*/}
-        {/*    // height={150}*/}
-        {/*    quality={95}*/}
-        {/*    alt=""*/}
-        {/*  />*/}
-        {/*</div>*/}
+        <Article>
+          <H2Wrapper>-- Topics --</H2Wrapper>
+          <Topics isSideBar={false} />
+        </Article>
         <Article>
           <H2Wrapper>-- 最近の投稿 --</H2Wrapper>
           <section>
@@ -71,6 +64,7 @@ const DivWrapper = styled.div`
 const H2Wrapper = styled.h2`
   font-size: var(--fontSizeH1);
   text-align: center;
+  margin-bottom: 0.5em;
 `
 
 export const pageQuery = graphql`

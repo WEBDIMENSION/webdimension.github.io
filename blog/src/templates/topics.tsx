@@ -6,24 +6,24 @@ import PostList from "../components/postList"
 import PageTitle from "../components/pageTitle"
 import PageNation from "../components/pageNation"
 
-const Categories = ({ pageContext, data }: { pageContext: any; data: any }) => {
-  const { category } = pageContext
+const Topics = ({ pageContext, data }: { pageContext: any; data: any }) => {
+  const { topic } = pageContext
   const nodes = data.allMarkdownRemark.nodes
-  console.log(nodes)
+  console.log(pageContext)
+  console.log(data)
 
   return (
     <Layout>
-      <Seo title={category} />
       <Seo
-        title={category + " がカテゴライズされた記事一覧"}
+        title={topic + " がタグ付けされた記事一覧"}
         DisplaySubTitle={true}
-        description={category + " がカテゴライズされた記事一覧"}
+        description={topic + " がタグ付けされた記事一覧"}
       />
 
       <div>
-        <PageTitle title={category} prefixTitle="Category" />
+        <PageTitle title={topic} prefixTitle="Topics" />
         <PostList nodes={nodes} />
-        <Link to="/category/">All categories</Link>
+        <Link to="/blog/topics/">All Topics</Link>
       </div>
       <section>
         <PageNation pageContext={pageContext} />
@@ -31,16 +31,15 @@ const Categories = ({ pageContext, data }: { pageContext: any; data: any }) => {
     </Layout>
   )
 }
-
-export default Categories
+export default Topics
 
 export const pageQuery = graphql`
-  query Categories($category: String, $skip: Int!, $limit: Int!) {
+  query Topics($topic: String, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       skip: $skip
       limit: $limit
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { categories: { in: [$category] }, draft: { in: [false] } } }
+      sort: { fields: [frontmatter___topic_order], order: ASC }
+      filter: { frontmatter: { topics: { ne: null, in: [$topic] }, draft: { in: [false] } } }
     ) {
       totalCount
       nodes {
@@ -52,7 +51,7 @@ export const pageQuery = graphql`
           post_modified(formatString: "MMMM DD, YYYY")
           title
           description
-          categories
+          topics
         }
       }
     }

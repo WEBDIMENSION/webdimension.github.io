@@ -78,6 +78,10 @@ type File = Node & {
   readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
+  /** Returns all children nodes filtered by type TopicsJson */
+  readonly childrenTopicsJson: Maybe<ReadonlyArray<Maybe<TopicsJson>>>;
+  /** Returns the first child node of type TopicsJson or null if there are no children of given type on this node */
+  readonly childTopicsJson: Maybe<TopicsJson>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -717,6 +721,8 @@ type Frontmatter = {
   readonly categories: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly draft: Maybe<Scalars['Boolean']>;
+  readonly topics: Maybe<Scalars['String']>;
+  readonly topic_order: Maybe<Scalars['String']>;
 };
 
 
@@ -739,6 +745,17 @@ type Fields = {
   readonly slug: Maybe<Scalars['String']>;
 };
 
+type TopicsJson = Node & {
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
+  readonly title: Maybe<Scalars['String']>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly totalPages: Maybe<Scalars['String']>;
+};
+
 type Query = {
   readonly file: Maybe<File>;
   readonly allFile: FileConnection;
@@ -758,6 +775,8 @@ type Query = {
   readonly allMarkdownRemark: MarkdownRemarkConnection;
   readonly imageSharp: Maybe<ImageSharp>;
   readonly allImageSharp: ImageSharpConnection;
+  readonly topicsJson: Maybe<TopicsJson>;
+  readonly allTopicsJson: TopicsJsonConnection;
 };
 
 
@@ -800,6 +819,8 @@ type Query_fileArgs = {
   childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
   childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   childImageSharp: Maybe<ImageSharpFilterInput>;
+  childrenTopicsJson: Maybe<TopicsJsonFilterListInput>;
+  childTopicsJson: Maybe<TopicsJsonFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -1022,6 +1043,26 @@ type Query_allImageSharpArgs = {
   limit: Maybe<Scalars['Int']>;
 };
 
+
+type Query_topicsJsonArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  description: Maybe<StringQueryOperatorInput>;
+  url: Maybe<StringQueryOperatorInput>;
+  totalPages: Maybe<StringQueryOperatorInput>;
+};
+
+
+type Query_allTopicsJsonArgs = {
+  filter: Maybe<TopicsJsonFilterInput>;
+  sort: Maybe<TopicsJsonSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
 type StringQueryOperatorInput = {
   readonly eq: Maybe<Scalars['String']>;
   readonly ne: Maybe<Scalars['String']>;
@@ -1095,6 +1136,8 @@ type FrontmatterFilterInput = {
   readonly categories: Maybe<StringQueryOperatorInput>;
   readonly tags: Maybe<StringQueryOperatorInput>;
   readonly draft: Maybe<BooleanQueryOperatorInput>;
+  readonly topics: Maybe<StringQueryOperatorInput>;
+  readonly topic_order: Maybe<StringQueryOperatorInput>;
 };
 
 type BooleanQueryOperatorInput = {
@@ -1214,6 +1257,21 @@ type ImageSharpResizeFilterInput = {
   readonly originalName: Maybe<StringQueryOperatorInput>;
 };
 
+type TopicsJsonFilterListInput = {
+  readonly elemMatch: Maybe<TopicsJsonFilterInput>;
+};
+
+type TopicsJsonFilterInput = {
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+  readonly title: Maybe<StringQueryOperatorInput>;
+  readonly description: Maybe<StringQueryOperatorInput>;
+  readonly url: Maybe<StringQueryOperatorInput>;
+  readonly totalPages: Maybe<StringQueryOperatorInput>;
+};
+
 type FileConnection = {
   readonly totalCount: Scalars['Int'];
   readonly edges: ReadonlyArray<FileEdge>;
@@ -1313,6 +1371,8 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.frontmatter.categories'
   | 'childrenMarkdownRemark.frontmatter.tags'
   | 'childrenMarkdownRemark.frontmatter.draft'
+  | 'childrenMarkdownRemark.frontmatter.topics'
+  | 'childrenMarkdownRemark.frontmatter.topic_order'
   | 'childrenMarkdownRemark.fields.slug'
   | 'childrenMarkdownRemark.excerpt'
   | 'childrenMarkdownRemark.rawMarkdownBody'
@@ -1374,6 +1434,8 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.frontmatter.categories'
   | 'childMarkdownRemark.frontmatter.tags'
   | 'childMarkdownRemark.frontmatter.draft'
+  | 'childMarkdownRemark.frontmatter.topics'
+  | 'childMarkdownRemark.frontmatter.topic_order'
   | 'childMarkdownRemark.fields.slug'
   | 'childMarkdownRemark.excerpt'
   | 'childMarkdownRemark.rawMarkdownBody'
@@ -1568,6 +1630,91 @@ type FileFieldsEnum =
   | 'childImageSharp.internal.mediaType'
   | 'childImageSharp.internal.owner'
   | 'childImageSharp.internal.type'
+  | 'childrenTopicsJson'
+  | 'childrenTopicsJson.id'
+  | 'childrenTopicsJson.parent.id'
+  | 'childrenTopicsJson.parent.parent.id'
+  | 'childrenTopicsJson.parent.parent.children'
+  | 'childrenTopicsJson.parent.children'
+  | 'childrenTopicsJson.parent.children.id'
+  | 'childrenTopicsJson.parent.children.children'
+  | 'childrenTopicsJson.parent.internal.content'
+  | 'childrenTopicsJson.parent.internal.contentDigest'
+  | 'childrenTopicsJson.parent.internal.description'
+  | 'childrenTopicsJson.parent.internal.fieldOwners'
+  | 'childrenTopicsJson.parent.internal.ignoreType'
+  | 'childrenTopicsJson.parent.internal.mediaType'
+  | 'childrenTopicsJson.parent.internal.owner'
+  | 'childrenTopicsJson.parent.internal.type'
+  | 'childrenTopicsJson.children'
+  | 'childrenTopicsJson.children.id'
+  | 'childrenTopicsJson.children.parent.id'
+  | 'childrenTopicsJson.children.parent.children'
+  | 'childrenTopicsJson.children.children'
+  | 'childrenTopicsJson.children.children.id'
+  | 'childrenTopicsJson.children.children.children'
+  | 'childrenTopicsJson.children.internal.content'
+  | 'childrenTopicsJson.children.internal.contentDigest'
+  | 'childrenTopicsJson.children.internal.description'
+  | 'childrenTopicsJson.children.internal.fieldOwners'
+  | 'childrenTopicsJson.children.internal.ignoreType'
+  | 'childrenTopicsJson.children.internal.mediaType'
+  | 'childrenTopicsJson.children.internal.owner'
+  | 'childrenTopicsJson.children.internal.type'
+  | 'childrenTopicsJson.internal.content'
+  | 'childrenTopicsJson.internal.contentDigest'
+  | 'childrenTopicsJson.internal.description'
+  | 'childrenTopicsJson.internal.fieldOwners'
+  | 'childrenTopicsJson.internal.ignoreType'
+  | 'childrenTopicsJson.internal.mediaType'
+  | 'childrenTopicsJson.internal.owner'
+  | 'childrenTopicsJson.internal.type'
+  | 'childrenTopicsJson.title'
+  | 'childrenTopicsJson.description'
+  | 'childrenTopicsJson.url'
+  | 'childrenTopicsJson.totalPages'
+  | 'childTopicsJson.id'
+  | 'childTopicsJson.parent.id'
+  | 'childTopicsJson.parent.parent.id'
+  | 'childTopicsJson.parent.parent.children'
+  | 'childTopicsJson.parent.children'
+  | 'childTopicsJson.parent.children.id'
+  | 'childTopicsJson.parent.children.children'
+  | 'childTopicsJson.parent.internal.content'
+  | 'childTopicsJson.parent.internal.contentDigest'
+  | 'childTopicsJson.parent.internal.description'
+  | 'childTopicsJson.parent.internal.fieldOwners'
+  | 'childTopicsJson.parent.internal.ignoreType'
+  | 'childTopicsJson.parent.internal.mediaType'
+  | 'childTopicsJson.parent.internal.owner'
+  | 'childTopicsJson.parent.internal.type'
+  | 'childTopicsJson.children'
+  | 'childTopicsJson.children.id'
+  | 'childTopicsJson.children.parent.id'
+  | 'childTopicsJson.children.parent.children'
+  | 'childTopicsJson.children.children'
+  | 'childTopicsJson.children.children.id'
+  | 'childTopicsJson.children.children.children'
+  | 'childTopicsJson.children.internal.content'
+  | 'childTopicsJson.children.internal.contentDigest'
+  | 'childTopicsJson.children.internal.description'
+  | 'childTopicsJson.children.internal.fieldOwners'
+  | 'childTopicsJson.children.internal.ignoreType'
+  | 'childTopicsJson.children.internal.mediaType'
+  | 'childTopicsJson.children.internal.owner'
+  | 'childTopicsJson.children.internal.type'
+  | 'childTopicsJson.internal.content'
+  | 'childTopicsJson.internal.contentDigest'
+  | 'childTopicsJson.internal.description'
+  | 'childTopicsJson.internal.fieldOwners'
+  | 'childTopicsJson.internal.ignoreType'
+  | 'childTopicsJson.internal.mediaType'
+  | 'childTopicsJson.internal.owner'
+  | 'childTopicsJson.internal.type'
+  | 'childTopicsJson.title'
+  | 'childTopicsJson.description'
+  | 'childTopicsJson.url'
+  | 'childTopicsJson.totalPages'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -1735,6 +1882,8 @@ type FileFilterInput = {
   readonly childMarkdownRemark: Maybe<MarkdownRemarkFilterInput>;
   readonly childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   readonly childImageSharp: Maybe<ImageSharpFilterInput>;
+  readonly childrenTopicsJson: Maybe<TopicsJsonFilterListInput>;
+  readonly childTopicsJson: Maybe<TopicsJsonFilterInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -3134,6 +3283,8 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.categories'
   | 'frontmatter.tags'
   | 'frontmatter.draft'
+  | 'frontmatter.topics'
+  | 'frontmatter.topic_order'
   | 'fields.slug'
   | 'excerpt'
   | 'rawMarkdownBody'
@@ -3493,6 +3644,194 @@ type ImageSharpSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type TopicsJsonConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<TopicsJsonEdge>;
+  readonly nodes: ReadonlyArray<TopicsJson>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<TopicsJsonGroupConnection>;
+};
+
+
+type TopicsJsonConnection_distinctArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonConnection_maxArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonConnection_minArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonConnection_sumArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: TopicsJsonFieldsEnum;
+};
+
+type TopicsJsonEdge = {
+  readonly next: Maybe<TopicsJson>;
+  readonly node: TopicsJson;
+  readonly previous: Maybe<TopicsJson>;
+};
+
+type TopicsJsonFieldsEnum =
+  | 'id'
+  | 'parent.id'
+  | 'parent.parent.id'
+  | 'parent.parent.parent.id'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.children.children'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.children'
+  | 'parent.children.id'
+  | 'parent.children.parent.id'
+  | 'parent.children.parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.children.children'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'children'
+  | 'children.id'
+  | 'children.parent.id'
+  | 'children.parent.parent.id'
+  | 'children.parent.parent.children'
+  | 'children.parent.children'
+  | 'children.parent.children.id'
+  | 'children.parent.children.children'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.children'
+  | 'children.children.id'
+  | 'children.children.parent.id'
+  | 'children.children.parent.children'
+  | 'children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.children.children'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'title'
+  | 'description'
+  | 'url'
+  | 'totalPages';
+
+type TopicsJsonGroupConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<TopicsJsonEdge>;
+  readonly nodes: ReadonlyArray<TopicsJson>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<TopicsJsonGroupConnection>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+};
+
+
+type TopicsJsonGroupConnection_distinctArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonGroupConnection_maxArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonGroupConnection_minArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonGroupConnection_sumArgs = {
+  field: TopicsJsonFieldsEnum;
+};
+
+
+type TopicsJsonGroupConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: TopicsJsonFieldsEnum;
+};
+
+type TopicsJsonSortInput = {
+  readonly fields: Maybe<ReadonlyArray<Maybe<TopicsJsonFieldsEnum>>>;
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
+};
+
+type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
 type DraftsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3509,48 +3848,63 @@ type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
       & { readonly social: Maybe<Pick<Social, 'twitter'>> }
     )> }> };
 
+type tagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type tagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type FooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'title'>
+      & { readonly author: Maybe<Pick<Author, 'company'>> }
+    )> }> };
+
 type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NotFoundQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-type TagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type ActiveTopicsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type ActiveTopicsQuery = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'title' | 'description' | 'url' | 'totalPages'> }> } };
+
+type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type TopicsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TopicsListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type ContactQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-type tagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type TagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type tagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+type TagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
-
-type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+type TopicsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
-    )> } };
+type TopicsPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type blogListQueryQueryVariables = Exact<{
   skip: Scalars['Int'];
@@ -3563,10 +3917,60 @@ type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<
       & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
     )> } };
 
-type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
+type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+    )> } };
+
+type CategoriesQueryVariables = Exact<{
+  category: Maybe<Scalars['String']>;
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type CategoriesQuery = { readonly allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'categories'>> }> }
+  ) };
+
+type blogDraftsQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
+    )> } };
+
+type TagsQueryVariables = Exact<{
+  tag: Maybe<Scalars['String']>;
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type TagsQuery = { readonly allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
+  ) };
+
+type TopicsQueryVariables = Exact<{
+  topic: Maybe<Scalars['String']>;
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type TopicsQuery = { readonly allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'topics'>> }> }
+  ) };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3594,34 +3998,10 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type blogDraftsQueryQueryVariables = Exact<{
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
+type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
-    )> } };
-
-type FooterQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'title'>
-      & { readonly author: Maybe<Pick<Author, 'company'>> }
-    )> }> };
-
-type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
 
 type BlogPostBySlugQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
@@ -3640,33 +4020,14 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type TagsQueryVariables = Exact<{
-  tag: Maybe<Scalars['String']>;
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type TagsQuery = { readonly allMarkdownRemark: (
-    Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
-  ) };
-
-type CategoriesQueryVariables = Exact<{
-  category: Maybe<Scalars['String']>;
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type CategoriesQuery = { readonly allMarkdownRemark: (
-    Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
-  ) };
-
 type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type BioQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly author: Maybe<Pick<Author, 'name' | 'summary'>>, readonly social: Maybe<Pick<Social, 'twitter'>>, readonly github: Maybe<Pick<SiteSiteMetadataGithub, 'url' | 'repository'>>, readonly dockerhub: Maybe<Pick<SiteSiteMetadataDockerhub, 'url'>> }> }> };
+
+type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 }
