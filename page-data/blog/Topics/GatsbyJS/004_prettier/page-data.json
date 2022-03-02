@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-tsx",
+    "path": "/blog/Topics/GatsbyJS/004_prettier/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"おっさんWEBエンジニア奮闘記"}},"markdownRemark":{"id":"ded13c0f-abbd-5e41-a297-2fb89fed4475","excerpt":"環境設定","html":"<h2>環境設定</h2>","frontmatter":{"title":"GatsbyJS に Prettiew を導入","date":"March 02, 2022","post_modified":"March 02, 2022","description":"GatsbyJSにESLintを導入しコードの品質を保つ","tags":["GatsbyJS","TypeScript"],"draft":false}},"previous":{"fields":{"slug":"/Topics/GatsbyJS/005_eslint/"},"frontmatter":{"title":"GatsbyJS に ESLint を導入"}},"next":{"fields":{"slug":"/Topics/GatsbyJS/006_grouping/"},"frontmatter":{"title":"GatsbyJS 記事のグループ化"}}},"pageContext":{"id":"ded13c0f-abbd-5e41-a297-2fb89fed4475","previousPostId":"3f0c79ff-f0aa-5a71-ab0a-46e021b6d41c","nextPostId":"56bd2603-7108-5982-be87-790de954d6f3","draft":false}},
+    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575"]}

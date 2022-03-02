@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-tags-tsx",
     "path": "/blog/tags/testinfra/",
     "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/Infrastructure/Iac/ansible_vpn/"},"frontmatter":{"date":"December 14, 2020","post_modified":"December 14, 2020","title":"VPNサーバー(SoftEhter)をAnsibleでConoha-VPNサーバーへ構築","description":"Conoha API を使いVPN構築を簡略化 の備忘録","tags":["Linux","Docker","Python","Ansible","Testinfra","VPN"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Testinfra","linkPrefix":"/blog/tags/testinfra","linkSuffix":"/page/","draft":[false]}},
-    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","2772418575"]}
+    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575"]}
