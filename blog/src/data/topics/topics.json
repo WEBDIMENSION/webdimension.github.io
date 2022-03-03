@@ -1,8 +1,14 @@
 [
   {
     "title": "おっさんが GatsbyJS のインストールから Deploy するまで",
-    "description": "TypeScript化, ESLint, Prettier, Grouping(Tags), CSS, ページネーション, 問い合わせフォーム、GitHubActions, その他",
+    "description": "TypeScript化, ESLint, Prettier, Grouping(Tags), CSS, ページネーション, 問い合わせフォーム、GitHubActions, etc...",
     "url": "/blog/topics/gatsby-js",
     "totalPages": "13"
+  },
+  {
+    "title": "Laravel 事前準備",
+    "description": "php-cs-fixer, es-lint, phpunit,veu-test,laravel-mix, etc...",
+    "url": "/blog/topics/laravel",
+    "totalPages": "8"
   }
 ]
