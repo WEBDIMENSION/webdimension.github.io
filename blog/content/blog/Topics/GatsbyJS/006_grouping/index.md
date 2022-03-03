@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:36:13"
 description: "GatsbyJS 記事のグループ化。Tagsを実装。Categoryなども同様"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "6"
 draft: false
 

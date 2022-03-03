@@ -5,8 +5,8 @@ date: "2022-03-02 18:44:11"
 post_modified: "2022-03-02 18:44:11"
 description: "概要。 GatsbyJSのインストールからDeployまで"
 categories: ["FrontEnd"]
-tags: ["GatsbyJs", "TypeScript"]
-topics: "GatsbyJs"
+tags: ["GatsbyJS", "TypeScript"]
+topics: "GatsbyJS"
 topic_order: "0"
 draft: false
 

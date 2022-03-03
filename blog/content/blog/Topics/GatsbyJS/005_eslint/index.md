@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:30:01"
 description: "GatsbyJSにESLintを導入しコードの品質を保つ"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "5"
 draft: false
 

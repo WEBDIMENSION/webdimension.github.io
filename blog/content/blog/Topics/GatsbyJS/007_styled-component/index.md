@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:37:56"
 description: "GatsbyJS styled-components を導入し CSS を反映する。"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "7"
 draft: false
 

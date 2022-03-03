@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:46:36"
 description: "GatsbyJS の CI/CD。GitHub Actionを使用してGitHub Pageへデプロイ。独自ドメイン設定"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "100"
 draft: false
 
