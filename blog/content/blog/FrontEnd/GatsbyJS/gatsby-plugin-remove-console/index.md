@@ -6,7 +6,7 @@ description: "GatsbyJs で plugin gatsby-plugin-remove-console をインスト�
 categories: ["FrontEnd"]
 tags: ["GatsbyJs"]
 topics: ""
-draft: true
+draft: false
 ---
 
 本番デプロイ (Production build) に console.log(hoge)を消したい。  
