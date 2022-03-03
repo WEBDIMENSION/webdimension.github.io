@@ -11,7 +11,6 @@ import Topics from "../components/topics"
 
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes
-  console.log(nodes)
 
   if (nodes.length === 0) {
     return (
