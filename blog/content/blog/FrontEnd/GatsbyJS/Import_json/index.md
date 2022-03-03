@@ -1,4 +1,14 @@
-# GatsbyJs で json ファイルを インポート
+---
+
+title: "GatsbyJs で json ファイルを インポート"
+date: "2022-03-03 08:14:44"
+post_modified: "2022-03-03 08:14:44"
+description: "GatsbyJs で json ファイルをインポートして GraphQL から取得"
+categories: ["FrontEnd"]
+tags: ["GatsbyJS"]
+draft: false
+
+---
 
 ## Data ファイル作成
 

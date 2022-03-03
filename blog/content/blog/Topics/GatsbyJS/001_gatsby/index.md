@@ -1,12 +1,12 @@
 ---
 
-title: "GtabyJS Install & Git 設定"
+title: "GatsbyJS Install & Git 設定"
 date: "2022-03-02 20:15:50"
 post_modified: "2022-03-02 20:15:50"
 description: "GatsbyJsをインストールしてGitHubへ初回Pushするまで"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "1"
 draft: false
 

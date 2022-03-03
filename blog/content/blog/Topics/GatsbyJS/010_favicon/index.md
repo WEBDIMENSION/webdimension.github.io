@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:43:40"
 description: "GatsbyJS のFabicon.icon を変更。gatsby-config.js にて設定"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "10"
 draft: false
 

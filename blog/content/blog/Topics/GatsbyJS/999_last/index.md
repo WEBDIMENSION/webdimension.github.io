@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:48:31"
 description: "GatsbyJS で Blog 構築するための下地作りを終えて。今後の課題。"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "999"
 draft: false
 

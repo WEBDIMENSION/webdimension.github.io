@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:39:33"
 description: "GatsbyJS 記事一覧ページを生成し、Pagination を実装する"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "8"
 draft: false
 

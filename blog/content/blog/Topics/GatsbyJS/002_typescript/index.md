@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:18:46"
 description: "GatsbyJS Blog-starter をTypeScript化する"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "2"
 draft: false
 

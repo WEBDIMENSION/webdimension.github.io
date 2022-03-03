@@ -6,7 +6,7 @@ post_modified: "2022-03-02 20:42:03"
 description: "GatsbyJS 問い合わせフォームを実装 Netlify, FlexyForm"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS", "TypeScript"]
-topics: "GatsbyJs"
+topics: "GatsbyJS"
 topic_order: "9"
 draft: false
 
