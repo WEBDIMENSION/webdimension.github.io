@@ -33,7 +33,7 @@ const ContentWrapper = styled.div`
     letter-spacing: 0.5em;
     background-color: var(--colorPrimary);
     font-weight: bolder;
-    border-radius: 1em 1em 0 0;
+    border-radius: 0.5em 0.5em 0 0;
     font-size: var(--fontSizeH4);
   }
 
