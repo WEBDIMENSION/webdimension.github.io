@@ -67,10 +67,19 @@ const DivWrapper = styled.div`
   text-align: center;
   padding: 8px;
 
+  ul {
+    li {
+      margin-bottom: 2em;
+      //border-top: 1px var(--colorSecondary) solid;
+      border-bottom: 1px var(--fontColor) solid;
+      padding: 1em 0;
+    }
+  }
+
   p.topicDescription {
     padding: 8px;
-    border-top: 1px var(--colorSecondary) solid;
     margin-top: 8px;
+    border-top: 1px var(--fontColor) dashed;
   }
 
   span.topicTotalPage {
@@ -83,5 +92,9 @@ const DivWrapper = styled.div`
     font-size: var(--fontSizeH1);
     text-align: center;
     margin-bottom: 0.5em;
+  }
+
+  a {
+    text-decoration: none;
   }
 `

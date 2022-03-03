@@ -9,7 +9,6 @@ import PageNation from "../components/pageNation"
 const Categories = ({ pageContext, data }: { pageContext: any; data: any }) => {
   const { category } = pageContext
   const nodes = data.allMarkdownRemark.nodes
-  console.log(nodes)
 
   return (
     <Layout>
