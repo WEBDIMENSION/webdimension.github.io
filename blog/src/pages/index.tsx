@@ -11,6 +11,7 @@ import Topics from "../components/topics"
 
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes
+  console.log(nodes)
 
   if (nodes.length === 0) {
     return (
@@ -34,7 +35,9 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
         </DivWrapper>
         <Article>
           <H2Wrapper>-- Topics --</H2Wrapper>
-          <Topics isSideBar={false} />
+          <section>
+            <Topics isSideBar={false} />
+          </section>
         </Article>
         <Article>
           <H2Wrapper>-- 最近の投稿 --</H2Wrapper>
