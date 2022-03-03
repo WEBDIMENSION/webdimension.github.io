@@ -5,6 +5,8 @@ post_modified: "2020-02-15 15:02:23"
 description: "Laravel6へBootstrap4 vue.js を導入"
 categories: ["BackEnd"]
 tags: ["Laravel", "Vue.js", "Bootstrap"]
+topics: "laravel"
+topic_order: "1"
 draft: false
 ---
 

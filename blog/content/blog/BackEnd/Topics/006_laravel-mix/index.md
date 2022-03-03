@@ -5,6 +5,8 @@ post_modified: "2020-02-15 20:04:00"
 description: "Laravel-mix (webpack) で Build, Watch をしてみる"
 categories: ["BackEnd"]
 tags: ["Laravel", "Webpack"]
+topics: "laravel"
+topic_order: "6"
 draft: false
 ---
 
