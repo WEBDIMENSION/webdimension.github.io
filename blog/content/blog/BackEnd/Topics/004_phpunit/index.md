@@ -5,6 +5,8 @@ post_modified: "2020-02-15 18:29:30"
 description: "Laravelデフォルトのphpunitを実行。composer.json へスクリプト登録"
 categories: ["BackEnd"]
 tags: ["PHPUnit", "Laravel"]
+topics: "laravel"
+topic_order: "4"
 draft: false
 ---
 

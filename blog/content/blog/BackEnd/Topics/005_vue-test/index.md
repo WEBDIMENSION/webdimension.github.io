@@ -5,6 +5,8 @@ post_modified: "2020-02-15 20:05:24"
 description: "Laravel上でのVue.jsにUnittestを導入。npm scriptに追加"
 categories: ["BackEnd"]
 tags: ["Node", "Laravel", "Vue.js"]
+topics: "laravel"
+topic_order: "5"
 draft: false
 ---
 

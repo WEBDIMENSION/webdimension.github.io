@@ -5,6 +5,8 @@ post_modified: "2020-02-15 20:33:52"
 description: "npm run xxx の Build時に Eslint, Stylelintも実行しスパルタンな設定をしてみる。"
 categories: ["BackEnd"]
 tags: ["Npm", "Laravel", "Vue.js", "Stylelint"]
+topics: "laravel"
+topic_order: "8"
 draft: false
 ---
 
