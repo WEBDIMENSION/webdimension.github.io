@@ -10,7 +10,6 @@ import styled from "styled-components"
 import data from "../data/dockerhub/dockerhub.json"
 
 const Dockerhub = ({ url }: { url: string | unknown | undefined }) => {
-  console.log(data.results)
   return (
     <DivWrapper>
       <h4>DockerHub public repositories</h4>
