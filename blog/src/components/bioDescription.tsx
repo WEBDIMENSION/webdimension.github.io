@@ -8,9 +8,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import InfoIcon from "@mui/icons-material/Info"
 import SideBarContentBottom from "../components/sideBarContentBottom"
-import IconButton from "@mui/material/IconButton"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faIdCard } from "@fortawesome/free-solid-svg-icons"
 
 const BioDescription = ({ isSideBar }: { isSideBar: boolean }) => {
   return (
@@ -21,9 +21,7 @@ const BioDescription = ({ isSideBar }: { isSideBar: boolean }) => {
       <br />
       {isSideBar ? (
         <SideBarContentBottom>
-          <IconButton color="inherit" size="large" aria-label="about">
-            <InfoIcon />
-          </IconButton>
+          <FontAwesomeIcon icon={faIdCard} />
           <Link to={`/about/`}>AboutMe</Link>
         </SideBarContentBottom>
       ) : (

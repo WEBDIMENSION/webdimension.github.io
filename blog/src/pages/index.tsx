@@ -8,6 +8,8 @@ import styled from "styled-components"
 import BioDescription from "../components/bioDescription"
 import GoogleAdsense from "../components/google/googleAdsense"
 import Topics from "../components/topics"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBlog, faBellConcierge } from "@fortawesome/free-solid-svg-icons"
 
 const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) => {
   const nodes = data.allMarkdownRemark.nodes
@@ -33,13 +35,19 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
           <GoogleAdsense slotKey={"contentsLower"} />
         </DivWrapper>
         <Article>
-          <H2Wrapper>-- Topics --</H2Wrapper>
+          <H2Wrapper>
+            <FontAwesomeIcon icon={faBellConcierge} />
+            Topics
+          </H2Wrapper>
           <section>
             <Topics isSideBar={false} />
           </section>
         </Article>
         <Article>
-          <H2Wrapper>-- 最近の投稿 --</H2Wrapper>
+          <H2Wrapper>
+            <FontAwesomeIcon icon={faBlog} />
+            最近の投稿
+          </H2Wrapper>
           <section>
             <PostList nodes={nodes} />
           </section>

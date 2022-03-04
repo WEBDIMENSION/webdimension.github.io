@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 const GitHubApi = () => {
   const [data, setData] = useState([])
@@ -24,7 +26,10 @@ const GitHubApi = () => {
   }
   return (
     <DivWrapper className="githubRepos">
-      <h4>GitHub public repositories</h4>
+      <h4>
+        <FontAwesomeIcon icon={faGithub} />
+        GitHub public repositories
+      </h4>
       <ul>
         {data.map((repo: any) => {
           return (
