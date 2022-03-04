@@ -12,9 +12,11 @@ import BioDescription from "./bioDescription"
 import styled from "styled-components"
 import IconButton from "@mui/material/IconButton"
 import EmailIcon from "@mui/icons-material/Email"
+import GitHubApi from "./githubApi"
+import DockerHubApi from "./dockehubApi"
 
 const Bio = () => {
-  const data = useStaticQuery<GatsbyTypes.BioQueryQuery>(graphql`
+  const { site } = useStaticQuery<GatsbyTypes.BioQueryQuery>(graphql`
     query BioQuery {
       site {
         siteMetadata {
@@ -37,9 +39,9 @@ const Bio = () => {
     }
   `)
 
-  const author = data.site?.siteMetadata?.author
-  const github = data.site?.siteMetadata?.github
-  const dockerhub = data.site?.siteMetadata?.dockerhub
+  const author = site?.siteMetadata?.author
+  const github = site?.siteMetadata?.github
+  const dockerhub = site?.siteMetadata?.dockerhub
 
   return (
     <DivWrapper className="bio">
@@ -54,7 +56,7 @@ const Bio = () => {
           &nbsp;<a href={"https://github.com/"}>GitHub</a>&nbsp; を利用しています。
           <br />
           ソースは
-          <a href={github?.repository} target={"_blank"}>
+          <a href={github?.repository} target={"_blank"} rel="noreferrer">
             {" "}
             GitHub{" "}
           </a>
@@ -86,21 +88,16 @@ const Bio = () => {
       <div className={"bioDescription"}>
         <h2>Profile</h2>
         <h3>Repositories</h3>
-        <ul>
-          <li>
-            <a href={github?.url} target={"_blank"}>
-              GitHub
-            </a>
-          </li>
-          <li>
-            <s>GitLab (非公開)</s>
-          </li>
-          <li>
-            <a href={dockerhub?.url} target={"_blank"}>
-              DockerHub
-            </a>
-          </li>
-        </ul>
+        <GitHubApi />
+        <div>
+          <h4>GitLab</h4>
+          <ul>
+            <li>
+              <s>(非公開)</s>
+            </li>
+          </ul>
+        </div>
+        <DockerHubApi url={dockerhub?.url} />
         <h3>Language</h3>
         <ul>
           <li>php</li>
@@ -220,6 +217,10 @@ const DivWrapper = styled.div`
       margin-top: 1em;
       border-bottom: 1px var(--fontColor) solid;
       padding-bottom: 0.5em;
+    }
+
+    h4 {
+      margin-top: 1em;
     }
 
     ul {

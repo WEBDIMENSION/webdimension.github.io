@@ -82,6 +82,10 @@ type File = Node & {
   readonly childrenTopicsJson: Maybe<ReadonlyArray<Maybe<TopicsJson>>>;
   /** Returns the first child node of type TopicsJson or null if there are no children of given type on this node */
   readonly childTopicsJson: Maybe<TopicsJson>;
+  /** Returns all children nodes filtered by type DockerhubJson */
+  readonly childrenDockerhubJson: Maybe<ReadonlyArray<Maybe<DockerhubJson>>>;
+  /** Returns the first child node of type DockerhubJson or null if there are no children of given type on this node */
+  readonly childDockerhubJson: Maybe<DockerhubJson>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
@@ -756,6 +760,41 @@ type TopicsJson = Node & {
   readonly totalPages: Maybe<Scalars['String']>;
 };
 
+type DockerhubJson = Node & {
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
+  readonly count: Maybe<Scalars['Int']>;
+  readonly results: Maybe<ReadonlyArray<Maybe<DockerhubJsonResults>>>;
+};
+
+type DockerhubJsonResults = {
+  readonly user: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly namespace: Maybe<Scalars['String']>;
+  readonly repository_type: Maybe<Scalars['String']>;
+  readonly status: Maybe<Scalars['Int']>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly is_private: Maybe<Scalars['Boolean']>;
+  readonly is_automated: Maybe<Scalars['Boolean']>;
+  readonly can_edit: Maybe<Scalars['Boolean']>;
+  readonly star_count: Maybe<Scalars['Int']>;
+  readonly pull_count: Maybe<Scalars['Int']>;
+  readonly last_updated: Maybe<Scalars['Date']>;
+  readonly is_migrated: Maybe<Scalars['Boolean']>;
+  readonly collaborator_count: Maybe<Scalars['Int']>;
+  readonly hub_user: Maybe<Scalars['String']>;
+};
+
+
+type DockerhubJsonResults_last_updatedArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
 type StaticImage = Node & {
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
@@ -880,6 +919,8 @@ type Query = {
   readonly allImageSharp: ImageSharpConnection;
   readonly topicsJson: Maybe<TopicsJson>;
   readonly allTopicsJson: TopicsJsonConnection;
+  readonly dockerhubJson: Maybe<DockerhubJson>;
+  readonly allDockerhubJson: DockerhubJsonConnection;
   readonly staticImage: Maybe<StaticImage>;
   readonly allStaticImage: StaticImageConnection;
 };
@@ -926,6 +967,8 @@ type Query_fileArgs = {
   childImageSharp: Maybe<ImageSharpFilterInput>;
   childrenTopicsJson: Maybe<TopicsJsonFilterListInput>;
   childTopicsJson: Maybe<TopicsJsonFilterInput>;
+  childrenDockerhubJson: Maybe<DockerhubJsonFilterListInput>;
+  childDockerhubJson: Maybe<DockerhubJsonFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
@@ -1164,6 +1207,24 @@ type Query_topicsJsonArgs = {
 type Query_allTopicsJsonArgs = {
   filter: Maybe<TopicsJsonFilterInput>;
   sort: Maybe<TopicsJsonSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+type Query_dockerhubJsonArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  count: Maybe<IntQueryOperatorInput>;
+  results: Maybe<DockerhubJsonResultsFilterListInput>;
+};
+
+
+type Query_allDockerhubJsonArgs = {
+  filter: Maybe<DockerhubJsonFilterInput>;
+  sort: Maybe<DockerhubJsonSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -1423,6 +1484,41 @@ type TopicsJsonFilterInput = {
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly url: Maybe<StringQueryOperatorInput>;
   readonly totalPages: Maybe<StringQueryOperatorInput>;
+};
+
+type DockerhubJsonFilterListInput = {
+  readonly elemMatch: Maybe<DockerhubJsonFilterInput>;
+};
+
+type DockerhubJsonFilterInput = {
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+  readonly count: Maybe<IntQueryOperatorInput>;
+  readonly results: Maybe<DockerhubJsonResultsFilterListInput>;
+};
+
+type DockerhubJsonResultsFilterListInput = {
+  readonly elemMatch: Maybe<DockerhubJsonResultsFilterInput>;
+};
+
+type DockerhubJsonResultsFilterInput = {
+  readonly user: Maybe<StringQueryOperatorInput>;
+  readonly name: Maybe<StringQueryOperatorInput>;
+  readonly namespace: Maybe<StringQueryOperatorInput>;
+  readonly repository_type: Maybe<StringQueryOperatorInput>;
+  readonly status: Maybe<IntQueryOperatorInput>;
+  readonly description: Maybe<StringQueryOperatorInput>;
+  readonly is_private: Maybe<BooleanQueryOperatorInput>;
+  readonly is_automated: Maybe<BooleanQueryOperatorInput>;
+  readonly can_edit: Maybe<BooleanQueryOperatorInput>;
+  readonly star_count: Maybe<IntQueryOperatorInput>;
+  readonly pull_count: Maybe<IntQueryOperatorInput>;
+  readonly last_updated: Maybe<DateQueryOperatorInput>;
+  readonly is_migrated: Maybe<BooleanQueryOperatorInput>;
+  readonly collaborator_count: Maybe<IntQueryOperatorInput>;
+  readonly hub_user: Maybe<StringQueryOperatorInput>;
 };
 
 type FileConnection = {
@@ -1868,6 +1964,117 @@ type FileFieldsEnum =
   | 'childTopicsJson.description'
   | 'childTopicsJson.url'
   | 'childTopicsJson.totalPages'
+  | 'childrenDockerhubJson'
+  | 'childrenDockerhubJson.id'
+  | 'childrenDockerhubJson.parent.id'
+  | 'childrenDockerhubJson.parent.parent.id'
+  | 'childrenDockerhubJson.parent.parent.children'
+  | 'childrenDockerhubJson.parent.children'
+  | 'childrenDockerhubJson.parent.children.id'
+  | 'childrenDockerhubJson.parent.children.children'
+  | 'childrenDockerhubJson.parent.internal.content'
+  | 'childrenDockerhubJson.parent.internal.contentDigest'
+  | 'childrenDockerhubJson.parent.internal.description'
+  | 'childrenDockerhubJson.parent.internal.fieldOwners'
+  | 'childrenDockerhubJson.parent.internal.ignoreType'
+  | 'childrenDockerhubJson.parent.internal.mediaType'
+  | 'childrenDockerhubJson.parent.internal.owner'
+  | 'childrenDockerhubJson.parent.internal.type'
+  | 'childrenDockerhubJson.children'
+  | 'childrenDockerhubJson.children.id'
+  | 'childrenDockerhubJson.children.parent.id'
+  | 'childrenDockerhubJson.children.parent.children'
+  | 'childrenDockerhubJson.children.children'
+  | 'childrenDockerhubJson.children.children.id'
+  | 'childrenDockerhubJson.children.children.children'
+  | 'childrenDockerhubJson.children.internal.content'
+  | 'childrenDockerhubJson.children.internal.contentDigest'
+  | 'childrenDockerhubJson.children.internal.description'
+  | 'childrenDockerhubJson.children.internal.fieldOwners'
+  | 'childrenDockerhubJson.children.internal.ignoreType'
+  | 'childrenDockerhubJson.children.internal.mediaType'
+  | 'childrenDockerhubJson.children.internal.owner'
+  | 'childrenDockerhubJson.children.internal.type'
+  | 'childrenDockerhubJson.internal.content'
+  | 'childrenDockerhubJson.internal.contentDigest'
+  | 'childrenDockerhubJson.internal.description'
+  | 'childrenDockerhubJson.internal.fieldOwners'
+  | 'childrenDockerhubJson.internal.ignoreType'
+  | 'childrenDockerhubJson.internal.mediaType'
+  | 'childrenDockerhubJson.internal.owner'
+  | 'childrenDockerhubJson.internal.type'
+  | 'childrenDockerhubJson.count'
+  | 'childrenDockerhubJson.results'
+  | 'childrenDockerhubJson.results.user'
+  | 'childrenDockerhubJson.results.name'
+  | 'childrenDockerhubJson.results.namespace'
+  | 'childrenDockerhubJson.results.repository_type'
+  | 'childrenDockerhubJson.results.status'
+  | 'childrenDockerhubJson.results.description'
+  | 'childrenDockerhubJson.results.is_private'
+  | 'childrenDockerhubJson.results.is_automated'
+  | 'childrenDockerhubJson.results.can_edit'
+  | 'childrenDockerhubJson.results.star_count'
+  | 'childrenDockerhubJson.results.pull_count'
+  | 'childrenDockerhubJson.results.last_updated'
+  | 'childrenDockerhubJson.results.is_migrated'
+  | 'childrenDockerhubJson.results.collaborator_count'
+  | 'childrenDockerhubJson.results.hub_user'
+  | 'childDockerhubJson.id'
+  | 'childDockerhubJson.parent.id'
+  | 'childDockerhubJson.parent.parent.id'
+  | 'childDockerhubJson.parent.parent.children'
+  | 'childDockerhubJson.parent.children'
+  | 'childDockerhubJson.parent.children.id'
+  | 'childDockerhubJson.parent.children.children'
+  | 'childDockerhubJson.parent.internal.content'
+  | 'childDockerhubJson.parent.internal.contentDigest'
+  | 'childDockerhubJson.parent.internal.description'
+  | 'childDockerhubJson.parent.internal.fieldOwners'
+  | 'childDockerhubJson.parent.internal.ignoreType'
+  | 'childDockerhubJson.parent.internal.mediaType'
+  | 'childDockerhubJson.parent.internal.owner'
+  | 'childDockerhubJson.parent.internal.type'
+  | 'childDockerhubJson.children'
+  | 'childDockerhubJson.children.id'
+  | 'childDockerhubJson.children.parent.id'
+  | 'childDockerhubJson.children.parent.children'
+  | 'childDockerhubJson.children.children'
+  | 'childDockerhubJson.children.children.id'
+  | 'childDockerhubJson.children.children.children'
+  | 'childDockerhubJson.children.internal.content'
+  | 'childDockerhubJson.children.internal.contentDigest'
+  | 'childDockerhubJson.children.internal.description'
+  | 'childDockerhubJson.children.internal.fieldOwners'
+  | 'childDockerhubJson.children.internal.ignoreType'
+  | 'childDockerhubJson.children.internal.mediaType'
+  | 'childDockerhubJson.children.internal.owner'
+  | 'childDockerhubJson.children.internal.type'
+  | 'childDockerhubJson.internal.content'
+  | 'childDockerhubJson.internal.contentDigest'
+  | 'childDockerhubJson.internal.description'
+  | 'childDockerhubJson.internal.fieldOwners'
+  | 'childDockerhubJson.internal.ignoreType'
+  | 'childDockerhubJson.internal.mediaType'
+  | 'childDockerhubJson.internal.owner'
+  | 'childDockerhubJson.internal.type'
+  | 'childDockerhubJson.count'
+  | 'childDockerhubJson.results'
+  | 'childDockerhubJson.results.user'
+  | 'childDockerhubJson.results.name'
+  | 'childDockerhubJson.results.namespace'
+  | 'childDockerhubJson.results.repository_type'
+  | 'childDockerhubJson.results.status'
+  | 'childDockerhubJson.results.description'
+  | 'childDockerhubJson.results.is_private'
+  | 'childDockerhubJson.results.is_automated'
+  | 'childDockerhubJson.results.can_edit'
+  | 'childDockerhubJson.results.star_count'
+  | 'childDockerhubJson.results.pull_count'
+  | 'childDockerhubJson.results.last_updated'
+  | 'childDockerhubJson.results.is_migrated'
+  | 'childDockerhubJson.results.collaborator_count'
+  | 'childDockerhubJson.results.hub_user'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -2037,6 +2244,8 @@ type FileFilterInput = {
   readonly childImageSharp: Maybe<ImageSharpFilterInput>;
   readonly childrenTopicsJson: Maybe<TopicsJsonFilterListInput>;
   readonly childTopicsJson: Maybe<TopicsJsonFilterInput>;
+  readonly childrenDockerhubJson: Maybe<DockerhubJsonFilterListInput>;
+  readonly childDockerhubJson: Maybe<DockerhubJsonFilterInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
@@ -3980,6 +4189,202 @@ type TopicsJsonSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type DockerhubJsonConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<DockerhubJsonEdge>;
+  readonly nodes: ReadonlyArray<DockerhubJson>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<DockerhubJsonGroupConnection>;
+};
+
+
+type DockerhubJsonConnection_distinctArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonConnection_maxArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonConnection_minArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonConnection_sumArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: DockerhubJsonFieldsEnum;
+};
+
+type DockerhubJsonEdge = {
+  readonly next: Maybe<DockerhubJson>;
+  readonly node: DockerhubJson;
+  readonly previous: Maybe<DockerhubJson>;
+};
+
+type DockerhubJsonFieldsEnum =
+  | 'id'
+  | 'parent.id'
+  | 'parent.parent.id'
+  | 'parent.parent.parent.id'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.children.children'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.children'
+  | 'parent.children.id'
+  | 'parent.children.parent.id'
+  | 'parent.children.parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.children.children'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'children'
+  | 'children.id'
+  | 'children.parent.id'
+  | 'children.parent.parent.id'
+  | 'children.parent.parent.children'
+  | 'children.parent.children'
+  | 'children.parent.children.id'
+  | 'children.parent.children.children'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.children'
+  | 'children.children.id'
+  | 'children.children.parent.id'
+  | 'children.children.parent.children'
+  | 'children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.children.children'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'count'
+  | 'results'
+  | 'results.user'
+  | 'results.name'
+  | 'results.namespace'
+  | 'results.repository_type'
+  | 'results.status'
+  | 'results.description'
+  | 'results.is_private'
+  | 'results.is_automated'
+  | 'results.can_edit'
+  | 'results.star_count'
+  | 'results.pull_count'
+  | 'results.last_updated'
+  | 'results.is_migrated'
+  | 'results.collaborator_count'
+  | 'results.hub_user';
+
+type DockerhubJsonGroupConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<DockerhubJsonEdge>;
+  readonly nodes: ReadonlyArray<DockerhubJson>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<DockerhubJsonGroupConnection>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+};
+
+
+type DockerhubJsonGroupConnection_distinctArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonGroupConnection_maxArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonGroupConnection_minArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonGroupConnection_sumArgs = {
+  field: DockerhubJsonFieldsEnum;
+};
+
+
+type DockerhubJsonGroupConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: DockerhubJsonFieldsEnum;
+};
+
+type DockerhubJsonSortInput = {
+  readonly fields: Maybe<ReadonlyArray<Maybe<DockerhubJsonFieldsEnum>>>;
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
+};
+
 type StaticImageConnection = {
   readonly totalCount: Scalars['Int'];
   readonly edges: ReadonlyArray<StaticImageEdge>;
@@ -4230,13 +4635,10 @@ type StaticImageSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type FooterQueryVariables = Exact<{ [key: string]: never; }>;
+type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'title'>
-      & { readonly author: Maybe<Pick<Author, 'company'>> }
-    )> }> };
+type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
 type DraftsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4246,38 +4648,18 @@ type DraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pi
     & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'title' | 'description'>> }> }
   ) };
 
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+type staticBlogsrccomponentsseoTsx1188992244QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+type staticBlogsrccomponentsseoTsx1188992244Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
       Pick<SiteSiteMetadata, 'title' | 'subTitle' | 'description'>
       & { readonly social: Maybe<Pick<Social, 'twitter'>> }
     )> }> };
-
-type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
 type tagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type tagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
-
-type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NotFoundQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type TopicsPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TopicsPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type ActiveTopicsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4289,15 +4671,82 @@ type TopicsListQueryVariables = Exact<{ [key: string]: never; }>;
 
 type TopicsListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
-type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
+type TagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type TagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NotFoundQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type TopicsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TopicsPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+    )> } };
+
+type ContactQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
+
+type blogDraftsQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
+    )> } };
+
+type blogListQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+    )> } };
+
+type BlogPostBySlugQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
+  previousPostId: Maybe<Scalars['String']>;
+  nextPostId: Maybe<Scalars['String']>;
+}>;
+
+
+type BlogPostBySlugQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
+    & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'post_modified' | 'description' | 'tags' | 'draft'>> }
+  )>, readonly previous: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }>, readonly next: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -4325,21 +4774,6 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type ContactQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
-
-type TagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
 type TagsQueryVariables = Exact<{
   tag: Maybe<Scalars['String']>;
   skip: Scalars['Int'];
@@ -4352,64 +4786,10 @@ type TagsQuery = { readonly allMarkdownRemark: (
     & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
   ) };
 
-type blogDraftsQueryQueryVariables = Exact<{
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
+type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
-    )> } };
-
-type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
-    )> } };
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type BlogPostBySlugQueryVariables = Exact<{
-  id: Maybe<Scalars['String']>;
-  previousPostId: Maybe<Scalars['String']>;
-  nextPostId: Maybe<Scalars['String']>;
-}>;
-
-
-type BlogPostBySlugQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly markdownRemark: Maybe<(
-    Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
-    & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'post_modified' | 'description' | 'tags' | 'draft'>> }
-  )>, readonly previous: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }>, readonly next: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }> };
-
-type blogListQueryQueryVariables = Exact<{
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
-    )> } };
-
-type TopicsQueryVariables = Exact<{
-  topic: Maybe<Scalars['String']>;
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type TopicsQuery = { readonly allMarkdownRemark: (
-    Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'topics'>> }> }
-  ) };
+type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type CategoriesQueryVariables = Exact<{
   category: Maybe<Scalars['String']>;
@@ -4423,14 +4803,39 @@ type CategoriesQuery = { readonly allMarkdownRemark: (
     & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'categories'>> }> }
   ) };
 
-type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
+type TopicsQueryVariables = Exact<{
+  topic: Maybe<Scalars['String']>;
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
 
 
-type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type TopicsQuery = { readonly allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'topics'>> }> }
+  ) };
+
+type FooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'title'>
+      & { readonly author: Maybe<Pick<Author, 'company'>> }
+    )> }> };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type BioQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly author: Maybe<Pick<Author, 'name' | 'summary'>>, readonly social: Maybe<Pick<Social, 'twitter'>>, readonly github: Maybe<Pick<SiteSiteMetadataGithub, 'url' | 'repository'>>, readonly dockerhub: Maybe<Pick<SiteSiteMetadataDockerhub, 'url'>> }> }> };
+
+type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type HeaderQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 }
