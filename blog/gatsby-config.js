@@ -198,5 +198,6 @@ module.exports = {
         exclude: ["error", "warn"], // <- will be removed all console calls except these
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }

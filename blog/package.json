@@ -34,6 +34,7 @@
     "gatsby-plugin-robots-txt": "^1.7.0",
     "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-plugin-sitemap": "^5.7.0",
+    "gatsby-plugin-styled-components": "^5.9.0",
     "gatsby-plugin-typegen": "^2.2.4",
     "gatsby-plugin-use-dark-mode": "^1.4.0",
     "gatsby-remark-copy-linked-files": "^5.4.0",

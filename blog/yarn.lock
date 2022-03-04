@@ -6332,6 +6332,13 @@ gatsby-plugin-sitemap@^5.7.0:
     minimatch "^3.0.4"
     sitemap "^7.0.0"
 
+gatsby-plugin-styled-components@^5.9.0:
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-5.9.0.tgz#e475e712dcd25c15861577a42d076cc1b9cfd4a7"
+  integrity sha512-6ABRN7QMjwqJNiELvycumJw/GsTOGwbKFdEGwCY/B8o/sL5f6EeSy5iNHZ4zPOCPrdebsw3m/l+vwvKR5EL8Ug==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+
 gatsby-plugin-typegen@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typegen/-/gatsby-plugin-typegen-2.2.4.tgz#2d0724991dd3f8517cceb7facacf083f9294532d"
