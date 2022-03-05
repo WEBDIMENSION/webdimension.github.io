@@ -14,8 +14,7 @@ draft: false
 
 ## phpunit を実行してみる
 
-Laravel にはデフォルトで Test が導入されている。
-実行してみる
+Laravel にはデフォルトで Test が導入されている。 実行してみる
 
 ```bash
  ./vendor/bin/phpunit
@@ -27,7 +26,7 @@ Time: 669 ms, Memory: 22.00 MB
 OK (1 tests, 1 assertions)
 ```
 
-このように OK がでれば　テスト成功
+このように OK がでれば テスト成功
 
 ### composer.json の script に追加
 
@@ -53,6 +52,6 @@ composer test
 
 ### IDE から Testunit 実行
 
-参考:[Docker on Vagrant をがんばってみた](https://blog.webdimension.jp/linux/docke-on-vagrant/)
+参考:[Docker on Vagrant をがんばってみた](/blog/Environment/docke-on-vagrant/)
 
 この例では Vagrant 上の Docker で動いている PHP をテストしています。

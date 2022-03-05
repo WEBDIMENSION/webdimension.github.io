@@ -56,13 +56,15 @@ const Bio = () => {
           <s>Netlify</s>
           &nbsp;
           <FontAwesomeIcon icon={faGithub} />
-          <a href={"https://github.com/"}>GitHub</a>&nbsp; を利用しています。
+          <a href={"https://github.com/"} target={"_blank"} rel="noreferrer">
+            GitHub
+          </a>
+          &nbsp; を利用しています。
           <br />
           ソースは
           <FontAwesomeIcon icon={faGithub} />
           <a href={github?.repository} target={"_blank"} rel="noreferrer">
-            {" "}
-            GitHub{" "}
+            GitHub
           </a>
           (webdimension/gatsby_blog)で全公開しております。
         </p>

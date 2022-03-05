@@ -47,12 +47,12 @@ services:
     working_dir: /workspace/src
     entrypoint: "/bin/sh -c './pandoc.sh'"
     stdin_open: true
-#    tty: true
+  #    tty: true
   linkchecker:
     build:
       context: ./linkchecker
     container_name: ${COMPOSE_PROJECT_NAME}_linkchecker
-    working_dir: /workspace/src
+    working_dir: /workspace/output
     volumes:
       - ${DIR_PATH}/linkchecker/output:/workspace/output
 #    stdin_open: true

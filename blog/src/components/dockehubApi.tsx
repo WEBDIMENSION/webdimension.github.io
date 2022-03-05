@@ -21,7 +21,9 @@ const Dockerhub = ({ url }: { url: string | unknown | undefined }) => {
       <ul>
         {data.results.map((repo: any) => (
           <li key={repo.name}>
-            <a href={url + repo.name}>{repo.name}</a>
+            <a href={url + repo.user + "/" + repo.name} target={"_blank"} rel="noreferrer">
+              {repo.name}
+            </a>
           </li>
         ))}
       </ul>
