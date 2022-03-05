@@ -4,7 +4,6 @@
 
 [MySQL_Sync](https://github.com/WEBDIMENSION/mysql_sync/tree/master/mysql8/Docker/mysql_sync) を使用
 
-
 ## Pythonから MySQL 操作し WordPress の Post されたデータを html ファイルへエクスポート
 
 Intellij IDEA にて Remote 設定しておく MySQL を起動しておく
@@ -56,7 +55,7 @@ docker-compose exec gatsby yarn serve
 ```
 
 ```bash
-docker-compose run linkchecker -o text -Fhtml/report/linkchecker.report.html http://localhost:9000/
+docker-compose run linkchecker -o text -Fhtml/report/linkchecker.report.html http://gatsby:9000/
 ```
 
 [linkchecker command](linkchecker/README.md)
