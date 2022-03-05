@@ -35,9 +35,12 @@ draft: false
 
 ### Docker on Vagrant を用意
 
-手前味噌の記事 [汎用的な Vagrant( CentOS7 )](https://blog.webdimension.jp/linux/vagrant-template-centos7/)
-の[Source](https://github.com/WEBDIMENSION/vagrant-centos7)を元に **provisioning** の際に **Docker** インストールを追記しました。\
-[Source](https://github.com/WEBDIMENSION/docker-on-vagrant)
+[//]: # (手前味噌の記事 汎用的な Vagrant&#40; CentOS7 &#41;&#40;https://blog.webdimension.jp/linux/vagrant-template-centos7/&#41;)
+
+[//]: # (の[Source]&#40;https://github.com/WEBDIMENSION/vagrant-centos7&#41;を元に **provisioning** の際に **Docker**
+インストールを追記しました。\)
+
+[//]: # ([Source]&#40;https://github.com/WEBDIMENSION/docker-on-vagrant&#41;)
 
 追記分 ( CircleCI はお好みで )
 

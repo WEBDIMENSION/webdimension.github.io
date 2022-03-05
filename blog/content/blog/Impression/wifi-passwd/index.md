@@ -61,7 +61,7 @@ WEP 使ってる方は今すぐ Wi-Fi ルーターを買い換えましょう。
 
 MAC でみると
 
-![](images/Screen-Shot-2019-09-16-at-21.08.34-のコピー.png)
+![](images/Screen-Shot-2019-09-16-at-21.08.34.png)
 
 "Parrot Security OS"に Wi-Fi 子機を接続\
 Amazon でポチったやつ （動作はするが熱くなる)
