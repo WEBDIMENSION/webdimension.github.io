@@ -11,28 +11,17 @@ define l_docker_compose
 	cd $(PARENT_DIR) && /usr/local/bin/docker-compose $1 $2 $3 $4
 endef
 
-hello_world:
-	@echo 'Hello World'
-
-hello_world2:
-	@echo 'Hello World2'
-
-my_target:
-	@echo $(DT)
-	@sleep 10
-	@echo $(DT)
-
 gatsby_start:
 	@$(call l_docker_compose, 'exec' 'gatsby' 'yarn' 'start')
 
 gatsby_build:
-	cd $(PARENT_DIR) && docker-compose exec gatsby yarn build
+	@$(call l_docker_compose, 'exec' 'gatsby' 'yarn' 'build')
+
+gatsby_serve:
+	@$(call l_docker_compose, 'exec' 'gatsby' 'yarn' 'serve')
 
 act:
-	cd $(PARENT_DIR) &&  /usr/local/bin/act push -v --secret-file ./.env
-
-which_act:
-	@(which act)
+	cd $(PARENT_DIR) &&  act push -v --secret-file .env
 
 vscode:
-	cd $(PARENT_DIR) &&  /usr/local/bin/code blog/.vscode/workspace.code-workspace
+	cd $(PARENT_DIR) &&  code blog/.vscode/workspace.code-workspace
