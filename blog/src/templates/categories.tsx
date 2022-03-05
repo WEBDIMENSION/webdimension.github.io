@@ -22,7 +22,7 @@ const Categories = ({ pageContext, data }: { pageContext: any; data: any }) => {
       <div>
         <PageTitle title={category} prefixTitle="Category" />
         <PostList nodes={nodes} />
-        <Link to="/categories/">All categories</Link>
+        <Link to="/blog/categories/">All categories</Link>
       </div>
       <section>
         <PageNation pageContext={pageContext} />
