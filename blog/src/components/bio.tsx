@@ -10,11 +10,14 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import BioDescription from "./bioDescription"
 import styled from "styled-components"
-import IconButton from "@mui/material/IconButton"
-import EmailIcon from "@mui/icons-material/Email"
+import GitHubApi from "./githubApi"
+import DockerHubApi from "./dockehubApi"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGitlab, faGithub } from "@fortawesome/free-brands-svg-icons"
+import { faIdCard, faEnvelope, faAt } from "@fortawesome/free-solid-svg-icons"
 
 const Bio = () => {
-  const data = useStaticQuery<GatsbyTypes.BioQueryQuery>(graphql`
+  const { site } = useStaticQuery<GatsbyTypes.BioQueryQuery>(graphql`
     query BioQuery {
       site {
         siteMetadata {
@@ -37,9 +40,9 @@ const Bio = () => {
     }
   `)
 
-  const author = data.site?.siteMetadata?.author
-  const github = data.site?.siteMetadata?.github
-  const dockerhub = data.site?.siteMetadata?.dockerhub
+  const author = site?.siteMetadata?.author
+  const github = site?.siteMetadata?.github
+  const dockerhub = site?.siteMetadata?.dockerhub
 
   return (
     <DivWrapper className="bio">
@@ -51,10 +54,13 @@ const Bio = () => {
           <br />
           Hostingは &nbsp;
           <s>Netlify</s>
-          &nbsp;<a href={"https://github.com/"}>GitHub</a>&nbsp; を利用しています。
+          &nbsp;
+          <FontAwesomeIcon icon={faGithub} />
+          <a href={"https://github.com/"}>GitHub</a>&nbsp; を利用しています。
           <br />
           ソースは
-          <a href={github?.repository} target={"_blank"}>
+          <FontAwesomeIcon icon={faGithub} />
+          <a href={github?.repository} target={"_blank"} rel="noreferrer">
             {" "}
             GitHub{" "}
           </a>
@@ -72,35 +78,37 @@ const Bio = () => {
           quality={95}
           alt="Profile picture"
         />
-        <div className={"profDiv"}>Author:&nbsp;{author?.name}</div>
+        <div className={"profDiv"}>
+          <FontAwesomeIcon icon={faAt} />
+          Author:&nbsp;{author?.name}
+        </div>
         <div className={"profDiv"}>{author?.summary}</div>
         <div className={"profDiv"}>WEB系バックエンドを主軸にインフラからフロントエンドまでが守備範囲。</div>
         <div className={"profDiv"}>
-          <IconButton color="inherit" size="large" aria-label="Contact" href={"/contact"}>
-            <EmailIcon />
-          </IconButton>
+          <FontAwesomeIcon icon={faEnvelope} />
           <Link to={"/contact/"}>Contact</Link>
         </div>
       </div>
 
       <div className={"bioDescription"}>
-        <h2>Profile</h2>
+        <h2>
+          <FontAwesomeIcon icon={faIdCard} />
+          Profile
+        </h2>
         <h3>Repositories</h3>
-        <ul>
-          <li>
-            <a href={github?.url} target={"_blank"}>
-              GitHub
-            </a>
-          </li>
-          <li>
-            <s>GitLab (非公開)</s>
-          </li>
-          <li>
-            <a href={dockerhub?.url} target={"_blank"}>
-              DockerHub
-            </a>
-          </li>
-        </ul>
+        <GitHubApi />
+        <div>
+          <h4>
+            <FontAwesomeIcon icon={faGitlab} />
+            GitLab
+          </h4>
+          <ul>
+            <li>
+              <s>(非公開)</s>
+            </li>
+          </ul>
+        </div>
+        <DockerHubApi url={dockerhub?.url} />
         <h3>Language</h3>
         <ul>
           <li>php</li>
@@ -220,6 +228,10 @@ const DivWrapper = styled.div`
       margin-top: 1em;
       border-bottom: 1px var(--fontColor) solid;
       padding-bottom: 0.5em;
+    }
+
+    h4 {
+      margin-top: 1em;
     }
 
     ul {

@@ -10,8 +10,8 @@ import kebabCase from "lodash/kebabCase"
 import styled from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import SideBarContentBottom from "../components/sideBarContentBottom"
-import IconButton from "@mui/material/IconButton"
-import TagIcon from "@mui/icons-material/Tag"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTags } from "@fortawesome/free-solid-svg-icons"
 
 const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
   const data = useStaticQuery<GatsbyTypes.tagsQueryQuery>(graphql`
@@ -52,9 +52,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
       </UlWrapper>
       {isSideBar ? (
         <SideBarContentBottom>
-          <IconButton color="inherit" size="large" aria-label="tags">
-            <TagIcon />
-          </IconButton>
+          <FontAwesomeIcon icon={faTags} />
           <Link to={`/blog/tags/`}>All Tags</Link>
         </SideBarContentBottom>
       ) : (

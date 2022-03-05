@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import IconButton from "@mui/material/IconButton"
-import LocalOfferIcon from "@mui/icons-material/LocalOffer"
 import kebabCase from "lodash/kebabCase"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTag } from "@fortawesome/free-solid-svg-icons"
 
 const TagsInContent = ({ node }: { node: any }) => {
   return (
@@ -11,9 +11,7 @@ const TagsInContent = ({ node }: { node: any }) => {
       {node.frontmatter?.tags?.map((tag: string) => {
         return (
           <li key={tag}>
-            <IconButton>
-              <LocalOfferIcon />
-            </IconButton>
+            <FontAwesomeIcon icon={faTag} />
             <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>
           </li>
         )

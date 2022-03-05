@@ -9,8 +9,8 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import SideBarContentBottom from "./sideBarContentBottom"
-import IconButton from "@mui/material/IconButton"
-import TopicIcon from "@mui/icons-material/Topic"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBellConcierge } from "@fortawesome/free-solid-svg-icons"
 
 const Topics = ({ isSideBar }: { isSideBar: boolean }) => {
   const data = useStaticQuery<GatsbyTypes.ActiveTopicsQuery>(graphql`
@@ -46,9 +46,7 @@ const Topics = ({ isSideBar }: { isSideBar: boolean }) => {
       </ul>
       {isSideBar ? (
         <SideBarContentBottom>
-          <IconButton color="inherit" size="large" aria-label="tags">
-            <TopicIcon />
-          </IconButton>
+          <FontAwesomeIcon icon={faBellConcierge} />
           <Link to={`/blog/topics/`}>All Topics</Link>
         </SideBarContentBottom>
       ) : (
