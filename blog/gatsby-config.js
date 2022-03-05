@@ -18,7 +18,7 @@ module.exports = {
       url: `https://github.com/WEBDIMENSION/gatasby_blog`,
     },
     dockerhub: {
-      url: `https://hub.docker.com/u/webdimension`,
+      url: `https://hub.docker.com/r/`,
     },
   },
   plugins: [

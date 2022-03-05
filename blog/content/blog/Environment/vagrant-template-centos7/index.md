@@ -18,7 +18,8 @@ Docker のようなコンテナ型ではなくガチの CentOS 上で何か実�
 毎回一から構築するのは[めんどくさい]{.under_line}ので Vagrant の Provisioning で自動化します。
 
 VirtualBOx,Vagrant はインストール済み前提です。
-[Source](https://github.com/WEBDIMENSION/vagrant-centos7)
+
+[//]: # ([Source]&#40;https://github.com/WEBDIMENSION/vagrant-centos7&#41;)
 
 provision/provision/settings_local.yaml
 

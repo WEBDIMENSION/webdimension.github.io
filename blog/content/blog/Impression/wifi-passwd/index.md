@@ -65,7 +65,8 @@ MAC でみると
 
 "Parrot Security OS"に Wi-Fi 子機を接続\
 Amazon でポチったやつ （動作はするが熱くなる)
-<https://www.amazon.co.jp/gp/product/B005DU4XSM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1>
+
+~~https://www.amazon.co.jp/gp/product/B005DU4XSM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1~~
 
 ![](images/wifi-usb.jpg)
 
