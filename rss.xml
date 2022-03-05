@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Mar 2022 00:04:15 GMT</lastBuildDate><item><title><![CDATA[GatsbyJS で 初回表示、リロード時にスタイルが崩れる]]></title><description><![CDATA[GatsbyJS で でのプレビューは問題ないのだけれど本番環境 でのプレビュー時は初回表示、リロード時に表示が崩れる現象が発生。 リンクを辿るときは正常な表示。 ページ構成としてこのような感じ レスポンシブ対応としてMUI(Material-UI…]]></description><link>https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby-plugin-styled-components/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby-plugin-styled-components/</guid><pubDate>Fri, 04 Mar 2022 06:42:07 GMT</pubDate><content:encoded>&lt;p&gt;GatsbyJS で&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Mar 2022 14:55:23 GMT</lastBuildDate><item><title><![CDATA[GatsbyJS で 初回表示、リロード時にスタイルが崩れる]]></title><description><![CDATA[GatsbyJS で でのプレビューは問題ないのだけれど本番環境 でのプレビュー時は初回表示、リロード時に表示が崩れる現象が発生。 リンクを辿るときは正常な表示。 ページ構成としてこのような感じ レスポンシブ対応としてMUI(Material-UI…]]></description><link>https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby-plugin-styled-components/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby-plugin-styled-components/</guid><pubDate>Fri, 04 Mar 2022 06:42:07 GMT</pubDate><content:encoded>&lt;p&gt;GatsbyJS で&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;でのプレビューは問題ないのだけれど本番環境&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; build
@@ -9632,16 +9632,14 @@ describe&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span c
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;test 成功&lt;/p&gt;</content:encoded></item><item><title><![CDATA[PHP UnitTest - Laravelでの開発の前準備4]]></title><description><![CDATA[PHP UnitTest - Laravel での開発の前準備 4 phpunit を実行してみる Laravel にはデフォルトで Test が導入されている。
-実行してみる このように OK がでれば　テスト成功 composer.json の script…]]></description><link>https://blog.webdimension.jp/BackEnd/Topics/004_phpunit/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/Topics/004_phpunit/</guid><pubDate>Sat, 15 Feb 2020 17:11:36 GMT</pubDate><content:encoded>&lt;h1&gt;PHP UnitTest - Laravel での開発の前準備 4&lt;/h1&gt;
+&lt;p&gt;test 成功&lt;/p&gt;</content:encoded></item><item><title><![CDATA[PHP UnitTest - Laravelでの開発の前準備4]]></title><description><![CDATA[PHP UnitTest - Laravel での開発の前準備 4 phpunit を実行してみる Laravel にはデフォルトで Test が導入されている。 実行してみる このように OK がでれば テスト成功 composer.json の script…]]></description><link>https://blog.webdimension.jp/BackEnd/Topics/004_phpunit/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/Topics/004_phpunit/</guid><pubDate>Sat, 15 Feb 2020 17:11:36 GMT</pubDate><content:encoded>&lt;h1&gt;PHP UnitTest - Laravel での開発の前準備 4&lt;/h1&gt;
 &lt;h2&gt;phpunit を実行してみる&lt;/h2&gt;
-&lt;p&gt;Laravel にはデフォルトで Test が導入されている。
-実行してみる&lt;/p&gt;
+&lt;p&gt;Laravel にはデフォルトで Test が導入されている。 実行してみる&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt; ./vendor/bin/phpunit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Time: &lt;span class=&quot;token number&quot;&gt;669&lt;/span&gt; ms, Memory: &lt;span class=&quot;token number&quot;&gt;22.00&lt;/span&gt; MB
 
 OK &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; tests, &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; assertions&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このように OK がでれば　テスト成功&lt;/p&gt;
+&lt;p&gt;このように OK がでれば テスト成功&lt;/p&gt;
 &lt;h3&gt;composer.json の script に追加&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
@@ -9657,7 +9655,7 @@ OK &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;composer&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;で実行できるようになる。&lt;/p&gt;
 &lt;h3&gt;IDE から Testunit 実行&lt;/h3&gt;
-&lt;p&gt;参考:&lt;a href=&quot;https://blog.webdimension.jp/linux/docke-on-vagrant/&quot;&gt;Docker on Vagrant をがんばってみた&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考:&lt;a href=&quot;/blog/Environment/docke-on-vagrant/&quot;&gt;Docker on Vagrant をがんばってみた&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;この例では Vagrant 上の Docker で動いている PHP をテストしています。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Eslint (vue) - Laravelでの開発の前準備3]]></title><description><![CDATA[Eslint (vue) - Laravel での開発の前準備 3 Eslint Install package.json へ Script として登録 vim composer.json npm run eslint で rule 違反箇所を確認 npm run eslint…]]></description><link>https://blog.webdimension.jp/BackEnd/Topics/003_es-lint/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/Topics/003_es-lint/</guid><pubDate>Sat, 15 Feb 2020 16:23:44 GMT</pubDate><content:encoded>&lt;h1&gt;Eslint (vue) - Laravel での開発の前準備 3&lt;/h1&gt;
 &lt;h1&gt;Eslint&lt;/h1&gt;
 &lt;h2&gt;Install&lt;/h2&gt;
@@ -11799,8 +11797,8 @@ WEP 使ってる方は今すぐ Wi-Fi ルーターを買い換えましょう。
 &lt;p&gt;MAC でみると&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;images/Screen-Shot-2019-09-16-at-21.08.34-%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;“Parrot Security OS”に Wi-Fi 子機を接続&lt;br&gt;
-Amazon でポチったやつ （動作はするが熱くなる)
-&lt;a href=&quot;https://www.amazon.co.jp/gp/product/B005DU4XSM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;https://www.amazon.co.jp/gp/product/B005DU4XSM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&lt;/a&gt;&lt;/p&gt;
+Amazon でポチったやつ （動作はするが熱くなる)&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;&lt;a href=&quot;https://www.amazon.co.jp/gp/product/B005DU4XSM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&quot;&gt;https://www.amazon.co.jp/gp/product/B005DU4XSM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;#x26;psc=1&lt;/a&gt;&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -12613,8 +12611,7 @@ Laravel/vendor/autoload.php になります。 phpunit.xml は Laravel/phpunit.x
 &lt;p&gt;といっても特別なにかすごいことやってるわけでなく汎用的なテンプレートです。&lt;br&gt;
 Docker のようなコンテナ型ではなくガチの CentOS 上で何か実験したい、遊びたい時などなど用途です。&lt;br&gt;
 毎回一から構築するのは[めんどくさい]{.under_line}ので Vagrant の Provisioning で自動化します。&lt;/p&gt;
-&lt;p&gt;VirtualBOx,Vagrant はインストール済み前提です。
-&lt;a href=&quot;https://github.com/WEBDIMENSION/vagrant-centos7&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;VirtualBOx,Vagrant はインストール済み前提です。&lt;/p&gt;
 &lt;p&gt;provision/provision/settings_local.yaml&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;vm:
  &lt;span class=&quot;token comment&quot;&gt;# Box名 なんでも可&lt;/span&gt;
