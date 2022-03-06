@@ -9,4 +9,4 @@ python-main:
 	@$(call _l_docker_compose, 'exec', 'python', 'python', 'main.py')
 
 linkchecker:
-	@$(call _l_docker_compose, 'run', 'linkchecker')
+	@$(call _l_docker_compose, 'run', '--rm', 'linkchecker')
