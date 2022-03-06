@@ -2,10 +2,11 @@
 title: "Docker Image を GitHubAction からGHCR (GitHub Container Repository) へPush"
 date: "2022-03-06 19:16:20"
 post_modified: "2022-03-06 19:16:20"
-description: ""
+description: "GitHub Actions 内で Dockerfile をもとに Build し GHCR (GitHub Container Repository) へPush。
+今後の可能性を多々感じる。アイデア次第でとても効率的に。"
 categories: ["Infrastructure"]
 tags: ["GitHub", "GitHub Actions", "ghcr.io"]
-draft: true
+draft: false
 ---
 
 ## GitHub レポジトリ作成
