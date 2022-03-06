@@ -49,8 +49,7 @@ services:
     stdin_open: true
   #    tty: true
   linkchecker:
-    build:
-      context: ./linkchecker
+    image: ghcr.io/webdimension/linkchecker:latest
     container_name: ${COMPOSE_PROJECT_NAME}_linkchecker
     volumes:
       - ${DIR_PATH}/linkchecker/output:/workspace/output
