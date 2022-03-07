@@ -17,6 +17,8 @@
   --yellow: #Fe0;
   --yellow2: #FF5;
   --glay: #f5f2f0;
+
+  --containerWidth: 1180px;
 }
 
 html {
@@ -82,7 +84,7 @@ a:hover {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: var(--containerWidth);
   margin: 0 auto;
   padding: 0 4px;
 }
@@ -108,4 +110,67 @@ td {
 
 .svg-inline--fa {
   margin-right: 0.2em;
+}
+
+/*.overlay {*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  background-color: var(--bgColorPrimary);*/
+/*  opacity: 0.96;*/
+/*}*/
+
+/*.content {*/
+/*  top: 10%;*/
+/*  !*left: 50%;*!*/
+/*  !*right: auto;*!*/
+/*  !*bottom: auto;*!*/
+/*  !*marginRight: -50%;*!*/
+/*  !*transform: translate(-50%, -50%);*!*/
+/*  background-color: var(--bgColorScondary);*/
+/*  opacity: 0.98;*/
+/*}*/
+
+
+/*検索モーダル*/
+.modalWrapper {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.modalWrapper button,
+.modalSearchWindow button {
+  padding: 10px 20px;
+}
+
+.modalSearchOverlay {
+  z-index: 960;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: var(--bgColorPrimary);*/
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.modalSearchWindow {
+  z-index: 965;
+  top: 10%;
+  background-color: var(--bgColorPrimary);
+  /*margin: 4vw -50% 0 auto;*/
+  padding: 40px;
+  /*inset: 0;*/
+  /*transform: translate(-50%, -50%);*/
+  position: absolute;
+  border: 1px solid var(--colorSecondary);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  width: 85%;
+  max-width: calc(var(--containerWidth) * 0.8);;
+  max-height: 600px;
+  opacity: 0.95;
 }

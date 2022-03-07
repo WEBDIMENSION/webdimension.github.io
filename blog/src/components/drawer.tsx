@@ -13,7 +13,9 @@ import {
   faIdCard,
   faEnvelope,
   faBars,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons"
+import ModalSearch from "./modalSearch"
 
 const drawer = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -41,6 +43,10 @@ const drawer = () => {
             <li>
               <FontAwesomeIcon icon={faTags} />
               <Link to={`/blog/tags/`}>Tags</Link>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <ModalSearch />
             </li>
             <li>
               <FontAwesomeIcon icon={faBellConcierge} />
