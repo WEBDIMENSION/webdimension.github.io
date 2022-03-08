@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import Box from "@mui/material/Box"
 import Drawer from "./drawer"
+import ModalSearch from "./modalSearch"
 
 const Header = () => {
   const data = useStaticQuery<GatsbyTypes.HeaderQuery>(graphql`
@@ -68,10 +69,13 @@ const Header = () => {
           <nav className={"pc"}>
             <ul>
               <li>
-                <Link to="/blog/">blog</Link>
+                <Link to="/blog/">Blog</Link>
               </li>
               <li>
-                <Link to="/about/">AboutMe</Link>
+                <ModalSearch />
+              </li>
+              <li>
+                <Link to="/about/"> AboutMe</Link>
               </li>
               <li>
                 <Link to="/contact/">Contact</Link>
@@ -105,7 +109,7 @@ const HeaderWrapper = styled.header`
     background-color: var(--bgColorPrimary);
     opacity: 0.96;
     width: 100%;
-    z-index: 999;
+    z-index: 900;
 
     .logo {
       .bio-avatar {
@@ -130,7 +134,7 @@ const HeaderWrapper = styled.header`
         li {
           display: inline-block;
           padding-left: 20px;
-          font-size: 1.2em;
+          font-size: 1.1em;
         }
       }
     }

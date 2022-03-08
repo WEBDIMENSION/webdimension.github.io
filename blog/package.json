@@ -56,6 +56,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-modal": "^3.14.4",
     "react-modern-drawer": "^1.0.1",
     "styled-components": "^5.3.3",
     "typeface-merriweather": "0.0.72",
@@ -65,6 +66,7 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.5",
+    "@types/react-modal": "^3.13.1",
     "@types/typography": "^0.16.4",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",

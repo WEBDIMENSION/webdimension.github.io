@@ -131,6 +131,7 @@ const FormWrapper = styled.form`
     border: 2px solid var(--hrefVisitedBackground);
     background-color: var(--hrefBackground);
     //margin: 0.5em;
+
     color: var(--fontColor);
     font-size: var(--fontSizeH3);
     //padding: 4px;
