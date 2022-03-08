@@ -27,12 +27,9 @@ const ModalSearch: React.FC = () => {
         Search
       </Link>
       <Modal
-        // className={"Modal"}
         className="modalSearchWindow"
-        // contentLabel="Modal"
         contentLabel="SearchModal"
         isOpen={modalIsOpen}
-        // style={customStyles}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         overlayClassName="modalSearchOverlay"
