@@ -3,7 +3,7 @@ title: "OpenAPI-Generatorの環境をDockerで構築"
 date: "2022-02-23 01:43:47"
 post_modified: "2022-02-23 01:43:47"
 description: ""
-categories: ["OpenAPI, prism(Mock Server) を Docker で構築"]
+categories: ["BackEnd"]
 tags: ["API", "OpenAPI", "Prism", "Docker", "Docker-compose"]
 draft: false
 ---
