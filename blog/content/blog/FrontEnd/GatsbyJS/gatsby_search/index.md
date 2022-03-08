@@ -1,9 +1,9 @@
 ---
 
-title: "GatsbyJS 検索ページを設置 SessionStorage 使用しページ遷移しても検索結果を保持"
+title: "GatsbyJS 検索ページを設置 sessionStorage 使用しページ遷移しても検索結果を保持"
 date: "2022-03-07 11:26:56"
 post_modified: "2022-03-09 02:00:35"
-description: "GatsbyJsでプラグインを使わずサイト内検索を設置。 React-Modal使用。SessionStorage でページ遷移しても検索結果を保持"
+description: "GatsbyJsでプラグインを使わずサイト内検索を設置。 React-Modal使用。sessionStorage でページ遷移しても検索結果を保持"
 categories: ["FrontEnd"]
 tags: ["GatsbyJS"]
 draft: false
