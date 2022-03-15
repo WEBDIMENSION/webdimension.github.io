@@ -4,7 +4,7 @@ date: "2022-02-23 01:30:29"
 post_modified: "2022-02-23 01:30:29"
 description: "スニペット作成時の知見、奥が深い"
 categories: ["Tools"]
-tags: ["Intellij Idea", "Snippet"]
+tags: ["Intellij IDEA", "Snippet"]
 draft: false
 ---
 
