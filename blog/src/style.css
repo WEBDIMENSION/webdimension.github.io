@@ -265,10 +265,18 @@ article.blog-post ul:not(.contains-task-list) li:not(.tags):before {
   content: "";
 }
 
+
+article.blog-post ol {
+  counter-reset: item;
+}
+
 article.blog-post ol > li {
   background-color: var(--hrefVisitedBackground);
-  padding-left: 0.5em;
   border-radius: 10px; /* 角丸指定 */
+}
+
+article.blog-post ol > li ol {
+  margin-left: 1em;
 }
 
 article.blog-post ol > li:before {
