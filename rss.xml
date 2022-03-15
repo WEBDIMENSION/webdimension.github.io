@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 09 Mar 2022 06:12:13 GMT</lastBuildDate><item><title><![CDATA[GatsbyJS 検索ページを設置 sessionStorage 使用しページ遷移しても検索結果を保持]]></title><description><![CDATA[検索ボックスのためのモーダルを用意 Install react-modal modal画面作成  検索結果表示画面コンポーネント sessionStorage を使用し ページ遷移後も検索結果を保持]]></description><link>https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby_search/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby_search/</guid><pubDate>Mon, 07 Mar 2022 11:26:56 GMT</pubDate><content:encoded>&lt;h2&gt;検索ボックスのためのモーダルを用意&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 15 Mar 2022 08:21:56 GMT</lastBuildDate><item><title><![CDATA[Intellij IDEA ブラウザデバッグの際のブラウザの設定]]></title><description><![CDATA[などで動いているWEBアプリをブラウザデバッグする際デフォルト設定では クリーンな(Add ON なし、インストールしたてのような)が立ち上がる。 できるならば日常使っている設定のままデバッグが立ち上がってほしい。  ->  下記の箇所の user data directory…]]></description><link>https://blog.webdimension.jp/Tools/Intellij/browser_debug/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/Intellij/browser_debug/</guid><pubDate>Tue, 15 Mar 2022 04:15:28 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;http://localhost:8000&lt;/code&gt;などで動いているWEBアプリをブラウザデバッグする際デフォルト設定では クリーンな(Add ON なし、インストールしたてのような)&lt;code class=&quot;language-text&quot;&gt;Chrome&lt;/code&gt;が立ち上がる。&lt;/p&gt;
+&lt;p&gt;できるならば日常使っている設定のままデバッグが立ち上がってほしい。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Run/Debug設定&lt;/code&gt; -&gt; &lt;code class=&quot;language-text&quot;&gt;Browser&lt;/code&gt; 下記の箇所の &lt;strong&gt;user data directory&lt;/strong&gt; を 指定する。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2c69aa51548f96431a19e373c3bd1791/39e47/intellij_idea_browser_debug.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.88607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAABoElEQVQ4y21TSY7jMAz0a4Kx9oWSt8Q5dAMz+f+DakDaVsfuHAqiJKqKm7pYKsahwFoLY0xDCAExJTn3zsN7L/YV7Mt3VIq86UqtWJblRMh2iBEheMTgt7P9Idtaa8F7AAznPbp5zCDKPw77GlPGUAvmqYg6ESHn3FaGc/4Xceeck4iOi03doBTC6+8XHo9VMni9/mFdVzyfT3x9f+N+f2CsCTlFEWGklNAppc5kEqWBsUYcjlKwgGVx51BKlTV5BWfNqaad1qqRHWGzLQ/rgEwktcs5SeTSACLxYUJrLilzhGdCvT+0WOeMZSQM5FGigVZ/RMgHj14p5KBRKLeUua6/Cfe0OZVpICzLhPsyYxiK+HCEMcatq86ilIJaq4BJT4QNvFcaqldQSiOEiBiTzCUTbCQDUsptzFoNPxHyvu97ULSiyvbtdpP1JPwBH2r405hxmgU8WvwLrr/p04B3LUVtTsQslHLGME4g2oabid+JriPXCI3Re3ePGu7KWks31Y7jnol5Rrk51wy7mh2W6mU0OK0DR8fVG+GB90ZcI/wP9oGv9dTRIZgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Intellij IDEA ブラウザデバッグ&quot;
+        title=&quot;Intellij IDEA ブラウザデバッグ&quot;
+        src=&quot;/static/2c69aa51548f96431a19e373c3bd1791/f058b/intellij_idea_browser_debug.png&quot;
+        srcset=&quot;/static/2c69aa51548f96431a19e373c3bd1791/c26ae/intellij_idea_browser_debug.png 158w,
+/static/2c69aa51548f96431a19e373c3bd1791/6bdcf/intellij_idea_browser_debug.png 315w,
+/static/2c69aa51548f96431a19e373c3bd1791/f058b/intellij_idea_browser_debug.png 630w,
+/static/2c69aa51548f96431a19e373c3bd1791/40601/intellij_idea_browser_debug.png 945w,
+/static/2c69aa51548f96431a19e373c3bd1791/78612/intellij_idea_browser_debug.png 1260w,
+/static/2c69aa51548f96431a19e373c3bd1791/39e47/intellij_idea_browser_debug.png 1735w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Macの場合&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Bliskの場合&lt;/span&gt;
+~/Library/Application Support/Blisk&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# Chromeの場合&lt;/span&gt;
+~/Library/Application Support/google/chrome&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;一度デバッグを停止し他のブラウザのとSessionを断ち再度デバッグ &lt;kbd&gt;ctl&lt;/kbd&gt; + &lt;kbd&gt;D&lt;/kbd&gt; で通常の設定のままのブラウザが起動する。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS 検索ページを設置 sessionStorage 使用しページ遷移しても検索結果を保持]]></title><description><![CDATA[検索ボックスのためのモーダルを用意 Install react-modal modal画面作成  検索結果表示画面コンポーネント sessionStorage を使用し ページ遷移後も検索結果を保持]]></description><link>https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby_search/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/GatsbyJS/gatsby_search/</guid><pubDate>Mon, 07 Mar 2022 11:26:56 GMT</pubDate><content:encoded>&lt;h2&gt;検索ボックスのためのモーダルを用意&lt;/h2&gt;
 &lt;h3&gt;Install react-modal&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; react-modal @react-modal&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;modal画面作成&lt;/h3&gt;
