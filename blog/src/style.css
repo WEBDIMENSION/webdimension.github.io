@@ -174,3 +174,7 @@ td {
   max-height: 600px;
   opacity: 0.95;
 }
+
+.gatsby-resp-image-wrapper {
+  margin: 1.5em auto;
+}
