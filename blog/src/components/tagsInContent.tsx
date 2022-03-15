@@ -10,7 +10,7 @@ const TagsInContent = ({ node }: { node: any }) => {
     <UlWrapper className={"tags"}>
       {node.frontmatter?.tags?.map((tag: string) => {
         return (
-          <li key={tag}>
+          <li key={tag} className={"tags"}>
             <FontAwesomeIcon icon={faTag} />
             <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>
           </li>
