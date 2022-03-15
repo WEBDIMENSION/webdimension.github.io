@@ -175,6 +175,23 @@ td {
   opacity: 0.95;
 }
 
+
+/*content start*/
 .gatsby-resp-image-wrapper {
   margin: 1.5em auto;
+}
+
+article.blog-post h2 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px var(--fontColor) solid;
+}
+
+article.blog-post h3 {
+  margin-bottom: 1em;
+  border-bottom: 1px var(--visitedColor) solid;
+}
+
+article.blog-post ul {
+  margin-bottom: 1em !important;
 }
