@@ -58,6 +58,7 @@ export default GoogleAds
 
 const AsideWrapper = styled.aside`
   margin: 1em 0;
+  height: 250px;
 
   .adArea {
     width: 100%;
