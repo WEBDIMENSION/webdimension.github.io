@@ -40,7 +40,6 @@ const SearchResult = () => {
   }
 
   const sessQuery = sessionStorage.getItem("sessQuery")
-  console.log(sessQuery)
 
   let postData: any
   let query: string

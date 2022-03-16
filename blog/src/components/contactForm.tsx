@@ -17,7 +17,6 @@ const ContactForm = () => {
   const [message, setMessage] = useState("")
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
-    console.log(event.target?.name)
     switch (event?.target?.name) {
       case "name":
         setName(event.target?.value)
