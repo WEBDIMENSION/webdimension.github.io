@@ -11,7 +11,7 @@ const TagsInContent = ({ node }: { node: any }) => {
       {node.frontmatter?.tags?.map((tag: string) => {
         return (
           <li key={tag} className={"tags"}>
-            <FontAwesomeIcon icon={faTag} />
+            <FontAwesomeIcon icon={faTag} size="1x" />
             <Link to={`/blog/tags/${kebabCase(tag)}/`}>{tag}</Link>
           </li>
         )

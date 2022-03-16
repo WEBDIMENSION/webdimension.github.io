@@ -36,7 +36,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
         </DivWrapper>
         <Article>
           <H2Wrapper>
-            <FontAwesomeIcon icon={faBellConcierge} />
+            <FontAwesomeIcon icon={faBellConcierge} size="1x" />
             Topics
           </H2Wrapper>
           <section>
@@ -45,7 +45,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data }) =>
         </Article>
         <Article>
           <H2Wrapper>
-            <FontAwesomeIcon icon={faBlog} />
+            <FontAwesomeIcon icon={faBlog} size="1x" />
             最近の投稿
           </H2Wrapper>
           <section>

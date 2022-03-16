@@ -46,7 +46,7 @@ const Topics = ({ isSideBar }: { isSideBar: boolean }) => {
       </ul>
       {isSideBar ? (
         <SideBarContentBottom>
-          <FontAwesomeIcon icon={faBellConcierge} />
+          <FontAwesomeIcon icon={faBellConcierge} size="1x" />
           <Link to={`/blog/topics/`}>All Topics</Link>
         </SideBarContentBottom>
       ) : (

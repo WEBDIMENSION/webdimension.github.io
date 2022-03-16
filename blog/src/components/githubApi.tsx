@@ -27,7 +27,7 @@ const GitHubApi = () => {
   return (
     <DivWrapper className="githubRepos">
       <h4>
-        <FontAwesomeIcon icon={faGithub} />
+        <FontAwesomeIcon icon={faGithub} size="1x" />
         GitHub public repositories
       </h4>
       <ul>
