@@ -25,40 +25,40 @@ const drawer = () => {
 
   return (
     <DivWrapper>
-      <FontAwesomeIcon icon={faBars} className={"menuButton"} onClick={toggleDrawer} />
+      <FontAwesomeIcon icon={faBars} className={"menuButton"} onClick={toggleDrawer} size="1x" />
       <Drawer open={isOpen} onClose={toggleDrawer} direction="right">
         <div className={"closeButton"}>
           <button onClick={toggleDrawer}>Close</button>
         </div>
         <UlWrapper className={"drawerMenu"}>
           <li>
-            <FontAwesomeIcon icon={faHouse} />
+            <FontAwesomeIcon icon={faHouse} size="1x" />
             <Link to={`/`}>Top</Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faBlog} />
+            <FontAwesomeIcon icon={faBlog} size="1x" />
             <Link to={`/blog/`}>Blog</Link>
           </li>
           <ul className={"secondaryMenu"}>
             <li>
-              <FontAwesomeIcon icon={faTags} />
+              <FontAwesomeIcon icon={faTags} size="1x" />
               <Link to={`/blog/tags/`}>Tags</Link>
             </li>
             <li>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <FontAwesomeIcon icon={faMagnifyingGlass} size="1x" />
               <ModalSearch />
             </li>
             <li>
-              <FontAwesomeIcon icon={faBellConcierge} />
+              <FontAwesomeIcon icon={faBellConcierge} size="1x" />
               <Link to={`/blog/topics/`}>Topics</Link>
             </li>
           </ul>
           <li>
-            <FontAwesomeIcon icon={faIdCard} />
+            <FontAwesomeIcon icon={faIdCard} size="1x" />
             <Link to={`/about/`}>AboutMe</Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faEnvelope} size="1x" />
             <Link to={`/contact/`}>Contact</Link>
           </li>
         </UlWrapper>

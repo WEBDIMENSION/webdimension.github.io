@@ -21,7 +21,7 @@ const BioDescription = ({ isSideBar }: { isSideBar: boolean }) => {
       <br />
       {isSideBar ? (
         <SideBarContentBottom>
-          <FontAwesomeIcon icon={faIdCard} />
+          <FontAwesomeIcon icon={faIdCard} size="1x" />
           <Link to={`/about/`}>AboutMe</Link>
         </SideBarContentBottom>
       ) : (

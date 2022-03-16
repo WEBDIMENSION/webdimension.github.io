@@ -52,7 +52,7 @@ const Tags = ({ isSideBar }: { isSideBar: boolean }) => {
       </UlWrapper>
       {isSideBar ? (
         <SideBarContentBottom>
-          <FontAwesomeIcon icon={faTags} />
+          <FontAwesomeIcon icon={faTags} size="1x" />
           <Link to={`/blog/tags/`}>All Tags</Link>
         </SideBarContentBottom>
       ) : (

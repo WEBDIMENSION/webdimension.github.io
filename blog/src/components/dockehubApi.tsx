@@ -15,7 +15,7 @@ const Dockerhub = ({ url }: { url: string | unknown | undefined }) => {
   return (
     <DivWrapper>
       <h4>
-        <FontAwesomeIcon icon={faDocker} />
+        <FontAwesomeIcon icon={faDocker} size="1x" />
         DockerHub public repositories
       </h4>
       <ul>

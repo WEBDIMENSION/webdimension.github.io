@@ -55,14 +55,14 @@ const Bio = () => {
           Hostingは &nbsp;
           <s>Netlify</s>
           &nbsp;
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} size="1x" />
           <a href={"https://github.com/"} target={"_blank"} rel="noreferrer">
             GitHub
           </a>
           &nbsp; を利用しています。
           <br />
           ソースは
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} size="1x" />
           <a href={github?.repository} target={"_blank"} rel="noreferrer">
             GitHub
           </a>
@@ -81,27 +81,27 @@ const Bio = () => {
           alt="Profile picture"
         />
         <div className={"profDiv"}>
-          <FontAwesomeIcon icon={faAt} />
+          <FontAwesomeIcon icon={faAt} size="1x" />
           Author:&nbsp;{author?.name}
         </div>
         <div className={"profDiv"}>{author?.summary}</div>
         <div className={"profDiv"}>WEB系バックエンドを主軸にインフラからフロントエンドまでが守備範囲。</div>
         <div className={"profDiv"}>
-          <FontAwesomeIcon icon={faEnvelope} />
+          <FontAwesomeIcon icon={faEnvelope} size="1x" />
           <Link to={"/contact/"}>Contact</Link>
         </div>
       </div>
 
       <div className={"bioDescription"}>
         <h2>
-          <FontAwesomeIcon icon={faIdCard} />
+          <FontAwesomeIcon icon={faIdCard} size="1x" />
           Profile
         </h2>
         <h3>Repositories</h3>
         <GitHubApi />
         <div>
           <h4>
-            <FontAwesomeIcon icon={faGitlab} />
+            <FontAwesomeIcon icon={faGitlab} size="1x" />
             GitLab
           </h4>
           <ul>
