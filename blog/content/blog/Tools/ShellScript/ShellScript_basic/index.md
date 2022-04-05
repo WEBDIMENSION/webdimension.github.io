@@ -8,6 +8,89 @@ tags: ["Shell Script"]
 draft: false
 ---
 
+## 特殊パラメータ
+
+| 変数名 | 内容                                                |
+| ------ | --------------------------------------------------- |
+| $#     | パラメータ数                                        |
+| $?     | 直前のコマンドのステータス                          |
+| $$     | プロセス ID                                         |
+| $!     | 最後に実行したバックグラウンドコマンドのプロセス ID |
+
+## declare
+
+| オプション | 属性         |
+| ---------- | ------------ |
+| -r         | 読み取り専用 |
+| -i         | 整数         |
+| -a         | 配列         |
+| -A         | 連想配列     |
+
+```bash
+# 等価
+declare -r var1
+readonly var1
+```
+
+## 連想配列
+
+```bash
+declare -A user=([id]=1 [name]=yamada [class]=A-1)
+echo ${user[id]}
+echo ${user[name]}
+echo ${user[class]}
+```
+
+### 値の取得
+
+```bash
+echo "${user[@]}"
+```
+
+### キーの取得
+
+```bash
+echo "${!user[@]}"
+```
+
+## 変数の初期化
+
+```bash
+echo ${name:-yamada}
+name=suzuki
+echo ${name:-yamada}
+```
+
+## 算術
+
+```bash
+declare -i sum
+sum=5+3
+echo $sum
+# 8
+or
+
+echo $((sum=5+3))
+#8
+```
+
+## noclobber
+
+```bash
+set -o noclobber
+touch abc.txt
+ps > abc.txt
+# Eror
+```
+
+```bash
+set -o noclobber
+touch abc.txt
+ps >| abc.txt
+# overwrite
+```
+
+
 ## Get parameter
 
 ```bash

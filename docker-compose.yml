@@ -25,7 +25,7 @@ services:
       - GOOGLE_ADSENSE_DRAWER=${GOOGLE_ADSENSE_DRAWER}
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
-    command: gatsby develop --host 0.0.0.0
+    # command: gatsby develop --host 0.0.0.0
     tty: true
 networks:
   default:
