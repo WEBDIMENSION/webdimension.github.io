@@ -5,7 +5,7 @@ post_modified: "2022-04-05 13:59:28"
 description: "シェルスクリプトにテスト導入、コード品質の向上"
 categories: ["Tools"]
 tags: ["ShellScript"]
-draft: true
+draft: false
 ---
 
 ## Bats でシェルスクリプトをテストする
@@ -199,3 +199,7 @@ PATH="${BATS_TEST_DIRNAME%/*}:$PATH"
 | lines  | outputを分割した配列 |
 
 通常は status と output で判定  
+
+
+
+c

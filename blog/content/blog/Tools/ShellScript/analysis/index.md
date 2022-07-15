@@ -5,7 +5,7 @@ post_modified: "2022-04-05 11:28:50"
 description: "シェルスクリプトの汚いコード、バグになりかねないソースを解析"
 categories: ["Tools"]
 tags: ["ShellScript"]
-draft: true
+draft: false
 ---
 
 ## noexec オプション

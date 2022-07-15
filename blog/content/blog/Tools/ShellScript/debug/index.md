@@ -5,7 +5,7 @@ post_modified: "2022-04-05 13:59:25"
 description: "シェルスクリプトのデバッグを探る"
 categories: ["Tools"]
 tags: ["ShellScript"]
-draft: true
+draft: false
 ---
 
 ## Bssh のオプションでデバッグ設定

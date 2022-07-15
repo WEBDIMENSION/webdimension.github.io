@@ -5,12 +5,12 @@ post_modified: "2022-03-22 02:42:27"
 description: "React.js useEffectの振る舞い"
 categories: ["FrontEnd"]
 tags: ["React.js"]
-draft: true
+draft: false
 ---
 
 ## React.js userEffect 基本
 
-レンダリング後に事項される
+レンダリング後に実行される
 
 ```jsx
 useEffect(() => {

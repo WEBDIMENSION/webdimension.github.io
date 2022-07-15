@@ -1,4 +1,4 @@
-MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+AKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 PARENT_DIR := $(shell dirname ${MAKEFILE_DIR})
 
 define _docker_compose

@@ -5,7 +5,7 @@ post_modified: "2022-03-22 05:07:59"
 description: "React.js useCallbackの振る舞い"
 categories: ["FrontEnd"]
 tags: ["React.js"]
-draft: true
+draft: false
 ---
 
 ## useCallback() 基本
@@ -28,7 +28,7 @@ const sampleFunc = useCallback(
 );
 ```
 
-すべてが市レンダリングされる例
+すべてが再レンダリングされる例
 
 ```jsx
 import React, {useState} from 'react'
