@@ -4,7 +4,7 @@ date: "2022-02-23 03:02:51"
 post_modified: "2022-02-23 03:02:51"
 description: "ShellScript ソースコピペ用"
 categories: ["Tools"]
-tags: ["Shell Script"]
+tags: ["ShellScript"]
 draft: false
 ---
 
