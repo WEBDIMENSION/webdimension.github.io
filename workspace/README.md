@@ -55,7 +55,7 @@ docker-compose exec gatsby yarn serve
 ```
 
 ```bash
-docker-compose run linkchecker
+docker-compose run --rm linkchecker
 ```
 
 [see](linkchecker/src/linkchecker.sh)  

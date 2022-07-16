@@ -27,7 +27,7 @@ services:
     stdin_open: true
     # command: gatsby develop --host 0.0.0.0
     tty: true
-# networks:
-#   default:
-#     external:
-#       name: ${NET_WORK_NAME}
+networks:
+  default:
+    external:
+      name: ${NET_WORK_NAME}
