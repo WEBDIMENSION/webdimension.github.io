@@ -51,6 +51,8 @@ services:
   linkchecker:
     image: ghcr.io/webdimension/linkchecker:latest
     container_name: ${COMPOSE_PROJECT_NAME}_linkchecker
+    environment:
+      - TARGET_URL=${TARGET_URL}
     volumes:
       - ${DIR_PATH}/linkchecker/output:/workspace/output
       - ${DIR_PATH}/linkchecker/src:/workspace/src
