@@ -8,9 +8,9 @@ tags: ["Chrome"]
 draft: false
 ---
 
-# Chrome アドオン Vimium
+## Chrome アドオン Vimium
 
-## VImium が便利すぎ
+### VImium が便利すぎ
 
 ブラウジング時に戻ったり、進んだり、上スクロールしたり、下スクロールしたり、フォーム入力だったり・・・ マウスやトラックパッドでガチャガチャやるのが[めんどくさい]
 {.under_line}時は[Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=ja)の出番です。
@@ -26,17 +26,17 @@ And more\...
 
 例えば
 
-![](images/Screen-Shot-2019-09-22-at-10.46.29.png)
+![image](images/Screen-Shot-2019-09-22-at-10.46.29.png)
 
 という表示で [f]{.kbd} をタイプ
 
-![](images/Screen-Shot-2019-09-22-at-10.46.43.png)
+![image](images/Screen-Shot-2019-09-22-at-10.46.43.png)
 
 ということです。
 
 [g]{.kbd} [i]{.kbd} とタイプすると
 
-![](images/Screen-Shot-2019-09-22-at-10.52.58.png)
+![image](images/Screen-Shot-2019-09-22-at-10.52.58.png)
 
 テキストボックスにカーソルが移動。
 

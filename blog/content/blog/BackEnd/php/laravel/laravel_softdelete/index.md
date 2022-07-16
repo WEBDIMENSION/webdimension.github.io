@@ -8,9 +8,9 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel Softdelete
+## Laravel Softdelete
 
-## model に追加
+### model に追加
 
 ```php
 namespace App;
@@ -24,7 +24,7 @@ class User extends Model
 }
 ```
 
-## Softdelete されているか
+### Softdelete されているか
 
 ```php
 if ($user->trashed()) {
@@ -32,25 +32,25 @@ if ($user->trashed()) {
 }
 ```
 
-## Softdelete されているデータも含めて取得
+### Softdelete されているデータも含めて取得
 
 ```php
 $users = App\User::withTrashed()->get();
 ```
 
-## Softdelete されているデータのみ取得
+### Softdelete されているデータのみ取得
 
 ```php
 $users = App\User::onlyTrashed()->get();
 ```
 
-## Softdelete を復元
+### Softdelete を復元
 
 ```php
 $user->restore();
 ```
 
-## 物理削除
+### 物理削除
 
 ```php
 $user->forceDelete();

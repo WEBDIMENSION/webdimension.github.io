@@ -8,14 +8,14 @@ tags: ["Vim", "MAC"]
 draft: false
 ---
 
-# Karabiner
+## Karabiner
 
 特に MAC では US キーボードか JIS キーボードかと宗教戦争みたいなこともありますがどちらもメリット、デメリットあります。
 
 US キーボードでも JIS キーボードでもどちらのデメリットを補ってくれるキーボードをカスタマイズできるアプリです。
 [Karabiner](https://pqrs.org/osx/karabiner/)
 
-## Karabinerc で自分だけのショートカット
+### Karabinerc で自分だけのショートカット
 
 以下 US キーボード前提での例です。僕の例です。
 
@@ -36,16 +36,16 @@ US キーボードでは
 正直、[cmd]{.kbd} + [tab]{.kbd} のスイッチングは[tab]{.kbd}の連打が[めんどくさい]{.under_line}。
 [cmd]{.kbd} + [tab]{.kbd} より遥かに楽で早いです。
 
-## Karabiner でキー押下時をカスタマイズ。
+### Karabiner でキー押下時をカスタマイズ
 
 以下、[caps lock]{.kbd}と[left control]{.kbd}を入れ替えた設定を前提にしてます。 これは MAC の設定画面でもできますが Karabiner でももちろんできます。
 
-![](images/us-kbd.png)
+![table](images/us-kbd.png)
 Karabiner での設定
 
-![](images/Screen-Shot-2019-10-02-at-21.58.08.png)
+![table](images/Screen-Shot-2019-10-02-at-21.58.08.png)
 
-### どんなことができるのか
+#### どんなことができるのか
 
 - [space]{.kbd}長押しで[shift]{.kbd}
 - [left control]{.kbd}にトレードオフした[caps lock]{.kbd}単体押し(長押しでない)で[esc]{.kbd} [英数を送信]{.kbd}
@@ -61,7 +61,7 @@ Karabiner での設定
 そういうことです。
 [j]{.kbd},[k]{.kbd},[l]{.kbd}も割り当てます。個人的にはこれはすごく便利です。 マウスやカーソルキーを使うのは[めんどくさい]{.under_line}のでなるべくホームポジションを崩したくないんです。
 
-## Karabiner のデメリット
+### Karabiner のデメリット
 
 **Karabiner**無しでは仕事が捗らなくなるという中毒性があります。 他人の MAC を操作すると Typo 連発です。
 

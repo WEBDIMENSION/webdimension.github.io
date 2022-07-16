@@ -32,14 +32,14 @@ source test.bats
 
 ```bash
 @test 'add test' {
-	var_01=5
-	var_02=15
-	[[ var_01+var_02 -eq 20 ]]
+ var_01=5
+ var_02=15
+ [[ var_01+var_02 -eq 20 ]]
 }
 @test 'div test' {
-	var_01=5
-	var_02=15
-	[[ var_02/var_01 -eq 3 ]]
+ var_01=5
+ var_02=15
+ [[ var_02/var_01 -eq 3 ]]
 }
 ```
 
@@ -60,14 +60,14 @@ bats test.bats
 
 ```bash
 @test 'add test' {
-	var_01=5
-	var_02=15
-	[[ var_01+var_02 -eq 20 ]]
+ var_01=5
+ var_02=15
+ [[ var_01+var_02 -eq 20 ]]
 }
 @test 'div test' {
-	var_01=5
-	var_02=15
-	[[ var_02/var_01 -eq 2 ]]  # Here
+ var_01=5
+ var_02=15
+ [[ var_02/var_01 -eq 2 ]]  # Here
 }
 ```
 
@@ -114,9 +114,9 @@ test.sh
 #!/usr/bin/env bash
 
 if [[ $1 == test ]]; then
-	param='test'
+ param='test'
 else
-	param='not test'
+ param='not test'
 fi
 
 echo "$param"
@@ -163,9 +163,9 @@ test.sh
 #!/usr/bin/env bash
 
 if [[ $1 == test ]]; then
-	param='test'
+ param='test'
 else
-	param='not test'
+ param='not test'
 fi
 
 echo "$param"
@@ -199,7 +199,5 @@ PATH="${BATS_TEST_DIRNAME%/*}:$PATH"
 | lines  | outputを分割した配列 |
 
 通常は status と output で判定  
-
-
 
 c

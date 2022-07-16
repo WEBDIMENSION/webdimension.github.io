@@ -8,7 +8,7 @@ tags: ["Docker", "Python", "Jupyter"]
 draft: false
 ---
 
-# JupyterLab on Docker で PDF や Latex でダウンロードできるまで
+## JupyterLab on Docker で PDF や Latex でダウンロードできるまで
 
 AI や機械学習で遊ぶため(お勉強)**JupyterLab**の環境を Docker で作りました。
 **JupyterLab**は動いたのですが PDF や Letax でダウンロードするには**texlive-full**を追加しなければいけないことになった。
@@ -22,7 +22,7 @@ DockerImage**を作成。\
 rel="noopener noreferrer"}へ、Source を[GitLab](https://gitlab.com/webdimension/python){target="\_blank" rel="noopener
 noreferrer"}へ登録しました。
 
-## 既存の DockerImage から JupyterLab を構築
+### 既存の DockerImage から JupyterLab を構築
 
 ネットからほぼコピペの Dockerfile だと
 
@@ -60,7 +60,7 @@ CMD ["jupyter", "lab", "--allow-root"]
 これでも**JupyteLab**自体動作しますがメニューの
 "File -\> Export Nootebook as "から PDF や Latex でダウンロードしようとするとエラーが発生。
 
-![](images/Screen-Shot-2019-11-02-at-16.20.03.png)
+![image](images/Screen-Shot-2019-11-02-at-16.20.03.png)
 
 調べたところ**texlive-full**をインストールすれば解決するらしい。
 **texlive-full**のインストールを追記した**Dockerfile**が以下。
@@ -133,7 +133,7 @@ pip install -r /tmp/requirements.txt && \
 **pandas**などのパッケージを追加する場合は requirements.txt に**pandas**を追記して build するようになります。 このままだとライブラリを追加する度に 30 分以上かかり[めんどくさい]
 {.under_line}ので Dockerfile は最小限にして**JupyterLab**,**texlive-full**のインストールは DockerImage 側でするような DockerImage を用意します。
 
-## JupyterLab,exlive-full 環境構築のための DockerFile
+### JupyterLab,exlive-full 環境構築のための DockerFile
 
 DockerImage を作るための Dockerfile です。
 
@@ -206,7 +206,7 @@ apt-get install -y $(cat packages.txt)
 
 となってます。
 
-## DockerImage を生成し DockerHub へアップロード
+### DockerImage を生成し DockerHub へアップロード
 
 - DcokerHub でアカウント登録
 - DockerHub でリポジトリの作成 上記が前提です。[Docker Hub](https://hub.docker.com/){target="\_brank" rel="noopener noreferrer"}
@@ -247,11 +247,11 @@ $docker push webdimension/jupyter-latex
 これまた時間がかかります。。。。 無事 Push が完了すれば[DockerHub のレポジトリ](https://cloud.docker.com/repository/list){target="\_brank" rel="
 noopener noreferrer"}でも確認してみます。
 
-![](images/Screen-Shot-2019-11-03-at-11.45.33.png)
+![image](images/Screen-Shot-2019-11-03-at-11.45.33.png)
 
 これで新規 DockerImage を DockerHub へ登録できました。
 
-## DockerHub へ登録した DockerImage から JupyterLab 環境を構築
+### DockerHub へ登録した DockerImage から JupyterLab 環境を構築
 
 docker-compose.yml
 

@@ -10,17 +10,17 @@ topic_order: "7"
 draft: false
 ---
 
-# Stylelint -- Laravel での開発の前準備 7
+## Stylelint -- Laravel での開発の前準備 7
 
-## Stylelint を導入する
+### Stylelint を導入する
 
-### Stylelint Install
+#### Stylelint Install
 
 ```bash
 npm install --save-dev stylelint stylelint-config-standard stylelint-config-recommended-scss stylelint-scss stylelint-config-concentric-order stylelint-webpack-plugin
 ```
 
-### 設定ファイル
+#### 設定ファイル
 
 .stylelintrc
 (以下一般的な設定)
@@ -287,7 +287,7 @@ npm install --save-dev stylelint stylelint-config-standard stylelint-config-reco
 }
 ```
 
-## package.json に script 登録
+### package.json に script 登録
 
 ```bash
     "scripts": {
@@ -314,14 +314,14 @@ npm run stylelint-fix
 
 でルール違反自動整形
 
-## IDE に Stylelint 設定
+### IDE に Stylelint 設定
 
 例 Intellij IDEA Preferences \| Languages & Frameworks \| Style Sheets \| Stylelint
 
-![](images/Screen-Shot-2020-02-15-at-19.41.14.png)
+![image](images/Screen-Shot-2020-02-15-at-19.41.14.png)
 
 不要なタブを入れてみる
 
-![](images/Screen-Shot-2020-02-15-at-19.41.28.png)
+![image](images/Screen-Shot-2020-02-15-at-19.41.28.png)
 
 怒られる。。。

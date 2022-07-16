@@ -10,9 +10,9 @@ topic_order: "6"
 draft: false
 ---
 
-# webpack - Laravel での開発の前準備 6
+## webpack - Laravel での開発の前準備 6
 
-## Laravel mix (webpack) をざっくり理解する
+### Laravel mix (webpack) をざっくり理解する
 
 設定ファイルは webpack.js
 
@@ -26,7 +26,7 @@ draft: false
 - resources/sass/app.scss を build して public/css に配置
   (pblic/css/app.css)
 
-### ファイルを追加する場合
+#### ファイルを追加する場合
 
 ```bash
 ('resources/js/app.js', 'public/js')
@@ -40,7 +40,7 @@ draft: false
 
 が生成される。
 
-## package.json 　を見てみる
+### package.json 　を見てみる
 
 ```bash
     "scripts": {
@@ -105,9 +105,9 @@ npm run hot
 
 開発のモードの Build とプロダクトモードの違いは生成される js,css をみれば一目瞭然。
 
-## npm run watch 実行してみる
+### npm run watch 実行してみる
 
-### Command から実行
+#### Command から実行
 
 ```bash
 npm run watch
@@ -123,14 +123,14 @@ npm run watch
      /js/app.js  1.39 MiB     /js/app  [emitted]  /js/app
 ```
 
-### IDE で実行
+#### IDE で実行
 
 例 Intellij IDEA
 
 [option]{.kbd} + [F11]{.kbd}
 
-![](images/Screen-Shot-2020-02-15-at-19.08.22.png)
+![image](images/Screen-Shot-2020-02-15-at-19.08.22.png)
 
 実行結果
 
-![](images/Screen-Shot-2020-02-15-at-19.07.26.png)
+![image](images/Screen-Shot-2020-02-15-at-19.07.26.png)

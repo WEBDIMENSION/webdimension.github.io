@@ -37,7 +37,7 @@ if [[ $target_content =~ $key ]]; then
  sed 's/^\/\//https:\/\//' | \
  xargs -n 1 curl -L#O --output-dir "$img_dir"
 else
-   	echo "img src none"
+    echo "img src none"
 fi
 ```
 

@@ -8,9 +8,9 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel Varidation
+## Laravel Varidation
 
-_Controler 内_
+___Controler 内___
 
 ```php
     protected function validator(array $data)
@@ -26,7 +26,7 @@ _Controler 内_
     }
 ```
 
-_Example login_
+___Example login___
 
 ```php
     public function login(Request $request)

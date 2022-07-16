@@ -8,9 +8,9 @@ tags: ["Makefile"]
 draft: false
 ---
 
-# Makefile
+## Makefile
 
-## Exec
+### Exec
 
 ```bash
 make docker-compose_ps
@@ -18,16 +18,16 @@ make docker-compose_ps
 
 ```bash
 docker-compose_ps:
-	@$(call _docker_compose, 'ps')
+ @$(call _docker_compose, 'ps')
 ```
 
-## include
+### include
 
 ```bash
 include ./.makefile.d/*.mk
 ```
 
-## variable
+### variable
 
 ```bash
   FOO := foo
@@ -41,7 +41,7 @@ BAR = $(shell date)
   FOO := foo
 ```
 
-## define
+### define
 
 Current DIR
 
@@ -49,26 +49,26 @@ Current DIR
   echo $(PWD)
 ```
 
-## Shell
+### Shell
 
 ```bash
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 ```
 
-## Function
+### Function
 
 ```bash
 define _docker_compose
-	cd $(PARENT_DIR) && docker-compose $1 $2
+ cd $(PARENT_DIR) && docker-compose $1 $2
 endef
 ```
 
 ```bash
 docker-compose_ps:
-	@$(call _docker_compose, 'ps')
+ @$(call _docker_compose, 'ps')
 ```
 
-## Directory
+### Directory
 
 ```bash
 # Current Dir

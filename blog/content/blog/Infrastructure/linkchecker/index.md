@@ -97,6 +97,3 @@ linkchecker -o text -Fdot/report/linkchecker.report.dot http://loalhost
 # Format failures
 linkchecker -o text -Ffailures/report/linkchecker.report.failures http://loalhost
 ```
-
-
-

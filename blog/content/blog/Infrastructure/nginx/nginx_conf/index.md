@@ -176,7 +176,7 @@ http {
   }
 ```
 
-#timeout
+## timeout
 
 ```bash
     location /one/ {

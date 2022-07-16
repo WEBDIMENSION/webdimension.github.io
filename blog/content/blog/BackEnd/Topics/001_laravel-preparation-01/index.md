@@ -10,23 +10,23 @@ topic_order: "1"
 draft: false
 ---
 
-# Laravel での開発の前準備その１
+## Laravel での開発の前準備その１
 
-## Laravel6.x で Bootstrap4, Vue.js を導入
+### Laravel6.x で Bootstrap4, Vue.js を導入
 
-### laravel/ui 導入
+#### laravel/ui 導入
 
 ```bash
 composer require laravel/ui
 ```
 
-### Bootstrap 導入
+#### Bootstrap 導入
 
 ```bash
 php artisan ui bootstrap
 ```
 
-### Vue.js 導入
+#### Vue.js 導入
 
 ```bash
 php artisan ui vue

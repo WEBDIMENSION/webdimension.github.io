@@ -172,7 +172,7 @@ postgres=# \dt *.*
 postgres=# \dT+
 ```
 
-### 全データ型をリスト表示
+### viewをリスト表示
 
 ```bash
 postgres=# \dv
@@ -180,7 +180,7 @@ postgres=# \dv
 
 ## パーティショニング
 
-**親テーブル**
+***親テーブル***
 
 ```sql
 create table zenkoku_chiho_kokyodantai_code (

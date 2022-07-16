@@ -8,7 +8,7 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel DB 　命名規則
+## Laravel DB 　命名規則
 
 f#(というか FrameWork 全般)
 

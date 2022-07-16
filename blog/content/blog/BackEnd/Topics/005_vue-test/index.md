@@ -10,11 +10,11 @@ topic_order: "5"
 draft: false
 ---
 
-# vue.js テスト環境 - Laravel での開発の前準備 5
+## vue.js テスト環境 - Laravel での開発の前準備 5
 
-## Vue.js Unittest を導入する
+### Vue.js Unittest を導入する
 
-### vue test-utils install
+#### vue test-utils install
 
 ```bash
 npm install --save-dev @vue/test-utils mocha jsdom jsdom-global expect
@@ -38,7 +38,7 @@ package.json を変更
 npm install
 ```
 
-## vue.js テストを設置
+### vue.js テストを設置
 
 javascript のテスト用ディレクトリを作成
 
@@ -60,9 +60,9 @@ require('jsdom-global')()
 global.expect = require('expect')
 ```
 
-## testunit を作る
+### testunit を作る
 
-### testunit (テストする方)
+#### testunit (テストする方)
 
 tests/Javascript/VueTestComponent.spec.js
 
@@ -83,7 +83,7 @@ describe('VueTestComponent.vue', () => {
 })
 ```
 
-### vue component (テストされる方)
+#### vue component (テストされる方)
 
 ../../resources/js/components/VueTestComponent.vue
 
@@ -105,7 +105,7 @@ export default {
 </script>
 ```
 
-## packege.json に script 登録
+### packege.json に script 登録
 
 ```bash
 npm run test
@@ -125,7 +125,7 @@ package.json
     },
 ```
 
-## vue unittest を実行
+### vue unittest を実行
 
 ```bash
 npm test
@@ -146,18 +146,18 @@ npm test
  MOCHA  Tests completed successfully
 ```
 
-## IDE から test 実行
+### IDE から test 実行
 
 例 Intellij idea Preferences \| Languages & Frameworks \| Node.js and NPM
 
-![](images/Screen-Shot-2020-02-15-at-18.04.51.png)
+![image](images/Screen-Shot-2020-02-15-at-18.04.51.png)
 
 [optin]{.kbd} + [F11]{.kbd} で npm script を Popup 表示
 
-![](images/Screen-Shot-2020-02-15-at-18.06.52.png)
+![image](images/Screen-Shot-2020-02-15-at-18.06.52.png)
 
 test を選択して実行
 
-![](images/Screen-Shot-2020-02-15-at-18.07.53.png)
+![image](images/Screen-Shot-2020-02-15-at-18.07.53.png)
 
 test 成功

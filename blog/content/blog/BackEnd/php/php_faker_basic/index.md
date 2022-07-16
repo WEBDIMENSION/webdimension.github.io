@@ -153,7 +153,7 @@ $faker = Faker\Factory::create('ja_JP');
 
 | 用途     | code                                                                     | Example                                          |
 | -------- | ------------------------------------------------------------------------ | ------------------------------------------------ |
-| imageUrl | $faker->imageUrl($width = '400', $height = '200', 'cats', true, 'Faker') | https://lorempixel.com/400/200/cats/Faker/?25164 |
+| imageUrl | $faker->imageUrl($width = '400', $height = '200', 'cats', true, 'Faker') | <https://lorempixel.com/400/200/cats/Faker/?25164> |
 | image    | $faker->image($dir = '/tmp')                                             | /tmp/f234f5e7e9c27ec90bf1c89ac6935cfe.jpg        |
 | image2   | $faker->image($dir, $width, $height, 'cats', false                       | 1ac870f44ad086a9d3c63bf14087e2b0.jpg             |
 

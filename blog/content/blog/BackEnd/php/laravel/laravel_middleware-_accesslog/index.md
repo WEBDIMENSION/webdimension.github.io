@@ -8,9 +8,9 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# laravel middleware で access 履歴
+## laravel middleware で access 履歴
 
-## Model Middleware 登録
+### Model Middleware 登録
 
 ```bash
 // Model 作成
@@ -19,7 +19,7 @@ php artisan make:model Models/Admin/AccessReport -m
 php artisan make:middleware AccessReportMiddleware
 ```
 
-### Models/Admin/AccessReport.php
+#### Models/Admin/AccessReport.php
 
 ```php
 namespace App\Models\Admin;
@@ -56,7 +56,7 @@ class AccessReport extends Model
 }
 ```
 
-## laravel/app/Http/Middleware/AccessReportMiddleware.php
+### laravel/app/Http/Middleware/AccessReportMiddleware.php
 
 ```php
 namespace App\Http\Middleware;
@@ -98,7 +98,7 @@ class AccessReportMiddleware
 }
 ```
 
-## App/Http/Kernel.php
+### App/Http/Kernel.php
 
 ```php
     protected $routeMiddleware = [
@@ -117,7 +117,7 @@ class AccessReportMiddleware
     ];
 ```
 
-## database/migrations/[DATETIME]\_create_access_reports_table.php
+### database/migrations/[DATETIME]\_create_access_reports_table.php
 
 ```php
 use Illuminate\Database\Migrations\Migration;

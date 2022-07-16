@@ -41,5 +41,5 @@ draft: false
 }
 ```
 
-`icon: `src/images/icon.png`,` を変更する。  
+`icon: src/images/icon.png`, を変更する。  
 自動生成される。

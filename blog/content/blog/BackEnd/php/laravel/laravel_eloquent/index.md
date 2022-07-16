@@ -8,14 +8,14 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel Eloquent 備忘録
+## Laravel Eloquent 備忘録
 
-## laravel Eloquent
+### laravel Eloquent
 
-_Example_
+___Example___
 
 ```php
-class Article extends Model
+class Article extends Model_
 {
     public $timestamps = true;
     protected $guarded = [

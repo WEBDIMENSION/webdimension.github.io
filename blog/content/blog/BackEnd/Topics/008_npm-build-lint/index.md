@@ -10,9 +10,9 @@ topic_order: "8"
 draft: false
 ---
 
-# npm run watch(build 時) で Lint 実行 - Laravel での開発の前準備 8
+## npm run watch(build 時) で Lint 実行 - Laravel での開発の前準備 8
 
-## webpack (laravel-mix) への設定追加
+### webpack (laravel-mix) への設定追加
 
 webpack.mix.js
 

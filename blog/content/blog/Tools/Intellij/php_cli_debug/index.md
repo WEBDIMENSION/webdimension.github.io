@@ -23,10 +23,13 @@ draft: false
   ```
 
 - 別コンテナの DB に接続してのデバッグを行うときはネットワーク設定をする
+
   ```bash
   docker network create xxx
   ```
+
   (docker-compose.yml の netword:)
+
   ```yaml
   networks:
   default:

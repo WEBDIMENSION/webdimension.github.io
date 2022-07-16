@@ -26,7 +26,6 @@ draft: false
 - `Repository` -> `Settings` -> `Secret`  
   pullDown の `actions` を 選択  
   ここで任意の名前で設定する (ここでは `PERSONAL_ACCESS_TOKEN` で 設定)
--
 
 ## USERNAME を Secret に設定する
 

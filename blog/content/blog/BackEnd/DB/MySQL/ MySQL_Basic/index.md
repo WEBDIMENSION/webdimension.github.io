@@ -329,7 +329,7 @@ reference_option]
 UPDATE reference_option]
 ```
 
-#### reference_option:
+#### reference_option
 
 RESTRICT | CASCADE | SET NULL | NO ACTION | SET DEFAULT
 

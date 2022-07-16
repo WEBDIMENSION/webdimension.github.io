@@ -10,7 +10,7 @@ draft: false
 
 ## CASE
 
-**SELECT 句**
+***SELECT 句***
 
 ```sql
 SELECT name,
@@ -23,7 +23,7 @@ SELECT name,
 FROM Address
 ```
 
-**WHERE 句**
+***WHERE 句***
 
 ```sql
 SELECT key,
@@ -43,7 +43,7 @@ WHERE CASE
 ;
 ```
 
-**GROUP BY 句**
+***GROUP BY 句***
 
 ```sql
 SELECT CASE
@@ -62,7 +62,7 @@ GROUP BY CASE
 
 ## INTERSECT
 
-**共通するレコード**
+***共通するレコード***
 
 ```sql
 SELECT *
@@ -73,7 +73,7 @@ FROM Address2;
 
 ## Expect
 
-**Address にあって Address2 にないレコード**
+***Address にあって Address2 にないレコード***
 
 ```sql
 SELECT *
@@ -84,7 +84,7 @@ FROM Address2;
 
 ## Rank
 
-**age の降順(抜け番あり)**
+***age の降順(抜け番あり)***
 
 ```sql
 SELECT name,
@@ -92,7 +92,7 @@ SELECT name,
        RANK() OVER (ORDER BY age DESC) AS rnk
 ```
 
-**age の降順(抜け番なし)**
+***age の降順(抜け番なし)***
 
 ```sql
 SELECT name,

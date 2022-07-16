@@ -8,9 +8,9 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel form facede
+## Laravel form facede
 
-## laravel form facade
+### laravel form facade
 
 [参考](http://recipes.laravel.jp/category/17)
 記述が楽。\

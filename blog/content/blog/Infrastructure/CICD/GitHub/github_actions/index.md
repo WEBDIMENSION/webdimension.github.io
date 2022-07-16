@@ -8,9 +8,9 @@ tags: ["Linux", "Docker", "GitHub Actions"]
 draft: false
 ---
 
-# Github Actions 基本
+## Github Actions 基本
 
-## GitHub Actions
+### GitHub Actions
 
 Project top dir に .github/workflows を作る
 
@@ -104,7 +104,7 @@ jobs:
 # todo: variable from vars_file
 ```
 
-## Matirx
+### Matirx
 
 ```yaml
 # Example
@@ -145,7 +145,7 @@ jobs:
           ansible-playbook -i hosts/develop site.yml -l ${{ matrix.docker_image }}"
 ```
 
-## ACT ( Exec Github Actions on local )
+### ACT ( Exec Github Actions on local )
 
 Install for Linux , Mac
 

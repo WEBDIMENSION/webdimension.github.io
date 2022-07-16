@@ -8,16 +8,16 @@ tags: ["PHP", "Composer"]
 draft: false
 ---
 
-# PHP Composer
+## PHP Composer
 
-## PHP Composer とは
+### PHP Composer とは
 
 _PHP のパッケージ管理ツール_ と呼ばれてます。\
 Node.js や npm を使ったことある方にはなんとなくわかるでしょうか。\
 Node.js の npm と似た扱いになります。\
 Node.js では package.json に当たる部分が Composer では composer.json になります。
 
-_なにがいいのかというと_
+___なにがいいのかというと___
 
 - ライブラリーを簡単にインストールできる
 - ライブラリーの依存関係を解決してくれる

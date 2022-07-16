@@ -258,9 +258,9 @@ i=1
 
 while [[ $i -le $1 ]]
 do
-	((result_number+=i))
-	((i++))
-	echo "i=$i"
+ ((result_number+=i))
+ ((i++))
+ echo "i=$i"
 done
 
 echo "Total: $result_number"

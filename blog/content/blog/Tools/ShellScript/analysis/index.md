@@ -27,7 +27,6 @@ set -o noexec
 
 のようなエラー表示
 
-
 ## shellcheck
 
 ### Install
@@ -47,15 +46,16 @@ brew install shellcheck
 ### Exec shellcheck
 
 source sc.sh
+
 ```bash
 #!/usr/bin/env bash
 
 set -o noexec
 
 if [[ $1 == test ]]; then
-	param='test'
+ param='test'
 else
-	param='not test'
+ param='not test'
 fi
 
 echo "$param"
@@ -67,17 +67,17 @@ shellcheck sc.sh
 
 エラーなし
 
-
 source sc.sh (echo " を外す)
+
 ```bash
 #!/usr/bin/env bash
 
 set -o noexec
 
 if [[ $1 == test ]]; then
-	param='test'
+ param='test'
 else
-	param='not test'
+ param='not test'
 fi
 
 echo $param
@@ -101,7 +101,6 @@ For more information:
 ```
 
 エラーを指摘される。エラーの詳細はリンク先で確認
-
 
 Intellij IDEA ではエディタ上で表示してくれる。
 

@@ -8,12 +8,12 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel Filable or Gurd
+## Laravel Filable or Gurd
 
 In Model\
 ホワイトリストかブラックリストか、みたいなもの。。。
 
-## Fillable
+### Fillable
 
 ```php
 // これらが変更可能
@@ -29,7 +29,7 @@ In Model\
     ];
 ```
 
-## Gurd
+### Gurd
 
 ```php
 // これらが変更禁止

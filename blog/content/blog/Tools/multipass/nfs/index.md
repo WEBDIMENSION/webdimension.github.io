@@ -134,10 +134,10 @@ echo "###################################"
 
 echo "$DEVELOP_INIT"
 if [ "$DEVELOP_INIT" == 'true' ]; then
-	ansible-playbook -i hosts/multipass site.yml -l multipass
-#	ansible-playbook -i hosts/multipass site.yml -l multipass -t tests
+ ansible-playbook -i hosts/multipass site.yml -l multipass
+# ansible-playbook -i hosts/multipass site.yml -l multipass -t tests
 else
-	ansible-playbook -i hosts/multipass site.yml -l multipass --skip-tags develop_init
+ ansible-playbook -i hosts/multipass site.yml -l multipass --skip-tags develop_init
 fi
 
 ```

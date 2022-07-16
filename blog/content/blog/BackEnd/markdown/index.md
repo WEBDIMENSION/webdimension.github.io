@@ -12,7 +12,6 @@ WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく
 実経験の~~忘備録~~**備忘録**  
 これは `バックスラッシュ` です
 
-
 > お世話になります。xxxです。
 >
 > ご連絡いただいた、バグの件ですが、仕様です。
@@ -51,12 +50,12 @@ TypeScript化, ESLint, Prettier, Grouping(Tags), CSS, ページネーション, 
 
 - list1 aifdsafjkdsalfjldsajfdas
 - list2 kkkkkkkkkkkkiiiiiiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dkkkkkkkkkkkkkkkkkkj
+  - list2 kkkkkkkkkkkkiiiiiiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dkkkkkkkkkkkkkkkkkkj
+  - list3 fdsdsafdsfdsfdsafds
+  - list3 [href](https://google.com)
     - list2 kkkkkkkkkkkkiiiiiiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dkkkkkkkkkkkkkkkkkkj
     - list3 fdsdsafdsfdsfdsafds
     - list3 [href](https://google.com)
-        - list2 kkkkkkkkkkkkiiiiiiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa dkkkkkkkkkkkkkkkkkkj
-        - list3 fdsdsafdsfdsfdsafds
-        - list3 [href](https://google.com)
 - list3 fdsdsafdsfdsfdsafds
 - list3 [href](https://google.com)
 
@@ -79,8 +78,6 @@ php-cs-fixer, es-lint, ~~phpunit~~,veu-test,laravel-mix, etc..._(全8ページ)_
 1. list3 [href](https://google.com)
 
 ---
-
-
 
 🔗 [Link](http://aaaaa.com)
 

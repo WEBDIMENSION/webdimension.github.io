@@ -10,9 +10,9 @@ topic_order: "4"
 draft: false
 ---
 
-# PHP UnitTest - Laravel での開発の前準備 4
+## PHP UnitTest - Laravel での開発の前準備 4
 
-## phpunit を実行してみる
+### phpunit を実行してみる
 
 Laravel にはデフォルトで Test が導入されている。 実行してみる
 
@@ -28,7 +28,7 @@ OK (1 tests, 1 assertions)
 
 このように OK がでれば テスト成功
 
-### composer.json の script に追加
+#### composer.json の script に追加
 
 ```bash
     "scripts": {
@@ -50,7 +50,7 @@ composer test
 
 で実行できるようになる。
 
-### IDE から Testunit 実行
+#### IDE から Testunit 実行
 
 参考:[Docker on Vagrant をがんばってみた](/blog/Environment/docke-on-vagrant/)
 

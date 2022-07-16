@@ -48,4 +48,3 @@ draft: false
 Preferences | Languages & Frameworks | JavaScript | Prettier
 
 On save のチェックボックスをON
-

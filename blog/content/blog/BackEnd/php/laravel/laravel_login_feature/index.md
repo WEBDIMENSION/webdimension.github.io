@@ -8,56 +8,56 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel login 機能追加
+## Laravel login 機能追加
 
-## Setup
+### Setup
 
-### Create Model Dir
+#### Create Model Dir
 
 ```bash
 mkdir -p App/Models/Admin
 ```
 
-### Create Controller Dir
+#### Create Controller Dir
 
 ```bash
 mkdir -p App/Http/Controllers/
 ```
 
-### Create Model and table
+#### Create Model and table
 
 ```bash
 php artisan make:model Models/Admin/Admin -m
 ```
 
-### Copy Auth
+#### Copy Auth
 
 ```bash
 cp -rf App/Http/Controllers/auth App/Http/Controllers/Admin/auth
 ```
 
-### Copy HomeController
+#### Copy HomeController
 
 ```bash
 cp App/Http/Controllers/HomeController.php App/Http/Controllers/Admin/HomeController.php
 ```
 
-### Views
+#### Views
 
 ```bash
 cp /resources/views/home.blade.php /resources/views/admin/home.blade.php
 cp /resources/views/auth/login.blade.php /resources/views/admin/auth/login.blade.php
 ```
 
-### Add admin-routing
+#### Add admin-routing
 
 ```bash
 touch /routes/admin.php
 ```
 
-## Admin Login
+### Admin Login
 
-### App/Models/Admin/Admin.php
+#### App/Models/Admin/Admin.php
 
 ```bash
 # Table固有設定追記
@@ -77,14 +77,14 @@ touch /routes/admin.php
     }
 ```
 
-### App/Http/Controllers/Admin/HomeController.php
+#### App/Http/Controllers/Admin/HomeController.php
 
 ```bash
 #middlewear auth.admin に設定
 $this->middleware('auth:admin');
 ```
 
-### App/Http/Controllers/Admin/Auth/LoginController.php
+#### App/Http/Controllers/Admin/Auth/LoginController.php
 
 ```bash
 # Redirect URL when login success
@@ -143,7 +143,7 @@ public function showLoginForm()
     }
 ```
 
-### config/auth.php
+#### config/auth.php
 
 ```bash
     'defaults' => [
@@ -208,7 +208,7 @@ public function showLoginForm()
     ],
 ```
 
-### app/Exceptions/Handler.php
+#### app/Exceptions/Handler.php
 
 ```php
 //追記
@@ -233,7 +233,7 @@ public function showLoginForm()
     }
 ```
 
-## Admin Faker
+### Admin Faker
 
 ```bash
 php artisan make:factory AdminFactory

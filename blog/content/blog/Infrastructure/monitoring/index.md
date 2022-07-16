@@ -37,7 +37,7 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 
 ```bash
 iostat
-Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp) 	03/24/20 	_x86_64_	(1 CPU)
+Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp)  03/24/20  _x86_64_ (1 CPU)
 
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
            0.76    0.00    1.44    0.02    0.00   97.77
@@ -48,7 +48,7 @@ sda               1.19         6.77         9.39     423937     587992
 
 ```bash
 iostat -h
-Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp) 	03/24/20 	_x86_64_	(1 CPU)
+Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp)  03/24/20  _x86_64_ (1 CPU)
 
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
            0.76    0.00    1.44    0.02    0.00   97.77
@@ -60,7 +60,7 @@ sda
 
 ```bash
 iostat -x
-Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp) 	03/24/20 	_x86_64_	(1 CPU)
+Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp)  03/24/20  _x86_64_ (1 CPU)
 
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle
            0.76    0.00    1.44    0.02    0.00   97.77
@@ -74,7 +74,7 @@ sda               0.09     0.84    0.21    0.98     6.76     9.38    27.08     0
 ```bash
 sar 1　3
 
-Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp) 	03/24/20 	_x86_64_	(1 CPU)
+Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp)  03/24/20  _x86_64_ (1 CPU)
 
 11:59:29        CPU     %user     %nice   %system   %iowait    %steal     %idle
 11:59:30        all      1.02      0.00      3.06      0.00      0.00     95.92
@@ -106,7 +106,7 @@ Average:       433937   1449187     76.96     85424    729440   1520448     38.2
 ```bash
 sar
 # display current date done
-Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp) 	03/24/20 	_x86_64_	(1 CPU)
+Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp)  03/24/20  _x86_64_ (1 CPU)
 
 11:40:02        CPU     %user     %nice   %system   %iowait    %steal     %idle
 11:50:01        all      0.93      0.00      1.46      0.03      0.00     97.58
@@ -118,7 +118,7 @@ Average:        all      0.95      0.00      1.46      0.02      0.00     97.56
 #specify file
 sar -f /var/log/sa/sa24
 
-Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp) 	03/24/20 	_x86_64_	(1 CPU)
+Linux 3.10.0-862.14.4.el7.x86_64 (centos75.exp)  03/24/20  _x86_64_ (1 CPU)
 
 11:40:02        CPU     %user     %nice   %system   %iowait    %steal     %idle
 11:50:01        all      0.93      0.00      1.46      0.03      0.00     97.58

@@ -8,7 +8,7 @@ tags: ["Command", "Security"]
 draft: false
 ---
 
-# パスワード生成に便利なツール 'pwgen'
+## パスワード生成に便利なツール 'pwgen'
 
 パスワード生成には
 
@@ -19,7 +19,7 @@ draft: false
 
 混じりで 8 桁以上とか、とにかく[めんどくさい]{.under_line}ので簡単に生成してくれる 'pwgen' が便利です。
 
-## pwgen Install
+### pwgen Install
 
 ```bash
 # brew

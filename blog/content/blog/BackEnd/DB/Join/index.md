@@ -46,7 +46,7 @@ insert into owners (id, name)
 values (3, 'saburo');
 ```
 
-_Table dog_
+___Table dog___
 | id | name | owner_id |
 | --- | ----- | -------- |
 | 1 | aka | 1 |
@@ -54,7 +54,7 @@ _Table dog_
 | 3 | shiro | 1 |
 | 4 | kuro | 4 |
 
-_Table owner_
+___Table owner___
 | id | name |
 | --- | ----- |
 | 1 | ichiro |

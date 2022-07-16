@@ -8,9 +8,9 @@ tags: ["Docker", "Linux"]
 draft: false
 ---
 
-# Docker Memo
+## Docker Memo
 
-## Docker ip 　取得
+### Docker ip 　取得
 
 Ansible での test の際に inventory_file に host の IP を動的に書き込みたい
 
@@ -18,7 +18,7 @@ Ansible での test の際に inventory_file に host の IP を動的に書き�
 docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container>
 ```
 
-## 'docker exec' is not road env
+### 'docker exec' is not road env
 
 ```bash
 docke exec xxx

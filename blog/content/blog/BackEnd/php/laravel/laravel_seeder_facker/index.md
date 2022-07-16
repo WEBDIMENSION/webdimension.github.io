@@ -8,15 +8,15 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel migration seed facker
+## Laravel migration seed facker
 
-_データ再生時によく使う_
+___データ再生時によく使う___
 
 ```bash
 php artisan migrate:refresh --seed
 ```
 
-## faker,seeder
+### faker,seeder
 
 ```php
     public function run()
@@ -48,7 +48,7 @@ $factory->define(User::class, function (Faker $faker) {
 });
 ```
 
-## seedr relation 例
+### seedr relation 例
 
 ```php
     public function run()

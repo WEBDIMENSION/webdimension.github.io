@@ -10,17 +10,17 @@ topic_order: "2"
 draft: false
 ---
 
-# php-cs-fixer - Laravel での開発の前準備 2
+## php-cs-fixer - Laravel での開発の前準備 2
 
-## php-cs-fixer を設定する
+### php-cs-fixer を設定する
 
-### php-cs-fixer Install
+#### php-cs-fixer Install
 
 ```bash
 composer install php-cs-fixer
 ```
 
-### composer.json へ Script として登録
+#### composer.json へ Script として登録
 
 vim composer.json
 composer fix-diff で rule 違反箇所を確認
@@ -47,22 +47,22 @@ composer fix で rule 違反箇所を整形
     }
 ```
 
-### IDE への設定
+#### IDE への設定
 
 例) Intelij idea
 
 Preferences \| Languages & Frameworks \| PHP \| Quality Tools
 
-![](images/Screen-Shot-2020-02-15-at-15.18.48.png)
+![image](images/Screen-Shot-2020-02-15-at-15.18.48.png)
 
 ルール違反箇所
 
-![](images/Screen-Shot-2020-02-15-at-15.21.18.png)
+![image](images/Screen-Shot-2020-02-15-at-15.21.18.png)
 
 [option]{.kbd} + [CR]{.kbd}
 で自動整形
 
-### php-cs-fixer 詳細設定
+#### php-cs-fixer 詳細設定
 
 プロジェクトルートへ.php_cs.dist or .php_cs
 

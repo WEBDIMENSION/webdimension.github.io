@@ -8,7 +8,7 @@ tags: ["Parrot Security OS", "Tmux", "Tmuxinator", "Security"]
 draft: false
 ---
 
-# Parrot Security OS
+## Parrot Security OS
 
 ずっと使っていた Version4.2 が無理しすぎたせいか動きがわるくなったので 4.7 へ移行してみた。
 
@@ -20,19 +20,19 @@ draft: false
 
 イタリア製というのもあってか美しいです
 
-![](images/Screen-Shot-2019-10-01-at-20.57.31.png)
+![image](images/Screen-Shot-2019-10-01-at-20.57.31.png)
 
 何かひらくと
-![](images/Screen-Shot-2019-10-01-at-20.57.15.png)
+![image](images/Screen-Shot-2019-10-01-at-20.57.15.png)
 
 Office 系(**libreOffice**)
 
-![](images/Screen-Shot-2019-10-01-at-21.07.26.png)
+![image](images/Screen-Shot-2019-10-01-at-21.07.26.png)
 
 ブラウザは**Firefox**がデフォルトです。
 "TOR ブラウザ"もデフォルトで搭載してまがここでは触れません。
 
-![](images/Screen-Shot-2019-10-01-at-21.09.29.png)
+![image](images/Screen-Shot-2019-10-01-at-21.09.29.png)
 
 ## VMwear 上に Parrot Security OS をインストール
 

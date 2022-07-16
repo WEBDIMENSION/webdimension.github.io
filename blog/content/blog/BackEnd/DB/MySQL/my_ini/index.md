@@ -8,7 +8,7 @@ tags: ["Database", "MySQL"]
 draft: false
 ---
 
-**Example**
+***Example***
 
 ```ini
 [client]

@@ -27,5 +27,3 @@ curl -L https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0
 # Document生成
 docker-compose run schemaspy
 ```
-
-##

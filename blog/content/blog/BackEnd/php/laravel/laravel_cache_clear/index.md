@@ -8,9 +8,9 @@ tags: ["PHP", "Laravel"]
 draft: false
 ---
 
-# Laravel よく使う Cache 系のコマンド
+## Laravel よく使う Cache 系のコマンド
 
-## Laravel cache clear
+### Laravel cache clear
 
 ```bash
 # Seed時 class 生成後

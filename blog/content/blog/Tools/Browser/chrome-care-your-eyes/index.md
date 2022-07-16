@@ -8,7 +8,7 @@ tags: ["Chrome"]
 draft: false
 ---
 
-# Chrome アドオン Care your Eyes
+## Chrome アドオン Care your Eyes
 
 夜な夜な調べ物などでブラウジングしていると目が疲れますよね。
 
@@ -23,13 +23,13 @@ draft: false
 
 Before
 
-![](images/スクリーンショット-2019-10-01-15.47.43.png)
+![image](images/スクリーンショット-2019-10-01-15.47.43.png)
 
 ---
 
 After
 [alt]{.kbd}+[ctl]{.kbd}+[x]{.kbd}
 
-![](images/スクリーンショット-2019-10-01-15.48.02.png)
+![image](images/スクリーンショット-2019-10-01-15.48.02.png)
 
 目が辛くなってきたおっさんエンジニアには必須です！

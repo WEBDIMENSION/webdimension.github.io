@@ -10,17 +10,17 @@ topic_order: "3"
 draft: false
 ---
 
-# Eslint (vue) - Laravel での開発の前準備 3
+## Eslint (vue) - Laravel での開発の前準備 3
 
-# Eslint
+### Eslint
 
-## Install
+### Install
 
 ```bash
-$ npm install babel-eslint eslint eslint-config-prettier eslint-config-standard eslint-friendly-formatter eslint-loader eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-node eslint-plugin-prettier eslint-plugin-promise eslint-plugin-standard eslint-plugin-vue laravel-mix-eslint --save-dev
+npm install babel-eslint eslint eslint-config-prettier eslint-config-standard eslint-friendly-formatter eslint-loader eslint-plugin-html eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-node eslint-plugin-prettier eslint-plugin-promise eslint-plugin-standard eslint-plugin-vue laravel-mix-eslint --save-dev
 ```
 
-### package.json へ Script として登録
+#### package.json へ Script として登録
 
 vim composer.json npm run eslint で rule 違反箇所を確認 npm run eslint-fix で rule 違反箇所を整形
 
@@ -34,21 +34,21 @@ vim composer.json npm run eslint で rule 違反箇所を確認 npm run eslint-f
     },
 ```
 
-### IDE への設定
+#### IDE への設定
 
 例) Intelij idea
 
 Preferences \| Languages & Frameworks \| JavaScript \| Code Quality Tools \| ESLint
 
-![](images/Screen-Shot-2020-02-15-at-16.00.39.png)
+![image](images/Screen-Shot-2020-02-15-at-16.00.39.png)
 
 ルール違反箇所
 
-![](images/Screen-Shot-2020-02-15-at-16.01.06.png)
+![image](images/Screen-Shot-2020-02-15-at-16.01.06.png)
 
 [option]{.kbd} + [CR]{.kbd} で自動整形
 
-## 設定ファイル
+### 設定ファイル
 
 プロジェクトルートへ.eslintrc.js
 

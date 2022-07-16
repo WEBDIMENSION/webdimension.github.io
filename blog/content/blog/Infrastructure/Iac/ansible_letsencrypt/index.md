@@ -8,9 +8,9 @@ tags: ["Linux", "Apache", "Ansible", "Let's Encrypt", "Cron"]
 draft: false
 ---
 
-# Ansible, Let's Encrypt
+## Ansible, Let's Encrypt
 
-## Install cerbot tasks
+### Install cerbot tasks
 
 ```yaml
 - name: check installed cerbot
@@ -48,7 +48,7 @@ draft: false
     - { "regexp": '^RENEW_HOOK=""$', "replace": 'RENEW_HOOK="--renew-hook ''systemctl restart httpd''"' }
 ```
 
-## VirtualHost vars
+### VirtualHost vars
 
 ```yaml
 httpd:
@@ -100,7 +100,7 @@ httpd:
             weekday: "*"
 ```
 
-## Get cert
+### Get cert
 
 ```yaml
  ---
@@ -168,7 +168,7 @@ httpd:
      - Restart httpd
 ```
 
-## Cron vars
+### Cron vars
 
 ```yaml
 crontab:
@@ -184,7 +184,7 @@ crontab:
     weekday: "*"
 ```
 
-## Cron tab
+### Cron tab
 
 ```yaml
 ---
@@ -204,7 +204,7 @@ crontab:
     - "{{ crontab }}"
 ```
 
-## letsencrypt_virtualhost.conf (Jinja2 template)
+### letsencrypt_virtualhost.conf (Jinja2 template)
 
 ```conf
   ServerName {{ item.value.httpd.hostname }}

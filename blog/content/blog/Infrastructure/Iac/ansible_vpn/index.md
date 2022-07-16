@@ -8,11 +8,11 @@ tags: ["Linux", "Docker", "Python", "Ansible", "Testinfra", "VPN"]
 draft: false
 ---
 
-# VPN サーバー(SoftEhter)を Ansible で Conoha-VPN サーバーへ構築
+## VPN サーバー(SoftEhter)を Ansible で Conoha-VPN サーバーへ構築
 
 [GitHub](https://github.com/WEBDIMENSION/ansible-softether-for-conoha)
 
-## inventory_file での host の指定を動的にしたい
+### inventory_file での host の指定を動的にしたい
 
 ローカルの Docker 上でのテスト, Act(GitHub actions のローカル版)を利用してのテスト、本番デプロイにおいて inventory_file での host の指定を動的にしたい。
 
@@ -80,7 +80,7 @@ with open(
     f.write(SOFTETHER_INVENTORY_FILE)
 ```
 
-## nofity 設定反映するため Service を restart させる
+### nofity 設定反映するため Service を restart させる
 
 Case in Firewalled
 
@@ -111,7 +111,7 @@ notify: Restart
   firewalld  # <-  最終的にリスタートさせる
 ```
 
-## Use dict for vars and loop
+### Use dict for vars and loop
 
 ```yaml
 #  dict で書くことにより
@@ -161,7 +161,7 @@ expires: "{{ item.value.expires }}"
 with_dict: "{{ ansible_users }}"
 ```
 
-## ansible-lint shell command
+### ansible-lint shell command
 
 ```bash
 # Default command
@@ -181,7 +181,7 @@ subprocess.run(
 )
 ```
 
-## flake8
+### flake8
 
 ```bash
 # Default command
@@ -201,7 +201,7 @@ subprocess.run(
 )
 ```
 
-## block
+### block
 
 ```bash
 # default command
@@ -221,7 +221,7 @@ subprocess.run(
 )
 ```
 
-## testinfra for ansible
+### testinfra for ansible
 
 ```python
         subprocess.run(
@@ -276,11 +276,11 @@ def test_ansible_user(host):
         assert user.home == "/home/" + i["name"]
 ```
 
-## Docker for Ansible test
+### Docker for Ansible test
 
 Enable ssh systemd
 
-### CentOS7
+#### CentOS7
 
 ```bash
 FROM centos:centos7
@@ -309,7 +309,7 @@ RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 ENTRYPOINT ["/sbin/init"]
 ```
 
-### Ubuntu20.04
+#### Ubuntu20.04
 
 ```bash
 FROM ubuntu:20.04
