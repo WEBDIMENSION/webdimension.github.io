@@ -267,8 +267,6 @@ type Directory_ctimeArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
-  readonly port: Maybe<Scalars['Int']>;
-  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly jsxRuntime: Maybe<Scalars['String']>;
@@ -770,21 +768,16 @@ type DockerhubJson = Node & {
 };
 
 type DockerhubJsonResults = {
-  readonly user: Maybe<Scalars['String']>;
   readonly name: Maybe<Scalars['String']>;
   readonly namespace: Maybe<Scalars['String']>;
   readonly repository_type: Maybe<Scalars['String']>;
   readonly status: Maybe<Scalars['Int']>;
-  readonly description: Maybe<Scalars['String']>;
   readonly is_private: Maybe<Scalars['Boolean']>;
-  readonly is_automated: Maybe<Scalars['Boolean']>;
-  readonly can_edit: Maybe<Scalars['Boolean']>;
   readonly star_count: Maybe<Scalars['Int']>;
   readonly pull_count: Maybe<Scalars['Int']>;
   readonly last_updated: Maybe<Scalars['Date']>;
-  readonly is_migrated: Maybe<Scalars['Boolean']>;
-  readonly collaborator_count: Maybe<Scalars['Int']>;
-  readonly hub_user: Maybe<Scalars['String']>;
+  readonly date_registered: Maybe<Scalars['Date']>;
+  readonly affiliation: Maybe<Scalars['String']>;
 };
 
 
@@ -795,103 +788,8 @@ type DockerhubJsonResults_last_updatedArgs = {
   locale: Maybe<Scalars['String']>;
 };
 
-type StaticImage = Node & {
-  readonly id: Scalars['ID'];
-  readonly parent: Maybe<Node>;
-  readonly children: ReadonlyArray<Node>;
-  readonly internal: Internal;
-  readonly sourceInstanceName: Maybe<Scalars['String']>;
-  readonly relativePath: Maybe<Scalars['String']>;
-  readonly extension: Maybe<Scalars['String']>;
-  readonly prettySize: Maybe<Scalars['String']>;
-  readonly modifiedTime: Maybe<Scalars['Date']>;
-  readonly accessTime: Maybe<Scalars['Date']>;
-  readonly changeTime: Maybe<Scalars['Date']>;
-  readonly birthTime: Maybe<Scalars['Date']>;
-  readonly root: Maybe<Scalars['String']>;
-  readonly dir: Maybe<Scalars['String']>;
-  readonly base: Maybe<Scalars['String']>;
-  readonly ext: Maybe<Scalars['String']>;
-  readonly name: Maybe<Scalars['String']>;
-  readonly absolutePath: Maybe<Scalars['String']>;
-  readonly relativeDirectory: Maybe<Scalars['String']>;
-  readonly dev: Maybe<Scalars['Int']>;
-  readonly mode: Maybe<Scalars['Int']>;
-  readonly nlink: Maybe<Scalars['Int']>;
-  readonly uid: Maybe<Scalars['Int']>;
-  readonly rdev: Maybe<Scalars['Int']>;
-  readonly blksize: Maybe<Scalars['Int']>;
-  readonly ino: Maybe<Scalars['Int']>;
-  readonly size: Maybe<Scalars['Int']>;
-  readonly blocks: Maybe<Scalars['Int']>;
-  readonly atimeMs: Maybe<Scalars['Float']>;
-  readonly mtimeMs: Maybe<Scalars['Float']>;
-  readonly ctimeMs: Maybe<Scalars['Float']>;
-  readonly birthtimeMs: Maybe<Scalars['Int']>;
-  readonly atime: Maybe<Scalars['Date']>;
-  readonly mtime: Maybe<Scalars['Date']>;
-  readonly ctime: Maybe<Scalars['Date']>;
-  readonly birthtime: Maybe<Scalars['Date']>;
-};
 
-
-type StaticImage_modifiedTimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_accessTimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_changeTimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_birthTimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_atimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_mtimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_ctimeArgs = {
-  formatString: Maybe<Scalars['String']>;
-  fromNow: Maybe<Scalars['Boolean']>;
-  difference: Maybe<Scalars['String']>;
-  locale: Maybe<Scalars['String']>;
-};
-
-
-type StaticImage_birthtimeArgs = {
+type DockerhubJsonResults_date_registeredArgs = {
   formatString: Maybe<Scalars['String']>;
   fromNow: Maybe<Scalars['Boolean']>;
   difference: Maybe<Scalars['String']>;
@@ -921,8 +819,6 @@ type Query = {
   readonly allTopicsJson: TopicsJsonConnection;
   readonly dockerhubJson: Maybe<DockerhubJson>;
   readonly allDockerhubJson: DockerhubJsonConnection;
-  readonly staticImage: Maybe<StaticImage>;
-  readonly allStaticImage: StaticImageConnection;
 };
 
 
@@ -1034,8 +930,6 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<IntQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   jsxRuntime: Maybe<StringQueryOperatorInput>;
@@ -1225,54 +1119,6 @@ type Query_dockerhubJsonArgs = {
 type Query_allDockerhubJsonArgs = {
   filter: Maybe<DockerhubJsonFilterInput>;
   sort: Maybe<DockerhubJsonSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-type Query_staticImageArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  sourceInstanceName: Maybe<StringQueryOperatorInput>;
-  relativePath: Maybe<StringQueryOperatorInput>;
-  extension: Maybe<StringQueryOperatorInput>;
-  prettySize: Maybe<StringQueryOperatorInput>;
-  modifiedTime: Maybe<DateQueryOperatorInput>;
-  accessTime: Maybe<DateQueryOperatorInput>;
-  changeTime: Maybe<DateQueryOperatorInput>;
-  birthTime: Maybe<DateQueryOperatorInput>;
-  root: Maybe<StringQueryOperatorInput>;
-  dir: Maybe<StringQueryOperatorInput>;
-  base: Maybe<StringQueryOperatorInput>;
-  ext: Maybe<StringQueryOperatorInput>;
-  name: Maybe<StringQueryOperatorInput>;
-  absolutePath: Maybe<StringQueryOperatorInput>;
-  relativeDirectory: Maybe<StringQueryOperatorInput>;
-  dev: Maybe<IntQueryOperatorInput>;
-  mode: Maybe<IntQueryOperatorInput>;
-  nlink: Maybe<IntQueryOperatorInput>;
-  uid: Maybe<IntQueryOperatorInput>;
-  rdev: Maybe<IntQueryOperatorInput>;
-  blksize: Maybe<IntQueryOperatorInput>;
-  ino: Maybe<IntQueryOperatorInput>;
-  size: Maybe<IntQueryOperatorInput>;
-  blocks: Maybe<IntQueryOperatorInput>;
-  atimeMs: Maybe<FloatQueryOperatorInput>;
-  mtimeMs: Maybe<FloatQueryOperatorInput>;
-  ctimeMs: Maybe<FloatQueryOperatorInput>;
-  birthtimeMs: Maybe<IntQueryOperatorInput>;
-  atime: Maybe<DateQueryOperatorInput>;
-  mtime: Maybe<DateQueryOperatorInput>;
-  ctime: Maybe<DateQueryOperatorInput>;
-  birthtime: Maybe<DateQueryOperatorInput>;
-};
-
-
-type Query_allStaticImageArgs = {
-  filter: Maybe<StaticImageFilterInput>;
-  sort: Maybe<StaticImageSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -1504,21 +1350,16 @@ type DockerhubJsonResultsFilterListInput = {
 };
 
 type DockerhubJsonResultsFilterInput = {
-  readonly user: Maybe<StringQueryOperatorInput>;
   readonly name: Maybe<StringQueryOperatorInput>;
   readonly namespace: Maybe<StringQueryOperatorInput>;
   readonly repository_type: Maybe<StringQueryOperatorInput>;
   readonly status: Maybe<IntQueryOperatorInput>;
-  readonly description: Maybe<StringQueryOperatorInput>;
   readonly is_private: Maybe<BooleanQueryOperatorInput>;
-  readonly is_automated: Maybe<BooleanQueryOperatorInput>;
-  readonly can_edit: Maybe<BooleanQueryOperatorInput>;
   readonly star_count: Maybe<IntQueryOperatorInput>;
   readonly pull_count: Maybe<IntQueryOperatorInput>;
   readonly last_updated: Maybe<DateQueryOperatorInput>;
-  readonly is_migrated: Maybe<BooleanQueryOperatorInput>;
-  readonly collaborator_count: Maybe<IntQueryOperatorInput>;
-  readonly hub_user: Maybe<StringQueryOperatorInput>;
+  readonly date_registered: Maybe<DateQueryOperatorInput>;
+  readonly affiliation: Maybe<StringQueryOperatorInput>;
 };
 
 type FileConnection = {
@@ -2005,21 +1846,16 @@ type FileFieldsEnum =
   | 'childrenDockerhubJson.internal.type'
   | 'childrenDockerhubJson.count'
   | 'childrenDockerhubJson.results'
-  | 'childrenDockerhubJson.results.user'
   | 'childrenDockerhubJson.results.name'
   | 'childrenDockerhubJson.results.namespace'
   | 'childrenDockerhubJson.results.repository_type'
   | 'childrenDockerhubJson.results.status'
-  | 'childrenDockerhubJson.results.description'
   | 'childrenDockerhubJson.results.is_private'
-  | 'childrenDockerhubJson.results.is_automated'
-  | 'childrenDockerhubJson.results.can_edit'
   | 'childrenDockerhubJson.results.star_count'
   | 'childrenDockerhubJson.results.pull_count'
   | 'childrenDockerhubJson.results.last_updated'
-  | 'childrenDockerhubJson.results.is_migrated'
-  | 'childrenDockerhubJson.results.collaborator_count'
-  | 'childrenDockerhubJson.results.hub_user'
+  | 'childrenDockerhubJson.results.date_registered'
+  | 'childrenDockerhubJson.results.affiliation'
   | 'childDockerhubJson.id'
   | 'childDockerhubJson.parent.id'
   | 'childDockerhubJson.parent.parent.id'
@@ -2060,21 +1896,16 @@ type FileFieldsEnum =
   | 'childDockerhubJson.internal.type'
   | 'childDockerhubJson.count'
   | 'childDockerhubJson.results'
-  | 'childDockerhubJson.results.user'
   | 'childDockerhubJson.results.name'
   | 'childDockerhubJson.results.namespace'
   | 'childDockerhubJson.results.repository_type'
   | 'childDockerhubJson.results.status'
-  | 'childDockerhubJson.results.description'
   | 'childDockerhubJson.results.is_private'
-  | 'childDockerhubJson.results.is_automated'
-  | 'childDockerhubJson.results.can_edit'
   | 'childDockerhubJson.results.star_count'
   | 'childDockerhubJson.results.pull_count'
   | 'childDockerhubJson.results.last_updated'
-  | 'childDockerhubJson.results.is_migrated'
-  | 'childDockerhubJson.results.collaborator_count'
-  | 'childDockerhubJson.results.hub_user'
+  | 'childDockerhubJson.results.date_registered'
+  | 'childDockerhubJson.results.affiliation'
   | 'id'
   | 'parent.id'
   | 'parent.parent.id'
@@ -2599,8 +2430,6 @@ type SiteFieldsEnum =
   | 'siteMetadata.github.repository'
   | 'siteMetadata.github.url'
   | 'siteMetadata.dockerhub.url'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2736,8 +2565,6 @@ type SiteGroupConnection_groupArgs = {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  readonly port: Maybe<IntQueryOperatorInput>;
-  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly jsxRuntime: Maybe<StringQueryOperatorInput>;
@@ -4323,21 +4150,16 @@ type DockerhubJsonFieldsEnum =
   | 'internal.type'
   | 'count'
   | 'results'
-  | 'results.user'
   | 'results.name'
   | 'results.namespace'
   | 'results.repository_type'
   | 'results.status'
-  | 'results.description'
   | 'results.is_private'
-  | 'results.is_automated'
-  | 'results.can_edit'
   | 'results.star_count'
   | 'results.pull_count'
   | 'results.last_updated'
-  | 'results.is_migrated'
-  | 'results.collaborator_count'
-  | 'results.hub_user';
+  | 'results.date_registered'
+  | 'results.affiliation';
 
 type DockerhubJsonGroupConnection = {
   readonly totalCount: Scalars['Int'];
@@ -4385,271 +4207,10 @@ type DockerhubJsonSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type StaticImageConnection = {
-  readonly totalCount: Scalars['Int'];
-  readonly edges: ReadonlyArray<StaticImageEdge>;
-  readonly nodes: ReadonlyArray<StaticImage>;
-  readonly pageInfo: PageInfo;
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly group: ReadonlyArray<StaticImageGroupConnection>;
-};
+type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type StaticImageConnection_distinctArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageConnection_maxArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageConnection_minArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageConnection_sumArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageConnection_groupArgs = {
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-  field: StaticImageFieldsEnum;
-};
-
-type StaticImageEdge = {
-  readonly next: Maybe<StaticImage>;
-  readonly node: StaticImage;
-  readonly previous: Maybe<StaticImage>;
-};
-
-type StaticImageFieldsEnum =
-  | 'id'
-  | 'parent.id'
-  | 'parent.parent.id'
-  | 'parent.parent.parent.id'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.children.children'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.children'
-  | 'parent.children.id'
-  | 'parent.children.parent.id'
-  | 'parent.children.parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.children.children'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'children'
-  | 'children.id'
-  | 'children.parent.id'
-  | 'children.parent.parent.id'
-  | 'children.parent.parent.children'
-  | 'children.parent.children'
-  | 'children.parent.children.id'
-  | 'children.parent.children.children'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.children'
-  | 'children.children.id'
-  | 'children.children.parent.id'
-  | 'children.children.parent.children'
-  | 'children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.children.children'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'sourceInstanceName'
-  | 'relativePath'
-  | 'extension'
-  | 'prettySize'
-  | 'modifiedTime'
-  | 'accessTime'
-  | 'changeTime'
-  | 'birthTime'
-  | 'root'
-  | 'dir'
-  | 'base'
-  | 'ext'
-  | 'name'
-  | 'absolutePath'
-  | 'relativeDirectory'
-  | 'dev'
-  | 'mode'
-  | 'nlink'
-  | 'uid'
-  | 'rdev'
-  | 'blksize'
-  | 'ino'
-  | 'size'
-  | 'blocks'
-  | 'atimeMs'
-  | 'mtimeMs'
-  | 'ctimeMs'
-  | 'birthtimeMs'
-  | 'atime'
-  | 'mtime'
-  | 'ctime'
-  | 'birthtime';
-
-type StaticImageGroupConnection = {
-  readonly totalCount: Scalars['Int'];
-  readonly edges: ReadonlyArray<StaticImageEdge>;
-  readonly nodes: ReadonlyArray<StaticImage>;
-  readonly pageInfo: PageInfo;
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly group: ReadonlyArray<StaticImageGroupConnection>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-};
-
-
-type StaticImageGroupConnection_distinctArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageGroupConnection_maxArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageGroupConnection_minArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageGroupConnection_sumArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-type StaticImageGroupConnection_groupArgs = {
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-  field: StaticImageFieldsEnum;
-};
-
-type StaticImageFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>;
-  readonly parent: Maybe<NodeFilterInput>;
-  readonly children: Maybe<NodeFilterListInput>;
-  readonly internal: Maybe<InternalFilterInput>;
-  readonly sourceInstanceName: Maybe<StringQueryOperatorInput>;
-  readonly relativePath: Maybe<StringQueryOperatorInput>;
-  readonly extension: Maybe<StringQueryOperatorInput>;
-  readonly prettySize: Maybe<StringQueryOperatorInput>;
-  readonly modifiedTime: Maybe<DateQueryOperatorInput>;
-  readonly accessTime: Maybe<DateQueryOperatorInput>;
-  readonly changeTime: Maybe<DateQueryOperatorInput>;
-  readonly birthTime: Maybe<DateQueryOperatorInput>;
-  readonly root: Maybe<StringQueryOperatorInput>;
-  readonly dir: Maybe<StringQueryOperatorInput>;
-  readonly base: Maybe<StringQueryOperatorInput>;
-  readonly ext: Maybe<StringQueryOperatorInput>;
-  readonly name: Maybe<StringQueryOperatorInput>;
-  readonly absolutePath: Maybe<StringQueryOperatorInput>;
-  readonly relativeDirectory: Maybe<StringQueryOperatorInput>;
-  readonly dev: Maybe<IntQueryOperatorInput>;
-  readonly mode: Maybe<IntQueryOperatorInput>;
-  readonly nlink: Maybe<IntQueryOperatorInput>;
-  readonly uid: Maybe<IntQueryOperatorInput>;
-  readonly rdev: Maybe<IntQueryOperatorInput>;
-  readonly blksize: Maybe<IntQueryOperatorInput>;
-  readonly ino: Maybe<IntQueryOperatorInput>;
-  readonly size: Maybe<IntQueryOperatorInput>;
-  readonly blocks: Maybe<IntQueryOperatorInput>;
-  readonly atimeMs: Maybe<FloatQueryOperatorInput>;
-  readonly mtimeMs: Maybe<FloatQueryOperatorInput>;
-  readonly ctimeMs: Maybe<FloatQueryOperatorInput>;
-  readonly birthtimeMs: Maybe<IntQueryOperatorInput>;
-  readonly atime: Maybe<DateQueryOperatorInput>;
-  readonly mtime: Maybe<DateQueryOperatorInput>;
-  readonly ctime: Maybe<DateQueryOperatorInput>;
-  readonly birthtime: Maybe<DateQueryOperatorInput>;
-};
-
-type StaticImageSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<StaticImageFieldsEnum>>>;
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
-};
-
-type FooterQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'title'>
-      & { readonly author: Maybe<Pick<Author, 'company'>> }
-    )> }> };
-
-type SearchDataQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SearchDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'excerpt'>
-        & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
-      ) }> } };
+type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
 type DraftsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4659,15 +4220,13 @@ type DraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pi
     & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'title' | 'description'>> }> }
   ) };
 
-type categoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type FooterQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type categoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
-
-type ActiveTopicsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ActiveTopicsQuery = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'title' | 'description' | 'url' | 'totalPages'> }> } };
+type FooterQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'title'>
+      & { readonly author: Maybe<Pick<Author, 'company'>> }
+    )> }> };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4682,25 +4241,58 @@ type tagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type tagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
 
+type TopicsListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TopicsListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+type SearchDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SearchDataQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MarkdownRemark, 'excerpt'>
+        & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+      ) }> } };
+
+type ActiveTopicsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ActiveTopicsQuery = { readonly allTopicsJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<TopicsJson, 'title' | 'description' | 'url' | 'totalPages'> }> } };
+
 type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NotFoundQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-type TopicsListQueryVariables = Exact<{ [key: string]: never; }>;
+type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TopicsListQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly group: ReadonlyArray<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> } };
+type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type ContactQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type TopicsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TopicsPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 type TagsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type TagsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-type ContactQueryVariables = Exact<{ [key: string]: never; }>;
+type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type ContactQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type Unnamed_2_Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
 
 type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4710,10 +4302,44 @@ type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick
       & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
     )> } };
 
-type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AboutQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type blogListQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
+    )> } };
+
+type BlogPostBySlugQueryVariables = Exact<{
+  id: Maybe<Scalars['String']>;
+  previousPostId: Maybe<Scalars['String']>;
+  nextPostId: Maybe<Scalars['String']>;
+}>;
+
+
+type BlogPostBySlugQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
+    & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'post_modified' | 'description' | 'tags' | 'draft'>> }
+  )>, readonly previous: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }>, readonly next: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }> };
+
+type blogDraftsQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
+      Pick<MarkdownRemark, 'excerpt'>
+      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
+    )> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -4741,37 +4367,17 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type CategoriesQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type TopicsPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TopicsPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ContactThanksQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type CategoriesQueryVariables = Exact<{
-  category: Maybe<Scalars['String']>;
+type TopicsQueryVariables = Exact<{
+  topic: Maybe<Scalars['String']>;
   skip: Scalars['Int'];
   limit: Scalars['Int'];
 }>;
 
 
-type CategoriesQuery = { readonly allMarkdownRemark: (
+type TopicsQuery = { readonly allMarkdownRemark: (
     Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'categories'>> }> }
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'topics'>> }> }
   ) };
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type pageBlogsrcpagesusingTypescriptTsx2907560070Query = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
 
 type TagsQueryVariables = Exact<{
   tag: Maybe<Scalars['String']>;
@@ -4785,55 +4391,16 @@ type TagsQuery = { readonly allMarkdownRemark: (
     & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }> }
   ) };
 
-type blogDraftsQueryQueryVariables = Exact<{
+type CategoriesQueryVariables = Exact<{
+  category: Maybe<Scalars['String']>;
   skip: Scalars['Int'];
   limit: Scalars['Int'];
 }>;
 
 
-type blogDraftsQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags' | 'draft'>> }
-    )> } };
-
-type BlogPostBySlugQueryVariables = Exact<{
-  id: Maybe<Scalars['String']>;
-  previousPostId: Maybe<Scalars['String']>;
-  nextPostId: Maybe<Scalars['String']>;
-}>;
-
-
-type BlogPostBySlugQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly markdownRemark: Maybe<(
-    Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'>
-    & { readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'post_modified' | 'description' | 'tags' | 'draft'>> }
-  )>, readonly previous: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }>, readonly next: Maybe<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>> }> };
-
-type blogListQueryQueryVariables = Exact<{
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type blogListQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'subTitle'>> }>, readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<(
-      Pick<MarkdownRemark, 'excerpt'>
-      & { readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'tags'>> }
-    )> } };
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type TopicsQueryVariables = Exact<{
-  topic: Maybe<Scalars['String']>;
-  skip: Scalars['Int'];
-  limit: Scalars['Int'];
-}>;
-
-
-type TopicsQuery = { readonly allMarkdownRemark: (
+type CategoriesQuery = { readonly allMarkdownRemark: (
     Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'topics'>> }> }
+    & { readonly nodes: ReadonlyArray<{ readonly fields: Maybe<Pick<Fields, 'slug'>>, readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'post_modified' | 'title' | 'description' | 'categories'>> }> }
   ) };
 
 type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;

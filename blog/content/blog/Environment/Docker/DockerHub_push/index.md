@@ -13,6 +13,7 @@ draft: false
 ```bash
 # docker tag [IMAGE ID] [自分のDockerID]/[Dockerイメージ名]:[タグ]
 docker tag 3e7c8f8edcde webdimension/almalinux8_systemd_lamp:latest
+docker tag oscommerse_lampp webdimension/lampp:latest
 ```
 
 | 項目                | 内容                                                                                           |
@@ -27,6 +28,7 @@ docker tag 3e7c8f8edcde webdimension/almalinux8_systemd_lamp:latest
 ```bash
 # docker push [自分のDockerID]/[Dockerイメージ名]:[タグ]
 docker push webdimension/almalinux8_systemd_lamp:latest
+docker push webdimension/lampp:latest
 ```
 
 ## コンテナからイメージ作成
