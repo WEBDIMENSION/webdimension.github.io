@@ -18,6 +18,9 @@ jobs:
       - name: Install Yarn
         run: npm install -g yarn
 
+      - name: Install Gatsby
+        run: npm install -g gatsby-cli@4.5.2
+
       - name: Cache dependencies
         uses: actions/cache@v1
         with:
@@ -42,8 +45,7 @@ jobs:
         working-directory: blog
 
       - name: Deploy
-        #        if: ${{ !env.ACT && github.ref == 'refs/heads/master'}}
-        if: ${{ github.ref == 'refs/heads/master'}}
+        if: ${{ !env.ACT && github.ref == 'refs/heads/master'}}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

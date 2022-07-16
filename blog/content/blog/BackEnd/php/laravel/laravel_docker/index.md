@@ -155,7 +155,7 @@ MIX_NODE_PORT=3000
 
 ### Dockerfile
 
-```Docer
+```Dockerfile
 FROM php:7.2.8-fpm
 RUN apt-get update && apt-get install -y \
   libssl-dev \
