@@ -8,7 +8,7 @@ tags: ["SSH", "ShellScript"]
 draft: false
 ---
 
-# ssh でのログインを快適に
+## ssh でのログインを快適に
 
 ssh ログインをパスワード認証ではなく鍵認証にして \~/ssh/config に
 

@@ -8,7 +8,7 @@ tags: ["MySQL", "Wordpress", "ShellScript"]
 draft: false
 ---
 
-# WordPress で Git を使った Webhook デプロイとリモート DB 同期
+## WordPress で Git を使った Webhook デプロイとリモート DB 同期
 
 ここでの**Git**の使い方はあくまで"1 人\_Git"、"オレオレ Git"なのでチームでの Git の使い方には参考にはなりません。
 
@@ -96,7 +96,7 @@ if (sizeof($slack_urls) > 0) {
 
 GitLab-\>設定-\>インテグレーション
 
-![](images/gitlab-webhook.png)
+![image](images/gitlab-webhook.png)
 
 "Git push"する度に自動デプロイされる。
 

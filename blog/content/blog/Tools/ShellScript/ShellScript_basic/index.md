@@ -90,16 +90,16 @@ ps >| abc.txt
 # overwrite
 ```
 
-
 ## Get parameter
 
 ```bash
 read -p $'\e[93mInstall(i) or Uninstall(u): ' action
 if [ $action = 'i' ]; then
 ...
-eactionlse
-	echo 'Your iput is missig'
-	read -p $'\e[93mInstall(i) or Uninstall(u): ' action
+
+else
+  echo 'Your iput is missig'
+  read -p $'\e[93mInstall(i) or Uninstall(u): ' action
 fi
 ```
 
@@ -107,14 +107,14 @@ fi
 
 ```bash
 files=(.bashrc .zshrc .bash_profile)
-	for file in ${files[@]}; do
-	  if [ -e $HOME/$file ]; then
-			for f in *.alias; do
-				...
-		  done < <(ls *)
-		  echo ${END} >> $HOME/$file
-	  fi
-	done
+for file in ${files[@]}; do
+  if [ -e $HOME/$file ]; then
+  for f in *.alias; do
+    ...
+  done < <(ls *)
+ echo ${END} >> $HOME/$file
+fi
+done
 ```
 
 ## Replace between start and end
@@ -123,7 +123,7 @@ files=(.bashrc .zshrc .bash_profile)
 files=(.zshrc)
 START="# import aliases start"
 END="# import aliases end"
-	 sed -i -e "/^${START}/,/^${END}/d" $HOME/$file
+sed -i -e "/^${START}/,/^${END}/d" $HOME/$file
 ```
 
 ## Function
@@ -132,9 +132,9 @@ END="# import aliases end"
 START="# import aliases start"
 END="# import aliases end"
 func_remove_text(){
-	sed -i -e "/^${START}/,/^${END}/d" $1
+sed -i -e "/^${START}/,/^${END}/d" $1
 }
-	func_remove_text $HOME/$file
+func_remove_text $HOME/$file
 ```
 
 ### 引数の数チェック
@@ -151,11 +151,11 @@ fi
 ## Specify enxtensin and loop
 
 ```bash
-	for f in `find $DIR -maxdepth 1 -type f -name "*.alias"`; do
-  		#echo "source $DIR/"${f%.*}"" >> $HOME/$file
-			echo $f
-  		echo "source $f" >> $HOME/$file
-  done < <(ls *)
+for f in `find $DIR -maxdepth 1 -type f -name "*.alias"`; do
+#echo "source $DIR/"${f%.*}"" >> $HOME/$file
+  echo $f
+  echo "source $f" >> $HOME/$file
+done < <(ls *)
 ```
 
 ## Exec file path
