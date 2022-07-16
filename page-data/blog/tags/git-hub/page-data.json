@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-tags-tsx",
-    "path": "/blog/tags/git-hub/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":0,"nodes":[]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"GitHub","linkPrefix":"/blog/tags/git-hub","linkSuffix":"/page/","draft":[false]}},
-    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
+{"componentChunkName":"component---src-templates-tags-tsx","path":"/blog/tags/git-hub/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/Infrastructure/github_container_registory_basic/"},"frontmatter":{"date":"March 06, 2022","post_modified":"March 06, 2022","title":"Docker Image を GitHubAction からGHCR (GitHub Container Repository) へPush","description":"GitHub Actions 内で Dockerfile をもとに Build し GHCR (GitHub Container Repository) へPush。 今後の可能性を多々感じる。アイデア次第でとても効率的に。","tags":["GitHub","GitHub Actions","ghcr.io"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"GitHub","linkPrefix":"/blog/tags/git-hub","linkSuffix":"/page/","draft":[false]}},"staticQueryHashes":["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

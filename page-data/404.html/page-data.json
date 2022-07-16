@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-404-tsx",
-    "path": "/404.html",
-    "result": {"data":{"site":{"siteMetadata":{"title":"おっさんWEBエンジニア奮闘記"}}},"pageContext":{}},
-    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
+{"componentChunkName":"component---src-pages-404-tsx","path":"/404.html","result":{"data":{"site":{"siteMetadata":{"title":"おっさんWEBエンジニア奮闘記"}}},"pageContext":{}},"staticQueryHashes":["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

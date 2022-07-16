@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-tags-tsx",
-    "path": "/blog/tags/multipass/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":0,"nodes":[]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"multipass","linkPrefix":"/blog/tags/multipass","linkSuffix":"/page/","draft":[false]}},
-    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
+{"componentChunkName":"component---src-templates-tags-tsx","path":"/blog/tags/multipass/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/Tools/multipass/nfs/"},"frontmatter":{"date":"July 16, 2022","post_modified":"July 16, 2022","title":"multipass nfs","description":"multipassのディレクトリ共有をnfsに変更","tags":["multipass","Vagrant","ShellScript"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"multipass","linkPrefix":"/blog/tags/multipass","linkSuffix":"/page/","draft":[false]}},"staticQueryHashes":["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

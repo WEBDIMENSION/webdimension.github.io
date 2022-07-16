@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Jul 2022 11:47:01 GMT</lastBuildDate><item><title><![CDATA[multipass nfs]]></title><description><![CDATA[Multipass の mount を sshfs から nfs へ変更 理由 ssh…]]></description><link>https://blog.webdimension.jp/Tools/multipass/nfs/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/multipass/nfs/</guid><pubDate>Sat, 16 Jul 2022 12:06:25 GMT</pubDate><content:encoded>&lt;h2&gt;Multipass の mount を sshfs から nfs へ変更&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Jul 2022 13:27:40 GMT</lastBuildDate><item><title><![CDATA[multipass nfs]]></title><description><![CDATA[Multipass の mount を sshfs から nfs へ変更 理由 ssh…]]></description><link>https://blog.webdimension.jp/Tools/multipass/nfs/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/multipass/nfs/</guid><pubDate>Sat, 16 Jul 2022 12:06:25 GMT</pubDate><content:encoded>&lt;h2&gt;Multipass の mount を sshfs から nfs へ変更&lt;/h2&gt;
 &lt;p&gt;理由&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -9489,47 +9489,47 @@ MIX_NODE_HOST=&amp;quot;${VIRTUAL_HOST}&amp;quot;
 MIX_NODE_INTERNAL_HOST=node
 MIX_NODE_PORT=3000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Dockerfile&lt;/h3&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;docer&quot;&gt;&lt;pre class=&quot;language-docer&quot;&gt;&lt;code class=&quot;language-docer&quot;&gt;FROM php:7.2.8-fpm
-RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \
-  libssl-dev \
-  git \
-  wget \
-  unzip \
-  vim
-RUN apt-get -y update
-RUN apt-get install -y \
-    curl \
-    gnupg
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
-RUN apt-get install -y nodejs
-RUN npm install npm@latest -g
-# PDO
-RUN docker-php-ext-install pdo_mysql
-# redis
-RUN docker-php-source extract
-RUN git clone -b 4.1.1 --depth 1 https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis &amp;amp;&amp;amp; \
-    docker-php-ext-install redis
-# xdebug
-RUN pecl install xdebug \
-  &amp;amp;&amp;amp; docker-php-ext-enable xdebug
-# php-zip
-RUN apt-get install -y zlib1g-dev \
-    &amp;amp;&amp;amp; docker-php-ext-install zip
-##Chrome Driver RUN apt-get install -y libnss3
-#RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-#RUN echo &amp;quot;deb http://dl.googlttcom/linux/chrome/deb/ stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list.d/google.list
-#RUN apt-get update &amp;amp;&amp;amp; apt-get install -y google-chrome-stable
-# GD
-RUN apt-get update &amp;amp;&amp;amp; apt-get install -y \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libmcrypt-dev \
-        libpng-dev \
-    &amp;amp;&amp;amp; docker-php-ext-install -j$(nproc) iconv \
-    &amp;amp;&amp;amp; docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    &amp;amp;&amp;amp; docker-php-ext-install -j$(nproc) gd
-# install composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;dockerfile&quot;&gt;&lt;pre class=&quot;language-dockerfile&quot;&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; php:7.2.8-fpm&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; apt-get update &amp;amp;&amp;amp; apt-get install -y &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  libssl-dev &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  git &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  wget &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  unzip &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  vim&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; apt-get -y update&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; apt-get install -y &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    curl &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    gnupg&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; curl -sL https://deb.nodesource.com/setup_11.x | bash -&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; apt-get install -y nodejs&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; npm install npm@latest -g&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# PDO&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; docker-php-ext-install pdo_mysql&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# redis&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; docker-php-source extract&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; git clone -b 4.1.1 --depth 1 https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis &amp;amp;&amp;amp; &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    docker-php-ext-install redis&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# xdebug&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; pecl install xdebug &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+  &amp;amp;&amp;amp; docker-php-ext-enable xdebug&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# php-zip&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; apt-get install -y zlib1g-dev &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    &amp;amp;&amp;amp; docker-php-ext-install zip&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;##Chrome Driver RUN apt-get install -y libnss3&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#RUN echo &quot;deb http://dl.googlttcom/linux/chrome/deb/ stable main&quot; &gt;&gt; /etc/apt/sources.list.d/google.list&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#RUN apt-get update &amp;amp;&amp;amp; apt-get install -y google-chrome-stable&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# GD&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; apt-get update &amp;amp;&amp;amp; apt-get install -y &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+        libfreetype6-dev &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+        libjpeg62-turbo-dev &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+        libmcrypt-dev &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+        libpng-dev &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    &amp;amp;&amp;amp; docker-php-ext-install -j$(nproc) iconv &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    &amp;amp;&amp;amp; docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ &lt;span class=&quot;token operator&quot;&gt;\&lt;/span&gt;
+    &amp;amp;&amp;amp; docker-php-ext-install -j$(nproc) gd&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# install composer&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;nginx default.conf&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;conf&quot;&gt;&lt;pre class=&quot;language-conf&quot;&gt;&lt;code class=&quot;language-conf&quot;&gt;server {
   listen      80;
@@ -12954,21 +12954,21 @@ Bootstrap も Version4 より Sass が採用されました。&lt;br&gt;
 ‘webpack’は Git 同様必須となりそうです。&lt;/p&gt;
 &lt;h3&gt;Wordpress のテーマ Understrap の Package.json&lt;/h3&gt;
 &lt;p&gt;Understrap の Sass で例えると、&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;source&quot;&gt;&lt;pre class=&quot;language-source&quot;&gt;&lt;code class=&quot;language-source&quot;&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;understrap-child&amp;quot;,
-  &amp;quot;version&amp;quot;: &amp;quot;0.5.5&amp;quot;,
-  &amp;quot;description&amp;quot;: &amp;quot;Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap&amp;quot;,
-  &amp;quot;main&amp;quot;: &amp;quot;index.js&amp;quot;,
-  &amp;quot;scripts&amp;quot;: {
-    &amp;quot;postinstall&amp;quot;: &amp;quot;gulp copy-assets&amp;quot;,
-    &amp;quot;watch&amp;quot;: &amp;quot;gulp watch&amp;quot;,
-    &amp;quot;sass&amp;quot;: &amp;quot;gulp sass&amp;quot;
-  },
-...
-...
-...
-...
-...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;understrap-child&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0.5.5&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;scripts&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;postinstall&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gulp copy-assets&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;watch&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gulp watch&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gulp sass&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  ...
+  ...
+  ...
+  ...
+  ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;この “scripts” の内容を実行するのですが、おっさんはすぐにターミナルを開き
 &lt;strong&gt;‘package.json’&lt;/strong&gt; のあるディレクトリまで移動し&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; run &lt;span class=&quot;token function&quot;&gt;watch&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

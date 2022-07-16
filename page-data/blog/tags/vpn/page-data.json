@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-tags-tsx",
-    "path": "/blog/tags/vpn/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":0,"nodes":[]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"VPN","linkPrefix":"/blog/tags/vpn","linkSuffix":"/page/","draft":[false]}},
-    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
+{"componentChunkName":"component---src-templates-tags-tsx","path":"/blog/tags/vpn/","result":{"data":{"allMarkdownRemark":{"totalCount":2,"nodes":[{"fields":{"slug":"/Infrastructure/Iac/ansible_vpn/"},"frontmatter":{"date":"December 14, 2020","post_modified":"December 14, 2020","title":"VPNサーバー(SoftEhter)をAnsibleでConoha-VPNサーバーへ構築","description":"Conoha API を使いVPN構築を簡略化 の備忘録","tags":["Linux","Docker","Python","Ansible","Testinfra","VPN"]}},{"fields":{"slug":"/Impression/vpn/"},"frontmatter":{"date":"September 23, 2019","post_modified":"September 23, 2019","title":"VPN導入でいつでもどこでも固定IP","description":"VPN,固定IPはメリットがいっぱい。","tags":["VPN"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"VPN","linkPrefix":"/blog/tags/vpn","linkSuffix":"/page/","draft":[false]}},"staticQueryHashes":["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
