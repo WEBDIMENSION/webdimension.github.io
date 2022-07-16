@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-categories-tsx",
     "path": "/blog/categories/tools/page/2/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":9,"nodes":[]}},"pageContext":{"limit":10,"skip":10,"currentPage":2,"numPages":3,"category":"Tools","linkPrefix":"/blog/categories/tools","linkSuffix":"/page/","draft":[false]}},
+    "result": {"data":{"allMarkdownRemark":{"totalCount":8,"nodes":[]}},"pageContext":{"limit":10,"skip":10,"currentPage":2,"numPages":3,"category":"Tools","linkPrefix":"/blog/categories/tools","linkSuffix":"/page/","draft":[false]}},
     "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

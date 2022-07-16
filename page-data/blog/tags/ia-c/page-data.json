@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-tags-tsx",
-    "path": "/blog/tags/ia-c/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":0,"nodes":[]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"IaC","linkPrefix":"/blog/tags/ia-c","linkSuffix":"/page/","draft":[false]}},
-    "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

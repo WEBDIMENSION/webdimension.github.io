@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-tags-tsx",
     "path": "/blog/tags/backlog/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":0,"nodes":[]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Backlog","linkPrefix":"/blog/tags/backlog","linkSuffix":"/page/","draft":[false]}},
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/Tools/Intellij/backLog/"},"frontmatter":{"date":"February 23, 2022","post_modified":"February 23, 2022","title":"Intellij IDEA connect to backlog","description":"Intellij IDEA を Backlog をつなぎ IDEA上で Issueなどかくk人","tags":["Intellij IDEA","Backlog"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Backlog","linkPrefix":"/blog/tags/backlog","linkSuffix":"/page/","draft":[false]}},
     "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

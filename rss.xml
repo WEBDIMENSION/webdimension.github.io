@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Jul 2022 02:47:20 GMT</lastBuildDate><item><title><![CDATA[Terraform 構文]]></title><description><![CDATA[三項演算子 Count 三項演算子とCountの組み合わせ terraform console 組み込み関数例 cidrsubnet(“10.1.0.0/16”, 8, 3) max(1, 100, 10) substr(“Pragmatic Terraform on AWS…]]></description><link>https://blog.webdimension.jp/Infrastructure/Iac/terraform/syntax/</link><guid isPermaLink="false">https://blog.webdimension.jp/Infrastructure/Iac/terraform/syntax/</guid><pubDate>Sat, 02 Jul 2022 08:24:19 GMT</pubDate><content:encoded>&lt;h2&gt;三項演算子&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Jul 2022 03:51:22 GMT</lastBuildDate><item><title><![CDATA[multipass nfs]]></title><description><![CDATA[Multipass の mount を sshfs から nfs へ変更 理由 ssh…]]></description><link>https://blog.webdimension.jp/Tools/multipass/nfs/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/multipass/nfs/</guid><pubDate>Sat, 16 Jul 2022 12:06:25 GMT</pubDate><content:encoded>&lt;h2&gt;Multipass の mount を sshfs から nfs へ変更&lt;/h2&gt;
+&lt;p&gt;理由&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ssh ログイン後 特定のディレクトリでレスポンスが悪い 。
+&lt;code class=&quot;language-text&quot;&gt;ls&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;pwd&lt;/code&gt; などでも １分かかる場合がある。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.git&lt;/code&gt;ディレクトリのあるディレクトリでこの事象が起こる。&lt;br&gt;
+全てではない。 原因不明&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ということで 以前の Vagrant + vmware のレスポンスがほしいため mount の方法を変える。&lt;/p&gt;
+&lt;p&gt;multipass デフォルトは sshfs で接続する。&lt;br&gt;
+multipass の mount のコマンドは使わない。&lt;/p&gt;
+&lt;h3&gt;振る舞い&lt;/h3&gt;
+&lt;h4&gt;—cloud-init で nfs-common&lt;/h4&gt;
+&lt;p&gt;これをインストールしないと nfs の mount ができない。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;packages:
+  - nfs-common&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;作成された VM の IP から &lt;code class=&quot;language-text&quot;&gt;/etc/exports/&lt;/code&gt;へ追記&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; -i &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&lt;span class=&quot;token variable&quot;&gt;${vm_ip}&lt;/span&gt;/d&quot;&lt;/span&gt; /etc/exports
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;echo &apos;&lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_HOST}&lt;/span&gt; alldirs -mapall=&lt;span class=&quot;token variable&quot;&gt;${USER_ID}&lt;/span&gt;:&lt;span class=&quot;token variable&quot;&gt;${GROUP_ID}&lt;/span&gt;  &lt;span class=&quot;token variable&quot;&gt;${vm_ip}&lt;/span&gt;&apos; &gt;&gt; /etc/exports&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;multipass exec コマンドで mount ディレクトリ作成&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;multipass &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt; -- &lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_VM}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;multipass exec コマンドで &lt;code class=&quot;language-text&quot;&gt;/etc/fstab&lt;/code&gt; へ追記、マウント&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;multipass &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt; -- &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;echo &apos;&lt;span class=&quot;token variable&quot;&gt;${NFS_HOST_IP}&lt;/span&gt;:/&lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_HOST}&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_VM}&lt;/span&gt; nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0&apos; &gt;&gt; /etc/fstab&quot;&lt;/span&gt;
+multipass &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt; -- &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;mount &lt;span class=&quot;token variable&quot;&gt;${NFS_HOST_IP}&lt;/span&gt;:/&lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_HOST}&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_VM}&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;multipass vm 作成スクリプト&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###       cloud-config          ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;AUTHORIZED_KEYS_ID_RSA&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$RSA_PUB_FILE_NAME&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;AUTHORIZED_KEYS_ANSIBLE_RSA&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$ANSIBLE_RSA_PUB_FILE_NAME&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;./cloud-config.yaml &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;_EOF_
+---
+locale: en_US.UTF8
+timezone: Asia/Tokyo
+packages:
+  - nfs-common
+users:
+  - name: ubuntu
+    ssh-authorized-keys:
+      - &lt;span class=&quot;token variable&quot;&gt;${AUTHORIZED_KEYS_ID_RSA}&lt;/span&gt;
+      - &lt;span class=&quot;token variable&quot;&gt;${AUTHORIZED_KEYS_ANSIBLE_RSA}&lt;/span&gt;
+_EOF_&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; ./cloud-config.yaml
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###         Create VM           ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+multipass launch -c &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${CPU}&lt;/span&gt;&quot;&lt;/span&gt; -m &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${MEMORY}&lt;/span&gt;&quot;&lt;/span&gt; -d &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${DISK_SIZE}&lt;/span&gt;&quot;&lt;/span&gt; -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${VM_VERSION}&lt;/span&gt;&quot;&lt;/span&gt; --cloud-init &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${CLOUD_INIT}&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#echo -e -n &quot;\n&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#echo &quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#echo &quot;###        Mount Dir            ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#echo &quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#multipass mount &quot;${MOUNT_WORKSPACE_HOST}&quot; &quot;${VM_NAME}&quot;:&quot;${MOUNT_WORKSPACE_VM}&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;#echo &quot;mount ${MOUNT_WORKSPACE_HOST} ${VM_NAME}:${MOUNT_WORKSPACE_VM}&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###      VM IP address          ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token assign-left variable&quot;&gt;vm_ip&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;multipass info develop &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; IPv4 &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;{ print $2 }&apos;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ipv4 : &lt;span class=&quot;token variable&quot;&gt;${vm_ip}&lt;/span&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###  Create ansible inventory   ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;./hosts/multipass &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;_EOF_
+[multipass]
+multipass ansible_host=&lt;span class=&quot;token variable&quot;&gt;$vm_ip&lt;/span&gt; ansible_user=ubuntu ansible_ssh_private_key_file=&lt;span class=&quot;token variable&quot;&gt;$RSA_FILE_NAME&lt;/span&gt; ansible_ssh_common_args=&apos;-o StrictHostKeyChecking=no&apos;
+
+[ubuntu20]
+multipass
+_EOF_&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; ./hosts/multipass
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt;
+
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e -n &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###           NFS               ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+
+
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sed&lt;/span&gt; -i &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&lt;span class=&quot;token variable&quot;&gt;${vm_ip}&lt;/span&gt;/d&quot;&lt;/span&gt; /etc/exports
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;echo &apos;&lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_HOST}&lt;/span&gt; alldirs -mapall=&lt;span class=&quot;token variable&quot;&gt;${USER_ID}&lt;/span&gt;:&lt;span class=&quot;token variable&quot;&gt;${GROUP_ID}&lt;/span&gt;  &lt;span class=&quot;token variable&quot;&gt;${vm_ip}&lt;/span&gt;&apos; &gt;&gt; /etc/exports&quot;&lt;/span&gt;
+multipass &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt; -- &lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_VM}&lt;/span&gt;
+multipass &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt; -- &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;echo &apos;&lt;span class=&quot;token variable&quot;&gt;${NFS_HOST_IP}&lt;/span&gt;:/&lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_HOST}&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_VM}&lt;/span&gt; nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0&apos; &gt;&gt; /etc/fstab&quot;&lt;/span&gt;
+multipass &lt;span class=&quot;token builtin class-name&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${VM_NAME}&lt;/span&gt; -- &lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;mount &lt;span class=&quot;token variable&quot;&gt;${NFS_HOST_IP}&lt;/span&gt;:/&lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_HOST}&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;${MOUNT_WORKSPACE_VM}&lt;/span&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###   Exec ansible playbook     ###&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;###################################&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$DEVELOP_INIT&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$DEVELOP_INIT&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;true&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+	ansible-playbook -i hosts/multipass site.yml -l multipass
+&lt;span class=&quot;token comment&quot;&gt;#	ansible-playbook -i hosts/multipass site.yml -l multipass -t tests&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+	ansible-playbook -i hosts/multipass site.yml -l multipass --skip-tags develop_init
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;sshfs から nfs に変更しての結果&lt;/h2&gt;
+&lt;p&gt;上記の症状は全くなし。通常のターミナル操作もレスポンスが早くなった気がする。&lt;br&gt;
+デフォルトで &lt;code class=&quot;language-text&quot;&gt;nfs&lt;/code&gt; 接続だったらいいのに・・・&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Terraform 構文]]></title><description><![CDATA[三項演算子 Count 三項演算子とCountの組み合わせ terraform console 組み込み関数例 cidrsubnet(“10.1.0.0/16”, 8, 3) max(1, 100, 10) substr(“Pragmatic Terraform on AWS…]]></description><link>https://blog.webdimension.jp/Infrastructure/Iac/terraform/syntax/</link><guid isPermaLink="false">https://blog.webdimension.jp/Infrastructure/Iac/terraform/syntax/</guid><pubDate>Sat, 02 Jul 2022 08:24:19 GMT</pubDate><content:encoded>&lt;h2&gt;三項演算子&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tf&quot;&gt;&lt;pre class=&quot;language-tf&quot;&gt;&lt;code class=&quot;language-tf&quot;&gt;instance_type = var.env == &amp;quot;prod&amp;quot; ? &amp;quot;m5.large&amp;quot; : &amp;quot;t3.micro&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;terraform plan -var &lt;span class=&quot;token string&quot;&gt;&apos;env=stage&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Count&lt;/h2&gt;
