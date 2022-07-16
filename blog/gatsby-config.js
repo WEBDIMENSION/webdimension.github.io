@@ -28,13 +28,6 @@ module.exports = {
         trackingIds: [process.env.GOOGLE_ANALYTICS_TRACKING_ID],
       },
     },
-    // {
-    //   resolve: `@isamrish/gatsby-plugin-google-adsense`,
-    //   options: {
-    //     googleAdClientId: [process.env.GOOGLE_ADSENSE_TRACKING_ID],
-    //     head: true, // Optional
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
