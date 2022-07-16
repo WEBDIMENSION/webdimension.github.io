@@ -8,9 +8,9 @@ tags: ["開発環境", "Docker", "VMwear"]
 draft: false
 ---
 
-# Ubuntu On Mac
+## Ubuntu On Mac
 
-# オレオレ開発環境
+### オレオレ開発環境
 
 GitHub : [Ubuntu On Mac](https://github.com/WEBDIMENSION/ubuntu_on_mac)
 

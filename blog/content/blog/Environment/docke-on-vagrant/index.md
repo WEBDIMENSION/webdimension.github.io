@@ -8,9 +8,9 @@ tags: ["Linux", "Vagrant", "開発環境", "Docker", "Xdebug", "PHPUnit"]
 draft: false
 ---
 
-# Docker on Vagrant をがんばってみた
+## Docker on Vagrant をがんばってみた
 
-## なぜ Docker on Vagrant?
+### なぜ Docker on Vagrant?
 
 おとなしく **Docker for Mac** 使えばいいんじゃない？\
 そうなんです。その通りなんです。 **Docker** 自体 **Vagrant**
@@ -33,7 +33,7 @@ draft: false
 - xdebug をインストールして リモートデバッグ
 - **Vagrant** 越しで phpunit を実行 (ココで詰まった、救世主がいた！)
 
-### Docker on Vagrant を用意
+#### Docker on Vagrant を用意
 
 [//]: # (手前味噌の記事 汎用的な Vagrant&#40; CentOS7 &#41;&#40;https://blog.webdimension.jp/linux/vagrant-template-centos7/&#41;)
 
@@ -76,7 +76,7 @@ sudo ln -s ${FILE} /usr/bin/docker-compose
 sudo curl -o /usr/local/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && sudo chmod +x /usr/local/bin/circleci
 ```
 
-### テストして Docker 上に Laravel を設置テストして Docker に Laravel を設置
+#### テストして Docker 上に Laravel を設置テストして Docker に Laravel を設置
 
 ここでは Docker の設定等は省きます。\
 **ハマりポイント**\
@@ -88,7 +88,7 @@ $ chmod 777 data_dir
 
 などでなんとか逃げる。(最初の一度だけで大丈夫)
 
-### xdebug をインストールして リモートデバッグ
+#### xdebug をインストールして リモートデバッグ
 
 php ビルド時に xdebug をインストール\
 Dockerfile に追記

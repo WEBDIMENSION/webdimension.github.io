@@ -9,9 +9,9 @@ tags: ["Linux", "Vagrant", "開発環境"]
 draft: false
 ---
 
-# 汎用的な Vagrant( CentOS7 )
+## 汎用的な Vagrant( CentOS7 )
 
-## おれおれ Vagrantfile
+### おれおれ Vagrantfile
 
 といっても特別なにかすごいことやってるわけでなく汎用的なテンプレートです。\
 Docker のようなコンテナ型ではなくガチの CentOS 上で何か実験したい、遊びたい時などなど用途です。\

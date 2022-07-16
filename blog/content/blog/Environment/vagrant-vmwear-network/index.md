@@ -8,12 +8,12 @@ tags: ["Vagrant", "VMwear", "Network"]
 draft: false
 ---
 
-# Vagrant(VirtualBox)と VMwear Fusion をネットワーク共有
+## Vagrant(VirtualBox)と VMwear Fusion をネットワーク共有
 
 開発中のプロジェクトに VMwear 上の OS からテストやセキュリティーチェックなどしたいけれども開発中のプロジェクトをグローバルなサーバーにアップするのも[めんどくさい]{.under_line}ので VMwearFusion
 のネットワークに Vagrant を設定しローカル内で完結させる。
 
-## VMware 上の OS のネットワーク設定
+### VMware 上の OS のネットワーク設定
 
 VM の設定を開く
 
@@ -28,7 +28,7 @@ VM の設定を開く
 
 ![](images/スクリーンショット-2019-10-01-14.00.03.png)
 
-## Vagrant 側のネットワーク設定
+### Vagrant 側のネットワーク設定
 
 HostOS から VMwear ネットワークを確認
 
@@ -54,7 +54,7 @@ ifconfig
 
 第 4 オクテッドはご自由に。ここでは 12 にしてます。 Vagrant を再起動。
 
-## VMwear 上の OS から接続確認
+### VMwear 上の OS から接続確認
 
 hosts ファイル編集
 
