@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
         working-directory: blog
 
       - name: Run build
@@ -42,7 +42,8 @@ jobs:
         working-directory: blog
 
       - name: Deploy
-        if: ${{ !env.ACT && github.ref == 'refs/heads/master'}}
+        #        if: ${{ !env.ACT && github.ref == 'refs/heads/master'}}
+        if: ${{ github.ref == 'refs/heads/master'}}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
