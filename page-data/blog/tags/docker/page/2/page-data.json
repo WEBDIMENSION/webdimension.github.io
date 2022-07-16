@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-tags-tsx",
     "path": "/blog/tags/docker/page/2/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[]}},"pageContext":{"limit":10,"skip":10,"currentPage":2,"numPages":2,"tag":"Docker","linkPrefix":"/blog/tags/docker","linkSuffix":"/page/","draft":[false]}},
+    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"nodes":[]}},"pageContext":{"limit":10,"skip":10,"currentPage":2,"numPages":2,"tag":"Docker","linkPrefix":"/blog/tags/docker","linkSuffix":"/page/","draft":[false]}},
     "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
