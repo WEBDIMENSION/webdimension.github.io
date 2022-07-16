@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-tags-tsx",
     "path": "/blog/tags/iac/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":0,"nodes":[]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Iac","linkPrefix":"/blog/tags/iac","linkSuffix":"/page/","draft":[false]}},
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/Infrastructure/Iac/terraform/syntax/"},"frontmatter":{"date":"July 02, 2022","post_modified":"July 02, 2022","title":"Terraform 構文","description":"Terraformで使える演算子","tags":["Terraform","Iac"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Iac","linkPrefix":"/blog/tags/iac","linkSuffix":"/page/","draft":[false]}},
     "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-tags-tsx",
     "path": "/blog/tags/snippet/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"nodes":[{"fields":{"slug":"/Tools/Intellij/snippet/"},"frontmatter":{"date":"February 23, 2022","post_modified":"February 23, 2022","title":"Intellij IDEA でスニペット作成","description":"スニペット作成時の知見、奥が深い","tags":["Intellij IDEA","Snippet"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Snippet","linkPrefix":"/blog/tags/snippet","linkSuffix":"/page/","draft":[false]}},
+    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"nodes":[{"fields":{"slug":"/Tools/Intellij/snippet/"},"frontmatter":{"date":"February 23, 2022","post_modified":"February 23, 2022","title":"Intellij IDEA でスニペット作成","description":"スニペット作成時の知見、奥が深い","tags":["Intellij IDEA","Snippet"]}},{"fields":{"slug":"/Tools/vscode/snippet_variable/"},"frontmatter":{"date":"February 23, 2022","post_modified":"February 23, 2022","title":"vscode で snippet","description":"vscode の snippet の変数","tags":["VSCode","Snippet"]}}]}},"pageContext":{"limit":10,"skip":0,"currentPage":1,"numPages":1,"tag":"Snippet","linkPrefix":"/blog/tags/snippet","linkSuffix":"/page/","draft":[false]}},
     "staticQueryHashes": ["1126706167","1176493165","1188992244","1314910092","1760060771","2772418575","3679674316"]}
