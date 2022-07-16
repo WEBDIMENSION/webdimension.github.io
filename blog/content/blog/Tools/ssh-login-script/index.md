@@ -4,7 +4,7 @@ date: "2019-11-02 23:11:21"
 post_modified: "2019-11-06 19:26:54"
 description: "sshでログインの際の手続きをちょっとのスクリプトで楽をする。記憶力とは戦わない。"
 categories: ["Tools"]
-tags: ["SSH", "Shell Script"]
+tags: ["SSH", "ShellScript"]
 draft: false
 ---
 

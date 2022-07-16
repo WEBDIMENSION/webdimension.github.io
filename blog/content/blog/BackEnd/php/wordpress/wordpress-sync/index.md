@@ -4,7 +4,7 @@ date: "2019-09-23 17:29:23"
 post_modified: "2019-09-23 19:40:32"
 description: "リモートのDBをローカルへ同期するめんどくさい作業をスクリプト化"
 categories: ["BackEnd"]
-tags: ["MySQL", "Wordpress", "Shell Script"]
+tags: ["MySQL", "Wordpress", "ShellScript"]
 draft: false
 ---
 
