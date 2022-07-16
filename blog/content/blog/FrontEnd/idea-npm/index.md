@@ -63,10 +63,10 @@ npm run watch
 
 ---
 
-1.  'cmd' + ',' を押下し設定を開く
-2.  'cmd' + 'f' を押下し npm を検索
-3.  Preferences \| Languages & Frameworks \| Node.js and NPM へ進む
-4.  'node','npm'の Path を設定
+1. 'cmd' + ',' を押下し設定を開く
+2. 'cmd' + 'f' を押下し npm を検索
+3. Preferences \| Languages & Frameworks \| Node.js and NPM へ進む
+4. 'node','npm'の Path を設定
 
 ![](images/Screen-Shot-2019-09-22-at-15.59.10.png)
 
@@ -87,9 +87,9 @@ Projct tool window の 'package.json' を右クリック。
 
 マウスやトラックパッドを使って右クリックなどはめんどくさいのでショートカットを設定します。
 
-1.  'cmd' + ',' を押下し設定を開く
-2.  Preferences \| Keymap へ進む。
-3.  'npm'で検索し ショートカットキーを割り当てる
+1. 'cmd' + ',' を押下し設定を開く
+2. Preferences \| Keymap へ進む。
+3. 'npm'で検索し ショートカットキーを割り当てる
 
 ![](images/Screen-Shot-2019-09-22-at-16.12.21.png)
 
@@ -101,8 +101,8 @@ Projct tool window の 'package.json' を右クリック。
 "ただただ、'npm run watch' を走らせたいんだ" という場合は IDEA の超便利機能
 「なんでも検索」の出番です。
 
-1.  'Shift' x 2 （連打) で「なんでも検索」
-2.  'watch' をタイプ、"Run 'watch' npm script" が出てくるので Enter。
+1. 'Shift' x 2 （連打) で「なんでも検索」
+2. 'watch' をタイプ、"Run 'watch' npm script" が出てくるので Enter。
 
 ![](images/Screen-Shot-2019-09-22-at-16.23.03.png)
 

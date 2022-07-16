@@ -5,7 +5,6 @@ post_modified: "2022-07-16 12:06:25"
 description: "multipassのディレクトリ共有をnfsに変更"
 categories: ["Tools"]
 tags: ["multipass", "Vagrant", "ShellScript"]
-topics: ""
 draft: false
 ---
 
