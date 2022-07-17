@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
-import { useLocation } from "@reach/router"
+import {useLocation} from "@reach/router"
 
 declare global {
   interface Window {
@@ -8,7 +8,8 @@ declare global {
   }
 }
 
-export const GoogleAds = ({ slotKey }: { slotKey: string }) => {
+export const GoogleAds = ({slotKey}: { slotKey: string }) => {
+  console.log(slotKey)
   const getSlot = (slotKey: string) => {
     const sideUpper: unknown = process.env.GOOGLE_ADSENSE_SLOT_SIDE_UPPER
     const sideLower: unknown = process.env.GOOGLE_ADSENSE_SLOT_SIDE_LOPER
@@ -27,10 +28,6 @@ export const GoogleAds = ({ slotKey }: { slotKey: string }) => {
   const location = useLocation()
   const path = location?.pathname || ""
 
-  useEffect(() => {
-    ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-  }, [path])
-
   if (process.env.NODE_ENV == "development") {
     return (
       <AsideWrapper className={"adArea"}>
@@ -40,11 +37,14 @@ export const GoogleAds = ({ slotKey }: { slotKey: string }) => {
       </AsideWrapper>
     )
   } else {
+    useEffect(() => {
+      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    }, [path])
     return (
       <AsideWrapper className={"adArea"}>
         <ins
           className="adsbygoogle"
-          style={{ display: "block" }}
+          style={{display: "block"}}
           data-ad-client={process.env.GOOGLE_ADSENSE_TRACKING_ID}
           data-ad-slot={getSlot(slotKey)}
           data-ad-format="auto"
