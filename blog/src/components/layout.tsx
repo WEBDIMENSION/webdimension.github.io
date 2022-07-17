@@ -13,6 +13,7 @@ import Drafts from "./drafts"
 import IconButton from "@mui/material/IconButton"
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward"
 import GoogleAdsense from "../components/google/googleAdsense"
+import GoogleAdsenseHeader from "../components/google/googleAdsenseHeader"
 import Topics from "../components/topics"
 import { Link as Scroll } from "react-scroll"
 
@@ -30,6 +31,7 @@ const Layout = ({ children }: { children?: React.ReactNode }) => {
         transition: "color 0.2s ease-out, background 0.2s ease-out",
       }}
     >
+      <GoogleAdsenseHeader />
       <Grid container className="container" id={"page_top"}>
         <Grid item xs={12}>
           <Drafts />
