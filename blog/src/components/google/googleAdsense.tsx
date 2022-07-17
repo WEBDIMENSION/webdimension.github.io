@@ -40,12 +40,14 @@ export const GoogleAds = ({slotKey}: { slotKey: string }) => {
     useEffect(() => {
       ;(window.adsbygoogle = window.adsbygoogle || []).push({})
     }, [path])
+
+
     return (
       <AsideWrapper className={"adArea"}>
         <ins
           className="adsbygoogle"
-          style={"display:block"}
-          data-ad-client="{process.env.GOOGLE_ADSENSE_TRACKING_ID}"
+          style={{display: "block"}}
+          data-ad-client={process.env.GOOGLE_ADSENSE_TRACKING_ID}
           data-ad-slot={getSlot(slotKey)}
           data-ad-format="auto"
           data-full-width-responsive="true"
