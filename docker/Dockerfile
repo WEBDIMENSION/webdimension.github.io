@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:18
 #RUN apk update && \
 #    apk add git yarn build-base autoconf automake libtool pkgconfig nasm curl && \
 #    yarn global add gatsby-cli && \
