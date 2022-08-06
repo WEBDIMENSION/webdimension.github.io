@@ -147,7 +147,7 @@ const Bio = () => {
           <li>Postgres</li>
           <li>MS.Access</li>
           <li>RedShift</li>
-          <li>SQLiteK</li>
+          <li>SQLite</li>
         </ul>
         <h3>Cloud</h3>
         <ul>
