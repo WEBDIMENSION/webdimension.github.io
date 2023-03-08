@@ -1,4 +1,282 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Feb 2023 07:46:17 GMT</lastBuildDate><item><title><![CDATA[gzip形式(拡張子「.gz」を解凍せずに確認]]></title><description><![CDATA[zless zgrep]]></description><link>https://blog.webdimension.jp/Tools/Commands/gz_text/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/Commands/gz_text/</guid><pubDate>Tue, 07 Feb 2023 15:41:11 GMT</pubDate><content:encoded>&lt;h2&gt;zless&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 Mar 2023 23:45:46 GMT</lastBuildDate><item><title><![CDATA[UML (クラス図)]]></title><description><![CDATA[UML (クラス図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 【UML】クラス図とは | クラス図の書き方と記号  PlantUMLでクラス図を作成 PlantUML…]]></description><link>https://blog.webdimension.jp/Tools/uml/class/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/class/</guid><pubDate>Thu, 09 Mar 2023 08:30:17 GMT</pubDate><content:encoded>&lt;h2&gt;UML (クラス図)&lt;/h2&gt;
+&lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
+&lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium-company.com/%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3/&quot;&gt;【UML】クラス図とは | クラス図の書き方と記号&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.wakuwakubank.com/posts/565-design-uml-class/&quot;&gt; PlantUMLでクラス図を作成&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/kyonc5/items/4d536cb59fd7c41debc1&quot;&gt;PlantUML クラス図 早見表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;感謝！&lt;/p&gt;
+&lt;h2&gt;書き方&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;線形&lt;/th&gt;
+&lt;th&gt;関連&lt;/th&gt;
+&lt;th&gt;記号&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;関連&lt;/td&gt;
+&lt;td&gt;関連（association）&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;クラス間の関連を表現&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;集約&lt;/td&gt;
+&lt;td&gt;集約（aggregation）&lt;/td&gt;
+&lt;td&gt;o—&lt;/td&gt;
+&lt;td&gt;クラス間の関連で全体と一部という関係性を表現&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;コンポジション&lt;/td&gt;
+&lt;td&gt;コンポジション（composition）&lt;/td&gt;
+&lt;td&gt;*—&lt;/td&gt;
+&lt;td&gt;集約よりも強い集約&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;依存&lt;/td&gt;
+&lt;td&gt;依存（dependency）&lt;/td&gt;
+&lt;td&gt;&amp;#x3C;..&lt;/td&gt;
+&lt;td&gt;クラス間の依存関係を表現&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;汎化&lt;/td&gt;
+&lt;td&gt;汎化（generalization）&lt;/td&gt;
+&lt;td&gt;&amp;#x3C;|—&lt;/td&gt;
+&lt;td&gt;クラス間の継承を表現&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;実現&lt;/td&gt;
+&lt;td&gt;実現（realization）&lt;/td&gt;
+&lt;td&gt;&amp;#x3C;..|&lt;/td&gt;
+&lt;td&gt;クラス間のインターフェースを表現&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;-&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;.&lt;/code&gt;  横&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;--&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;..&lt;/code&gt;  縦&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;---&lt;/code&gt; , &lt;code class=&quot;language-text&quot;&gt;...&lt;/code&gt;  縦 (遠距離)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;多重度&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;多重度&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;必ず1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0..1&lt;/td&gt;
+&lt;td&gt;０ または 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0..＊&lt;/td&gt;
+&lt;td&gt;0 以上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1..＊&lt;/td&gt;
+&lt;td&gt;1 以上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;n..m&lt;/td&gt;
+&lt;td&gt;n以上ｍ以下 ※[例] 1..3 → 1以上3以下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;n&lt;/td&gt;
+&lt;td&gt;必ずn ※[例] 2 → 必ず2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;n,m&lt;/td&gt;
+&lt;td&gt;nまたはm。[例] 1,3　→　1または3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;可視性&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;記号&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;private&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;#&lt;/td&gt;
+&lt;td&gt;protected&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;~&lt;/td&gt;
+&lt;td&gt;package private&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;+&lt;/td&gt;
+&lt;td&gt;public&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;h3&gt;関連（association）&lt;/h3&gt;
+&lt;p&gt;基本的なつながり（関連）をあらわします。&lt;/p&gt;
+&lt;p&gt;以下の例では「社員クラス」と「ユーザクラス」は関連性があり、クラス間の多重度は1対1であることを表現しています&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+employee &amp;quot;1&amp;quot; - &amp;quot;1&amp;quot; user : ラベル
+class employee {
+    - user_id: Integer
+    - user_name: String
+    + get_employee(): Object
+}
+class user {
+    - name: String
+    - address: String
+    + get_user(): Object
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;集約（aggregation）&lt;/h3&gt;
+&lt;p&gt;「部分クラス」は「全体クラス」の一部であることをあらわします。ただしお互いに依存関係はない。&lt;/p&gt;
+&lt;p&gt;以下の例では「乗員クラス」は「バスクラス」の一部であること（お互い依存関係はない）、クラス間の多重度は1対0以上であることを表現しています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+bus &amp;quot;1&amp;quot; o- &amp;quot;0..n&amp;quot; tire : ラベル
+class bus {
+    - company: string
+    - number_of_passengers: Integer
+}
+class tire {
+    - model: String
+    - start_data: Date
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;コンポジション（composition）&lt;/h3&gt;
+&lt;p&gt;「部分クラス」は「全体クラス」の一部であることをあらわします。集約よりも結びつきが強くお互いが存在して成り立つ関係性。&lt;/p&gt;
+&lt;p&gt;例えば「全体クラス」が削除されると「部分クラス」もあわせて削除されるような関係性をあらわします。&lt;/p&gt;
+&lt;p&gt;以下の例では「タイヤクラス」は「バスクラス」の一部であり、「バスが廃車になれば、バスについていたタイヤも廃車になる」といった関係性を表現します。（クラス間の多重度は1対4）&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+bus &amp;quot;1&amp;quot; *- &amp;quot;4&amp;quot; tire : ラベル
+class bus {
+    - company: string
+    - number_of_passengers: Integer
+    + get_bus_info()
+}
+
+class tire {
+    - model: String
+    - start_data: Date
+    + get_bus_info()
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;依存（dependency）&lt;/h3&gt;
+&lt;p&gt;お互いが依存関係にあることを表現します。例えば「クラスA」が変更された時、依存関係にある「クラスB」にも変更が生じるといった関係性をあらわします。&lt;/p&gt;
+&lt;p&gt;以下の例では、「ホイールクラス」と「タイヤクラス」が依存関係となり、「ホイール」を変えると「タイヤ」も変えるといった関係性を表現しています。（クラス間の多重度は1対4）&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+hide empty members
+
+Class GasStation {
+}
+
+class Car {
+}
+
+GasStation &amp;lt;.. Car : ラベル
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;汎化（generalization）&lt;/h3&gt;
+&lt;p&gt;子クラス」は「親クラス」の性質の継承しているといった関係性をあらわします。&lt;/p&gt;
+&lt;p&gt;以下の例では「犬クラス」は「動物クラス」の性質を継承していることを表現しています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+bus &amp;lt;|- tire : ラベル
+class bus {
+    - company: string
+    - number_of_passengers: Integer
+    + get_bus_info()
+}
+
+class tire {
+    - model: String
+    - start_data: Date
+    + get_bus_info()
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;実現（realization）&lt;/h3&gt;
+&lt;p&gt;「抽象クラス（interface）」の振る舞いを具体的に実装した「クラス」であるといった関係性をあらわします。&lt;/p&gt;
+&lt;p&gt;以下の例では、抽象的なクラスである「動物クラス」の振る舞いを具体的に実装したものが「犬クラス」であるということを表現しています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+bus &amp;lt;.. tire
+class bus {
+    - company: string
+    - number_of_passengers: Integer
+    + get_bus_info()
+}
+
+class tire {
+    - model: String
+    - start_data: Date
+    + get_bus_info()
+}
+note right of tire
+  注釈
+end note
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Package&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+title パッケージ化
+
+package PackageA {
+class ClassA {
+}
+
+class ClassB {
+}
+}
+
+package PackageB {
+class ClassC {
+}
+
+package PackageC {
+class ClassD {
+}
+
+    class ClassE {
+    }
+}
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Namespaces&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+title 名前空間
+
+namespace PackageA {
+  class Abc {
+  }
+
+  class Xyz {
+  }
+}
+
+namespace PackageB {
+  class Abc {
+  }
+
+  namespace PackageC {
+    class Xyz {
+    }
+  }
+}
+
+PackageA.Abc ..&amp;gt; PackageA.Xyz
+PackageB.Abc ..&amp;gt; PackageB.PackageC.Xyz
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[gzip形式(拡張子「.gz」を解凍せずに確認]]></title><description><![CDATA[zless zgrep]]></description><link>https://blog.webdimension.jp/Tools/Commands/gz_text/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/Commands/gz_text/</guid><pubDate>Tue, 07 Feb 2023 15:41:11 GMT</pubDate><content:encoded>&lt;h2&gt;zless&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# zless ファイル名 [ファイル名2 ･･･]```&lt;/span&gt;
 zless error_log.gz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;zgrep&lt;/h2&gt;
@@ -3579,7 +3857,7 @@ gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog&lt;/code&gt;&lt;
 &lt;li&gt;node: 14.19.0&lt;/li&gt;
 &lt;li&gt;Gatsby: 4.8.0&lt;/li&gt;
 &lt;li&gt;Editor: VSCode, Intellij IDEA&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[UML]]></title><description><![CDATA[Template Example タスクの登録 タスクの順序 タスクの色 カレンダー表示 休業日の指定 マイルストーンの設定 セパレーターの設置 タスクの定義 依存関係 エイリアス 色の変更 Completion status…]]></description><link>https://blog.webdimension.jp/Tools/uml/GanttChart/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/GanttChart/</guid><pubDate>Wed, 23 Feb 2022 04:48:52 GMT</pubDate><content:encoded>&lt;h2&gt;Template&lt;/h2&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[UML (ガントチャート)]]></title><description><![CDATA[Template Example タスクの登録 タスクの順序 タスクの色 カレンダー表示 休業日の指定 マイルストーンの設定 セパレーターの設置 タスクの定義 依存関係 エイリアス 色の変更 Completion status…]]></description><link>https://blog.webdimension.jp/Tools/uml/GanttChart/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/GanttChart/</guid><pubDate>Wed, 23 Feb 2022 04:48:52 GMT</pubDate><content:encoded>&lt;h2&gt;Template&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;project starts the 2019/06/01
 saturday are closed
 sunday are closed
