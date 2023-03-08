@@ -8,6 +8,7 @@ RUN npm install -g gatsby-cli@4.5.2
 #    apt install -y git curl yarn build-base autoconf automake libtool pkgconfig nasm &&  \
 #    yarn global add gatsby-cli && \
 #    gatsby options set package-manager yarn
+WORKDIR /app
 RUN npm install -g npm
 #RUN npm install -g yarnk
 #RUN npm install -g n

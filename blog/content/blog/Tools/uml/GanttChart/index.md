@@ -1,5 +1,5 @@
 ---
-title: "UML"
+title: "UML (ガントチャート)"
 date: "2022-02-23 04:48:52"
 post_modified: "2022-02-23 04:48:52"
 description: "Markdown でガントチャート"

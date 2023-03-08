@@ -5,6 +5,7 @@ services:
     build: ./docker
     volumes:
       - ./blog:/blog:delegated
+      #      - ../docker/package.json:/blog/package.json
       - /blog/.cache
       - /blog/build
       - /blog/node_modules
@@ -26,8 +27,9 @@ services:
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
     # command: gatsby develop --host 0.0.0.0
+    #    command: yarn ${YARN_MODE}
     tty: true
 networks:
   default:
-    external:
-      name: ${NET_WORK_NAME}
+    external: true
+    name: ${NET_WORK_NAME}
