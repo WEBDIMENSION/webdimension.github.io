@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 Mar 2023 23:45:46 GMT</lastBuildDate><item><title><![CDATA[UML (クラス図)]]></title><description><![CDATA[UML (クラス図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 【UML】クラス図とは | クラス図の書き方と記号  PlantUMLでクラス図を作成 PlantUML…]]></description><link>https://blog.webdimension.jp/Tools/uml/class/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/class/</guid><pubDate>Thu, 09 Mar 2023 08:30:17 GMT</pubDate><content:encoded>&lt;h2&gt;UML (クラス図)&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 09 Mar 2023 21:15:21 GMT</lastBuildDate><item><title><![CDATA[Docker volumes label]]></title><description><![CDATA[当ブログの Docker-compose.ynl ググれば host の node_modules と Containerの node_modules を同期させない情報はありそのまま使用してた。 ちなみに Dockerfile この状況だと 初回 (Container…]]></description><link>https://blog.webdimension.jp/Environment/Docker/Docker_volumes_labbe/</link><guid isPermaLink="false">https://blog.webdimension.jp/Environment/Docker/Docker_volumes_labbe/</guid><pubDate>Fri, 10 Mar 2023 05:23:36 GMT</pubDate><content:encoded>&lt;h2&gt;当ブログの Docker-compose.ynl&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yml&quot;&gt;&lt;pre class=&quot;language-yml&quot;&gt;&lt;code class=&quot;language-yml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;delegated
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/.cache
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/build
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /node_modules
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/public
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ググれば host の node_modules と Containerの node_modules を同期させない情報はありそのまま使用してた。&lt;/p&gt;
+&lt;p&gt;ちなみに Dockerfile&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;dockerfile&quot;&gt;&lt;pre class=&quot;language-dockerfile&quot;&gt;&lt;code class=&quot;language-dockerfile&quot;&gt;&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;FROM&lt;/span&gt; node:18&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; npm install -g gatsby-cli@4.5.2&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;WORKDIR&lt;/span&gt; /app&lt;/span&gt;
+&lt;span class=&quot;token instruction&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;RUN&lt;/span&gt; npm install -g npm&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この状況だと&lt;/p&gt;
+&lt;p&gt;初回 (Containerが生成されてない場合)&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;で 立ち上げ&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compse ecec xxx bash&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;yarn install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;で node_modules を Install してから&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;でサービス起動する。&lt;/p&gt;
+&lt;p&gt;これだと&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compose down&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;をすると コンテナが消え次回&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;して再度&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compse ecec xxx bash&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;yarn install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;しなければならない。時間のムダ。。。。&lt;/p&gt;
+&lt;h2&gt;まずは Container 側の node_modules を volumes で永続化する&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;gatsby&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gatsby
+    &lt;span class=&quot;token key atrule&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ./docker
+    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;delegated
+      &lt;span class=&quot;token comment&quot;&gt;#      - ../docker/package.json:/blog/package.json&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/.cache
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/build
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; node_volumes&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog/node_modules
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/public
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;node_volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gatsby_blog_node_volumes&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで 初回だけ&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compse ecec xxx bash&lt;/code&gt;
+&lt;code class=&quot;language-text&quot;&gt;yarn install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;することにより node_modules は永続かされる。&lt;/p&gt;
+&lt;p&gt;だが、&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;eocker volume purge&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;すればこの volume は削除される。&lt;/p&gt;
+&lt;h2&gt;volumes に Label を付与、 purge から除外する&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;gatsby&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gatsby
+    &lt;span class=&quot;token key atrule&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ./docker
+    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;delegated
+      &lt;span class=&quot;token comment&quot;&gt;#      - ../docker/package.json:/blog/package.json&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/.cache
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/build
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; node_volumes&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog/node_modules
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/public
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;node_volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gatsby_blog_node_volumes
+    &lt;span class=&quot;token key atrule&quot;&gt;labels&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;keep&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;volumes を purge するときは&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker volume prune --filter &quot;label!=keep&quot;&apos;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;めんどいので &lt;code class=&quot;language-text&quot;&gt;alias&lt;/code&gt; を設定&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;dvp=&apos;docker volume prune --filter &quot;label!=keep&quot;&apos;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;dvp&lt;/code&gt; を打つことにより 不要な volumes だけが削除されてさっぱり！。&lt;/p&gt;
+&lt;h2&gt;docker-compose.yml に ‘yarn start’&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;gatsby&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gatsby
+    &lt;span class=&quot;token key atrule&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ./docker
+    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;delegated
+      &lt;span class=&quot;token comment&quot;&gt;#      - ../docker/package.json:/blog/package.json&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/.cache
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/build
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; node_volumes&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/blog/node_modules
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; /blog/public
+    &lt;span class=&quot;token key atrule&quot;&gt;working_dir&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; /blog
+    &lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; gatsby develop &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;host 0.0.0.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;で サービスが起動する。らくちん。&lt;/p&gt;
+&lt;p&gt;まぁ、&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby develop --host 0.0.0.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;なので ここは &lt;code class=&quot;language-text&quot;&gt;develop mode&lt;/code&gt; が起動するまでは多少時間がかかるが致し方ない。&lt;/p&gt;
+&lt;p&gt;サービスの起動は &lt;code class=&quot;language-text&quot;&gt;lazydocker&lt;/code&gt; 等で確認&lt;/p&gt;</content:encoded></item><item><title><![CDATA[UML (クラス図)]]></title><description><![CDATA[UML (クラス図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 【UML】クラス図とは | クラス図の書き方と記号  PlantUMLでクラス図を作成 PlantUML…]]></description><link>https://blog.webdimension.jp/Tools/uml/class/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/class/</guid><pubDate>Thu, 09 Mar 2023 08:30:17 GMT</pubDate><content:encoded>&lt;h2&gt;UML (クラス図)&lt;/h2&gt;
 &lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
 &lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
 &lt;p&gt;参考&lt;/p&gt;
