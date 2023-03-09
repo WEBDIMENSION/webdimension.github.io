@@ -123,7 +123,7 @@ volumes:
       keep: true
 ```
 
-volumes を purge するときは
+volumes を prune するときは
 
 `docker volume prune --filter "label!=keep"'`
 
