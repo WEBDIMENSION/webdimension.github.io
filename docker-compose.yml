@@ -8,7 +8,7 @@ services:
       #      - ../docker/package.json:/blog/package.json
       - /blog/.cache
       - /blog/build
-      - /blog/node_modules
+      - node_volumes:/blog/node_modules
       - /blog/public
     working_dir: /blog
     ports:
@@ -26,9 +26,14 @@ services:
       - GOOGLE_ADSENSE_DRAWER=${GOOGLE_ADSENSE_DRAWER}
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
-    # command: gatsby develop --host 0.0.0.0
+    command: gatsby develop --host 0.0.0.0
     #    command: yarn ${YARN_MODE}
     tty: true
+volumes:
+  node_volumes:
+    name: gatsby_blog_node_volumes
+    labels:
+      keep: true
 networks:
   default:
     external: true
