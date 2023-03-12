@@ -2,6 +2,8 @@ version: '3.0'
 services:
   gatsby:
     container_name: gatsby
+    labels:
+      keep: true
     build: ./docker
     volumes:
       - ./blog:/blog:delegated
