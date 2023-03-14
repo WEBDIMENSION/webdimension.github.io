@@ -18,6 +18,9 @@ services:
       - ${SERVE_EXTERNAL_PORT}:${SERVE_INTERNAL_PORT}
       - ${STATUS_EXTERNAL_PORT}:${STATUS_INTERNAL_PORT}
     environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - CERT_NAME=${CERTS_FILE_NAME}
+      - HTTPS_METHOD=noredirect
       - NODE_ENV=${NODE_ENV}
       - SITE_URL=${SITE_URL}
       - GOOGLE_ANALYTICS_TRACKING_ID=${GOOGLE_ANALYTICS_TRACKING_ID}
@@ -28,8 +31,8 @@ services:
       - GOOGLE_ADSENSE_DRAWER=${GOOGLE_ADSENSE_DRAWER}
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
-    command: gatsby develop --host 0.0.0.0
-    #    command: yarn ${YARN_MODE}
+    command: gatsby develop -p ${DEVELOP_INTERNAL_PORT} --host 0.0.0.0
+    #command: yarn serve
     tty: true
 volumes:
   node_volumes:
@@ -38,5 +41,9 @@ volumes:
       keep: true
 networks:
   default:
-    external: true
-    name: ${NET_WORK_NAME}
+    name: ${NGINX_PROXY_NAME}
+
+#networks:
+#  default:
+#    external: true
+#    name: ${NET_WORK_NAME}
