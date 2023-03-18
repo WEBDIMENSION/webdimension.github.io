@@ -8,7 +8,7 @@ tags: ["UML", "Markdown"]
 draft: false
 ---
 
-##  ULM (アクティビティ図)
+## UML (アクティビティ図)
 
 ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。
 
@@ -18,7 +18,7 @@ draft: false
 
 [State Diagram](https://plantuml.com/activity-diagram-beta)
 
-### Simple action 
+### Simple action
 
 ```puml
 @startuml
@@ -27,6 +27,8 @@ draft: false
 several **lines**;
 @enduml
 ```
+
+***ベーシックなやつね***
 
 ### Start/Stop
 
@@ -40,6 +42,8 @@ stop
 @enduml
 ```
 
+***処理を止める***
+
 ### Start/End
 
 ```plantuml
@@ -52,9 +56,12 @@ end
 @enduml
 ```
 
+***処理を終わらせる(例外エラーとかかな)***
+
 ### Conditional
 
 #### if (...) then (...)
+
 ```plantuml
 @startuml
 start
@@ -69,7 +76,10 @@ endif
 stop
 @enduml
 ```
-#### if (...) is (...) then 
+
+***条件式***
+
+#### if (...) is (...) then
 
 ```plantuml
 @startuml
@@ -79,6 +89,8 @@ else
 :print not red;
 @enduml
 ```
+
+***if文***
 
 ### if (...) equals (...) then
 
@@ -90,6 +102,8 @@ else
 :print not 5;
 @enduml
 ```
+
+***これもif文***
 
 ### Several tests (horizontal mode)
 
@@ -111,6 +125,8 @@ endif
 stop
 @enduml
 ```
+
+***テスト実行 横表示***
 
 ### Several tests (vertical mode)
 
@@ -134,6 +150,8 @@ stop
 @enduml
 ```
 
+***テスト実行 縦表示***
+
 ### Switch and case [switch, case, endswitch]
 
 ```plantuml
@@ -155,9 +173,11 @@ stop
 @enduml
 ```
 
+***switch,case文***
+
 ### Conditional with stop on an action [kill, detach]
 
-#### stop action on a if loop 
+#### stop action on a if loop
 
 ```plantuml
 @startuml
@@ -168,6 +188,8 @@ endif
 #palegreen:action;
 @enduml
 ```
+
+***if文でstopで処理を止めるラインと処理を続けるライン***
 
 ### kill or detach keyword
 
@@ -183,6 +205,8 @@ endif
 @enduml
 ```
 
+***if文でkillで処理を止めるラインと処理を続けるライン(重大なエラーとかの時かな？？？)***
+
 #### detach
 
 ```plantuml
@@ -195,43 +219,41 @@ endif
 @enduml
 ```
 
+***if文でdetachで処理を止めるラインと処理を続けるライン(killと同様かな？)***
+
 ### Repeat loop
 
 #### epeat and repeatwhile keywords to have repeat loops
 
 ```plantuml
 @startuml
-
 start
-
 repeat
 :read data;
 :generate diagrams;
 repeat while (more data?) is (yes)
 ->no;
 stop
-
 @enduml
 ```
 
-####  target and insert an action in the return path using the backward keyword
+***ループの基本形***
+
+#### target and insert an action in the return path using the backward keyword
 
 ```plantuml
 @startuml
-
 start
-
 repeat :foo as starting label;
   :read data;
   :generate diagrams;
 backward:This is backward;
 repeat while (more data?)
-
 stop
-
 @enduml
 ```
 
+***ループの戻りに処理名を入れる場合は`backward`
 
 ### Break on a repeat loop [break]
 
@@ -253,6 +275,8 @@ stop
 @enduml
 ```
 
+***Breakで抜ける処理***
+
 ### While loop
 
 #### while and endwhile keywords to have repeat loops
@@ -268,6 +292,8 @@ stop
 @enduml
 ```
 
+***`do while`ね***
+
 #### label after the endwhile keyword, or using the is keyword.
 
 ```plantuml
@@ -278,6 +304,8 @@ endwhile (empty)
 :close file;
 @enduml
 ```
+
+***ラベル付けね***
 
 #### detach to form an infinite while loop, then you will want to also hide the partial arrow that results using
 
@@ -297,6 +325,8 @@ endif
 @enduml
 ```
 
+***detachで処理終了 `-[hidden]->` でラインを消す***
+
 ### Parallel processing
 
 #### fork
@@ -313,6 +343,8 @@ stop
 @enduml
 ```
 
+***並列処理***
+
 #### fork with end merge
 
 ```plantuml
@@ -326,6 +358,8 @@ end merge
 stop
 @enduml
 ```
+
+***並列処理から合流***
 
 ```plantuml
 @startuml
@@ -341,6 +375,8 @@ stop
 
 ```
 
+***並列処理から合流、かたや終了***
+
 #### Label on end fork
 
 ```plantuml
@@ -355,6 +391,8 @@ stop
 @enduml
 ```
 
+***ラベル付け***
+
 ```plantuml
 @startuml
 start
@@ -366,6 +404,8 @@ end fork {and}
 stop
 @enduml
 ```
+
+***ラベル付け***
 
 #### Other example
 
@@ -387,6 +427,8 @@ endif
 
 @enduml
 ```
+
+***分岐・並列処理***
 
 ### Split processing
 
@@ -410,6 +452,8 @@ end
 @enduml
 ```
 
+***分散***
+
 #### Input split (multi-start)
 
 ```plantuml
@@ -429,6 +473,8 @@ end split
 @enduml
 ```
 
+***最初から分散***
+
 ```plantuml
 @startuml
 split
@@ -445,6 +491,8 @@ end split
 :D;
 @enduml
 ```
+
+***最初から分散・複数処理***
 
 ### Output split (multi-end)
 
@@ -463,6 +511,8 @@ split again
 end split
 @enduml
 ```
+
+***分散処理で終了***
 
 ```plantuml
 @startuml
@@ -485,6 +535,8 @@ end split
 @enduml
 ```
 
+***分散処理で終了の仕方いろいろ***
+
 ### notes
 
 ```plantuml
@@ -506,6 +558,8 @@ stop
 @enduml
 ```
 
+***ノート***
+
 #### add note on backward activity
 
 ```plantuml
@@ -519,6 +573,8 @@ repeat while (Valid?) is (No) not (Yes)
 stop
 @enduml
 ```
+
+***ノート基本形***
 
 #### add note on partition activity
 
@@ -538,6 +594,8 @@ partition "**process** HelloWorld" {
 @enduml
 ```
 
+***partitionにノート***
+
 ### Colors
 
 ```plantuml
@@ -548,9 +606,10 @@ start
 #HotPink:reading configuration files
 These files should be edited at this point!;
 #AAAAAA:ending of the process;
-
 @enduml
 ```
+
+***色付け***
 
 ```plantuml
 @startuml
@@ -560,6 +619,8 @@ partition #red/white testPartition {
 }
 @enduml
 ```
+
+***色付け***
 
 #### Lines without arrows
 
@@ -574,6 +635,8 @@ stop
 @enduml
 ```
 
+***矢印除去(ラインのみ)***
+
 ```plantuml
 @startuml
 skinparam ArrowHeadColor none
@@ -585,6 +648,8 @@ repeat while (Valid?) is (No) not (Yes)
 stop
 @enduml
 ```
+
+***矢印除去(ラインのみ)***
 
 ### Arrows
 
@@ -608,6 +673,8 @@ endif
 @enduml
 ```
 
+***矢印の色***
+
 ### Connector
 
 ```plantuml
@@ -620,6 +687,8 @@ detach
 :Other activity;
 @enduml
 ```
+
+***接続 DBとかかな？***
 
 ### color on connector
 
@@ -636,6 +705,8 @@ be better off green;
 stop
 @enduml
 ```
+
+***色付け***
 
 ### Grouping or partition
 
@@ -657,6 +728,8 @@ stop
 @enduml
 ```
 
+***グルーピング***
+
 #### Partition
 
 ```plantuml
@@ -670,10 +743,11 @@ partition Running {
     :wait for user interaction;
     :print information;
 }
-
 stop
 @enduml
 ```
+
+***グルーピング***
 
 ```plantuml
 @startuml
@@ -689,6 +763,8 @@ partition Running {
 stop
 @enduml
 ```
+
+***グルーピングカラー***
 
 ### Detach or kill [detach, kill]
 
@@ -715,6 +791,8 @@ stop
 @enduml
 ```
 
+***detachで処理をとめる***
+
 #### kill
 
 ```plantuml
@@ -737,6 +815,8 @@ stop
  stop
 @enduml
 ```
+
+***killで処理をとめる***
 
 ### SDL (Specification and Description Language)
 
@@ -779,6 +859,8 @@ end split
 @enduml
 ```
 
+***処理の種類***
+
 #### Complete example
 
 ```plantuml
@@ -820,6 +902,8 @@ stop
 @enduml
 ```
 
+***完成形***
+
 ### Condition Style
 
 #### Inside style (by default)
@@ -836,6 +920,10 @@ repeatwhile (<b>end)
 @enduml
 ```
 
+この２つ
+***`skinparam conditionStyle inside`***
+***`repeatwhile (<b>end)`***
+
 ```plantuml
 @startuml
 start
@@ -846,6 +934,8 @@ repeatwhile (<b>end)
 :act3;
 @enduml
 ```
+
+***`repeatwhile (<b>end)`***
 
 #### Diamond style
 
@@ -861,6 +951,10 @@ repeatwhile (<b>end)
 @enduml
 ```
 
+この２つ
+***`skinparam conditionStyle diamond`***
+***`repeatwhile (<b>end)`***
+
 #### InsideDiamond (or Foo1) style
 
 ```plantuml
@@ -874,6 +968,8 @@ repeatwhile (<b>end)
 :act3;
 @enduml
 ```
+
+***`skinparam conditionStyle InsideDiamond`***  で内部表示
 
 ### Condition End Style
 
@@ -890,6 +986,8 @@ endif
 :C;
 @enduml
 ```
+
+`skinparam ConditionEndStyle diamond`  で空になる
 
 #### With two branches (B1, B2)
 
@@ -923,6 +1021,8 @@ endif
 @enduml
 ```
 
+***`skinparam ConditionEndStyle hline`で 並行のライン表示***
+
 #### With two branches (B1, B2)
 
 ```plantuml
@@ -938,3 +1038,5 @@ endif
 @enduml
 @enduml
 ```
+
+***`skinparam ConditionEndStyle hline`で 並行のライン表示***

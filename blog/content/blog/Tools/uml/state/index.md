@@ -8,7 +8,7 @@ tags: ["UML", "Markdown"]
 draft: false
 ---
 
-##  ULM (ステート図) 
+## UML (ステート図)
 
 ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。
 
@@ -17,7 +17,6 @@ draft: false
 参考
 
 [State Diagram](https://plantuml.com/state-diagram)
-
 
 ### Simple State
 
@@ -33,6 +32,8 @@ State2 --> [*]
 @enduml
 ```
 
+***まぁ、基本のところね。***
+
 ### Change state rendering
 
 ```puml
@@ -47,6 +48,8 @@ State1 -> State2
 State2 --> [*]
 @enduml
 ```
+
+***`hide empty description` 殻の説明部分を非表示ね。***
 
 ### Composite state
 
@@ -75,6 +78,8 @@ state Configuring {
 @enduml
 ```
 
+***複合的にネストもできる***
+
 ### Sub-state to sub-stat
 
 ```puml
@@ -95,6 +100,8 @@ X --> Z
 Z --> Y
 @enduml
 ```
+
+***Stateをまたいでのやりとり***
 
 ### Long name
 
@@ -120,6 +127,8 @@ State3 --> [*] : Aborted
 @enduml
 ```
 
+***長いステート名も`\n`の改行で表示***
+
 ### Fork [fork, join]
 
 ```puml
@@ -136,6 +145,8 @@ join_state --> State4
 State4 --> [*]
 @enduml
 ```
+
+***分岐処理かな***
 
 ### 同時進行
 
@@ -177,7 +188,9 @@ state Active {
 }
 ```
 
-### 条件
+***並列処理 横表示・縦表示***
+
+### Condition
 
 ```puml
 @startuml
@@ -194,6 +207,8 @@ c --> MajorId : [Id > 10]
 @enduml
 ```
 
+***条件式***
+
 ### Arrow directio
 
 ```puml
@@ -205,7 +220,9 @@ Third -left-> Last
 @enduml
 ```
 
-### hange line color and style
+***矢印の向き***
+
+### line color and style
 
 ```puml
 @startuml
@@ -215,12 +232,14 @@ S1 -[#DD00AA]-> S2
 S1 -left[#yellow]-> S3
 S1 -up[#red,dashed]-> S4
 S1 -right[dotted,#blue]-> S5
-
 X1 -[dashed]-> X2
 Z1 -[dotted]-> Z2
 Y1 -[#blue,bold]-> Y2
 @enduml
 ```
+
+***Lineの色***
+
 ### note
 
 ```puml
@@ -228,17 +247,16 @@ Y1 -[#blue,bold]-> Y2
 
 [*] --> Active
 Active --> Inactive
-
 note left of Active : this is a short\nnote
-
 note right of Inactive
 A note can also
 be defined on
 several lines
 end note
-
 @enduml
 ```
+
+***ノート***
 
 ### Inline color
 
@@ -259,6 +277,8 @@ state CurrentSite #pink {
 }
 @enduml
 ```
+
+***ステート名の色***
 
 ### Skinparam
 
@@ -288,6 +308,9 @@ NotShooting --> [*]
 @enduml
 ```
 
+***全体(スキンのスタイル)***
+
+
 ### Test of all specific skinparam to State Diagrams
 
 ```puml
@@ -306,15 +329,15 @@ skinparam State {
   FontStyle bold
   StartColor silver
 }
-
 state A : a a a\na
 state B : b b b\nb
-
 [*] -> A  : start
 A -> B : a2b
 B -> [*] : end
 @enduml
 ```
+
+***文字装飾***
 
 ### Display JSON
 
@@ -327,3 +350,5 @@ json json_test {
 }
 @enduml
 ```
+
+***json表示***
