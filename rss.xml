@@ -1,4 +1,417 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 14 Mar 2023 10:35:42 GMT</lastBuildDate><item><title><![CDATA[React Typescript webpack tailwind]]></title><description><![CDATA[React webpack tailwind CRA(Create React App) で Install した React は  を Install したり prod は  が効かなかったり
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Mar 2023 12:51:38 GMT</lastBuildDate><item><title><![CDATA[UML (ステート図)]]></title><description><![CDATA[ULM (ステート図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple State Change state rendering Composite state Sub-state to sub…]]></description><link>https://blog.webdimension.jp/Tools/uml/state/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/state/</guid><pubDate>Sat, 18 Mar 2023 08:43:26 GMT</pubDate><content:encoded>&lt;h2&gt;ULM (ステート図)&lt;/h2&gt;
+&lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
+&lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://plantuml.com/state-diagram&quot;&gt;State Diagram&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Simple State&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+[*] --&amp;gt; State1
+State1 --&amp;gt; [*]
+State1 : this is a string
+State1 : this is another string
+
+State1 -&amp;gt; State2
+State2 --&amp;gt; [*]
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Change state rendering&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+hide empty description
+[*] --&amp;gt; State1
+State1 --&amp;gt; [*]
+State1 : this is a string
+State1 : this is another string
+
+State1 -&amp;gt; State2
+State2 --&amp;gt; [*]
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Composite state&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+scale 350 width
+[*] --&amp;gt; NotShooting
+
+state NotShooting {
+  [*] --&amp;gt; Idle
+  Idle --&amp;gt; Configuring : EvConfig
+  Configuring --&amp;gt; Idle : EvConfig
+}
+
+state Configuring {
+  [*] --&amp;gt; NewValueSelection
+  NewValueSelection --&amp;gt; NewValuePreview : EvNewValue
+  NewValuePreview --&amp;gt; NewValueSelection : EvNewValueRejected
+  NewValuePreview --&amp;gt; NewValueSelection : EvNewValueSaved
+
+  state NewValuePreview {
+     State1 -&amp;gt; State2
+  }
+
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Sub-state to sub-stat&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+state A {
+  state X {
+  }
+  state Y {
+  }
+}
+ 
+state B {
+  state Z {
+  }
+}
+
+X --&amp;gt; Z
+Z --&amp;gt; Y
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Long name&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+scale 600 width
+
+[*] -&amp;gt; State1
+State1 --&amp;gt; State2 : Succeeded
+State1 --&amp;gt; [*] : Aborted
+State2 --&amp;gt; State3 : Succeeded
+State2 --&amp;gt; [*] : Aborted
+state State3 {
+  state &amp;quot;Accumulate Enough Data\nLong State Name&amp;quot; as long1
+  long1 : Just a test
+  [*] --&amp;gt; long1
+  long1 --&amp;gt; long1 : New Data
+  long1 --&amp;gt; ProcessData : Enough Data
+}
+State3 --&amp;gt; State3 : Failed
+State3 --&amp;gt; [*] : Succeeded / Save Result
+State3 --&amp;gt; [*] : Aborted
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Fork [fork, join]&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+state fork_state &amp;lt;&amp;lt;fork&amp;gt;&amp;gt;
+[*] --&amp;gt; fork_state
+fork_state --&amp;gt; State2
+fork_state --&amp;gt; State3
+
+state join_state &amp;lt;&amp;lt;join&amp;gt;&amp;gt;
+State2 --&amp;gt; join_state
+State3 --&amp;gt; join_state
+join_state --&amp;gt; State4
+State4 --&amp;gt; [*]
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;同時進行&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;Edit online	
+@startuml
+[*] --&amp;gt; Active
+
+state Active {
+  [*] -&amp;gt; NumLockOff
+  NumLockOff --&amp;gt; NumLockOn : EvNumLockPressed
+  NumLockOn --&amp;gt; NumLockOff : EvNumLockPressed
+  ||
+  [*] -&amp;gt; CapsLockOff
+  CapsLockOff --&amp;gt; CapsLockOn : EvCapsLockPressed
+  CapsLockOn --&amp;gt; CapsLockOff : EvCapsLockPressed
+  ||
+  [*] -&amp;gt; ScrollLockOff
+  ScrollLockOff --&amp;gt; ScrollLockOn : EvCapsLockPressed
+  ScrollLockOn --&amp;gt; ScrollLockOff : EvCapsLockPressed
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;[*] --&amp;gt; Active
+
+state Active {
+  [*] -&amp;gt; NumLockOff
+  NumLockOff --&amp;gt; NumLockOn : EvNumLockPressed
+  NumLockOn --&amp;gt; NumLockOff : EvNumLockPressed
+  --
+  [*] -&amp;gt; CapsLockOff
+  CapsLockOff --&amp;gt; CapsLockOn : EvCapsLockPressed
+  CapsLockOn --&amp;gt; CapsLockOff : EvCapsLockPressed
+  --
+  [*] -&amp;gt; ScrollLockOff
+  ScrollLockOff --&amp;gt; ScrollLockOn : EvCapsLockPressed
+  ScrollLockOn --&amp;gt; ScrollLockOff : EvCapsLockPressed
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;条件&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+state &amp;quot;Req(Id)&amp;quot; as ReqId &amp;lt;&amp;lt;sdlreceive&amp;gt;&amp;gt;
+state &amp;quot;Minor(Id)&amp;quot; as MinorId
+state &amp;quot;Major(Id)&amp;quot; as MajorId
+ 
+state c &amp;lt;&amp;lt;choice&amp;gt;&amp;gt;
+ 
+Idle --&amp;gt; ReqId
+ReqId --&amp;gt; c
+c --&amp;gt; MinorId : [Id &amp;lt;= 10]
+c --&amp;gt; MajorId : [Id &amp;gt; 10]
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Arrow directio&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+[*] -up-&amp;gt; First
+First -right-&amp;gt; Second
+Second --&amp;gt; Third
+Third -left-&amp;gt; Last
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;hange line color and style&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+State S1
+State S2
+S1 -[#DD00AA]-&amp;gt; S2
+S1 -left[#yellow]-&amp;gt; S3
+S1 -up[#red,dashed]-&amp;gt; S4
+S1 -right[dotted,#blue]-&amp;gt; S5
+
+X1 -[dashed]-&amp;gt; X2
+Z1 -[dotted]-&amp;gt; Z2
+Y1 -[#blue,bold]-&amp;gt; Y2
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;note&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+
+[*] --&amp;gt; Active
+Active --&amp;gt; Inactive
+
+note left of Active : this is a short\nnote
+
+note right of Inactive
+A note can also
+be defined on
+several lines
+end note
+
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Inline color&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+state CurrentSite #pink {
+    state HardwareSetup #lightblue {
+       state Site #brown
+        Site -[hidden]-&amp;gt; Controller
+        Controller -[hidden]-&amp;gt; Devices
+    }
+    state PresentationSetup{
+        Groups -[hidden]-&amp;gt; PlansAndGraphics
+    }
+    state Trends #FFFF77
+    state Schedule #magenta
+    state AlarmSupression
+}
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Skinparam&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+skinparam backgroundColor LightYellow
+skinparam state {
+  StartColor MediumBlue
+  EndColor Red
+  BackgroundColor Peru
+  BackgroundColor&amp;lt;&amp;lt;Warning&amp;gt;&amp;gt; Olive
+  BorderColor Gray
+  FontName Impact
+}
+
+[*] --&amp;gt; NotShooting
+
+state &amp;quot;Not Shooting State&amp;quot; as NotShooting {
+  state &amp;quot;Idle mode&amp;quot; as Idle &amp;lt;&amp;lt;Warning&amp;gt;&amp;gt;
+  state &amp;quot;Configuring mode&amp;quot; as Configuring
+  [*] --&amp;gt; Idle
+  Idle --&amp;gt; Configuring : EvConfig
+  Configuring --&amp;gt; Idle : EvConfig
+}
+
+NotShooting --&amp;gt; [*]
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Test of all specific skinparam to State Diagrams&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+skinparam State {
+  AttributeFontColor blue
+  AttributeFontName serif
+  AttributeFontSize  9
+  AttributeFontStyle italic
+  BackgroundColor palegreen
+  BorderColor violet
+  EndColor gold
+  FontColor red
+  FontName Sanserif
+  FontSize 15
+  FontStyle bold
+  StartColor silver
+}
+
+state A : a a a\na
+state B : b b b\nb
+
+[*] -&amp;gt; A  : start
+A -&amp;gt; B : a2b
+B -&amp;gt; [*] : end
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Display JSON&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
+json json_test &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token string&quot;&gt;&quot;fruit&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Apple&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;token string&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Large&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;token string&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Red&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Green&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[UML (シーケンス図)]]></title><description><![CDATA[UML (クラス図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 PlantUML…]]></description><link>https://blog.webdimension.jp/Tools/uml/sequence/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/sequence/</guid><pubDate>Sat, 18 Mar 2023 06:23:25 GMT</pubDate><content:encoded>&lt;h2&gt;UML (クラス図)&lt;/h2&gt;
+&lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
+&lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://applis.io/posts/plantuml-sequence-diagram&quot;&gt;PlantUMLによるシーケンス図の書き方【メッセージやノートなど】&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;メッセージ&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+participantA -&amp;gt; participantB : A-&amp;gt;Bのメッセージ
+participantA &amp;lt;- participantB : B-&amp;gt;Aのメッセージ
+participantB -&amp;gt; participantB : B-&amp;gt;Bのメッセージ
+participantB &amp;lt;-&amp;gt; participantC : B&amp;lt;-&amp;gt;Cのメッセージ
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;メッセージの色&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+participantA -&amp;gt; participantB : A-&amp;gt;Bのメッセージ
+participantA &amp;lt;- participantB : B-&amp;gt;Aのメッセージ
+participantB -[#0000ff]&amp;gt; participantB : B-&amp;gt;Bのメッセージ
+participantB &amp;lt;-[#red]&amp;gt; participantC : B&amp;lt;-&amp;gt;Cのメッセージ
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;メッセージの番号&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+autonumber
+participantA -&amp;gt; participantB : A-&amp;gt;Bのメッセージ
+participantA &amp;lt;- participantB : B-&amp;gt;Aのメッセージ
+autonumber 10
+participantB -&amp;gt; participantB : B-&amp;gt;Bのメッセージ
+participantB &amp;lt;-&amp;gt; participantC : B&amp;lt;-&amp;gt;Cのメッセージ
+autonumber stop
+participantA &amp;lt;- participantC : C-&amp;gt;Aのメッセージ
+autonumber resume
+participantA -&amp;gt; participantB : A-&amp;gt;Bのメッセージ
+
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;分類子の種類&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+participant Participant
+actor Actor
+boundary Boundary
+control Control
+entity Entity
+database Database
+collections Collections
+queue Queue
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;分類子の名前&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+participant サーバー as Server
+User -&amp;gt; Server : アクセス
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;分類子の背景色&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+participant サーバー as Server  #dedede
+User -&amp;gt; Server : アクセス
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;分類子のグループ化&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+box Internal Service #eeeeee
+participant WEBサーバー as WebServer  #dedede
+participant DBサーバー as DBServer  #dedede
+end box
+User -&amp;gt; WebServer : アクセス
+WebServer -&amp;gt; DBServer : SQL問い合わせ
+WebServer &amp;lt;- DBServer : 問い合わせ結果
+User &amp;lt;- WebServer : ページ表示
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;ノート&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+box Internal Service #eeeeee
+participant WEBサーバー as WebServer  #dedede
+participant DBサーバー as DBServer  #dedede
+end box
+User -&amp;gt; WebServer : アクセス
+note left
+動的ページへアクセス
+end note
+WebServer -&amp;gt; DBServer : SQL問い合わせ
+WebServer &amp;lt;- DBServer : 問い合わせ結果
+User &amp;lt;- WebServer : ページ表示
+note right
+結果表示
+end note
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;ノートの背景色&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+User -&amp;gt; Server : アクセスする
+note left  #aqua : ユーザーのアクション
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;リファレンスの書き方&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+participant サーバー as Server
+User -&amp;gt; Server : アクセスする
+ref over User : ユーザーの上に表示する
+User -&amp;gt; Server : 認可用URLを提示する
+ref over User, Server
+  ユーザー・サーバーに またがって表示する
+end ref
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;ライフライン&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+participant WebServer
+database DBServer
+
+activate WebServer
+  User -&amp;gt; WebServer : アクセスする
+  activate DBServer #ffaaaa
+    WebServer -&amp;gt; DBServer : SQL発行 
+    DBServer -&amp;gt; WebServer : 結果 
+    deactivate DBServer
+  WebServer -&amp;gt; User : 画面を表示する
+  destroy WebServer
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;ショートカット&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+participant WebServer as WebServer
+database DBServer as DBServer
+
+User -&amp;gt; WebServer ++ : アクセスする
+WebServer -&amp;gt; DBServer ++ : SQL発行 
+DBServer -&amp;gt; WebServer -- : 結果 
+WebServer -&amp;gt; User -- : 画面を表示する
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;区切り線&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+
+User -&amp;gt; server : アクセスする
+== 区切り線 ==
+User &amp;lt;- server : なにか。。。 
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;遅延&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+
+User -&amp;gt; WebServer : アクセスする
+WebServer -&amp;gt; DBServer ++ : SQL発行 
+DBServer -&amp;gt; WebServer -- : 結果 
+... 5 minutes later ...
+WebServer -&amp;gt; User -- : 画面を表示する
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;文字の装飾&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+User -&amp;gt; WebServer : アクセスする
+note left User
+=== 文字の装飾
+* **太字**
+* __下線__
+* &amp;lt;color #red&amp;gt;色の変更&amp;lt;/color&amp;gt;
+end note
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;改行&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
+actor ユーザー as User
+User -&amp;gt; Server : ここで改行\n改行しまいした
+@enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[React Typescript webpack tailwind]]></title><description><![CDATA[React webpack tailwind CRA(Create React App) で Install した React は  を Install したり prod は  が効かなかったり
 将来的には非推奨？という声もあったりでピュアなReact ts…]]></description><link>https://blog.webdimension.jp/FrontEnd/REACT/react_webpack_tailwind/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/REACT/react_webpack_tailwind/</guid><pubDate>Sun, 12 Mar 2023 20:34:03 GMT</pubDate><content:encoded>&lt;h2&gt;React webpack tailwind&lt;/h2&gt;
 &lt;p&gt;CRA(Create React App) で Install した React は &lt;code class=&quot;language-text&quot;&gt;craco&lt;/code&gt; を Install したり prod は &lt;code class=&quot;language-text&quot;&gt;tailwind&lt;/code&gt; が効かなかったり
 将来的には非推奨？という声もあったりでピュアなReact ts をインストールした備忘録。&lt;/p&gt;
