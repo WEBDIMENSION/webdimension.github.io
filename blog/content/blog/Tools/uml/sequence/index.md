@@ -1,5 +1,5 @@
 ---
-title: "ULM (シーケンス図)"
+title: "UML (シーケンス図)"
 date: "2023-03-18 06:23:25"
 post_modified: "2023-03-18 06:23:25"
 description: "Markdown で PlantUML、シーケンス図"

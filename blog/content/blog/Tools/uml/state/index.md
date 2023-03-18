@@ -1,5 +1,5 @@
 ---
-title: "ULM (ステート図)"
+title: "UML (ステート図)"
 date: "2023-03-18 08:43:26"
 post_modified: "2023-03-18 08:43:26"
 description: "Markdown で PlantUML、ステート図"
