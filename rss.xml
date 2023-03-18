@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Mar 2023 16:07:37 GMT</lastBuildDate><item><title><![CDATA[UML (アクティビティ図)]]></title><description><![CDATA[ULM (アクティビティ図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple action Start/Stop Start/End Conditional if (…) then (…) if…]]></description><link>https://blog.webdimension.jp/Tools/uml/activity/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/activity/</guid><pubDate>Sat, 18 Mar 2023 10:58:04 GMT</pubDate><content:encoded>&lt;h2&gt;ULM (アクティビティ図)&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Mar 2023 22:50:55 GMT</lastBuildDate><item><title><![CDATA[UML (アクティビティ図)]]></title><description><![CDATA[UML (アクティビティ図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple action ベーシックなやつね Start/Stop 処理を止める Start/End…]]></description><link>https://blog.webdimension.jp/Tools/uml/activity/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/activity/</guid><pubDate>Sat, 18 Mar 2023 10:58:04 GMT</pubDate><content:encoded>&lt;h2&gt;UML (アクティビティ図)&lt;/h2&gt;
 &lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
 &lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
 &lt;p&gt;参考&lt;/p&gt;
@@ -9,6 +9,7 @@
 :This is defined on
 several **lines**;
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ベーシックなやつね&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Start/Stop&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -17,6 +18,7 @@ several **lines**;
 several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;処理を止める&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Start/End&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -25,6 +27,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;処理を終わらせる(例外エラーとかかな)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Conditional&lt;/h3&gt;
 &lt;h4&gt;if (…) then (…)&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -39,6 +42,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;条件式&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;if (…) is (…) then&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;color?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;lt;color&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;red&gt;red&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
@@ -46,6 +50,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; 
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;print not red&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;if文&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;if (…) equals (…) then&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;counter?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;equals&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;5&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
@@ -53,6 +58,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; 
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;print not 5&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;これもif文&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Several tests (horizontal mode)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -70,6 +76,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;テスト実行 横表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Several tests (vertical mode)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 !pragma useVerticalIf on
@@ -88,6 +95,7 @@ else (nothing)
 endif
 stop
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;テスト実行 縦表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Switch and case [switch, case, endswitch]&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -105,6 +113,7 @@ stop
 &lt;span class=&quot;token keyword&quot;&gt;endswitch&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;switch,case文&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Conditional with stop on an action [kill, detach]&lt;/h3&gt;
 &lt;h4&gt;stop action on a if loop&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -114,6 +123,7 @@ stop
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token color symbol&quot;&gt;#palegreen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;action&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;if文でstopで処理を止めるラインと処理を続けるライン&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;kill or detach keyword&lt;/h3&gt;
 &lt;h4&gt;kill&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -123,6 +133,7 @@ stop
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token color symbol&quot;&gt;#palegreen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;action&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;if文でkillで処理を止めるラインと処理を続けるライン(重大なエラーとかの時かな？？？)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;detach&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;condition?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
@@ -131,34 +142,30 @@ stop
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token color symbol&quot;&gt;#palegreen&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;action&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;if文でdetachで処理を止めるラインと処理を続けるライン(killと同様かな？)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Repeat loop&lt;/h3&gt;
 &lt;h4&gt;epeat and repeatwhile keywords to have repeat loops&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
-
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
-
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;read data&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;generate diagrams&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;more data?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;yes&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token arrow operator&quot;&gt;-&gt;&lt;/span&gt;no&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
-
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ループの基本形&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;target and insert an action in the return path using the backward keyword&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
-
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
-
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;foo &lt;span class=&quot;token keyword&quot;&gt;as&lt;/span&gt; starting label&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;read data&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;generate diagrams&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; backward&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;more data?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
-
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;***ループの戻りに処理名を入れる場合は&lt;code class=&quot;language-text&quot;&gt;backward&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Break on a repeat loop [break]&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -175,6 +182,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;Alert &lt;span class=&quot;token string&quot;&gt;&quot;Success&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Breakで抜ける処理&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;While loop&lt;/h3&gt;
 &lt;h4&gt;while and endwhile keywords to have repeat loops&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -185,6 +193,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;endwhile&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;do while&lt;/code&gt;ね&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;label after the endwhile keyword, or using the is keyword.&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;check filesize ?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;not empty&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
@@ -192,6 +201,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;endwhile&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;empty&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;close file&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ラベル付けね&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;detach to form an infinite while loop, then you will want to also hide the partial arrow that results using&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;Step 1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -206,6 +216,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
   &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;detachで処理終了 &lt;code class=&quot;language-text&quot;&gt;-[hidden]-&gt;&lt;/code&gt; でラインを消す&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Parallel processing&lt;/h3&gt;
 &lt;h4&gt;fork&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -217,6 +228,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;end fork&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;並列処理&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;fork with end merge&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -227,6 +239,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;end merge&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;並列処理から合流&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;fork&lt;/span&gt;
@@ -238,6 +251,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;並列処理から合流、かたや終了&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Label on end fork&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -248,6 +262,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;end fork&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;or&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ラベル付け&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;fork&lt;/span&gt;
@@ -257,6 +272,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;end fork&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;and&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ラベル付け&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Other example&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 
@@ -274,6 +290,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;分岐・並列処理&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Split processing&lt;/h3&gt;
 &lt;h4&gt;Split&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -291,6 +308,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;D&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;分散&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Input split (multi-start)&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;	
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -306,6 +324,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;end split&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;D&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;最初から分散&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;split&lt;/span&gt;
    &lt;span class=&quot;token arrow operator&quot;&gt;-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token expression&quot;&gt;hidden&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;-&gt;&lt;/span&gt;
@@ -320,6 +339,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
 &lt;span class=&quot;token keyword&quot;&gt;end split&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;D&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;最初から分散・複数処理&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Output split (multi-end)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -334,6 +354,7 @@ backward&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;This &lt;s
    kill
 &lt;span class=&quot;token keyword&quot;&gt;end split&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;分散処理で終了&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;split&lt;/span&gt;
@@ -352,6 +373,7 @@ split&lt;/span&gt; again
    &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;end split&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;分散処理で終了の仕方いろいろ&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;notes&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 
@@ -369,6 +391,7 @@ floating note left&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ノート&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;add note on backward activity&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -379,6 +402,7 @@ floating note left&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Valid?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;No&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Yes&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ノート基本形&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;add note on partition activity&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -393,6 +417,7 @@ partition &lt;span class=&quot;token string&quot;&gt;&quot;**process** HelloWorl
     &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;Hell&lt;span class=&quot;token arrow operator&quot;&gt;o-&lt;/span&gt;Sent&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;partitionにノート&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Colors&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 
@@ -401,14 +426,15 @@ partition &lt;span class=&quot;token string&quot;&gt;&quot;**process** HelloWorl
 #HotPink&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;reading configuration files
 These files should be edited at this point!&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token color symbol&quot;&gt;#AAAAAA&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;ending of the process&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;色付け&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
 partition &lt;span class=&quot;token color symbol&quot;&gt;#red&lt;/span&gt;/white testPartition &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;token color symbol&quot;&gt;#blue&lt;/span&gt;\green&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;testActivity&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;色付け&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Lines without arrows&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;skinparam&lt;/span&gt; ArrowHeadColor none
@@ -418,6 +444,7 @@ partition &lt;span class=&quot;token color symbol&quot;&gt;#red&lt;/span&gt;/whi
 several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;矢印除去(ラインのみ)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;skinparam&lt;/span&gt; ArrowHeadColor none
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -427,6 +454,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Valid?&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;No&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Yes&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;矢印除去(ラインのみ)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Arrows&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;foo1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -445,6 +473,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token arrow operator&quot;&gt;-&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token expression&quot;&gt;&lt;span class=&quot;token color symbol&quot;&gt;#gray&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;bold&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;-&gt;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;foo5&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;矢印の色&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Connector&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -454,6 +483,7 @@ several **lines**&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;A&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;Other activity&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;接続 DBとかかな？&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;color on connector&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -466,6 +496,7 @@ be better off green&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt
 &lt;span class=&quot;token color symbol&quot;&gt;#green&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;G&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;色付け&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Grouping or partition&lt;/h3&gt;
 &lt;h4&gt;Group&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -481,6 +512,7 @@ be better off green&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt
 
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;グルーピング&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Partition&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
@@ -492,9 +524,9 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;wait for user interaction&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;print information&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;グルーピング&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
 partition #lightGreen &lt;span class=&quot;token string&quot;&gt;&quot;Input Interface&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -507,6 +539,7 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;グルーピングカラー&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Detach or kill [detach, kill]&lt;/h3&gt;
 &lt;h4&gt;detach&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -527,6 +560,7 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
  &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;foo7&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
  &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;detachで処理をとめる&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;kill&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
  &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -546,6 +580,7 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
  &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;foo7&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
  &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;killで処理をとめる&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;SDL (Specification and Description Language)&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;- |
 - &amp;lt;
@@ -580,6 +615,7 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;end split&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;finish&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;処理の種類&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Complete example&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 
@@ -617,6 +653,7 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;stop&lt;/span&gt;
 
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;完成形&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Condition Style&lt;/h3&gt;
 &lt;h4&gt;Inside style (by default)&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -628,6 +665,9 @@ partition Running &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
 repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;lt;b&gt;end&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;act3&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この２つ
+&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;skinparam conditionStyle inside&lt;/code&gt;&lt;/strong&gt;&lt;/em&gt;
+&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;repeatwhile (&amp;lt;b&gt;end)&lt;/code&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;start&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;repeat&lt;/span&gt;
@@ -636,6 +676,7 @@ repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;l
 repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;lt;b&gt;end&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;act3&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;repeatwhile (&amp;lt;b&gt;end)&lt;/code&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;Diamond style&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;skinparam&lt;/span&gt; conditionStyle diamond
@@ -646,6 +687,9 @@ repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;l
 repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;lt;b&gt;end&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;act3&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この２つ
+&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;skinparam conditionStyle diamond&lt;/code&gt;&lt;/strong&gt;&lt;/em&gt;
+&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;repeatwhile (&amp;lt;b&gt;end)&lt;/code&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;InsideDiamond (or Foo1) style&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;skinparam&lt;/span&gt; conditionStyle InsideDiamond
@@ -656,6 +700,7 @@ repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;l
 repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;lt;b&gt;end&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;act3&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;skinparam conditionStyle InsideDiamond&lt;/code&gt;&lt;/strong&gt;&lt;/em&gt;  で内部表示&lt;/p&gt;
 &lt;h3&gt;Condition End Style&lt;/h3&gt;
 &lt;h4&gt;Diamond style (by default)&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
@@ -667,6 +712,7 @@ repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;l
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;C&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;skinparam ConditionEndStyle diamond&lt;/code&gt;  で空になる&lt;/p&gt;
 &lt;h4&gt;With two branches (B1, B2)&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;skinparam&lt;/span&gt; ConditionEndStyle diamond
@@ -690,6 +736,7 @@ repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;l
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;C&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;skinparam ConditionEndStyle hline&lt;/code&gt;で 並行のライン表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h4&gt;With two branches (B1, B2)&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;skinparam&lt;/span&gt; ConditionEndStyle hline
@@ -701,7 +748,8 @@ repeatwhile &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&amp;l
 &lt;span class=&quot;token keyword&quot;&gt;endif&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;C&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;
-&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[UML (ステート図)]]></title><description><![CDATA[ULM (ステート図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple State Change state rendering Composite state Sub-state to sub…]]></description><link>https://blog.webdimension.jp/Tools/uml/state/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/state/</guid><pubDate>Sat, 18 Mar 2023 08:43:26 GMT</pubDate><content:encoded>&lt;h2&gt;ULM (ステート図)&lt;/h2&gt;
+&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;skinparam ConditionEndStyle hline&lt;/code&gt;で 並行のライン表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[UML (ステート図)]]></title><description><![CDATA[UML (ステート図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple State まぁ、基本のところね。 Change state rendering…]]></description><link>https://blog.webdimension.jp/Tools/uml/state/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/state/</guid><pubDate>Sat, 18 Mar 2023 08:43:26 GMT</pubDate><content:encoded>&lt;h2&gt;UML (ステート図)&lt;/h2&gt;
 &lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
 &lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
 &lt;p&gt;参考&lt;/p&gt;
@@ -716,6 +764,7 @@ State1 : this is another string
 State1 -&amp;gt; State2
 State2 --&amp;gt; [*]
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;まぁ、基本のところね。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Change state rendering&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 hide empty description
@@ -727,6 +776,7 @@ State1 : this is another string
 State1 -&amp;gt; State2
 State2 --&amp;gt; [*]
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;hide empty description&lt;/code&gt; 殻の説明部分を非表示ね。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Composite state&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 scale 350 width
@@ -750,6 +800,7 @@ state Configuring {
 
 }
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;複合的にネストもできる&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Sub-state to sub-stat&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 state A {
@@ -767,6 +818,7 @@ state B {
 X --&amp;gt; Z
 Z --&amp;gt; Y
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Stateをまたいでのやりとり&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Long name&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 scale 600 width
@@ -787,6 +839,7 @@ State3 --&amp;gt; State3 : Failed
 State3 --&amp;gt; [*] : Succeeded / Save Result
 State3 --&amp;gt; [*] : Aborted
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;長いステート名も&lt;code class=&quot;language-text&quot;&gt;\n&lt;/code&gt;の改行で表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Fork [fork, join]&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 state fork_state &amp;lt;&amp;lt;fork&amp;gt;&amp;gt;
@@ -800,6 +853,7 @@ State3 --&amp;gt; join_state
 join_state --&amp;gt; State4
 State4 --&amp;gt; [*]
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;分岐処理かな&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;同時進行&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;Edit online	
 @startuml
@@ -833,7 +887,8 @@ state Active {
   ScrollLockOff --&amp;gt; ScrollLockOn : EvCapsLockPressed
   ScrollLockOn --&amp;gt; ScrollLockOff : EvCapsLockPressed
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;条件&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;並列処理 横表示・縦表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Condition&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 state &amp;quot;Req(Id)&amp;quot; as ReqId &amp;lt;&amp;lt;sdlreceive&amp;gt;&amp;gt;
 state &amp;quot;Minor(Id)&amp;quot; as MinorId
@@ -846,6 +901,7 @@ ReqId --&amp;gt; c
 c --&amp;gt; MinorId : [Id &amp;lt;= 10]
 c --&amp;gt; MajorId : [Id &amp;gt; 10]
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;条件式&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Arrow directio&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 [*] -up-&amp;gt; First
@@ -853,7 +909,8 @@ First -right-&amp;gt; Second
 Second --&amp;gt; Third
 Third -left-&amp;gt; Last
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;hange line color and style&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;矢印の向き&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;line color and style&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 State S1
 State S2
@@ -861,26 +918,24 @@ S1 -[#DD00AA]-&amp;gt; S2
 S1 -left[#yellow]-&amp;gt; S3
 S1 -up[#red,dashed]-&amp;gt; S4
 S1 -right[dotted,#blue]-&amp;gt; S5
-
 X1 -[dashed]-&amp;gt; X2
 Z1 -[dotted]-&amp;gt; Z2
 Y1 -[#blue,bold]-&amp;gt; Y2
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Lineの色&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;note&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 
 [*] --&amp;gt; Active
 Active --&amp;gt; Inactive
-
 note left of Active : this is a short\nnote
-
 note right of Inactive
 A note can also
 be defined on
 several lines
 end note
-
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ノート&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Inline color&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 state CurrentSite #pink {
@@ -897,6 +952,7 @@ state CurrentSite #pink {
     state AlarmSupression
 }
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;ステート名の色&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Skinparam&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 skinparam backgroundColor LightYellow
@@ -921,6 +977,7 @@ state &amp;quot;Not Shooting State&amp;quot; as NotShooting {
 
 NotShooting --&amp;gt; [*]
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;全体(スキンのスタイル)&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Test of all specific skinparam to State Diagrams&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;puml&quot;&gt;&lt;pre class=&quot;language-puml&quot;&gt;&lt;code class=&quot;language-puml&quot;&gt;@startuml
 skinparam State {
@@ -937,14 +994,13 @@ skinparam State {
   FontStyle bold
   StartColor silver
 }
-
 state A : a a a\na
 state B : b b b\nb
-
 [*] -&amp;gt; A  : start
 A -&amp;gt; B : a2b
 B -&amp;gt; [*] : end
 @enduml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;文字装飾&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Display JSON&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;plantuml&quot;&gt;&lt;pre class=&quot;language-plantuml&quot;&gt;&lt;code class=&quot;language-plantuml&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;@startuml&lt;/span&gt;
 json json_test &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -952,7 +1008,8 @@ json json_test &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;token string&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Large&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
    &lt;span class=&quot;token string&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Red&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Green&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[UML (シーケンス図)]]></title><description><![CDATA[UML (クラス図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 PlantUML…]]></description><link>https://blog.webdimension.jp/Tools/uml/sequence/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/sequence/</guid><pubDate>Sat, 18 Mar 2023 06:23:25 GMT</pubDate><content:encoded>&lt;h2&gt;UML (クラス図)&lt;/h2&gt;
+&lt;span class=&quot;token delimiter punctuation&quot;&gt;@enduml&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;json表示&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[UML (シーケンス図)]]></title><description><![CDATA[UML (クラス図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 PlantUML…]]></description><link>https://blog.webdimension.jp/Tools/uml/sequence/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/sequence/</guid><pubDate>Sat, 18 Mar 2023 06:23:25 GMT</pubDate><content:encoded>&lt;h2&gt;UML (クラス図)&lt;/h2&gt;
 &lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
 &lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
 &lt;p&gt;参考&lt;/p&gt;
