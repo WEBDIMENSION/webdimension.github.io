@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 18 Mar 2023 22:50:55 GMT</lastBuildDate><item><title><![CDATA[UML (アクティビティ図)]]></title><description><![CDATA[UML (アクティビティ図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple action ベーシックなやつね Start/Stop 処理を止める Start/End…]]></description><link>https://blog.webdimension.jp/Tools/uml/activity/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/activity/</guid><pubDate>Sat, 18 Mar 2023 10:58:04 GMT</pubDate><content:encoded>&lt;h2&gt;UML (アクティビティ図)&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Mar 2023 21:58:42 GMT</lastBuildDate><item><title><![CDATA[PHPUnit 備忘録]]></title><description><![CDATA[setup/teardown testのmethodが実行されるたびに前処理・後処理 setUPBeforeClass/tearDownAfterClass test クラス全体に対しての前処理・後処理 PHPUnit でよく使う Assertion Document…]]></description><link>https://blog.webdimension.jp/BackEnd/php/phpunit/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/php/phpunit/</guid><pubDate>Tue, 21 Mar 2023 05:36:25 GMT</pubDate><content:encoded>&lt;h2&gt;setup/teardown&lt;/h2&gt;
+&lt;p&gt;testのmethodが実行されるたびに前処理・後処理&lt;/p&gt;
+&lt;h2&gt;setUPBeforeClass/tearDownAfterClass&lt;/h2&gt;
+&lt;p&gt;test クラス全体に対しての前処理・後処理&lt;/p&gt;
+&lt;h2&gt;PHPUnit でよく使う Assertion&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://phpunit.de/manual/5.5/ja/appendixes.assertions.html&quot;&gt;Document&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;MethodA&lt;/th&gt;
+&lt;th&gt;Meann&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;assertEquals($exp, $act)&lt;/td&gt;
+&lt;td&gt;$expと$actが等しい(==)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertSame($exp, $act)&lt;/td&gt;
+&lt;td&gt;$expと$actが等しい(===)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertNotEquals($exp, $act)&lt;/td&gt;
+&lt;td&gt;$expと$actが等しくない&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertContains(mixed $needle, Iterator array $haystack)&lt;/td&gt;
+&lt;td&gt;配列に $needleが含まれている&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertArrayHasKey(mixed $key, array $array)&lt;/td&gt;
+&lt;td&gt;配列にキーが含まれている&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertTrue($cond)&lt;/td&gt;
+&lt;td&gt;$condがTRUE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertFalse($cond)&lt;/td&gt;
+&lt;td&gt;$condがFALSE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertNull($var)&lt;/td&gt;
+&lt;td&gt;$varがNULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertNotNull($var)&lt;/td&gt;
+&lt;td&gt;$varがNULLではない&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertInternalType($type, $act)&lt;/td&gt;
+&lt;td&gt;$actの型が$typeと一致する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;assertInstanceOf($expected, $actual)&lt;/td&gt;
+&lt;td&gt;$actualが$expectedのインスタンスである&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;PHPUnit でよく使う Annotation&lt;/h2&gt;
+&lt;h3&gt;@test&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;class HogeTest extends TestCase
+{
+
+/** @test */
+public function hogeMethod()
+{
+...
+}
+
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;/** @test */&lt;/code&gt; を書くことで &lt;code class=&quot;language-text&quot;&gt;testHogeTest&lt;/code&gt; と書かなくて良い&lt;/p&gt;
+&lt;h3&gt;dataProvider&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;class HogeTest extends TestCase
+{
+    /**
+     * @test
+     * @dataProvider provider
+     */
+    public function hoge($dollar, $multiplication, $expect)
+    {
+        ...
+        ...
+    }
+
+    /** @test */
+    public function provider(): array
+    {
+        return [
+            // $dollar, $multiplication, $expect
+            [5, 2, 10],
+            [15, 3, 45],
+        ];
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@dataProvider provider&lt;/code&gt; テストデータ指定&lt;/p&gt;
+&lt;h3&gt;@testWit&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;class HogeTest extends TestCase
+{
+    /**
+     * @test
+     * @testWith [5, 2, 10]
+     *           [15, 3, 45]
+     */
+    public function hoge($dollar, $multiplication, $expect)
+    {
+        $dollar = new Dollar($dollar);
+        $this-&amp;gt;assertEquals(new Dollar($expect), $dollar-&amp;gt;times($multiplication));
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@testWith&lt;/code&gt; で PHPoc 内に データを記述&lt;/p&gt;
+&lt;h3&gt;@testdox&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;/**
+     * @test
+     * @testdox  説明文 
+     * @testWith [5, 2, 10]
+     *           [15, 3, 45]
+     */&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@testdox&lt;/code&gt;に説明文をかける&lt;/p&gt;
+&lt;h3&gt;@group&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;/**
+ * @group hogehoge
+ */
+public function hoge() {
+    // ...
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;@group hogehoge&lt;/code&gt; group を指定して 実行できる&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 指定のグループのみ実行&lt;/span&gt;
+./vendor/bin/phpunit tests/ --group hogehoge
+&lt;span class=&quot;token comment&quot;&gt;# 指定のグループ以外実行&lt;/span&gt;
+./vendor/bin/phpunit tests/ --exclude-group hogehoge&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;@depends&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;class StackTest extends TestCase
+{
+    public function testEmpty()
+    {
+        $stack = [];
+        $this-&amp;gt;assertEmpty($stack);
+
+        return $stack;
+    }
+
+    /**
+     * @depends testEmpty
+     */
+    public function testPush(array $stack)
+    {
+        array_push($stack, &amp;#39;foo&amp;#39;);
+        $this-&amp;gt;assertSame(&amp;#39;foo&amp;#39;, $stack[count($stack)-1]);
+        $this-&amp;gt;assertNotEmpty($stack);
+
+        return $stack;
+    }
+
+    /**
+     * @depends testPush
+     */
+    public function testPop(array $stack)
+    {
+        $this-&amp;gt;assertSame(&amp;#39;foo&amp;#39;, array_pop($stack));
+        $this-&amp;gt;assertEmpty($stack);
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;testEmptyの実行&lt;/li&gt;
+&lt;li&gt;testEmptyの実行結果を引数に、testPushを実行&lt;/li&gt;
+&lt;li&gt;testPushの実行結果を引数に、testPopを実行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;@expectedException InvalidArgumentException&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;phpregexp&quot;&gt;&lt;pre class=&quot;language-phpregexp&quot;&gt;&lt;code class=&quot;language-phpregexp&quot;&gt;/**
+* @expectedException InvalidArgumentException
+**/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;例外を受け取ってもTestOKとする&lt;/p&gt;</content:encoded></item><item><title><![CDATA[UML (アクティビティ図)]]></title><description><![CDATA[UML (アクティビティ図) ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。 基本的な書き方だけ。 参考 State Diagram Simple action ベーシックなやつね Start/Stop 処理を止める Start/End…]]></description><link>https://blog.webdimension.jp/Tools/uml/activity/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/uml/activity/</guid><pubDate>Sat, 18 Mar 2023 10:58:04 GMT</pubDate><content:encoded>&lt;h2&gt;UML (アクティビティ図)&lt;/h2&gt;
 &lt;p&gt;ちょっとの間離れるとすぐ忘れてしまうので備忘録として。。。&lt;/p&gt;
 &lt;p&gt;基本的な書き方だけ。&lt;/p&gt;
 &lt;p&gt;参考&lt;/p&gt;
