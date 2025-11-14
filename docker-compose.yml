@@ -1,4 +1,3 @@
-version: '3.0'
 services:
   gatsby:
     container_name: gatsby
@@ -8,10 +7,10 @@ services:
     volumes:
       - ./blog:/blog:delegated
       #      - ../docker/package.json:/blog/package.json
-      - /blog/.cache
-      - /blog/build
-      - node_volumes:/blog/node_modules
-      - /blog/public
+      # - /blog/.cache
+      # - /blog/build
+      # - node_volumes:/blog/node_modules
+      # - /blog/public
     working_dir: /blog
     ports:
       - ${DEVELOP_EXTERNAL_PORT}:${DEVELOP_INTERNAL_PORT}
@@ -31,7 +30,7 @@ services:
       - GOOGLE_ADSENSE_DRAWER=${GOOGLE_ADSENSE_DRAWER}
       - INTERNAL_STATUS_PORT=${STATUS_INTERNAL_PORT}
     stdin_open: true
-    command: gatsby develop -p ${DEVELOP_INTERNAL_PORT} --host 0.0.0.0
+    #command: gatsby develop -p ${DEVELOP_INTERNAL_PORT} --host 0.0.0.0
     #command: yarn serve
     tty: true
 volumes:
