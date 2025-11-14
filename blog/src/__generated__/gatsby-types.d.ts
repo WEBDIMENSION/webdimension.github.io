@@ -4292,11 +4292,6 @@ type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type CategoriesQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
-type ContactQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ContactQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
-
 type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4306,6 +4301,11 @@ type DraftsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type DraftsQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null, readonly allMarkdownRemark: { readonly totalCount: number, readonly nodes: ReadonlyArray<{ readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly date: string | null, readonly title: string | null, readonly description: string | null } | null }> } };
+
+type FooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FooterQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly author: { readonly company: string | null } | null } | null } | null };
 
 type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
 

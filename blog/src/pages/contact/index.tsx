@@ -1,5 +1,6 @@
 import * as React from "react"
 import { PageProps, graphql } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import ContactForm from "../../components/contactForm"
@@ -20,7 +21,13 @@ const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
         <PageTitle title={"Contact"} prefixTitle="" />
         <section>
           <PWrapper>
-            お問い合わせはこちらのフォームからお願いいたします。
+            お問い合わせは以下フォームからお願いいたします。
+            <br />
+            <Link to={"https://www.webdimension.jp/#contact"} rel="prev" target="_blank">
+              コーポレートサイト問い合わせフォーム
+            </Link>
+            <br />
+            (新規タブで開きます)
             <br />
             <br />
             返信にはお時間頂く場合があります。
@@ -30,9 +37,9 @@ const Contact: React.FC<PageProps<GatsbyTypes.ContactQuery>> = () => {
             <br />
           </PWrapper>
         </section>
-        <section>
-          <ContactForm />
-        </section>
+        {/* <section> */}
+        {/* <ContactForm /> */}
+        {/* </section> */}
       </Article>
     </Layout>
   )
