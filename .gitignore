@@ -3,3 +3,4 @@
 workspace/.vscode/*.log
 .idea
 .DS_Store
+.vscode
