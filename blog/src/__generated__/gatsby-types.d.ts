@@ -4249,11 +4249,6 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type AboutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type AboutQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
-
 type ActiveTopicsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4292,6 +4287,11 @@ type CategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type CategoriesQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
+type ContactQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ContactQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
 type ContactThanksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4316,6 +4316,11 @@ type NotFoundQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type NotFoundQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
+
+type ProfileQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ProfileQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
 type SearchDataQueryVariables = Exact<{ [key: string]: never; }>;
 

@@ -6,12 +6,12 @@ import Bio from "../components/bio"
 import Article from "../components/postArticle"
 import PageTitle from "../components/pageTitle"
 
-const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
+const About: React.FC<PageProps<GatsbyTypes.ProfileQueryQuery>> = () => {
   return (
     <Layout>
       <Seo title="おっさんWEBエンジニアのプロファイル" DisplaySubTitle={false} description={"プロファイル"} />
       <Article>
-        <PageTitle title={"AboutMe"} prefixTitle="" />
+        <PageTitle title={"Profile"} prefixTitle="" />
         <section>
           <Bio />
         </section>
@@ -23,7 +23,7 @@ const About: React.FC<PageProps<GatsbyTypes.AboutQueryQuery>> = () => {
 export default About
 
 export const pageQuery = graphql`
-  query AboutQuery {
+  query ProfileQuery {
     site {
       siteMetadata {
         title

@@ -75,7 +75,7 @@ const Header = () => {
                 <ModalSearch />
               </li>
               <li>
-                <Link to="/about/"> AboutMe</Link>
+                <Link to="/profile/"> Profile</Link>
               </li>
               <li>
                 <Link to="/contact/">Contact</Link>

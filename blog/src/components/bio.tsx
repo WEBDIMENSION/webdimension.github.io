@@ -95,7 +95,7 @@ const Bio = () => {
       <div className={"bioDescription"}>
         <h2>
           <FontAwesomeIcon icon={faIdCard} size="1x" />
-          Profile
+          Stack
         </h2>
         <h3>Repositories</h3>
         <GitHubApi />
@@ -139,6 +139,7 @@ const Bio = () => {
           <li>Slim3</li>
           <li>gatsby</li>
           <li>next,js</li>
+          <li>vue,js</li>
           <li>Flask</li>
         </ul>
         <h3>DataBase</h3>
@@ -183,6 +184,7 @@ const Bio = () => {
           <li>GitHub</li>
           <li>GitLab</li>
           <li>Zoom</li>
+          <li>Teams</li>
           <li>Discord</li>
           <li>GoogleMeet</li>
         </ul>
