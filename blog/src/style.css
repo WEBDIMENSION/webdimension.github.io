@@ -17,7 +17,6 @@
   --yellow: #Fe0;
   --yellow2: #FF5;
   --glay: #f5f2f0;
-
   --containerWidth: 1180px;
 }
 
@@ -27,15 +26,15 @@ html {
 }
 
 body.light-mode {
-  --bgColorPrimary: #fffffe;
-  --bgColorScondary: #F5F7FA;
-  --colorPrimary: #a3daff;
+  --bgColorPrimary: #ffffff;
+  --bgColorScondary: #fcfcfc;
+  --colorPrimary: #f4ece0;
   /*--colorPrimary: #336699;*/
   --colorSecondary: #BCD8C1;
   --fontColor: #555;
   --colorWarning: #ffd700;
   --visitedColor: #777;
-  --hrefBackground: #fff;
+  --hrefBackground: #f4ece0;
   --hrefVisitedBackground: #ddd;
   --hover: #4169E1;
 }
@@ -64,6 +63,8 @@ body {
 
 h1 {
   font-size: var(--fontSizeH1);
+  border-left: 8px var(--colorPrimary) solid;
+  padding-left: 8px;
 }
 
 h2 {

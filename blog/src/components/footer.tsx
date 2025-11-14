@@ -15,12 +15,13 @@ const Footer = () => {
       }
     }
   `)
-
+  const now = new Date()
+  const year = now.getFullYear()
   return (
     <FooterWrapper>
       <p>
         <small>{data.site?.siteMetadata?.title}</small>
-        <small>&copy;2007&nbsp;{data.site?.siteMetadata?.author?.company}</small>
+        <small>&copy;2005&nbsp;-&nbsp;{year}&nbsp;{data.site?.siteMetadata?.author?.company}</small>
       </p>
     </FooterWrapper>
   )
