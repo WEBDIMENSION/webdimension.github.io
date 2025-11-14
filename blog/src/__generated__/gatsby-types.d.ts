@@ -564,6 +564,7 @@ type DockerhubJsonFieldsEnum =
   | 'results.date_registered'
   | 'results.description'
   | 'results.is_private'
+  | 'results.last_modified'
   | 'results.last_updated'
   | 'results.media_types'
   | 'results.name'
@@ -572,7 +573,8 @@ type DockerhubJsonFieldsEnum =
   | 'results.repository_type'
   | 'results.star_count'
   | 'results.status'
-  | 'results.status_description';
+  | 'results.status_description'
+  | 'results.storage_size';
 
 type DockerhubJsonFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
@@ -634,6 +636,7 @@ type DockerhubJsonResults = {
   readonly date_registered: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
   readonly is_private: Maybe<Scalars['Boolean']>;
+  readonly last_modified: Maybe<Scalars['Date']>;
   readonly last_updated: Maybe<Scalars['Date']>;
   readonly media_types: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly name: Maybe<Scalars['String']>;
@@ -643,10 +646,19 @@ type DockerhubJsonResults = {
   readonly star_count: Maybe<Scalars['Int']>;
   readonly status: Maybe<Scalars['Int']>;
   readonly status_description: Maybe<Scalars['String']>;
+  readonly storage_size: Maybe<Scalars['Float']>;
 };
 
 
 type DockerhubJsonResults_date_registeredArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type DockerhubJsonResults_last_modifiedArgs = {
   difference: InputMaybe<Scalars['String']>;
   formatString: InputMaybe<Scalars['String']>;
   fromNow: InputMaybe<Scalars['Boolean']>;
@@ -667,6 +679,7 @@ type DockerhubJsonResultsFilterInput = {
   readonly date_registered: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly is_private: InputMaybe<BooleanQueryOperatorInput>;
+  readonly last_modified: InputMaybe<DateQueryOperatorInput>;
   readonly last_updated: InputMaybe<DateQueryOperatorInput>;
   readonly media_types: InputMaybe<StringQueryOperatorInput>;
   readonly name: InputMaybe<StringQueryOperatorInput>;
@@ -676,6 +689,7 @@ type DockerhubJsonResultsFilterInput = {
   readonly star_count: InputMaybe<IntQueryOperatorInput>;
   readonly status: InputMaybe<IntQueryOperatorInput>;
   readonly status_description: InputMaybe<StringQueryOperatorInput>;
+  readonly storage_size: InputMaybe<FloatQueryOperatorInput>;
 };
 
 type DockerhubJsonResultsFilterListInput = {
@@ -919,6 +933,7 @@ type FileFieldsEnum =
   | 'childDockerhubJson.results.date_registered'
   | 'childDockerhubJson.results.description'
   | 'childDockerhubJson.results.is_private'
+  | 'childDockerhubJson.results.last_modified'
   | 'childDockerhubJson.results.last_updated'
   | 'childDockerhubJson.results.media_types'
   | 'childDockerhubJson.results.name'
@@ -928,6 +943,7 @@ type FileFieldsEnum =
   | 'childDockerhubJson.results.star_count'
   | 'childDockerhubJson.results.status'
   | 'childDockerhubJson.results.status_description'
+  | 'childDockerhubJson.results.storage_size'
   | 'childImageSharp.children'
   | 'childImageSharp.children.children'
   | 'childImageSharp.children.children.children'
@@ -1150,6 +1166,7 @@ type FileFieldsEnum =
   | 'childrenDockerhubJson.results.date_registered'
   | 'childrenDockerhubJson.results.description'
   | 'childrenDockerhubJson.results.is_private'
+  | 'childrenDockerhubJson.results.last_modified'
   | 'childrenDockerhubJson.results.last_updated'
   | 'childrenDockerhubJson.results.media_types'
   | 'childrenDockerhubJson.results.name'
@@ -1159,6 +1176,7 @@ type FileFieldsEnum =
   | 'childrenDockerhubJson.results.star_count'
   | 'childrenDockerhubJson.results.status'
   | 'childrenDockerhubJson.results.status_description'
+  | 'childrenDockerhubJson.results.storage_size'
   | 'childrenImageSharp'
   | 'childrenImageSharp.children'
   | 'childrenImageSharp.children.children'

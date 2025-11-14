@@ -1,6 +1,6 @@
 FROM node:16-alpine
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git yarn python3 make g++  && \
+    apk add --no-cache bash git yarn python3 make g++ curl  && \
     yarn global add gatsby-cli@4.5.2
 EXPOSE 8000 9000
 #RUN apk update && \
