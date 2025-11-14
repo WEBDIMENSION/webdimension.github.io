@@ -27,15 +27,15 @@ html {
 
 body.light-mode {
   --bgColorPrimary: #ffffff;
-  --bgColorScondary: #fcfcfc;
-  --colorPrimary: #f4ece0;
+  --bgColorScondary: #fbf9f9;
+  --colorPrimary: #efebeb;
   /*--colorPrimary: #336699;*/
   --colorSecondary: #BCD8C1;
   --fontColor: #555;
   --colorWarning: #ffd700;
   --visitedColor: #777;
-  --hrefBackground: #f4ece0;
-  --hrefVisitedBackground: #ddd;
+  --hrefBackground: #fbf9f9;
+  --hrefVisitedBackground: #fbf9f9;
   --hover: #4169E1;
 }
 
