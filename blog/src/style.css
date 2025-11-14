@@ -63,8 +63,8 @@ body {
 
 h1 {
   font-size: var(--fontSizeH1);
-  border-left: 8px var(--colorPrimary) solid;
-  padding-left: 8px;
+  /* border-left: 8px var(--colorPrimary) solid; */
+  /* padding-left: 8px; */
 }
 
 h2 {
