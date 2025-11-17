@@ -1,4 +1,671 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 14 Nov 2025 06:50:46 GMT</lastBuildDate><item><title><![CDATA[docker dns http-proxy]]></title><description><![CDATA[hostsファイルを書き換えずに localhost に向ける 開発条件によってはhostsファイルを書き換えて開発しなければいけないことがある。 hostsファイルを書き換えるデメリット PCすべてが  local, remote…]]></description><link>https://blog.webdimension.jp/Environment/Docker/docker_dns_http-proxy/</link><guid isPermaLink="false">https://blog.webdimension.jp/Environment/Docker/docker_dns_http-proxy/</guid><pubDate>Mon, 18 Sep 2023 03:38:01 GMT</pubDate><content:encoded>&lt;h2&gt;hostsファイルを書き換えずに localhost に向ける&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[WEBエンジニア(第一世代)のおっさんが現在のWEBにしがみつく奮闘記。インフラ、バックエンド、フロントエンドの備忘録を公開。]]></description><link>https://blog.webdimension.jp</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 17 Nov 2025 07:15:46 GMT</lastBuildDate><item><title><![CDATA[Excelショートカット]]></title><description><![CDATA[##　Excelショートカット Mac (Usキーボード) から Parallels Windows のエクセルを操作する前提 参考 https://youtu.be/wnGa1DB9bnU?si=u6Z6bzS2dQ9Cw-Ni 左右スクロール　alt + page up…]]></description><link>https://blog.webdimension.jp/Tools/windows/excel_shortcut/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/windows/excel_shortcut/</guid><pubDate>Mon, 17 Nov 2025 16:07:34 GMT</pubDate><content:encoded>&lt;p&gt;##　Excelショートカット&lt;/p&gt;
+&lt;p&gt;Mac (Usキーボード) から Parallels Windows のエクセルを操作する前提&lt;/p&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/wnGa1DB9bnU?si=u6Z6bzS2dQ9Cw-Ni&quot;&gt;https://youtu.be/wnGa1DB9bnU?si=u6Z6bzS2dQ9Cw-Ni&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;左右スクロール　alt + page up/down&lt;/h3&gt;
+&lt;p&gt;A: autohotkey で対応&lt;/p&gt;
+&lt;p&gt;alt+ , ( alt + &amp;#x3C;)
+alt+ . ( alt + &gt;)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;!,::Send &quot;!{PgUp}&quot;
+!.::Send &quot;!{PgDn}&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;シートの切り替え　ctl + page up/down’&lt;/h3&gt;
+&lt;p&gt;A: autohotkey で対応&lt;/p&gt;
+&lt;p&gt;ctl + , ( ctl  + &amp;#x3C;)
+ctl + . ( ctl  + &gt;)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;^,::Send &quot;^{PgUp}&quot;
+^.::Send &quot;^{PgDn}&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;プルダウン　alt +down&lt;/h3&gt;
+&lt;p&gt;A: autohotkey で対応&lt;/p&gt;
+&lt;p&gt;alt + &lt;br&gt;
+alt + shift + \&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;!\::Send &quot;!{Down}&quot;
+!+\::Send &quot;!+{Down}&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;太字&lt;/h3&gt;
+&lt;p&gt;ctl ＋　b&lt;/p&gt;
+&lt;h3&gt;斜体&lt;/h3&gt;
+&lt;p&gt;ctl + i&lt;/p&gt;
+&lt;h3&gt;下線&lt;/h3&gt;
+&lt;p&gt;ctl + u&lt;/p&gt;
+&lt;h3&gt;取消線&lt;/h3&gt;
+&lt;p&gt;ctl + 5&lt;/p&gt;
+&lt;h3&gt;行のA列　home&lt;/h3&gt;
+&lt;p&gt;A:Karabiner で対応 (space長押し + o)&lt;/p&gt;
+&lt;h3&gt;A列の1 ctl + home&lt;/h3&gt;
+&lt;p&gt;A: autohotkeyで対応 space + ctr +o&lt;/p&gt;
+&lt;h3&gt;表の右下 ctl + end&lt;/h3&gt;
+&lt;p&gt;A: autohotkeyで対応 space + ctl + e&lt;/p&gt;
+&lt;h3&gt;データ範囲の隅&lt;/h3&gt;
+&lt;p&gt;ctl + 矢印 A: Karabiner or autohotkeyで作った方がよい？
+ctl + down はmacの木ボードショートカットか来ている
+(macのキーボードショートカットをOFF)~~&lt;/p&gt;
+&lt;p&gt;ctl + shift + h/j/k/l&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;^+h::Send &quot;^+{Left}&quot;
+^+j::Send &quot;^+{Down}&quot;
+^+k::Send &quot;^+{Up}&quot;
+^+l::Send &quot;^+{Right}&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;ジャンプ&lt;/h3&gt;
+&lt;p&gt;ctl  + g&lt;/p&gt;
+&lt;h3&gt;データ入力範囲の指定&lt;/h3&gt;
+&lt;p&gt;ctl + shift + 矢印 A: Karabiner or autohotkeyで作った方が良い？~~&lt;/p&gt;
+&lt;p&gt;autohotkeyで対応 ctl _ shit + h/j/k/l&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;^!h::Send &quot;^{Left}&quot;
+^!j::Send &quot;^{Down}&quot;
+^!k::Send &quot;^{Up}&quot;
+^!l::Send &quot;^{Right}&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;テーブル&lt;/h3&gt;
+&lt;p&gt;ctl + t&lt;/p&gt;
+&lt;h3&gt;罫線の削除&lt;/h3&gt;
+&lt;p&gt;ctl  + shift  \   A:  ctl + shift  +’-”   (USキーボードだから(ctr + _))&lt;/p&gt;
+&lt;h3&gt;合計&lt;/h3&gt;
+&lt;p&gt;alt + shift + = A: alt + = (USキーボード)&lt;/p&gt;
+&lt;h3&gt;セルの書式設定&lt;/h3&gt;
+&lt;p&gt;ctl + 1~~&lt;/p&gt;
+&lt;h3&gt;検索&lt;/h3&gt;
+&lt;p&gt;ctl + f&lt;/p&gt;
+&lt;h3&gt;置き換え&lt;/h3&gt;
+&lt;p&gt;ctl + h&lt;/p&gt;
+&lt;h3&gt;桁区切り&lt;/h3&gt;
+&lt;p&gt;ctl + shift + 1&lt;/p&gt;
+&lt;h3&gt;%表示&lt;/h3&gt;
+&lt;p&gt;ctl  + shift + 5&lt;/p&gt;
+&lt;h3&gt;フィルター&lt;/h3&gt;
+&lt;p&gt;ctl + shift + l
+&lt;del&gt;フルターの中身を見る際の alt + down は karabiner or autohotkeyで対応した方が良いかも？&lt;/del&gt;&lt;/p&gt;
+&lt;h3&gt;数式の表示&lt;/h3&gt;
+&lt;p&gt;ctl  + shift + @ A: usキーボードではできない&lt;/p&gt;
+&lt;p&gt;alt -&gt; m -&gt; h のショートカットで対応&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;オートフィルダブルクリック&lt;/h3&gt;
+&lt;p&gt;Alt → H → F → I → S&lt;/p&gt;
+&lt;h3&gt;シートの追加&lt;/h3&gt;
+&lt;p&gt;Shift F11 同時押し):新しいワークシートを挿入します。&lt;/p&gt;
+&lt;h3&gt;シートの削除&lt;/h3&gt;
+&lt;p&gt;alt → H → D → S&lt;/p&gt;
+&lt;h3&gt;行の固定&lt;/h3&gt;
+&lt;p&gt;ウィンドー枠の固定　ショートカットでいける&lt;/p&gt;
+&lt;p&gt;Alt -&gt;  W -&gt;  F -&gt;  F&lt;/p&gt;</content:encoded></item><item><title><![CDATA[MySQLよく使うコマンド]]></title><description><![CDATA[MySQLでよく使うコマンド 忘れないようにメモ 忘れないようにメモ]]></description><link>https://blog.webdimension.jp/BackEnd/DB/MySQL/frequently_used_command/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/DB/MySQL/frequently_used_command/</guid><pubDate>Mon, 17 Nov 2025 15:06:39 GMT</pubDate><content:encoded>&lt;h2&gt;MySQLでよく使うコマンド 忘れないようにメモ&lt;/h2&gt;
+&lt;p&gt;忘れないようにメモ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;-- Rootユーザーのパスワード変更&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;root&apos;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;@&apos;localhost&apos;&lt;/span&gt; IDENTIFIED &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;password&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- ユーザー作成&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;hoge&apos;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;@&apos;localhost&apos;&lt;/span&gt; IDENTIFIED &lt;span class=&quot;token keyword&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;hogehoge&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;PRIVILEGES&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;hoge&apos;&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;@&apos;localhost&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+FLUSH &lt;span class=&quot;token keyword&quot;&gt;PRIVILEGES&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;--Dump&lt;/span&gt;
+mysqldump &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;u root &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;h localhost DB_NAME &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; OUTPUT_FILENAME
+
+&lt;span class=&quot;token comment&quot;&gt;-- Restore&lt;/span&gt;
+mysql &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;u root &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p DB_NAME &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; SQL_FILE_NAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[サイト上のメールフォームなどからメールを送信する際の迷惑メール判定]]></title><description><![CDATA[Gmailの迷惑メール判定されないようにするために効果的だったもの DNS設定 txt _dmarc.webdimension.jp v=DMARC1; p=none; rua=mailto:info@webdimension.jp Type name TTL value txt…]]></description><link>https://blog.webdimension.jp/Infrastructure/mail_dmarc/</link><guid isPermaLink="false">https://blog.webdimension.jp/Infrastructure/mail_dmarc/</guid><pubDate>Mon, 17 Nov 2025 14:55:16 GMT</pubDate><content:encoded>&lt;h2&gt;Gmailの迷惑メール判定されないようにするために効果的だったもの&lt;/h2&gt;
+&lt;p&gt;DNS設定&lt;/p&gt;
+&lt;p&gt;txt _dmarc.webdimension.jp v=DMARC1; p=none; rua=mailto:&lt;a href=&quot;mailto:info@webdimension.jp&quot;&gt;info@webdimension.jp&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;TTL&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;txt&lt;/td&gt;
+&lt;td&gt;_dmarc.FQDN&lt;/td&gt;
+&lt;td&gt;3600&lt;/td&gt;
+&lt;td&gt;v=DMARC1; p=none; rua=mailto:メールアドレス&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Macのターミナル上からiCloudのファイルのパス]]></title><description><![CDATA[Macのターミナル上からiCloudのファイルのパス よく忘れるのでメモ]]></description><link>https://blog.webdimension.jp/Tools/mac/icloud_path/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/mac/icloud_path/</guid><pubDate>Mon, 17 Nov 2025 14:45:36 GMT</pubDate><content:encoded>&lt;h2&gt;Macのターミナル上からiCloudのファイルのパス&lt;/h2&gt;
+&lt;p&gt;よく忘れるのでメモ&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;~/Library/Mobile\ Documents/com~apple~CloudDocs/&lt;/code&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[OpenAPI redocly]]></title><description><![CDATA[OpenAPI をブラウザ表示 openapi.yaml を内容を確認する方法として swagger-ui がある ほかにもいるいるありそうだけど redocly というツールがよさげ。 ただただ見た目がよい。 swagger-ui…]]></description><link>https://blog.webdimension.jp/BackEnd/OpenAPI/redocly/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/OpenAPI/redocly/</guid><pubDate>Mon, 17 Nov 2025 14:26:57 GMT</pubDate><content:encoded>&lt;h2&gt;OpenAPI をブラウザ表示&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;openapi.yaml&lt;/em&gt; を内容を確認する方法として &lt;em&gt;swagger-ui&lt;/em&gt; がある&lt;/p&gt;
+&lt;p&gt;ほかにもいるいるありそうだけど &lt;em&gt;redocly&lt;/em&gt; というツールがよさげ。&lt;/p&gt;
+&lt;p&gt;ただただ見た目がよい。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;swagger-ui&lt;/em&gt; のメリットとしてはブラウザで開きブラウザからエンドポイントにアクセスできたりする。&lt;/p&gt;
+&lt;p&gt;でもブラウザからエンドポンとは叩かない。もっと見た目重視でとなれば &lt;em&gt;resocly&lt;/em&gt; 一択かな。&lt;/p&gt;
+&lt;p&gt;仕事でも最近は &lt;em&gt;swagger-ui&lt;/em&gt; よりも &lt;em&gt;resocly&lt;/em&gt; を目にすることが多くなった。&lt;/p&gt;
+&lt;p&gt;なので &lt;em&gt;resocly&lt;/em&gt; を Docker で動かすShellScritpを。。。&lt;/p&gt;
+&lt;p&gt;例) redockry&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;######################################################&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# redoc を html アプトプット 引数にアウトプットのファイル名&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;######################################################&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;docker&lt;/span&gt; run --name redocHtml --rm &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -v &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$PWD&lt;/span&gt;&quot;&lt;/span&gt;/:/spec &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+-p &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;:80 &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ redocly/cli build-docs /spec/openapi.yaml &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -o /spec/&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;openai.yaml のあるディレクトリに移動して &lt;code class=&quot;language-text&quot;&gt;redocly&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;http://localhost:8080&lt;/code&gt; で確認できるはず。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[docker-compose.yml では ${PWD} は使わない方がよい。]]></title><description><![CDATA[docker-compose.yml での ${PWD} の使用はやめた方がよい。 今まではこんな感じでパスを指定していた。 が、・・・・・ windows では ${PWD} は認識せず、期待通りに動かない。 今までは linux, mac…]]></description><link>https://blog.webdimension.jp/Environment/Docker/docker_compose_pwd/</link><guid isPermaLink="false">https://blog.webdimension.jp/Environment/Docker/docker_compose_pwd/</guid><pubDate>Mon, 17 Nov 2025 12:58:07 GMT</pubDate><content:encoded>&lt;h2&gt;docker-compose.yml での ${PWD} の使用はやめた方がよい。&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt; &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;PWD&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/../public&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/usr/share/nginx/html/corporate/public
+   &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;PWD&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/php/php.ini&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/usr/local/etc/php/php.ini&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;今まではこんな感じでパスを指定していた。&lt;/p&gt;
+&lt;p&gt;が、・・・・・&lt;/p&gt;
+&lt;p&gt;windows では ${PWD} は認識せず、期待通りに動かない。&lt;/p&gt;
+&lt;p&gt;今までは linux, mac 環境でしか試していなかったので気づけなかった。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt; &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./../public&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/usr/share/nginx/html/corporate/public
+   &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./php/php.ini&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/usr/local/etc/php/php.ini&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;のように相対パスを書いた方が良さそう。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Wordpress のアップデートをsshで実行する]]></title><description><![CDATA[Wordpress のアップデートをsshで実行するための設定 参考サイト 適当な場所に秘密鍵、公開鍵 のディレクトリを作成 ssh 鍵作成 パスワード聞かれるがパスワードは設定したくないので何も入力せずにEnter  を編集 ssh…]]></description><link>https://blog.webdimension.jp/BackEnd/php/wordpress/update_by_ssh/</link><guid isPermaLink="false">https://blog.webdimension.jp/BackEnd/php/wordpress/update_by_ssh/</guid><pubDate>Mon, 17 Nov 2025 12:35:30 GMT</pubDate><content:encoded>&lt;h2&gt;Wordpress のアップデートをsshで実行するための設定&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.capilano-fw.com/?p=3564&quot;&gt;参考サイト&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;適当な場所に秘密鍵、公開鍵 のディレクトリを作成&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; ~/.wp_ssh/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ssh 鍵作成&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ssh-keygen -f ~/.wp_ssh/id_rsa&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;パスワード聞かれるがパスワードは設定したくないので何も入力せずにEnter&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;wp-config.php&lt;/code&gt; を編集&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;injectablephp&quot;&gt;&lt;pre class=&quot;language-injectablephp&quot;&gt;&lt;code class=&quot;language-injectablephp&quot;&gt;/* SSH */                                                                                                                                                                                     
+define(&amp;#39;FS_METHOD&amp;#39;, &amp;#39;ssh2&amp;#39;);                                                                                                                                                                  
+define(&amp;#39;FTP_PUBKEY&amp;#39;, &amp;#39;&amp;lt;公開鍵の場所指定&amp;gt;&amp;#39;);                                                                                                                        
+define(&amp;#39;FTP_PRIKEY&amp;#39;, &amp;#39;&amp;lt;秘密鍵の場所指定&amp;gt;&amp;#39;);                                                                                                                            
+define(&amp;#39;FTP_USER&amp;#39;, &amp;#39;&amp;lt;USER_NAME&amp;gt;&amp;#39;);                                                                                                                                                           
+define(&amp;#39;FTP_HOST&amp;#39;, &amp;#39;127.0.0.1:22&amp;#39;);        &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh 拡張機能が利用できません。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;これが出た場合はサーバー側にインストールが必要&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dnf &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; php-pecl-ssh2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;権限変更&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;700&lt;/span&gt; ~/.wp_ssh
+&lt;span class=&quot;token function&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;600&lt;/span&gt; ~/.wp_ssh/*&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;で、うまくいけた。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Marp markdownでスライド作成]]></title><description><![CDATA[markdown から　スライドを作れるツール Marp いつもなんでもかんでもmarkdownを使っている。 メモ、日報　など。 そのmarkdownでスライド(パワーポイインと)も作れるようなので試してみた markdown を用意しておく css…]]></description><link>https://blog.webdimension.jp/Tools/markdown/marp/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/markdown/marp/</guid><pubDate>Mon, 17 Nov 2025 01:44:10 GMT</pubDate><content:encoded>&lt;h2&gt;markdown から　スライドを作れるツール Marp&lt;/h2&gt;
+&lt;p&gt;いつもなんでもかんでもmarkdownを使っている。 メモ、日報　など。&lt;/p&gt;
+&lt;p&gt;そのmarkdownでスライド(パワーポイインと)も作れるようなので試してみた&lt;/p&gt;
+&lt;h3&gt;markdown を用意しておく&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdownd&quot;&gt;&lt;pre class=&quot;language-markdownd&quot;&gt;&lt;code class=&quot;language-markdownd&quot;&gt;---
+marp: true
+header: &amp;quot;テーマ&amp;quot;
+footer: &amp;quot;:eagle:&amp;quot;
+theme: marp
+size: 16:9
+---
+
+##   
+
+&amp;lt;!--
+_class: title
+--&amp;gt;
+
+# Marp
+
+---
+
+# page2
+
+## 見出し
+
+&amp;lt;div&amp;gt;
+&amp;lt;div&amp;gt;
+
+### 左
+
+- lll
+- lll
+- lll
+- lll
+ 
+ここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンツツツツツツツここにコンテンツ
+&amp;lt;/div&amp;gt;
+&amp;lt;div&amp;gt;
+中央
+
+ここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンツツツツツツツここにコンテンツ
+
+&amp;lt;/div&amp;gt;
+&amp;lt;div&amp;gt;
+右
+
+ここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンツツツツツツツここにコンテンツ
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+## 見出し
+
+&amp;lt;div&amp;gt;
+&amp;lt;div&amp;gt;
+
+### 左
+
+- lll
+- lll
+- lll
+- lll
+
+ここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンツツツツツツツここにコンテンツ
+&amp;lt;/div&amp;gt;
+&amp;lt;div&amp;gt;
+中央
+
+ここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンツツツツツツツここにコンテンツ
+
+&amp;lt;/div&amp;gt;
+&amp;lt;div&amp;gt;
+右
+
+ここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンここにコンテンツツツツツツツここにコンテンツ
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+## head2
+
+:smile: &amp;lt;span class=&amp;quot;blue&amp;quot;&amp;gt;class blue&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;red&amp;quot;&amp;gt;class red&amp;lt;/span&amp;gt; **strong** *italic* &amp;lt;span class=&amp;quot;orange&amp;quot;&amp;gt;
+orange&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;green&amp;quot;&amp;gt;green&amp;lt;/span&amp;gt;
+~~docker rm コンテナ名~~
+
+```docker run --name marp --rm --init -v $PWD/Docs:/home/marp/app -v  ~/marp.css:/home/marp/app/marp.css  -e LANG=$LANG -p 8081:8080 -p 37717:37717 marpteam/marp-cli -s . --theme my.css```
+
+`docker run --name marp --rm --init -v $PWD/Docs:/home/marp/app -v  ~//marp.css:/home/marp/app/marp.css  -e LANG=$LANG -p 8081:8080 -p 37717:37717 marpteam/marp-cli -s . --theme my.css`
+
+`docker run --rm --init -v $PWD/Docs:/home/marp/app/ -e LANG=$LANG -p 37717:37717 marpteam/marp-cli -w memo.md`
+docker rm marp
+
+| tes | test | test | test |
+|:----|:-----|:-----|:-----|
+| aaa | sss  | sss  | sss  |
+| aaa | sss  | sss  | sss  | 
+
+---
+
+# page3
+
+### test
+
+test
+
+---
+
+# page4
+
+---
+
+# page5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;css も用意しておく&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;css&quot;&gt;&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* @theme marp */&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*@import default;*/&lt;/span&gt;
+&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string url&quot;&gt;&apos;https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&amp;amp;family=Varela+Round&amp;amp;display=swap&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;M PLUS Rounded 1c&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; sans-serif&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*background-color: #ffffff;*/&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ffffff&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #333333&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; column&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;gap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 20px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 12px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 18px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*width: 1280px;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*height: 1810px;*/&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;align-items&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; center&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;justify-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; space-between&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #e6e6e6&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4px 8px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #4a6986&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.3rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;section.title&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #4a6986&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ffffff&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*padding: 30px;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*font-size: 16rem;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*text-align: center;*/&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; column&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;justify-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; center&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;align-items&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; center&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;repeating-linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            45deg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 0%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0.2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 20%&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 255&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 40%
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;section.title &gt; header&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;section.title &gt; h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 4rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;footer&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 100%&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; fixed&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;linear-gradient&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;to right&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; #4a6986&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; #e6e6e6&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ffffff&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;z-index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 999&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;justify-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; center&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;align-items&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; center&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1rem &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*gap: 20px;*/&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token selector&quot;&gt;section p&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ffffff&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.6rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #4a6986&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.3rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px solid #4a6986 &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2px solid #4a6986 &lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #4a6986&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;h3&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.1rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;strong&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; bolder &lt;span class=&quot;token important&quot;&gt;!important&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.1rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;opacity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 0.5&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; monospace&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #dcdcdc&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #000000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; block&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.red&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ff0000&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.blue&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #0000FF&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.orange&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #ffa500&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.green&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; #32cd32&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;section &gt; div&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*background-color: #e6e6e6;*/&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; row&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;gap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*padding: 12px;*/&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 18px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding-bottom&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 2rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*border-bottom: 1px solid #e6e6e6;*/&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;section &gt; div &gt; *&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*border: 1px solid #333333;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*background-color: #e6e6e6;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*color: #ff0000;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*display: flex;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*flex-direction: row;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*gap: 20px;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*padding: 8px;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*font-size: 18px;*/&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;/*margin: 4px;*/&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;.emoji&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.3rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;table, th, td&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1px solid #333333&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;border-collapse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; collapse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;th, td&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8px&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token selector&quot;&gt;th&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; bolder&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 1.2rem&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これをDockerで動かすシェルスクリプトを用意&lt;/p&gt;
+&lt;p&gt;例) &lt;code class=&quot;language-text&quot;&gt;myMarp&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;######################################################&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# marp を起動 cssは固定　markdown のあるディレクトリをマウント&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;######################################################&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#echo &quot;$PWD&quot;/&quot;$1&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;docker&lt;/span&gt; run --name marp --rm --init &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -v &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token environment constant&quot;&gt;$PWD&lt;/span&gt;&quot;&lt;/span&gt;/&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;:/home/marp/app &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -v  ~/marp.css:/home/marp/app/marp.css &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -e &lt;span class=&quot;token assign-left variable&quot;&gt;&lt;span class=&quot;token environment constant&quot;&gt;LANG&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token environment constant&quot;&gt;$LANG&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -p &lt;span class=&quot;token number&quot;&gt;8080&lt;/span&gt;:8080 &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ -p &lt;span class=&quot;token number&quot;&gt;37717&lt;/span&gt;:37717 &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ marpteam/marp-cli -s &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+ --theme my.css
+&lt;span class=&quot;token comment&quot;&gt;# grep host ~/.ssh/config | awk &apos;{print $2}&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;markdown, cssがあるディレクトリに移動し&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;myMqrp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;http://localhost:8080&lt;/code&gt; で 表示できる。&lt;/p&gt;
+&lt;h2&gt;Marpは使えるかどうか。&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使うにはmarkdownの知識が絶対必須。&lt;/li&gt;
+&lt;li&gt;結局 html css も用意しないとそれなりのものは作れない。&lt;/li&gt;
+&lt;li&gt;であれば普通にパワーポイントやGoogleSlideでも良さそうな。&lt;/li&gt;
+&lt;li&gt;とは言えテキストベースなのでバージョン管理に向いている。&lt;/li&gt;
+&lt;li&gt;少人数で共有するだけであればMarpの方が早い。（テンプレートさえ然りしていれば）&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[WindowにMacのUSキーボードを外付けした時の日本語入力]]></title><description><![CDATA[WndowsでもMACのUSキーボード使いたい時の日本語入力の設定 Windows側にAutoHotKeyをインストールしておく 設定は 右cmd -> 日本語 左cmd -> 英数 となる。
+便利なAutoHotKey]]></description><link>https://blog.webdimension.jp/Tools/mac/mac_uskeybord_on_windows/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/mac/mac_uskeybord_on_windows/</guid><pubDate>Mon, 17 Nov 2025 01:34:30 GMT</pubDate><content:encoded>&lt;h2&gt;WndowsでもMACのUSキーボード使いたい時の日本語入力の設定&lt;/h2&gt;
+&lt;p&gt;Windows側に&lt;em&gt;AutoHotKey&lt;/em&gt;をインストールしておく&lt;/p&gt;
+&lt;p&gt;設定は&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;/*** Windows ***/
+LWin::Send &quot;{vk1D}&quot;
+RWin::Send &quot;{vk1C}&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;右cmd -&gt; 日本語&lt;/li&gt;
+&lt;li&gt;左cmd -&gt; 英数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;となる。
+便利な&lt;em&gt;AutoHotKey&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mac us キーボードでのParallelsDesktop(win)の日本語入力切り替え]]></title><description><![CDATA[ParallelsDesktopのWindowsの日本語入力をMACと合わせたい。 環境 mac usキーボード parallelsDesktop(win) Mac上では 右cmd -> 日本語 左cmd -> 英数 としている。 Parallels上のWindows…]]></description><link>https://blog.webdimension.jp/Tools/mac/parallels_desktop_japanese/</link><guid isPermaLink="false">https://blog.webdimension.jp/Tools/mac/parallels_desktop_japanese/</guid><pubDate>Mon, 17 Nov 2025 01:10:44 GMT</pubDate><content:encoded>&lt;h2&gt;ParallelsDesktopのWindowsの日本語入力をMACと合わせたい。&lt;/h2&gt;
+&lt;p&gt;環境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mac usキーボード&lt;/li&gt;
+&lt;li&gt;parallelsDesktop(win)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mac上では&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;右cmd -&gt; 日本語&lt;/li&gt;
+&lt;li&gt;左cmd -&gt; 英数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;としている。&lt;/p&gt;
+&lt;p&gt;Parallels上のWindowsでは &lt;code class=&quot;language-text&quot;&gt;SHIFT + Space&lt;/code&gt; で　
+日本語、英語を切り替えていたが Window上でも同じ操作でありたい。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;右win -&gt; 日本語&lt;/li&gt;
+&lt;li&gt;左win -&gt; 英数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;必須アプリ
+Mac側 karabiner-elements
+Windows側 AutoHotKey (ver2)&lt;/p&gt;
+&lt;p&gt;karabiner.json 追記&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;          &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな）&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;manipulators&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;basic&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;left_command&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;left_command&quot;&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;japanese_eisuu&quot;&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;conditions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;frontmost_application_unless&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;bundle_identifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.vm$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop\\.console$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.winapp\\.&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;basic&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;right_command&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;right_command&quot;&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;japanese_kana&quot;&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;conditions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;frontmost_application_unless&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;bundle_identifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.vm$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop\\.console$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.winapp\\.&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;basic&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;left_command&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;left_command&quot;&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;f9&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;left_shift&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;left_control&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;conditions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;frontmost_application_if&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;bundle_identifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.vm$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop\\.console$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.winapp\\.&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;basic&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;from&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;right_command&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                  &lt;span class=&quot;token property&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;optional&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;any&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;left_command&quot;&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;to_if_alone&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;key_code&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;f11&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;modifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;left_shift&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;left_control&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;token property&quot;&gt;&quot;conditions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;frontmost_application_if&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                    &lt;span class=&quot;token property&quot;&gt;&quot;bundle_identifiers&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.vm$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.desktop\\.console$&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+                      &lt;span class=&quot;token string&quot;&gt;&quot;^com\\.parallels\\.winapp\\.&quot;&lt;/span&gt;
+                    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+                  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;autoHotKey.ahk&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;txt&quot;&gt;&lt;pre class=&quot;language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;/*** Parallels Windows ***/
++^F9::Send &quot;{vk1D}&quot;
++^F11::Send &quot;{vk1C}&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これでMacもWindowsも同じ操作で快適。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[docker dns http-proxy]]></title><description><![CDATA[hostsファイルを書き換えずに localhost に向ける 開発条件によってはhostsファイルを書き換えて開発しなければいけないことがある。 hostsファイルを書き換えるデメリット PCすべてが  local, remote…]]></description><link>https://blog.webdimension.jp/Environment/Docker/docker_dns_http-proxy/</link><guid isPermaLink="false">https://blog.webdimension.jp/Environment/Docker/docker_dns_http-proxy/</guid><pubDate>Mon, 18 Sep 2023 03:38:01 GMT</pubDate><content:encoded>&lt;h2&gt;hostsファイルを書き換えずに localhost に向ける&lt;/h2&gt;
 &lt;p&gt;開発条件によってはhostsファイルを書き換えて開発しなければいけないことがある。&lt;/p&gt;
 &lt;h3&gt;hostsファイルを書き換えるデメリット&lt;/h3&gt;
 &lt;ul&gt;
@@ -5181,29 +5848,7 @@ tags&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class
         decoding=&quot;async&quot;
       /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS に Prettiew を導入]]></title><description><![CDATA[環境設定 VSCode に Prettier の Plugin Install 他のエディタの場合も同様に 設定ファイル  保存時に Prettier で format をする VSCode  Intellij IDEA Preferences | Languages…]]></description><link>https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/004_prettier/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/004_prettier/</guid><pubDate>Wed, 02 Mar 2022 20:30:01 GMT</pubDate><content:encoded>&lt;h2&gt;環境設定&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;VSCode に Prettier の Plugin Install 他のエディタの場合も同様に&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;設定ファイル&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.prettierrc&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;arrowParens&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;avoid&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;tabWidth&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;useTabs&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;printWidth&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;semi&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;保存時に Prettier で format をする&lt;/h2&gt;
-&lt;h3&gt;VSCode&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.vscode/setting.json&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;editor.formatOnSave&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Intellij IDEA&lt;/h3&gt;
-&lt;p&gt;Preferences | Languages &amp;#x26; Frameworks | JavaScript | Prettier&lt;/p&gt;
-&lt;p&gt;On save のチェックボックスをON&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS に ESLint を導入]]></title><description><![CDATA[環境設定 VSCode に ESlint の Plugin Install 他のエディタの場合も同様に ESlint を Pruject に Install Install modules ESlint 設定アイルを生成 設定ファイル .eslint.json]]></description><link>https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/005_eslint/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/005_eslint/</guid><pubDate>Wed, 02 Mar 2022 20:30:01 GMT</pubDate><content:encoded>&lt;h2&gt;環境設定&lt;/h2&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS に ESLint を導入]]></title><description><![CDATA[環境設定 VSCode に ESlint の Plugin Install 他のエディタの場合も同様に ESlint を Pruject に Install Install modules ESlint 設定アイルを生成 設定ファイル .eslint.json]]></description><link>https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/005_eslint/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/005_eslint/</guid><pubDate>Wed, 02 Mar 2022 20:30:01 GMT</pubDate><content:encoded>&lt;h2&gt;環境設定&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;VSCode に ESlint の Plugin Install 他のエディタの場合も同様に&lt;/li&gt;
 &lt;/ul&gt;
@@ -5262,7 +5907,29 @@ eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest @typescript-e
     &lt;span class=&quot;token string&quot;&gt;&quot;@typescript-eslint&quot;&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;token property&quot;&gt;&quot;rules&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS ページを追加する]]></title><description><![CDATA[AboutMe page 追加 about.tsx 追加 about.tsx 詳細 query に名前 graphql の型を反映 About ページのコンテンツ  メニューバーを追加して AbutMe のリンクをはる src/components/layout.tsx]]></description><link>https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/003_ add_pages/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/003_ add_pages/</guid><pubDate>Wed, 02 Mar 2022 20:25:50 GMT</pubDate><content:encoded>&lt;h2&gt;AboutMe page 追加&lt;/h2&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS に Prettiew を導入]]></title><description><![CDATA[環境設定 VSCode に Prettier の Plugin Install 他のエディタの場合も同様に 設定ファイル  保存時に Prettier で format をする VSCode  Intellij IDEA Preferences | Languages…]]></description><link>https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/004_prettier/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/004_prettier/</guid><pubDate>Wed, 02 Mar 2022 20:30:01 GMT</pubDate><content:encoded>&lt;h2&gt;環境設定&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;VSCode に Prettier の Plugin Install 他のエディタの場合も同様に&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;設定ファイル&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.prettierrc&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;arrowParens&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;avoid&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;tabWidth&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;useTabs&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;printWidth&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;semi&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;保存時に Prettier で format をする&lt;/h2&gt;
+&lt;h3&gt;VSCode&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;.vscode/setting.json&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;editor.formatOnSave&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Intellij IDEA&lt;/h3&gt;
+&lt;p&gt;Preferences | Languages &amp;#x26; Frameworks | JavaScript | Prettier&lt;/p&gt;
+&lt;p&gt;On save のチェックボックスをON&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS ページを追加する]]></title><description><![CDATA[AboutMe page 追加 about.tsx 追加 about.tsx 詳細 query に名前 graphql の型を反映 About ページのコンテンツ  メニューバーを追加して AbutMe のリンクをはる src/components/layout.tsx]]></description><link>https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/003_ add_pages/</link><guid isPermaLink="false">https://blog.webdimension.jp/FrontEnd/Topics/GatsbyJS/003_ add_pages/</guid><pubDate>Wed, 02 Mar 2022 20:25:50 GMT</pubDate><content:encoded>&lt;h2&gt;AboutMe page 追加&lt;/h2&gt;
 &lt;h3&gt;about.tsx 追加&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;cp&lt;/span&gt; src/pages/index.tsx src/pages/about.tsx&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;about.tsx&lt;/h3&gt;
