@@ -4,7 +4,7 @@ date: "2023-03-12 20:34:03"
 post_modified: "2023-03-12 20:34:03"
 description: "Create React App を使わず React TypeScript をインストール"
 categories: ["FrontEnd"]
-tags: ["Docker-conpoe", "Docker", "React.js", "TypeScript"]
+tags: ["Docker-compose", "Docker", "React.js", "TypeScript"]
 topics: ""
 draft: false
 ---
